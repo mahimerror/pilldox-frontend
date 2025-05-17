@@ -280,7 +280,7 @@
 
     <!-- zh main start   -->
     <main>
-      <section class="flex flex-col container mx-auto">
+      <section class="flex flex-col container mx-auto h-full">
         <div class="mt-[13px] mr-[60px]">
           <h5 class="text-[#222222] font-boldFont text-[40px]">Yo!Tube</h5>
           <svg
@@ -317,7 +317,7 @@
             </p>
           </div>
           <!-- create form  -->
-          <form action="" class="space-y-6">
+          <form onsubmit="event.preventDefault()" action="" class="space-y-6">
             <!-- upload room cover image -->
             <div>
               <label
@@ -517,12 +517,91 @@
 
             <div class="pt-6">
               <button
+                type="submit"
+                id="showModalBtn"
                 class="px-9 block border border-[rgba(0,_0,_0,_0.08)] rounded-lg bg-[#008080] py-[15px] text-center text-white text-lg font-mediumFont"
               >
                 Upload video
               </button>
             </div>
           </form>
+        </div>
+
+        <!-- modal content -->
+        <div
+          id="modalOverlay"
+          class="fixed inset-0 bg-black bg-opacity-50 justify-center hidden items-center"
+        >
+          <div class="flex justify-center items-center min-h-screen">
+            <div
+              id="modalContent"
+              class="bg-white px-[60px] lg:px-[172px] rounded-lg shadow-lg relative max-w-[794px] w-full mx-auto text-center pt-9 pb-[70px]"
+            >
+              <div class="flex items-center justify-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="60"
+                  height="60"
+                  viewBox="0 0 60 60"
+                  fill="none"
+                >
+                  <path
+                    d="M30 3.75C36.9619 3.75 43.6387 6.51562 48.5616 11.4384C53.4844 16.3613 56.25 23.0381 56.25 30C56.25 36.9619 53.4844 43.6387 48.5616 48.5616C43.6387 53.4844 36.9619 56.25 30 56.25C23.0381 56.25 16.3613 53.4844 11.4384 48.5616C6.51562 43.6387 3.75 36.9619 3.75 30C3.75 23.0381 6.51562 16.3613 11.4384 11.4384C16.3613 6.51562 23.0381 3.75 30 3.75ZM26.73 35.1787L20.8988 29.3438C20.6897 29.1347 20.4415 28.9689 20.1684 28.8557C19.8953 28.7426 19.6025 28.6844 19.3069 28.6844C19.0112 28.6844 18.7185 28.7426 18.4454 28.8557C18.1722 28.9689 17.924 29.1347 17.715 29.3438C17.2928 29.7659 17.0556 30.3386 17.0556 30.9356C17.0556 31.5327 17.2928 32.1053 17.715 32.5275L25.14 39.9525C25.3485 40.1626 25.5964 40.3294 25.8696 40.4432C26.1429 40.557 26.4359 40.6156 26.7319 40.6156C27.0278 40.6156 27.3209 40.557 27.5941 40.4432C27.8673 40.3294 28.1153 40.1626 28.3237 39.9525L43.6987 24.5737C43.9106 24.3656 44.0791 24.1175 44.1946 23.8439C44.3101 23.5702 44.3703 23.2764 44.3717 22.9794C44.373 22.6824 44.3156 22.3881 44.2027 22.1134C44.0897 21.8387 43.9235 21.5891 43.7136 21.3789C43.5037 21.1688 43.2543 21.0023 42.9797 20.889C42.7052 20.7757 42.4109 20.7179 42.1139 20.719C41.8169 20.72 41.523 20.7798 41.2492 20.895C40.9754 21.0102 40.7272 21.1784 40.5188 21.39L26.73 35.1787Z"
+                    fill="#36B37E"
+                  />
+                </svg>
+              </div>
+              <h2 class="text-[20px] font-mediumFont text-[#222222] mt-3">
+                Video Upload Successful!
+              </h2>
+              <p class="text-[#6A6A6A] font-mediumFont text-[14px] mb-8">
+                Your video has been uploaded and is ready to be viewed
+              </p>
+
+              <div class="w-[450px] h-[217px] relative">
+                <img
+                  class="w-full h-full rounded-xl object-cover"
+                  src="../dist/assets/images/upload-img.png"
+                  alt=""
+                />
+                <span
+                  class="absolute bottom-4 right-4 text-[#FFFFFF] text-[14px] font-mediumFont py-1 px-[14px] rounded-[4px] bg-[#2E2E2E]"
+                >
+                  2:30
+                </span>
+              </div>
+
+              <div class="flex justify-between items-center mt-[6px] mb-8">
+                <p class="text-base font-mediumFont text-[#2E2E2E]">
+                  My_Vid.mp4
+                </p>
+                <div
+                  class="flex items-center gap-2 text-[14px] font-mediumFont text-[#6A6A6A]"
+                >
+                  <span>1.2M views</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="4"
+                    height="4"
+                    viewBox="0 0 4 4"
+                    fill="none"
+                  >
+                    <circle cx="2" cy="2" r="2" fill="#6A6A6A" />
+                  </svg>
+                  <span>2 hours ago</span>
+                </div>
+              </div>
+
+              <!-- button -->
+              <div class="w-full">
+                <a
+                  href=""
+                  class="bg-[#008080] rounded-lg text-base text-white font-mediumFont block py-[10px]"
+                  >New Video</a
+                >
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -638,5 +717,30 @@
       </div>
     </footer>
     <!-- zh footer end -->
+
+    <script>
+      const showModalBtn = document.getElementById("showModalBtn");
+      const overlay = document.getElementById("modalOverlay");
+      const modalContent = document.getElementById("modalContent");
+
+      //   show the modal
+      function showModal() {
+        overlay.classList.remove("hidden");
+      }
+      //   hide the modal
+      function hideModal() {
+        overlay.classList.add("hidden");
+      }
+
+      //   add listeners
+      showModalBtn.addEventListener("click", showModal);
+      overlay.addEventListener("click", function (event) {
+        if (!modalContent.contains(event.target)) {
+          hideModal();
+        }
+        console.log(overlay);
+      });
+      console.log(overlay);
+    </script>
   </body>
 </html>
