@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="/assets/images/logo.svg"
+      type="image/x-icon"
+    />
+    <title>Pilldox Client | Community Inbox</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Existing styles with modifications */
+      #filePreviewContainer {
+        display: none; /* Hidden by default */
+        width: 100%;
+        overflow-x: auto;
+        gap: 10px;
+        padding: 5px 10px;
+        margin-bottom: 10px; /* Space between preview and message box */
+      }
+
+      #filePreviewContainer.has-files {
+        display: flex;
+      }
+
+      .file-preview-container {
+        gap: 10px;
+        overflow-x: auto;
+        padding: 5px 0;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+      }
+
+      .file-preview-container::-webkit-scrollbar {
+        height: 6px;
+      }
+
+      .file-preview-container::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 3px;
+      }
+
+      .file-preview-item {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+
+      .file-preview-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .file-remove-btn {
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 12px;
+        line-height: 1;
+        padding: 0;
+        z-index: 10;
+      }
+
+      .file-name {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        font-size: 10px;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 2px;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 640px) {
+        #filePreviewContainer {
+          padding: 5px;
+        }
+
+        .file-preview-item {
+          width: 50px;
+          height: 50px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- navbar -->
+    <header class="border-black/10 border-b">
+      <nav
+        class="py-4 md:py-5 w-full flex items-center justify-between px-5 md:px-8 2xl:px-0 container mx-auto"
+      >
+        <!-- logo -->
+        <div>
+          <a href="user-homepage.html" class="flex items-center gap-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="size-10 md:size-12 lg:size-14"
+              viewBox="0 0 51 48"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M25.394 16.3611L32.2544 12.4005C33.6571 11.5903 34.1425 9.77961 33.3316 8.37627C32.5218 6.97328 30.7114 6.48818 29.3084 7.2984L22.8436 11.0309L4.41683 0.392493C3.01315 -0.41772 1.20247 0.0673744 0.392597 1.47071C-0.41796 2.8737 0.0671392 4.68438 1.47082 5.4946L20.2922 16.3614L22.8426 17.8339L25.394 16.3614V16.3611ZM22.8436 2.19319C24.4702 2.19319 25.7893 3.51259 25.7893 5.13955C25.7893 6.76651 24.4702 8.08487 22.8436 8.08487C21.217 8.08487 19.8979 6.76617 19.8979 5.13955C19.8979 3.51293 21.2163 2.19319 22.8436 2.19319Z"
+                fill="#FF4040"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M37.8602 28.1984C37.0469 29.6072 35.2462 30.0892 33.837 29.2759C32.4279 28.4626 31.9455 26.6616 32.7588 25.2527C33.5718 23.8435 35.3739 23.3612 36.7827 24.1745C38.1919 24.9878 38.6742 26.7896 37.8602 28.1987M24.3157 23.3237V31.2445C24.3157 32.865 25.642 34.1902 27.2614 34.1902C28.8808 34.1902 30.2071 32.865 30.2071 31.2445V23.7799L48.6338 13.1412C50.0375 12.331 50.5219 10.5203 49.7121 9.11694C48.9015 7.7136 47.0908 7.22885 45.6878 8.03906L26.8665 18.9052L24.3151 20.378V23.3234L24.3157 23.3237Z"
+                fill="#F8BF2C"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M7.82562 28.1995C7.01231 26.7903 7.49466 24.9885 8.90384 24.1742C10.3127 23.3612 12.1148 23.8439 12.9277 25.2535C13.741 26.6616 13.2587 28.4633 11.8495 29.2767C10.4407 30.09 8.63859 29.6073 7.82562 28.1991M18.8194 18.9056L11.9589 14.945C10.5563 14.1351 8.74558 14.6202 7.93571 16.0232C7.12585 17.4266 7.61094 19.2369 9.01394 20.0468L15.4788 23.7796V45.0567C15.4788 46.6771 16.804 48.0024 18.4244 48.0024C20.0449 48.0024 21.3701 46.6771 21.3701 45.0567V20.3781L18.8187 18.9052L18.8194 18.9056Z"
+                fill="#008080"
+              />
+            </svg>
+            <p class="font-boldFont">CommunityConnect</p>
+          </a>
+        </div>
+
+        <!-- Auth Buttons -->
+        <div class="md:flex items-center gap-6 hidden">
+          <!-- add from zh start -->
+          <a
+            href=""
+            class="font-boldFont text-[#141414] w-32 flex items-center justify-center"
+          >
+            Chat rooms
+          </a>
+          <a
+            href=""
+            class="font-boldFont text-[#141414] w-32 flex items-center justify-center"
+          >
+            Yo!Tube
+          </a>
+          <a
+            href=""
+            class="font-boldFont text-[#141414] w-32 flex items-center justify-center"
+          >
+            Daro’s List
+          </a>
+          <!-- add from zh end -->
+          <a
+            href="community-join.html"
+            class="font-boldFont text-[#141414] w-32 flex items-center justify-center"
+          >
+            Inbox
+          </a>
+
+          <!-- dropdown -->
+          <button
+            class="px-8 py-3 border border-[#E6EBEF] text-[#222222] rounded-lg font-mediumFont navbar-dropdown-btn relative"
+          >
+            <div class="flex items-center gap-2">
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                >
+                  <path
+                    d="M6.79199 5.62435C6.79199 3.85523 8.23121 2.41602 10.0003 2.41602C11.769 2.41602 13.2079 3.85444 13.2087 5.6229C13.2011 7.35868 11.8508 8.75681 10.129 8.82431C10.0423 8.81582 9.95671 8.81672 9.87889 8.82285C8.11768 8.73861 6.79199 7.34126 6.79199 5.62435Z"
+                    stroke="#222222"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M6.18422 16.5354L6.18217 16.534C5.28374 15.9351 4.88281 15.1957 4.88281 14.4831C4.88281 13.7699 5.28435 13.0225 6.19006 12.4157C7.21325 11.7391 8.59388 11.3789 10.0099 11.3789C11.4269 11.3789 12.8029 11.7395 13.8168 12.4154C14.7097 13.0107 15.1092 13.7496 15.1161 14.4694C15.115 15.1901 14.7132 15.9291 13.814 16.5359C12.7961 17.2191 11.4169 17.5831 9.99948 17.5831C8.58173 17.5831 7.20222 17.2189 6.18422 16.5354Z"
+                    stroke="#222222"
+                    stroke-width="1.5"
+                  />
+                </svg>
+              </div>
+              <div>
+                <p>Hi, Zobayer</p>
+              </div>
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                >
+                  <path
+                    d="M9.96004 4.47461L6.70004 7.73461C6.31504 8.11961 5.68504 8.11961 5.30004 7.73461L2.04004 4.47461"
+                    stroke="#222222"
+                    stroke-width="1.5"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <!-- dropdown -->
+            <div
+              class="absolute w-full navbar-dropdown left-0 bg-white rounded-md px-8 py-2 shadow-[0px_6px_16px_0px_rgba(20,20,20,0.15)] translate-y-7 opacity-0 -z-10 transition-all duration-500 mt-5"
+            >
+              <div>
+                <a
+                  href="account.html"
+                  class="py-4 border-b border-[#14141414] block"
+                  >Account</a
+                >
+                <a href="#" class="py-4 block">Log Out</a>
+              </div>
+            </div>
+          </button>
+        </div>
+
+        <div class="md:hidden">
+          <div
+            id="menu-hamburger"
+            class="bg-primary p-2 size-10 flex items-center justify-center rounded-md md:hidden"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              version="1.1"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="0"
+              y="0"
+              viewBox="0 0 20 20"
+              style="enable-background: new 0 0 512 512"
+              xml:space="preserve"
+              class=""
+            >
+              <g>
+                <path
+                  fill="#ffffff"
+                  fill-rule="evenodd"
+                  d="M3 5a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1zm0 5a1 1 0 0 1 1-1h6a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1zm0 5a1 1 0 0 1 1-1h12a1 1 0 0 1 0 2H4a1 1 0 0 1-1-1z"
+                  clip-rule="evenodd"
+                  opacity="1"
+                  data-original="#ffffff"
+                  class=""
+                ></path>
+              </g>
+            </svg>
+          </div>
+          <div
+            id="menu-close"
+            class="bg-primary p-2 hidden size-10 items-center justify-center rounded-md md:hidden"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              version="1.1"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="0"
+              y="0"
+              viewBox="0 0 24 24"
+              style="enable-background: new 0 0 512 512"
+              xml:space="preserve"
+              class=""
+            >
+              <g>
+                <path
+                  d="M14.121 12 18 8.117A1.5 1.5 0 0 0 15.883 6L12 9.879 8.11 5.988A1.5 1.5 0 1 0 5.988 8.11L9.879 12 6 15.882A1.5 1.5 0 1 0 8.118 18L12 14.121 15.878 18A1.5 1.5 0 0 0 18 15.878Z"
+                  fill="#ffffff"
+                  opacity="1"
+                  data-original="#ffffff"
+                ></path>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <!-- sidebar -->
+        <div
+          id="sidebar"
+          class="fixed left-0 top-0 z-20 h-full w-60 -translate-x-full transform overflow-y-scroll bg-white transition-transform duration-500 md:w-64"
+        >
+          <!-- logo -->
+          <div
+            class="flex w-full items-center pb-2 pl-10 pt-12 font-roboto font-bold text-primary md:text-xl"
+          >
+            <a href="user-homepage.html" class="flex items-center gap-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="size-10 md:size-12 lg:size-14"
+                viewBox="0 0 51 48"
+                fill="none"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M25.394 16.3611L32.2544 12.4005C33.6571 11.5903 34.1425 9.77961 33.3316 8.37627C32.5218 6.97328 30.7114 6.48818 29.3084 7.2984L22.8436 11.0309L4.41683 0.392493C3.01315 -0.41772 1.20247 0.0673744 0.392597 1.47071C-0.41796 2.8737 0.0671392 4.68438 1.47082 5.4946L20.2922 16.3614L22.8426 17.8339L25.394 16.3614V16.3611ZM22.8436 2.19319C24.4702 2.19319 25.7893 3.51259 25.7893 5.13955C25.7893 6.76651 24.4702 8.08487 22.8436 8.08487C21.217 8.08487 19.8979 6.76617 19.8979 5.13955C19.8979 3.51293 21.2163 2.19319 22.8436 2.19319Z"
+                  fill="#FF4040"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M37.8602 28.1984C37.0469 29.6072 35.2462 30.0892 33.837 29.2759C32.4279 28.4626 31.9455 26.6616 32.7588 25.2527C33.5718 23.8435 35.3739 23.3612 36.7827 24.1745C38.1919 24.9878 38.6742 26.7896 37.8602 28.1987M24.3157 23.3237V31.2445C24.3157 32.865 25.642 34.1902 27.2614 34.1902C28.8808 34.1902 30.2071 32.865 30.2071 31.2445V23.7799L48.6338 13.1412C50.0375 12.331 50.5219 10.5203 49.7121 9.11694C48.9015 7.7136 47.0908 7.22885 45.6878 8.03906L26.8665 18.9052L24.3151 20.378V23.3234L24.3157 23.3237Z"
+                  fill="#F8BF2C"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M7.82562 28.1995C7.01231 26.7903 7.49466 24.9885 8.90384 24.1742C10.3127 23.3612 12.1148 23.8439 12.9277 25.2535C13.741 26.6616 13.2587 28.4633 11.8495 29.2767C10.4407 30.09 8.63859 29.6073 7.82562 28.1991M18.8194 18.9056L11.9589 14.945C10.5563 14.1351 8.74558 14.6202 7.93571 16.0232C7.12585 17.4266 7.61094 19.2369 9.01394 20.0468L15.4788 23.7796V45.0567C15.4788 46.6771 16.804 48.0024 18.4244 48.0024C20.0449 48.0024 21.3701 46.6771 21.3701 45.0567V20.3781L18.8187 18.9052L18.8194 18.9056Z"
+                  fill="#008080"
+                />
+              </svg>
+              <p class="font-boldFont">CommunityConnect</p>
+            </a>
+          </div>
+
+          <!-- Profile info -->
+          <div class="pt-4 px-4">
+            <button
+              class="px-5 py-2 text-sm text-[#222222] border-b border-black/20 font-mediumFont navbar-dropdown-btn relative w-full"
+            >
+              <div class="flex items-center gap-2">
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                  >
+                    <path
+                      d="M6.79199 5.62435C6.79199 3.85523 8.23121 2.41602 10.0003 2.41602C11.769 2.41602 13.2079 3.85444 13.2087 5.6229C13.2011 7.35868 11.8508 8.75681 10.129 8.82431C10.0423 8.81582 9.95671 8.81672 9.87889 8.82285C8.11768 8.73861 6.79199 7.34126 6.79199 5.62435Z"
+                      stroke="#222222"
+                      stroke-width="1.5"
+                    />
+                    <path
+                      d="M6.18422 16.5354L6.18217 16.534C5.28374 15.9351 4.88281 15.1957 4.88281 14.4831C4.88281 13.7699 5.28435 13.0225 6.19006 12.4157C7.21325 11.7391 8.59388 11.3789 10.0099 11.3789C11.4269 11.3789 12.8029 11.7395 13.8168 12.4154C14.7097 13.0107 15.1092 13.7496 15.1161 14.4694C15.115 15.1901 14.7132 15.9291 13.814 16.5359C12.7961 17.2191 11.4169 17.5831 9.99948 17.5831C8.58173 17.5831 7.20222 17.2189 6.18422 16.5354Z"
+                      stroke="#222222"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p>Hi, Zobayer</p>
+                </div>
+              </div>
+            </button>
+          </div>
+          <!-- NavLinks ::start -->
+          <div class="py-4 pl-10 font-inter text-sm">
+            <div class="flex flex-col justify-center gap-4 font-boldFont">
+              <a href="community-inbox.html">Inbox</a>
+              <a href="account.html">Account</a>
+              <button class="inline text-start">Logout</button>
+            </div>
+          </div>
+          <!-- NavLinks ::end -->
+        </div>
+      </nav>
+    </header>
+
+    <!-- body -->
+    <main
+      class="min-h-[calc(100vh-97px)] max-h-[calc(100vh-97px)] w-full flex !overflow-hidden"
+    >
+      <!-- sidebar -->
+      <section
+        class="w-[380px] bg-white border-r border-black/10 h-[calc(100vh-90px)] pr-6 pt-[30px] hidden lg:block overflow-y-auto"
+      >
+        <!-- zh start -->
+        <div class="pl-10">
+          <div class="flex items-center justify-between">
+            <h3 class="font-boldFont text-2xl text-[#222222]">Messages</h3>
+            <div>
+              <img src="../dist/assets/images/edit.png" alt="" />
+            </div>
+          </div>
+
+          <!-- zh search input start-->
+          <div class="mt-[23px] relative">
+            <input
+              type="text"
+              placeholder="Search"
+              class="py-[11px] pr-4 pl-[52px] w-full bg-[#ECECEC] rounded-lg border-0 outline-0 focus:outline-0 placeholder:text-[#6A6A6A] font-mediumFont text-base"
+            />
+            <div class="absolute top-[10px] left-4">
+              <img src="../dist//assets/images/serarch-inbox.png" alt="" />
+            </div>
+          </div>
+          <!-- zh search input end-->
+
+          <!-- zh message user list start -->
+          <div class="pt-10 space-y-[30px]">
+            <!-- user 1 -->
+            <div class="flex items-center">
+              <div class="w-[56px] h-[56px]">
+                <img
+                  class="w-full h-full object-cover"
+                  src="../dist/assets/images/inbox-user-icon.png"
+                  alt=""
+                />
+              </div>
+              <div class="pl-3">
+                <h5 class="text-lg text-[#222222] font-boldFont">
+                  Killan james
+                </h5>
+                <span class="text-[#6A6A6A] text-[14px] font-mediumFont"
+                  >Hello Joseph...</span
+                >
+              </div>
+              <div class="flex flex-col flex-1 items-end">
+                <span class="text-[14px] text-[#B6B6B6] font-mediumFont"
+                  >3:40 PM</span
+                >
+                <!-- read  -->
+                <div class="read pt-1 hidden">
+                  <div class="relative flex items-center justify-center">
+                    <img src="../dist/assets/images/read.svg" alt="" />
+                  </div>
+                </div>
+                <!-- unread -->
+                <div class="unread pt-1">
+                  <div class="relative flex items-center justify-center">
+                    <img src="../dist/assets/images/unread.png" alt="" />
+                    <span
+                      class="absolute text-white text-base font-mediumFont p-3"
+                      >9</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- user 2 -->
+            <div class="flex items-center">
+              <div class="w-[56px] h-[56px]">
+                <img
+                  class="w-full h-full object-cover"
+                  src="../dist/assets/images/inbox-user-icon2.png"
+                  alt=""
+                />
+              </div>
+              <div class="pl-3">
+                <h5 class="text-lg text-[#222222] font-boldFont">
+                  Killan james
+                </h5>
+                <span class="text-[#6A6A6A] text-[14px] font-mediumFont"
+                  >Hello Joseph...</span
+                >
+              </div>
+              <div class="flex flex-col flex-1 items-end">
+                <span class="text-[14px] text-[#B6B6B6] font-mediumFont"
+                  >3:40 PM</span
+                >
+                <!-- read  -->
+                <div class="read pt-1">
+                  <div class="relative flex items-center justify-center">
+                    <img src="../dist/assets/images/read.svg" alt="" />
+                  </div>
+                </div>
+                <!-- unread -->
+                <div class="unread pt-1 hidden">
+                  <div class="relative flex items-center justify-center">
+                    <img src="../dist/assets/images/unread.png" alt="" />
+                    <span
+                      class="absolute text-white text-base font-mediumFont p-3"
+                      >9</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- user 3 -->
+            <div class="flex items-center">
+              <div class="w-[56px] h-[56px]">
+                <img
+                  class="w-full h-full object-cover"
+                  src="../dist/assets/images/inbox-user-icon3.png"
+                  alt=""
+                />
+              </div>
+              <div class="pl-3">
+                <h5 class="text-lg text-[#222222] font-boldFont">
+                  Nobita Iksa
+                </h5>
+                <span class="text-[#6A6A6A] text-[14px] font-mediumFont"
+                  >Hello iksa</span
+                >
+              </div>
+              <div class="flex flex-col flex-1 items-end">
+                <span class="text-[14px] text-[#B6B6B6] font-mediumFont"
+                  >3:40 PM</span
+                >
+                <!-- read  -->
+                <div class="read pt-1">
+                  <div class="relative flex items-center justify-center">
+                    <img src="../dist/assets/images/read.svg" alt="" />
+                  </div>
+                </div>
+                <!-- unread -->
+                <div class="unread pt-1 hidden">
+                  <div class="relative flex items-center justify-center">
+                    <img src="../dist/assets/images/unread.png" alt="" />
+                    <span
+                      class="absolute text-white text-base font-mediumFont p-3"
+                      >9</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- user 4 -->
+            <div class="flex items-center">
+              <div class="w-[56px] h-[56px]">
+                <img
+                  class="w-full h-full object-cover"
+                  src="../dist/assets/images/inbox-user-icon2.png"
+                  alt=""
+                />
+              </div>
+              <div class="pl-3">
+                <h5 class="text-lg text-[#222222] font-boldFont">
+                  Killan james
+                </h5>
+                <span class="text-[#6A6A6A] text-[14px] font-mediumFont"
+                  >Hello Joseph...</span
+                >
+              </div>
+              <div class="flex flex-col flex-1 items-end">
+                <span class="text-[14px] text-[#B6B6B6] font-mediumFont"
+                  >3:40 PM</span
+                >
+                <div class="unread pt-1">
+                  <div class="relative flex items-center justify-center">
+                    <img src="../dist/assets/images/unread.png" alt="" />
+                    <span
+                      class="absolute text-white text-base font-mediumFont p-3"
+                      >9</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- user 5 -->
+            <div class="flex items-center">
+              <div class="w-[56px] h-[56px]">
+                <img
+                  class="w-full h-full object-cover"
+                  src="../dist/assets/images/inbox-user-icon3.png"
+                  alt=""
+                />
+              </div>
+              <div class="pl-3">
+                <h5 class="text-lg text-[#222222] font-boldFont">
+                  Nobita Iksa
+                </h5>
+                <span class="text-[#6A6A6A] text-[14px] font-mediumFont"
+                  >Hello iksa</span
+                >
+              </div>
+              <div class="flex flex-col flex-1 items-end">
+                <span class="text-[14px] text-[#B6B6B6] font-mediumFont"
+                  >3:40 PM</span
+                >
+                <!-- read  -->
+                <div class="read pt-1">
+                  <div class="relative flex items-center justify-center">
+                    <img src="../dist/assets/images/read.svg" alt="" />
+                  </div>
+                </div>
+                <!-- unread -->
+                <div class="unread pt-1 hidden">
+                  <div class="relative flex items-center justify-center">
+                    <img src="../dist/assets/images/unread.png" alt="" />
+                    <span
+                      class="absolute text-white text-base font-mediumFont p-3"
+                      >9</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- user 6 -->
+            <div class="flex items-center">
+              <div class="w-[56px] h-[56px]">
+                <img
+                  class="w-full h-full object-cover"
+                  src="../dist/assets/images/inbox-user-icon2.png"
+                  alt=""
+                />
+              </div>
+              <div class="pl-3">
+                <h5 class="text-lg text-[#222222] font-boldFont">
+                  Killan james
+                </h5>
+                <span class="text-[#6A6A6A] text-[14px] font-mediumFont"
+                  >Hello Joseph...</span
+                >
+              </div>
+              <div class="flex flex-col flex-1 items-end">
+                <span class="text-[14px] text-[#B6B6B6] font-mediumFont"
+                  >3:40 PM</span
+                >
+                <div class="unread pt-1">
+                  <div class="relative flex items-center justify-center">
+                    <img src="../dist/assets/images/unread.png" alt="" />
+                    <span
+                      class="absolute text-white text-base font-mediumFont p-3"
+                      >9</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- user 7 -->
+            <div class="flex items-center">
+              <div class="w-[56px] h-[56px]">
+                <img
+                  class="w-full h-full object-cover"
+                  src="../dist/assets/images/inbox-user-icon3.png"
+                  alt=""
+                />
+              </div>
+              <div class="pl-3">
+                <h5 class="text-lg text-[#222222] font-boldFont">
+                  Nobita Iksa
+                </h5>
+                <span class="text-[#6A6A6A] text-[14px] font-mediumFont"
+                  >Hello iksa</span
+                >
+              </div>
+              <div class="flex flex-col flex-1 items-end">
+                <span class="text-[14px] text-[#B6B6B6] font-mediumFont"
+                  >3:40 PM</span
+                >
+                <!-- read  -->
+                <div class="read pt-1">
+                  <div class="relative flex items-center justify-center">
+                    <img src="../dist/assets/images/read.svg" alt="" />
+                  </div>
+                </div>
+                <!-- unread -->
+                <div class="unread pt-1 hidden">
+                  <div class="relative flex items-center justify-center">
+                    <img src="../dist/assets/images/unread.png" alt="" />
+                    <span
+                      class="absolute text-white text-base font-mediumFont p-3"
+                      >9</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- user 8 -->
+            <div class="flex items-center">
+              <div class="w-[56px] h-[56px]">
+                <img
+                  class="w-full h-full object-cover"
+                  src="../dist/assets/images/inbox-user-icon2.png"
+                  alt=""
+                />
+              </div>
+              <div class="pl-3">
+                <h5 class="text-lg text-[#222222] font-boldFont">
+                  Killan james
+                </h5>
+                <span class="text-[#6A6A6A] text-[14px] font-mediumFont"
+                  >Hello Joseph...</span
+                >
+              </div>
+              <div class="flex flex-col flex-1 items-end">
+                <span class="text-[14px] text-[#B6B6B6] font-mediumFont"
+                  >3:40 PM</span
+                >
+                <div class="unread pt-1">
+                  <div class="relative flex items-center justify-center">
+                    <img src="../dist/assets/images/unread.png" alt="" />
+                    <span
+                      class="absolute text-white text-base font-mediumFont p-3"
+                      >9</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- user 9 -->
+            <div class="flex items-center">
+              <div class="w-[56px] h-[56px]">
+                <img
+                  class="w-full h-full object-cover"
+                  src="../dist/assets/images/inbox-user-icon3.png"
+                  alt=""
+                />
+              </div>
+              <div class="pl-3">
+                <h5 class="text-lg text-[#222222] font-boldFont">
+                  Nobita Iksa
+                </h5>
+                <span class="text-[#6A6A6A] text-[14px] font-mediumFont"
+                  >Hello iksa</span
+                >
+              </div>
+              <div class="flex flex-col flex-1 items-end">
+                <span class="text-[14px] text-[#B6B6B6] font-mediumFont"
+                  >3:40 PM</span
+                >
+                <!-- read  -->
+                <div class="read pt-1">
+                  <div class="relative flex items-center justify-center">
+                    <img src="../dist/assets/images/read.svg" alt="" />
+                  </div>
+                </div>
+                <!-- unread -->
+                <div class="unread pt-1 hidden">
+                  <div class="relative flex items-center justify-center">
+                    <img src="../dist/assets/images/unread.png" alt="" />
+                    <span
+                      class="absolute text-white text-base font-mediumFont p-3"
+                      >9</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- user 10 -->
+            <div class="flex items-center">
+              <div class="w-[56px] h-[56px]">
+                <img
+                  class="w-full h-full object-cover"
+                  src="../dist/assets/images/inbox-user-icon2.png"
+                  alt=""
+                />
+              </div>
+              <div class="pl-3">
+                <h5 class="text-lg text-[#222222] font-boldFont">
+                  Killan james
+                </h5>
+                <span class="text-[#6A6A6A] text-[14px] font-mediumFont"
+                  >Hello Joseph...</span
+                >
+              </div>
+              <div class="flex flex-col flex-1 items-end">
+                <span class="text-[14px] text-[#B6B6B6] font-mediumFont"
+                  >3:40 PM</span
+                >
+                <div class="unread pt-1">
+                  <div class="relative flex items-center justify-center">
+                    <img src="../dist/assets/images/unread.png" alt="" />
+                    <span
+                      class="absolute text-white text-base font-mediumFont p-3"
+                      >9</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- user 11 -->
+            <div class="flex items-center">
+              <div class="w-[56px] h-[56px]">
+                <img
+                  class="w-full h-full object-cover"
+                  src="../dist/assets/images/inbox-user-icon3.png"
+                  alt=""
+                />
+              </div>
+              <div class="pl-3">
+                <h5 class="text-lg text-[#222222] font-boldFont">
+                  Nobita Iksa
+                </h5>
+                <span class="text-[#6A6A6A] text-[14px] font-mediumFont"
+                  >Hello iksa</span
+                >
+              </div>
+              <div class="flex flex-col flex-1 items-end">
+                <span class="text-[14px] text-[#B6B6B6] font-mediumFont"
+                  >3:40 PM</span
+                >
+                <!-- read  -->
+                <div class="read pt-1">
+                  <div class="relative flex items-center justify-center">
+                    <img src="../dist/assets/images/read.svg" alt="" />
+                  </div>
+                </div>
+                <!-- unread -->
+                <div class="unread pt-1 hidden">
+                  <div class="relative flex items-center justify-center">
+                    <img src="../dist/assets/images/unread.png" alt="" />
+                    <span
+                      class="absolute text-white text-base font-mediumFont p-3"
+                      >9</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- zh message user list end -->
+        </div>
+        <!-- zh end -->
+      </section>
+
+      <!-- main content -->
+      <section
+        class="lg:w-[calc(100%-700px)] h-[calc(100vh-90px)] overflow-y-auto px-5 md:px-8 lg:px-0"
+      >
+        <!-- zh title start-->
+        <div
+          class="text-textColor lg:px-8 flex items-center justify-between mt-[30px]"
+        >
+          <div class="w-[56px] h-[56px]">
+            <img
+              class="w-full h-full object-cover"
+              src="../dist/assets/images/inbox-user-icon.png"
+              alt=""
+            />
+          </div>
+
+          <div class="pl-3">
+            <h5 class="text-lg text-[#222222] font-boldFont">Killan james</h5>
+            <span class="text-[#B6B6B6] text-xs font-mediumFont"
+              >Active Now</span
+            >
+          </div>
+
+          <div class="flex-1 justify-end place-items-end">
+            <div
+              class="flex items-center justify-center relative cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="40"
+                viewBox="0 0 40 40"
+                fill="none"
+              >
+                <circle cx="20" cy="20" r="20" fill="#E0E0E0" />
+              </svg>
+              <svg
+                class="absolute"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M10.5 6C10.5 5.79 10.5 5.6865 10.512 5.5995C10.5502 5.32456 10.677 5.0696 10.8733 4.87332C11.0696 4.67704 11.3246 4.55018 11.5995 4.512C11.685 4.5 11.79 4.5 12 4.5C12.21 4.5 12.3135 4.5 12.4005 4.512C12.6754 4.55018 12.9304 4.67704 13.1267 4.87332C13.323 5.0696 13.4498 5.32456 13.488 5.5995C13.5 5.685 13.5 5.79 13.5 6C13.5 6.21 13.5 6.3135 13.488 6.4005C13.4498 6.67544 13.323 6.9304 13.1267 7.12668C12.9304 7.32296 12.6754 7.44982 12.4005 7.488C12.315 7.5 12.21 7.5 12 7.5C11.79 7.5 11.6865 7.5 11.5995 7.488C11.3246 7.44982 11.0696 7.32296 10.8733 7.12668C10.677 6.9304 10.5502 6.67544 10.512 6.4005C10.5 6.315 10.5 6.21 10.5 6ZM10.5 12C10.5 11.79 10.5 11.6865 10.512 11.5995C10.5502 11.3246 10.677 11.0696 10.8733 10.8733C11.0696 10.677 11.3246 10.5502 11.5995 10.512C11.685 10.5 11.79 10.5 12 10.5C12.21 10.5 12.3135 10.5 12.4005 10.512C12.6754 10.5502 12.9304 10.677 13.1267 10.8733C13.323 11.0696 13.4498 11.3246 13.488 11.5995C13.5 11.685 13.5 11.79 13.5 12C13.5 12.21 13.5 12.3135 13.488 12.4005C13.4498 12.6754 13.323 12.9304 13.1267 13.1267C12.9304 13.323 12.6754 13.4498 12.4005 13.488C12.315 13.5 12.21 13.5 12 13.5C11.79 13.5 11.6865 13.5 11.5995 13.488C11.3246 13.4498 11.0696 13.323 10.8733 13.1267C10.677 12.9304 10.5502 12.6754 10.512 12.4005C10.5 12.315 10.5 12.21 10.5 12ZM10.5 18C10.5 17.7915 10.5 17.6865 10.512 17.5995C10.5504 17.3251 10.6772 17.0706 10.8731 16.8746C11.0691 16.6787 11.3236 16.5519 11.598 16.5135C11.6865 16.5015 11.79 16.5015 11.9985 16.5015C12.207 16.5015 12.3135 16.5015 12.399 16.5135C12.6734 16.5519 12.9279 16.6787 13.1239 16.8746C13.3198 17.0706 13.4466 17.3251 13.485 17.5995C13.497 17.6865 13.497 17.7915 13.497 18C13.497 18.2085 13.497 18.3135 13.485 18.4005C13.4466 18.6749 13.3198 18.9294 13.1239 19.1254C12.9279 19.3213 12.6734 19.4481 12.399 19.4865C12.312 19.4985 12.207 19.4985 11.9985 19.4985C11.79 19.4985 11.685 19.4985 11.598 19.4865C11.3236 19.4481 11.0691 19.3213 10.8731 19.1254C10.6772 18.9294 10.5504 18.6749 10.512 18.4005C10.5 18.3135 10.5 18.2085 10.5 18Z"
+                  fill="#2E2E2E"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <!-- zh title end-->
+
+        <div class="w-full my-5 lg:px-8">
+          <div class="w-full bg-[#00000014] h-[1px]"></div>
+        </div>
+
+        <!-- zh All messages start-->
+        <div
+          class="w-full md:px-8 my-5 md:my-8 lg:my-1 space-y-4 md:space-y-5 lg:space-y-10"
+        >
+          <!-- zh opposite message -->
+          <div class="flex gap-4">
+            <!-- image -->
+            <div class="size-14 flex-shrink-0">
+              <img
+                class="w-full h-full object-cover rounded-full"
+                src="../dist/assets/images/inbox-user-icon.png"
+                alt=""
+              />
+            </div>
+
+            <!-- info -->
+            <div class="flex flex-col">
+              <!-- message -->
+              <div
+                class="bg-[#F6F6F6] rounded-lg p-[18px] max-w-[673px] w-auto"
+              >
+                <p
+                  class="text-sm md:text-base font-mediumFont text-[#2E2E2E] leading-[164%]"
+                >
+                  Hi, I need some help understanding the legal process regarding
+                  law and order, specifically how to handle a civil dispute. Can
+                  you clarify the steps involved in filing a case and what
+                  actions I should take next? Thanks!"
+                </p>
+              </div>
+              <span
+                class="text-end pt-[10px] text-[14px] font-mediumFont text-[#B6B6B6]"
+                >3:40 PM</span
+              >
+            </div>
+          </div>
+
+          <!-- zh myself message -->
+          <div class="flex justify-end gap-4">
+            <!-- info -->
+            <div class="flex flex-col">
+              <!-- message -->
+              <div
+                class="bg-[#008080] rounded-lg p-[18px] max-w-[673px] w-auto"
+              >
+                <p
+                  class="text-sm md:text-base font-mediumFont text-white leading-[164%]"
+                >
+                  Hi, How are you?
+                </p>
+              </div>
+              <span
+                class="text-end pt-[10px] text-[14px] font-mediumFont text-[#B6B6B6]"
+                >3:40 PM</span
+              >
+            </div>
+
+            <!-- image -->
+            <div class="size-14 flex-shrink-0">
+              <img
+                class="w-full h-full object-cover rounded-full"
+                src="../dist/assets/images/inbox-user-icon.png"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <!-- zh opposite message -->
+          <div class="flex gap-4">
+            <!-- image -->
+            <div class="size-14 flex-shrink-0">
+              <img
+                class="w-full h-full object-cover rounded-full"
+                src="../dist/assets/images/inbox-user-icon.png"
+                alt=""
+              />
+            </div>
+
+            <!-- info -->
+            <div class="flex flex-col">
+              <!-- message -->
+              <div
+                class="bg-[#F6F6F6] rounded-lg p-[18px] max-w-[673px] w-auto"
+              >
+                <p
+                  class="text-sm md:text-base font-mediumFont text-[#2E2E2E] leading-[164%]"
+                >
+                  Hi, I need some help understanding the legal process regarding
+                  law and order, specifically how to handle a civil dispute. Can
+                  you clarify the steps involved in filing a case and what
+                  actions I should take next? Thanks!"
+                </p>
+              </div>
+              <span
+                class="text-end pt-[10px] text-[14px] font-mediumFont text-[#B6B6B6]"
+                >3:40 PM</span
+              >
+            </div>
+          </div>
+
+          <!-- zh myself message -->
+          <div class="flex justify-end gap-4">
+            <!-- info -->
+            <div class="flex flex-col">
+              <!-- message -->
+              <div
+                class="bg-[#008080] rounded-lg p-[18px] max-w-[673px] w-auto"
+              >
+                <p
+                  class="text-sm md:text-base font-mediumFont text-white leading-[164%]"
+                >
+                  Hi, How are you?
+                </p>
+              </div>
+              <span
+                class="text-end pt-[10px] text-[14px] font-mediumFont text-[#B6B6B6]"
+                >3:40 PM</span
+              >
+            </div>
+
+            <!-- image -->
+            <div class="size-14 flex-shrink-0">
+              <img
+                class="w-full h-full object-cover rounded-full"
+                src="../dist/assets/images/inbox-user-icon.png"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <!-- zh opposite message -->
+          <div class="flex gap-4">
+            <!-- image -->
+            <div class="size-14 flex-shrink-0">
+              <img
+                class="w-full h-full object-cover rounded-full"
+                src="../dist/assets/images/inbox-user-icon.png"
+                alt=""
+              />
+            </div>
+
+            <!-- info -->
+            <div class="flex flex-col">
+              <!-- message -->
+              <div
+                class="bg-[#F6F6F6] rounded-lg p-[18px] max-w-[673px] w-auto"
+              >
+                <p
+                  class="text-sm md:text-base font-mediumFont text-[#2E2E2E] leading-[164%]"
+                >
+                  Hi, What About You?
+                </p>
+              </div>
+              <span
+                class="text-end pt-[10px] text-[14px] font-mediumFont text-[#B6B6B6]"
+                >3:40 PM</span
+              >
+            </div>
+          </div>
+
+          <!-- zh myself message -->
+          <div class="flex justify-end gap-4">
+            <!-- info -->
+            <div class="flex flex-col">
+              <!-- message -->
+              <div
+                class="bg-[#008080] rounded-lg p-[18px] max-w-[673px] w-auto"
+              >
+                <p
+                  class="text-sm md:text-base font-mediumFont text-white leading-[164%]"
+                >
+                  Hi, I am fine?
+                </p>
+              </div>
+              <span
+                class="text-end pt-[10px] text-[14px] font-mediumFont text-[#B6B6B6]"
+                >3:40 PM</span
+              >
+            </div>
+
+            <!-- image -->
+            <div class="size-14 flex-shrink-0">
+              <img
+                class="w-full h-full object-cover rounded-full"
+                src="../dist/assets/images/inbox-user-icon.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <!-- zh All messages end-->
+
+        <!-- Message Input -->
+        <div class="lg:mx-8 my-2 2xl:my-10">
+          <!-- File preview container - NOW AT THE TOP -->
+          <div
+            id="filePreviewContainer"
+            class="bg-[#ECECEC] py-2 rounded-md file-preview-container mb-2 px-2 overflow-x-auto"
+          ></div>
+
+          <div class="bg-[#ECECEC] py-2 rounded-t-md rounded-b-md">
+            <form id="messageForm" class="px-4 flex flex-col">
+              <div class="flex items-center gap-2">
+                <!-- Upload input -->
+                <label
+                  for="fileUploadInbox"
+                  class="size-12 flex items-center justify-center"
+                >
+                  <input
+                    class="hidden"
+                    type="file"
+                    name="fileUploadInbox"
+                    id="fileUploadInbox"
+                    multiple
+                    accept="image/*,application/pdf,.doc,.docx,.txt"
+                  />
+                  <div class="bg-white p-2 rounded-full cursor-pointer">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                    >
+                      <path
+                        d="M5 10H15"
+                        stroke="#222222"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M10 15V5"
+                        stroke="#222222"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </label>
+
+                <!-- Text input -->
+                <div class="w-full flex h-full items-center justify-center">
+                  <textarea
+                    placeholder="Type Something..."
+                    class="font-mediumFont resize-none bg-transparent focus:outline-none w-full text-[#2E2E2E]"
+                    name="messageInput"
+                    id="messageInput"
+                    oninput="autoResize(this)"
+                    rows="1"
+                  ></textarea>
+                </div>
+
+                <!-- Submit button -->
+                <div>
+                  <button
+                    class="size-10 flex items-center justify-center bg-white rounded-full"
+                    type="submit"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                    >
+                      <path
+                        d="M6.16641 5.2668L13.2414 2.90846C16.4164 1.85013 18.1414 3.58346 17.0914 6.75846L14.7331 13.8335C13.1497 18.5918 10.5497 18.5918 8.96641 13.8335L8.26641 11.7335L6.16641 11.0335C1.40807 9.45013 1.40807 6.85846 6.16641 5.2668Z"
+                        stroke="#222222"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M8.4248 11.375L11.4081 8.3833"
+                        stroke="#222222"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Scripts -->
+    <script>
+      // Auto-resize textarea function
+      function autoResize(textarea) {
+        textarea.style.height = "auto";
+        textarea.style.height = textarea.scrollHeight + "px";
+      }
+
+      // File upload preview and management
+      const fileInput = document.getElementById("fileUploadInbox");
+      const filePreviewContainer = document.getElementById(
+        "filePreviewContainer"
+      );
+      const messageForm = document.getElementById("messageForm");
+
+      // Unique identifier for files
+      let fileCounter = 0;
+
+      // Store files to manage removal
+      let uploadedFiles = new DataTransfer();
+
+      // Function to update preview container visibility
+      function updateFilePreviewVisibility() {
+        if (uploadedFiles.files.length > 0) {
+          filePreviewContainer.classList.add("has-files");
+          filePreviewContainer.style.display = "flex";
+        } else {
+          filePreviewContainer.classList.remove("has-files");
+          filePreviewContainer.style.display = "none";
+        }
+      }
+
+      fileInput.addEventListener("change", function (event) {
+        // Reset preview container
+        filePreviewContainer.innerHTML = "";
+
+        // Reset uploadedFiles
+        uploadedFiles = new DataTransfer();
+
+        // Process each selected file
+        Array.from(this.files).forEach((file) => {
+          // Add file to uploadedFiles
+          uploadedFiles.items.add(file);
+
+          // Create a unique ID for this file
+          const fileId = `file-${fileCounter++}`;
+
+          // Create file preview container
+          const fileItem = document.createElement("div");
+          fileItem.className = "file-preview-item";
+          fileItem.id = fileId;
+
+          // Create remove button
+          const removeBtn = document.createElement("button");
+          removeBtn.innerHTML = "×";
+          removeBtn.className = "file-remove-btn";
+          removeBtn.addEventListener("click", () => {
+            // Remove the file preview
+            fileItem.remove();
+
+            // Remove this specific file from uploadedFiles
+            for (let i = 0; i < uploadedFiles.files.length; i++) {
+              if (
+                uploadedFiles.files[i].name === file.name &&
+                uploadedFiles.files[i].size === file.size
+              ) {
+                uploadedFiles.items.remove(i);
+                break;
+              }
+            }
+
+            // Update file input
+            fileInput.files = uploadedFiles.files;
+
+            // Update preview container visibility
+            updateFilePreviewVisibility();
+          });
+
+          // Handle different file types
+          if (file.type.startsWith("image/")) {
+            // For image files, create an image preview
+            const img = document.createElement("img");
+            img.file = file;
+            fileItem.appendChild(img);
+            fileItem.appendChild(removeBtn);
+
+            // Read the image file
+            const reader = new FileReader();
+            reader.onload = (e) => {
+              img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+          } else {
+            // For non-image files, show file name
+            const fileNameEl = document.createElement("div");
+            fileNameEl.textContent = file.name;
+            fileNameEl.className = "file-name";
+            fileItem.appendChild(fileNameEl);
+            fileItem.appendChild(removeBtn);
+          }
+
+          // Add to preview container
+          filePreviewContainer.appendChild(fileItem);
+        });
+
+        // Update preview container visibility
+        updateFilePreviewVisibility();
+      });
+
+      // Optional: Form submission handling
+      messageForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        // Collect uploaded files
+        const files = uploadedFiles.files;
+        const message = document.getElementById("messageInput").value;
+
+        // Here you would typically send the files and message to your server
+        console.log("Files:", files);
+        console.log("Message:", message);
+
+        // Clear input and previews after submission
+        fileInput.value = "";
+        filePreviewContainer.innerHTML = "";
+        document.getElementById("messageInput").value = "";
+        uploadedFiles = new DataTransfer();
+
+        // Update preview container visibility
+        updateFilePreviewVisibility();
+      });
+    </script>
+    <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
