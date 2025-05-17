@@ -267,30 +267,18 @@
     >
       <p class="font-bold text-[26px] lg:text-[40px]">Daro's List</p>
 
-      <div class="form-control w-full md:w-2/3">
-        <div class="input-group text-[#B6B6B6]">
+       <div class="relative w-1/2  rounded-md">
           <input
             type="text"
-            placeholder="Search for anything…."
-            class="bg-[#F6F6F6] rounded-lg px-6 py-3 w-full md:w-1/2 outline-none"
+            placeholder="Search for Anything..."
+            class="w-full py-3 px-8 shadow-sm bg-[#F6F6F6] rounded-lg outline-none"
           />
-          <button class="px-6 py-3 bg-[#F6F6F6]">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
-          </button>
-        </div>
+          <div class="absolute inset-y-0 right-0 py-3 px-8 flex items-center pointer-events-none">
+           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M10.5 18C14.6421 18 18 14.6421 18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18Z" stroke="#6A6A6A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M21 21L16 16" stroke="#6A6A6A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+           </svg>
+          </div>
       </div>
 
       <div class="flex items-center gap-7">
@@ -336,31 +324,32 @@
             </p>
             <p class="text-[#B6B6B6] font-medium">875</p>
           </div>
-
+          
+          <!-- div for -->
+          
           <div class="my-6">
             <div class="flex justify-between items-center">
               <p id="expand-sale" class="flex items-center gap-3">
-                <img
-                  src="./assets/images/sajnin-icon/ic_baseline-sell.png"
-                  alt="sale"
-                />
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M21.41 11.41L12.58 2.58C12.21 2.21 11.7 2 11.17 2H4C2.9 2 2 2.9 2 4V11.17C2 11.7 2.21 12.21 2.59 12.58L11.42 21.41C12.2 22.19 13.47 22.19 14.25 21.41L21.42 14.24C22.2 13.46 22.2 12.2 21.41 11.41ZM6.5 8C5.67 8 5 7.33 5 6.5C5 5.67 5.67 5 6.5 5C7.33 5 8 5.67 8 6.5C8 7.33 7.33 8 6.5 8Z" fill="#008080"/>
+                </svg>
                 For Sale
-                <img
-                  src="./assets/images/sajnin-icon/iconamoon_arrow-up-2-light.png"
-                  alt=""
-                />
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M7 10L12 15L17 10" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
               </p>
               <p class="text-[#B6B6B6] font-medium">3032</p>
             </div>
 
-            <div id="expand-items" class="mt-6 ml-5 hidden">
-              <div class="space-y-5 text-[#6A6A6A] w-full">
+
+            <div id="expand-items"  class="mt-6 ml-5 hidden">
+              <div class="text-[#6A6A6A] w-fullm flex flex-col gap-6">
                 <div class="flex items-center justify-between">
                   <button class="flex items-center gap-3">
-                    <img
-                      src="./assets/images/sajnin-icon/majesticons_car.png"
-                      alt=""
-                    />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M3 11L5.48 5.212C5.63432 4.852 5.89096 4.54524 6.21805 4.32978C6.54515 4.11432 6.92832 3.99965 7.32 4H16.682C17.0733 4.00004 17.4561 4.1149 17.7828 4.33033C18.1095 4.54577 18.3658 4.85231 18.52 5.212L21 11M3 11H21M3 11V18M21 11V18M3 18V18.5C3 18.8978 3.15804 19.2794 3.43934 19.5607C3.72064 19.842 4.10218 20 4.5 20C4.89782 20 5.27936 19.842 5.56066 19.5607C5.84196 19.2794 6 18.8978 6 18.5V18M3 18H6M21 18V18.5C21 18.8978 20.842 19.2794 20.5607 19.5607C20.2794 19.842 19.8978 20 19.5 20C19.1022 20 18.7206 19.842 18.4393 19.5607C18.158 19.2794 18 18.8978 18 18.5V18M21 18H18M18 18H6" stroke="#6A6A6A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3 11H21V18H3V11ZM6 14C6 13.7348 6.10536 13.4804 6.29289 13.2929C6.48043 13.1054 6.73478 13 7 13C7.26522 13 7.52057 13.1054 7.70811 13.2929C7.89564 13.4804 8.001 13.7348 8.001 14C8.001 14.2652 7.89564 14.5196 7.70811 14.7071C7.52057 14.8946 7.26622 15 7.001 15C6.73578 15 6.48043 14.8946 6.29289 14.7071C6.10536 14.5196 6 14.2652 6 14ZM17 13C16.7348 13 16.4804 13.1054 16.2929 13.2929C16.1054 13.4804 16 13.7348 16 14C16 14.2652 16.1054 14.5196 16.2929 14.7071C16.4804 14.8946 16.7348 15 17 15C17.2652 15 17.5206 14.8946 17.7081 14.7071C17.8956 14.5196 18.001 14.2652 18.001 14C18.001 13.7348 17.8956 13.4804 17.7081 13.2929C17.5206 13.1054 17.2652 13 17 13Z" fill="#6A6A6A"/>
+                    </svg>
                     <p>Vehicles</p>
                   </button>
                   <p class="text-[#B6B6B6] font-medium">500</p>
@@ -368,10 +357,9 @@
 
                 <div class="flex items-center justify-between">
                   <button class="flex items-center gap-3">
-                    <img
-                      src="./assets/images/sajnin-icon/ant-design_home-filled.png"
-                      alt=""
-                    />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M22.1828 11.8358L12.5289 2.18895C12.4594 2.1193 12.3768 2.06404 12.2859 2.02634C12.1951 1.98864 12.0976 1.96924 11.9992 1.96924C11.9008 1.96924 11.8034 1.98864 11.7125 2.02634C11.6216 2.06404 11.539 2.1193 11.4695 2.18895L1.81562 11.8358C1.53437 12.1171 1.375 12.4991 1.375 12.8975C1.375 13.7249 2.04766 14.3975 2.875 14.3975H3.89219V21.2811C3.89219 21.696 4.22734 22.0311 4.64219 22.0311H10.4992V16.7811H13.1242V22.0311H19.3563C19.7711 22.0311 20.1063 21.696 20.1063 21.2811V14.3975H21.1234C21.5219 14.3975 21.9039 14.2405 22.1852 13.9569C22.7687 13.371 22.7687 12.4218 22.1828 11.8358Z" fill="#6A6A6A"/>
+                    </svg>
                     <p href="#">Real Estate</p>
                   </button>
                   <p class="text-[#B6B6B6] font-medium">85</p>
@@ -379,10 +367,9 @@
 
                 <div class="flex items-center justify-between">
                   <button class="flex items-center gap-3">
-                    <img
-                      src="./assets/images/sajnin-icon/jam_computer-f.png"
-                      alt=""
-                    />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M3 4.06494H8C8.26522 4.06494 8.51957 4.1703 8.70711 4.35783C8.89464 4.54537 9 4.79972 9 5.06494V19.0649C9 19.3302 8.89464 19.5845 8.70711 19.772C8.51957 19.9596 8.26522 20.0649 8 20.0649H3C2.73478 20.0649 2.48043 19.9596 2.29289 19.772C2.10536 19.5845 2 19.3302 2 19.0649V5.06494C2 4.79972 2.10536 4.54537 2.29289 4.35783C2.48043 4.1703 2.73478 4.06494 3 4.06494ZM3 15.0649V17.0649H5V15.0649H3ZM12 7.06494H20C20.5304 7.06494 21.0391 7.27566 21.4142 7.65073C21.7893 8.0258 22 8.53451 22 9.06494V15.0649C22 15.5954 21.7893 16.1041 21.4142 16.4792C21.0391 16.8542 20.5304 17.0649 20 17.0649H12C11.4696 17.0649 10.9609 16.8542 10.5858 16.4792C10.2107 16.1041 10 15.5954 10 15.0649V9.06494C10 8.53451 10.2107 8.0258 10.5858 7.65073C10.9609 7.27566 11.4696 7.06494 12 7.06494ZM14 18.0649H18C18.2652 18.0649 18.5196 18.1703 18.7071 18.3578C18.8946 18.5454 19 18.7997 19 19.0649C19 19.3302 18.8946 19.5845 18.7071 19.772C18.5196 19.9596 18.2652 20.0649 18 20.0649H14C13.7348 20.0649 13.4804 19.9596 13.2929 19.772C13.1054 19.5845 13 19.3302 13 19.0649C13 18.7997 13.1054 18.5454 13.2929 18.3578C13.4804 18.1703 13.7348 18.0649 14 18.0649Z" fill="#6A6A6A"/>
+                    </svg>
                     <p href="#">Electronics</p>
                   </button>
                   <p class="text-[#B6B6B6] font-medium">1300</p>
@@ -390,10 +377,10 @@
 
                 <div class="flex items-center justify-between">
                   <button class="flex items-center gap-3">
-                    <img
-                      src="./assets/images/sajnin-icon/solar_sofa-bold.png"
-                      alt=""
-                    />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M7.00081 12V13H17.0008V12C17.0008 11.2056 17.3159 10.4436 17.877 9.88115C18.4381 9.31874 19.1994 9.00185 19.9938 9C19.9927 8.73848 19.9693 8.47754 19.9238 8.22C19.7695 7.44401 19.3885 6.73121 18.8291 6.17175C18.2696 5.6123 17.5568 5.23132 16.7808 5.077C16.3948 5 15.9308 5 15.0008 5H9.00081C8.07081 5 7.60681 5 7.22081 5.077C6.44482 5.23132 5.73202 5.6123 5.17256 6.17175C4.61311 6.73121 4.23213 7.44401 4.07781 8.22C4.03235 8.47754 4.00893 8.73848 4.00781 9C4.80225 9.00185 5.56351 9.31874 6.12461 9.88115C6.68571 10.4436 7.00081 11.2056 7.00081 12Z" fill="#6A6A6A"/>
+                        <path d="M18.444 18H5.556C5.28473 17.9998 5.01434 17.9689 4.75 17.908V19C4.75 19.1989 4.67098 19.3897 4.53033 19.5303C4.38968 19.671 4.19891 19.75 4 19.75C3.80109 19.75 3.61032 19.671 3.46967 19.5303C3.32902 19.3897 3.25 19.1989 3.25 19V17.151C2.85781 16.8174 2.54287 16.4025 2.32702 15.9351C2.11118 15.4677 1.99959 14.9589 2 14.444V12C2 11.4696 2.21071 10.9609 2.58579 10.5858C2.96086 10.2107 3.46957 10 4 10C4.53043 10 5.03914 10.2107 5.41421 10.5858C5.78929 10.9609 6 11.4696 6 12V13.2C6 13.4122 6.08429 13.6157 6.23432 13.7657C6.38434 13.9157 6.58783 14 6.8 14H17.2C17.4122 14 17.6157 13.9157 17.7657 13.7657C17.9157 13.6157 18 13.4122 18 13.2V12C18 11.4696 18.2107 10.9609 18.5858 10.5858C18.9609 10.2107 19.4696 10 20 10C20.5304 10 21.0391 10.2107 21.4142 10.5858C21.7893 10.9609 22 11.4696 22 12V14.444C22.0004 14.9589 21.8888 15.4677 21.673 15.9351C21.4571 16.4025 21.1422 16.8174 20.75 17.151V19C20.75 19.1989 20.671 19.3897 20.5303 19.5303C20.3897 19.671 20.1989 19.75 20 19.75C19.8011 19.75 19.6103 19.671 19.4697 19.5303C19.329 19.3897 19.25 19.1989 19.25 19V17.908C18.9857 17.9689 18.7153 17.9998 18.444 18Z" fill="#6A6A6A"/>
+                    </svg>
                     <p href="#">Furniture</p>
                   </button>
                   <p class="text-[#B6B6B6] font-medium">250</p>
@@ -401,10 +388,9 @@
 
                 <div class="flex items-center justify-between">
                   <button class="flex items-center gap-3">
-                    <img
-                      src="./assets/images/sajnin-icon/tdesign_book-filled.png"
-                      alt=""
-                    />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M7 2C5.93913 2 4.92172 2.42143 4.17157 3.17157C3.42143 3.92172 3 4.93913 3 6V18C3 19.0609 3.42143 20.0783 4.17157 20.8284C4.92172 21.5786 5.93913 22 7 22H21V2H7ZM11 5H18V7H11V5ZM5 18C5 17.4696 5.21071 16.9609 5.58579 16.5858C5.96086 16.2107 6.46957 16 7 16H19V20H7C6.46957 20 5.96086 19.7893 5.58579 19.4142C5.21071 19.0391 5 18.5304 5 18Z" fill="#6A6A6A"/>
+                    </svg>
                     <p href="#">Books</p>
                   </button>
                   <p class="text-[#B6B6B6] font-medium">1120</p>
@@ -412,10 +398,13 @@
 
                 <div class="flex items-center justify-between">
                   <button class="flex items-center gap-3">
-                    <img
-                      src="./assets/images/sajnin-icon/ic_baseline-pets.png"
-                      alt=""
-                    />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M4.5 12C5.88071 12 7 10.8807 7 9.5C7 8.11929 5.88071 7 4.5 7C3.11929 7 2 8.11929 2 9.5C2 10.8807 3.11929 12 4.5 12Z" fill="#6A6A6A"/>
+                        <path d="M9 8C10.3807 8 11.5 6.88071 11.5 5.5C11.5 4.11929 10.3807 3 9 3C7.61929 3 6.5 4.11929 6.5 5.5C6.5 6.88071 7.61929 8 9 8Z" fill="#6A6A6A"/>
+                        <path d="M15 8C16.3807 8 17.5 6.88071 17.5 5.5C17.5 4.11929 16.3807 3 15 3C13.6193 3 12.5 4.11929 12.5 5.5C12.5 6.88071 13.6193 8 15 8Z" fill="#6A6A6A"/>
+                        <path d="M19.5 12C20.8807 12 22 10.8807 22 9.5C22 8.11929 20.8807 7 19.5 7C18.1193 7 17 8.11929 17 9.5C17 10.8807 18.1193 12 19.5 12Z" fill="#6A6A6A"/>
+                        <path d="M17.3387 14.86C16.4687 13.84 15.7387 12.97 14.8587 11.95C14.3987 11.41 13.8087 10.87 13.1087 10.63C12.9987 10.59 12.8887 10.56 12.7787 10.54C12.5287 10.5 12.2587 10.5 11.9987 10.5C11.7387 10.5 11.4687 10.5 11.2087 10.55C11.0987 10.57 10.9887 10.6 10.8787 10.64C10.1787 10.88 9.59868 11.42 9.12868 11.96C8.25868 12.98 7.52868 13.85 6.64868 14.87C5.33868 16.18 3.72868 17.63 4.02868 19.66C4.31868 20.68 5.04868 21.69 6.35868 21.98C7.08868 22.13 9.41868 21.54 11.8987 21.54H12.0787C14.5587 21.54 16.8887 22.12 17.6187 21.98C18.9287 21.69 19.6587 20.67 19.9487 19.66C20.2587 17.62 18.6487 16.17 17.3387 14.86Z" fill="#6A6A6A"/>
+                    </svg>
                     <p href="#">Pets</p>
                   </button>
                   <p class="text-[#B6B6B6] font-medium">300</p>
@@ -423,10 +412,16 @@
 
                 <div class="flex items-center justify-between">
                   <button class="flex items-center gap-3">
-                    <img
-                      src="./assets/images/sajnin-icon/streamline_ball-solid.png"
-                      alt=""
-                    />
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <g clip-path="url(#clip0_11016_4556)">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M2.28516 4.95438C0.796345 7.0016 -0.00382963 9.46876 1.3781e-05 12.0001C-0.00382963 14.5314 0.796345 16.9986 2.28516 19.0458C3.40998 18.289 4.31812 17.252 4.92001 16.0372C5.54899 14.7848 5.87378 13.4016 5.86801 12.0001C5.87122 10.5989 5.54657 9.21631 4.92001 7.96295C4.31812 6.74815 3.40998 5.71121 2.28516 4.95438ZM3.70116 3.33095C5.0294 4.27744 6.10441 5.53614 6.83144 6.9961C7.60801 8.53038 8.01087 10.2532 8.01087 12.0001C8.01342 13.7378 7.60952 15.452 6.83144 17.0058C6.10418 18.4651 5.02918 19.7232 3.70116 20.6692C5.66657 22.554 8.21608 23.7121 10.9286 23.9521V0.0480957C8.1343 0.294953 5.6143 1.5001 3.70116 3.33095ZM13.0714 23.9538C15.7842 23.7133 18.3337 22.5547 20.2989 20.6692C18.9706 19.7228 17.8956 18.4641 17.1686 17.0041C16.3908 15.4508 15.9869 13.7372 15.9892 12.0001C15.9892 10.2515 16.392 8.53038 17.1686 6.99438C17.8954 5.53524 18.9698 4.27717 20.2972 3.33095C18.3326 1.44686 15.7845 0.288868 13.0732 0.0480957V23.9521L13.0714 23.9538ZM24 12.0001C24.0039 14.5314 23.2037 16.9986 21.7149 19.0458C20.59 18.289 19.6819 17.252 19.08 16.0372C18.451 14.7848 18.1263 13.4016 18.132 12.0001C18.132 10.5807 18.4594 9.18867 19.08 7.96295C19.6819 6.74815 20.59 5.71121 21.7149 4.95438C23.2037 7.0016 24.0039 9.46876 24 12.0001Z" fill="#6A6A6A"/>
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_11016_4556">
+                            <rect width="24" height="24" fill="white"/>
+                          </clipPath>
+                        </defs>
+                      </svg>
                     <p href="#">Sports</p>
                   </button>
                   <p class="text-[#B6B6B6] font-medium">175</p>
@@ -434,6 +429,8 @@
               </div>
             </div>
           </div>
+
+          <!-- for sale section ends -->
         </div>
 
         <div class="divider my-10"></div>
@@ -441,16 +438,22 @@
         <div>
           <p class="text-2xl font-bold mb-4">Location</p>
 
-          <div class="input-group text-[#B6B6B6] w-full">
-            <button class="px-4 py-3 bg-white border border-r-0">
-              <img src="./assets/images/sajnin-icon/bxs_map.png" alt="map" />
-            </button>
-            <input
-              type="text"
-              placeholder="Enter Location"
-              class="bg-white rounded-lg px-4 py-3 w-full border border-l-0 outline-none"
-            />
-          </div>
+            <div class="relative">
+               <input
+                 type="text"
+                 placeholder="Enter your location"
+                 class="pl-10 pr-4 py-2 ml-2 w-full border border-gray-300 rounded-lg outline-none"
+               />
+               
+               <!-- Location icon -->
+               <div class="py-3 px-4 absolute left-3 top-1/2 transform -translate-y-1/2">
+                 <!-- You can use any icon here, this is an example with Font Awesome -->
+                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                    <path d="M12.0001 2.09082C7.58908 2.09082 4.00008 5.67982 4.00008 10.0858C3.97108 16.5308 11.6961 21.8748 12.0001 22.0908C12.0001 22.0908 20.0291 16.5308 20.0001 10.0908C20.0001 5.67982 16.4111 2.09082 12.0001 2.09082ZM12.0001 14.0908C9.79008 14.0908 8.00008 12.3008 8.00008 10.0908C8.00008 7.88082 9.79008 6.09082 12.0001 6.09082C14.2101 6.09082 16.0001 7.88082 16.0001 10.0908C16.0001 12.3008 14.2101 14.0908 12.0001 14.0908Z" fill="#6A6A6A"/>
+                 </svg>
+               </div>
+            </div>
+
           
         </div>
 
@@ -463,12 +466,12 @@
             <input
               type="text"
               placeholder="Min"
-              class="input input-bordered w-full max-w-xs text-[#6A6A6A]"
+              class="border border-[#6A6A6A] py-3 px-4 rounded-lg w-full max-w-xs text-[#6A6A6A] outline-none"
             />
             <input
               type="text"
               placeholder="Max"
-              class="input input-bordered w-full max-w-xs text-[#6A6A6A]"
+              class="border border-[#6A6A6A] py-3 px-4 rounded-lg w-full max-w-xs text-[#6A6A6A] outline-none"
             />
           </div>
         </div>
@@ -478,22 +481,30 @@
         <div>
           <p class="text-2xl font-bold mb-4">Date Posted</p>
 
-          <div class="input-group text-[#B6B6B6] w-full">
-            
-            <input
-              type="datetime"
-              placeholder="Anytime"
-              class="bg-white rounded-lg px-4 py-3 w-full border border-r-0 outline-none"
-            />
+           <div class="relative">
+              <input
+                type="text"
+                placeholder="Select an option"
+                class="py-3 px-4 w-full border border-gray-300 rounded-lg outline-none"
+              />
+              
+              <!-- Down arrow icon -->
+              <div class="py-3 px-4 absolute right-3 top-1/2 transform -translate-y-1/2">
+                <!-- You can use any down arrow icon, this is an example with Heroicons -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M7 10L12 15L17 10" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+           </div>
 
-            <button class="px-4 py-3 bg-white border border-l-0">
-              <img src="./assets/images/sajnin-icon/iconamoon_arrow-up-2-light.png" alt="time" />
-            </button>
-          </div>
         </div>
       </div>
 
       
+
+
+      <!-- featured listing div right side cards view -->
+
       <div class="md:col-span-1 lg:col-span-3">
 
         <!-- featured listing div -->
