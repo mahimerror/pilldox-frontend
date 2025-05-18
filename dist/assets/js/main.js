@@ -2,6 +2,8 @@ $(document).ready(function () {
   //nice select:
   $(".hero-banner-select-sm").niceSelect();
   $(".hero-banner-select").niceSelect();
+  $(".watch-history-select").niceSelect();
+  $(".create-rooms-select").niceSelect();
   $(".accordion-body-address").niceSelect();
   $(".details-page-select").niceSelect();
   $(".business-specialty-select").niceSelect();

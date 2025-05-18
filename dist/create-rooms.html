@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pilldox Client | Create Rooms</title>
+    <link rel="stylesheet" href="./assets/css/nice-select.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -318,7 +319,7 @@
             </div>
 
             <!-- room form -->
-            <form action="" class="space-y-6">
+            <form action="" class="space-y-6 flex flex-col">
               <!-- room name -->
               <div class="space-y-2">
                 <label class="text-base text-[#2E2E2E] font-mediumFont" for=""
@@ -337,39 +338,16 @@
                   >Category</label
                 >
 
-                <div class="relative">
-                  <select
-                    class="appearance-none font-mediumFont text-[14px] px-6 rounded-lg border border-[rgba(0,_0,_0,_0.08)] w-full bg-[#FAFAFA] outline-0 mr-6 space-y-2 py-[14px]"
-                    name=""
-                    id=""
-                  >
-                    <option value="" class="text-gray-400">Select Value</option>
-                    <option value="" class="text-gray-400">Technology</option>
-                    <option value="" class="text-gray-400">
-                      Food & Dining
+                <div class="create-rooms-select">
+                  <select class="nice-select text-sm md:text-base">
+                    <option value="All Categories" disabled selected>
+                      Select Categories
                     </option>
-                    <option value="" class="text-gray-400">Gaming</option>
-                    <option value="" class="text-gray-400">
-                      Popular Rooms
-                    </option>
+                    <option value="Professional">Food & Dining</option>
+                    <option value="Business">Gaming</option>
+                    <option value="Business">Popular Rooms</option>
+                    <option value="Business">Technology</option>
                   </select>
-                  <div class="absolute top-[50%] right-6 -translate-y-1/2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                    >
-                      <path
-                        d="M7 10L12 15L17 10"
-                        stroke="black"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </div>
                 </div>
               </div>
 

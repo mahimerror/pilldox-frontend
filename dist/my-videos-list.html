@@ -281,6 +281,12 @@
     <!-- main -->
     <main>
       <section class="container mx-auto">
+        <!-- bg overlay -->
+        <div
+          id="modalOverlay"
+          class="fixed inset-0 bg-black bg-opacity-50 justify-center hidden z-10 items-center"
+        ></div>
+
         <!-- tube top title -->
         <div class="pt-10 pb-7 border-b border-b-[rgba(0,_0,_0,_0.08)]">
           <h4 class="text-[40px] text-[#222222] font-boldFont">MyTube</h4>
@@ -390,7 +396,7 @@
                     2:30
                   </span>
                 </div>
-                <div class="space-y-[10px]">
+                <div class="space-y-[10px] relative">
                   <h6 class="text-black text-lg font-mediumFont">
                     Expert Legal Consultation: Get the Right Advice for Your
                     Case
@@ -401,6 +407,61 @@
                     Need legal guidance? In this video, our experienced lawyer
                     provides professional insights on [specific legal topic...
                   </p>
+
+                  <!-- modal content -->
+                  <div
+                    id="modalBox"
+                    class="absolute hidden z-10 space-y-5 max-w-[540px] w-full top-5 left-0 bg-white rounded-xl p-5 border border-[rgba(0,_0,_0,_0.08)] shadow-md"
+                  >
+                    <!-- title -->
+                    <div
+                      class="border border-[rgba(0,_0,_0,_0.08)] rounded-xl px-4 py-3 flex flex-col w-full h-full items-start justify-start gap-2"
+                    >
+                      <label
+                        for=""
+                        class="text-[14px] font-mediumFont text-[#6A6A6A]"
+                        >Title</label
+                      >
+                      <textarea
+                        type="text"
+                        placeholder="write your Title"
+                        
+                        class="leading-[26px] resize-none w-full  border-0 outline-0 font-mediumFont text-base text-[#2E2E2E]"
+                      ></textarea>
+                    </div>
+
+                    <!-- description -->
+                    <div
+                      class="border border-[rgba(0,_0,_0,_0.08)] rounded-xl px-4 py-3 flex flex-col gap-2"
+                    >
+                      <label
+                        for=""
+                        class="text-[14px] font-mediumFont text-[#6A6A6A]"
+                        >Description</label
+                      >
+                      <textarea
+                        type="text"
+                        placeholder="Write you words here..."
+                        class="leading-[26px] resize-none w-full h-[100px] border-0 outline-0 font-mediumFont text-base text-[#2E2E2E]"
+                      ></textarea>
+                    </div>
+
+                    <div
+                      class="space-x-4 place-content-end w-full flex items-center justify-end"
+                    >
+                      <button
+                        id="closeModalBtn"
+                        class="text-base text-black font-mediumFont leading-[26px] px-[18px] py-[6px] rounded-[40px] bg-[#E0E0E0]"
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        class="bg-[#008080] text-white font-mediumFont text-base leading-[26px] px-[18px] py-[6px] rounded-[40px]"
+                      >
+                        Save
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -428,6 +489,7 @@
               <!-- video actions buttons -->
               <div class="col-span-1 text-center flex gap-10">
                 <svg
+                  id="editButton"
                   class="cursor-pointer"
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -837,6 +899,47 @@
       </div>
     </footer>
     <!-- zh footer end -->
+
+    <script>
+      const editButton = document.getElementById("editButton");
+      const modalBox = document.getElementById("modalBox");
+      const modalOverlay = document.getElementById("modalOverlay");
+      const closeModalBtn = document.getElementById("closeModalBtn");
+
+      // show modal
+      const showModal = () => {
+        modalOverlay.classList.remove("hidden");
+        modalBox.classList.remove("hidden");
+      };
+
+      // hide modal
+      const hideModal = () => {
+        modalOverlay.classList.add("hidden");
+        modalBox.classList.add("hidden");
+      };
+
+      // show modal listener
+      editButton.addEventListener("click", showModal);
+
+      // hide modal listener
+      closeModalBtn.addEventListener("click", (event) => {
+        if (event.target === closeModalBtn) {
+          hideModal();
+        }
+      });
+
+      // Auto-resize textarea function
+      function autoResize(textarea) {
+        // textarea.value = textarea.value.trim();
+        textarea.style.height = "auto";
+        textarea.style.height = textarea.scrollHeight + "px";
+      }
+      // Auto-resize on load
+      window.addEventListener("load", function () {
+        const ta = document.getElementById("textAreaContent");
+        autoResize(ta);
+      });
+    </script>
 
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>
