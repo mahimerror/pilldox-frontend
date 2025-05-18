@@ -10,6 +10,7 @@
     />
     <title>Pilldox Client | Post Advertise</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
   <body>
@@ -284,24 +285,66 @@
     </header>
 
     <!-- body -->
-    <main
-      class="flex flex-col items-center justify-center font-poppins mx-5 md:mx-8 2xl:mx-0"
-    >
-      <div class="text-center mt-12">
-        <h3 class="text-[32px] font-bold text-textColor">
-          Post a New Advertisement
-        </h3>
-        <p class="text-[#6A6A6A] font-medium">
-          Fill in the details below to create your ad
-        </p>
-      </div>
+    <main class="bg-gray-50 min-h-screen flex items-center justify-center">
+      <div class="w-3/4 lg:w-1/2 bg-white border p-8 rounded-lg relative">
+        <div class="pb-32 md:pb-40">
+          <div class="text-center my-10">
+            <h3 class="text-2xl md:text-3xl lg:text-[32px] font-bold text-textColor">
+              Post a New Advertisement
+            </h3>
+            <p class="text-[#6A6A6A] font-medium my-3">
+              Fill in the details below to create your ad
+            </p>
+          </div>
 
-      <div class="w-2/3 mx-auto border rounded-xl p-5 my-10">
-        <p class="font-medium mb-4">Post Type</p>
+          <p class="font-medium mb-4">Post Type</p>
+          <div
+            id="dropdownToggle"
+            class="w-full border flex items-center justify-between py-3 px-6 rounded-lg"
+          >
+            <span id="selectedOption">Select the type of post...</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M7 10L12 15L17 10"
+                stroke="black"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
 
-           
+          <!-- options for dropdown -->
+          <ul
+            id="dropdownMenu"
+            class="rounded-lg p-6 mt-3 shadow-lg font-medium overflow-auto hidden"
+          >
+            <li class="bg-white w-full py-3 px-6 hover:bg-[#F6F6F6] rounded-lg">
+              Jobs
+            </li>
+            <li class="bg-white w-full py-3 px-6 hover:bg-[#F6F6F6] rounded-lg">
+              For Sale
+            </li>
+            <li class="bg-white w-full py-3 px-6 hover:bg-[#F6F6F6] rounded-lg">
+              Housing
+            </li>
+            <li class="bg-white w-full py-3 px-6 hover:bg-[#F6F6F6] rounded-lg">
+              Community
+            </li>
+          </ul>
+        </div>
 
-        <button class="bg-primary text-white py-3 w-full my-4 rounded-lg">Post Now</button>
+        <button
+          class="absolute bottom-8 left-8 right-8 bg-[#008080] text-white py-3 rounded-md text-lg font-medium transition mb-14"
+        >
+          Continue
+        </button>
       </div>
     </main>
 
@@ -417,6 +460,35 @@
         <p>Copyright ©2024 <span class="text-[#F8BF2C]">Connect</span></p>
       </div>
     </footer>
+
+    <script>
+      const dropdownToggle = document.getElementById("dropdownToggle");
+      const dropdownMenu = document.getElementById("dropdownMenu");
+      const option = dropdownMenu.querySelectorAll("li");
+      const selected = document.getElementById("selectedOption");
+
+      dropdownToggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        dropdownMenu.classList.toggle("hidden");
+      });
+
+      option.forEach((opt) =>
+        opt.addEventListener("click", () => {
+          selected.textContent = opt.textContent;
+          dropdownMenu.classList.add("hidden");
+        })
+      );
+
+      document.addEventListener("click", (e) => {
+        if (
+          !dropdownToggle.contains(e.target) &&
+          !dropdownMenu.contains(e.target)
+        ) {
+          dropdownMenu.classList.add("hidden");
+        }
+      });
+    </script>
+
     <!-- Scripts -->
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>
