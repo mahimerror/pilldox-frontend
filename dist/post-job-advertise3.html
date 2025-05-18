@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pilldox Client | Post Advertise</title>
+    <title>Pilldox Client | Job Post Advertise</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- navbar start-->
+    
+     <!-- navbar start-->
     <header class="border-black/10 border-b">
       <nav
         class="py-4 md:py-5 w-full flex items-center justify-between px-5 md:px-8 2xl:px-0 container mx-auto"
@@ -277,7 +278,12 @@
       </nav>
     </header>
 
-    <main>
+
+    <main id="postBody">
+     
+
+    <!-- header ends here -->
+
       <section
         class="w-full h-full flex flex-col justify-center items-center pt-[30px]"
       >
@@ -315,15 +321,16 @@
             </div>
 
             <!-- post advertise form -->
-            <form action="" class="w-full">
-              <p class="text-2xl font-bold mb-11">Item Details</p>
+            <form id="submissionForm" action="" class="w-full">
+              <p class="text-2xl font-bold mb-11">Job Details</p>
+
               <div class="space-y-2 mb-6">
                 <label class="text-base text-[#2E2E2E] font-mediumFont" for=""
-                  >Item Title<span class="text-red-600">*</span></label
+                  >Job Title<span class="text-red-600">*</span></label
                 >
                 <input
                   type="text"
-                  placeholder="Enter item title"
+                  placeholder="Enter job title (e.g., Graphic Designer)"
                   class="font-mediumFont text-[14px] placeholder:text-[#B6B6B6] py-[14px] px-6 rounded-lg border border-[rgba(0,_0,_0,_0.08)] w-full bg-[#FAFAFA] outline-0"
                   required
                 />
@@ -331,7 +338,19 @@
 
               <div class="space-y-2 mb-6">
                 <label class="text-base text-[#2E2E2E] font-mediumFont" for=""
-                  >Item Category</label
+                  >Company Name<span class="text-red-600">*</span></label
+                >
+                <input
+                  type="text"
+                  placeholder="Enter company name"
+                  class="font-mediumFont text-[14px] placeholder:text-[#B6B6B6] py-[14px] px-6 rounded-lg border border-[rgba(0,_0,_0,_0.08)] w-full bg-[#FAFAFA] outline-0"
+                  required
+                />
+              </div>
+
+              <div class="space-y-2 mb-6">
+                <label class="text-base text-[#2E2E2E] font-mediumFont" for=""
+                  >Job Type</label
                 >
 
                 <div class="relative">
@@ -342,14 +361,11 @@
                   >
                     <option value="" class="text-gray-400">Select Value</option>
                     <option value="vehicles" class="text-gray-400">
-                      Vehicles
+                      Full Time
                     </option>
-                    <option value="" class="text-gray-400">Real Estate</option>
-                    <option value="" class="text-gray-400">Electronics</option>
-                    <option value="" class="text-gray-400">Furniture</option>
-                    <option value="" class="text-gray-400">Books</option>
-                    <option value="" class="text-gray-400">Pets</option>
-                    <option value="" class="text-gray-400">Sports</option>
+                    <option value="" class="text-gray-400">Part Time</option>
+                    <option value="" class="text-gray-400">Contractual</option>
+                    <option value="" class="text-gray-400">Internship</option>
                   </select>
                   <div class="absolute top-[50%] right-6 -translate-y-1/2">
                     <svg
@@ -373,7 +389,7 @@
 
               <div class="space-y-2 mb-6">
                 <label class="text-base text-[#2E2E2E] font-mediumFont" for=""
-                  >Item Conditions</label
+                  >Job Category</label
                 >
 
                 <div class="relative">
@@ -383,8 +399,13 @@
                     id=""
                   >
                     <option value="" class="text-gray-400">Select Value</option>
-                    <option value="" class="text-gray-400">New</option>
-                    <option value="vehicles" class="text-gray-400">Old</option>
+                    <option value="" class="text-gray-400">It</option>
+                    <option value="vehicles" class="text-gray-400">
+                      Marketing
+                    </option>
+                    <option value="vehicles" class="text-gray-400">
+                      Finance
+                    </option>
                   </select>
                   <div class="absolute top-[50%] right-6 -translate-y-1/2">
                     <svg
@@ -411,63 +432,12 @@
                   >Description <span class="text-red-600">*</span></label
                 >
                 <textarea
-                  placeholder="Describe the item’s condition, features, and specifications..."
+                  placeholder="Describe the job responsibilities and requirements..."
                   name=""
                   id=""
                   class="resize-none bg-[#FAFAFA] w-full px-6 py-[14px] text-[14px] font-mediumFont outline-0 rounded-lg border border-[rgba(0,_0,_0,_0.08)] h-[149px]"
                   required
                 ></textarea>
-              </div>
-
-              <!-- upload image -->
-              <div class="space-y-2 flex flex-col mb-6">
-                <label class="text-base text-[#2E2E2E] font-mediumFont" for=""
-                  >Upload Photo</label
-                >
-                <label
-                  for="roomsCoverUpload"
-                  class="relative cursor-pointer text-center bg-[#FAFAFA] w-full px-6 py-10 rounded-lg border-[2px] border-dashed border-[rgba(0,_0,_0,_0.08)] flex items-center justify-center"
-                >
-                  <div class="space-y-4">
-                    <svg
-                      class="mx-auto"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="44"
-                      height="44"
-                      viewBox="0 0 44 44"
-                      fill="none"
-                    >
-                      <path
-                        d="M31.168 16.5037C35.1555 16.5257 37.3151 16.7035 38.7231 18.1115C40.3346 19.723 40.3346 22.3153 40.3346 27.5V29.3333C40.3346 34.5198 40.3346 37.1122 38.7231 38.7237C37.1135 40.3333 34.5193 40.3333 29.3346 40.3333H14.668C9.4833 40.3333 6.88914 40.3333 5.27947 38.7237C3.66797 37.1103 3.66797 34.5198 3.66797 29.3333V27.5C3.66797 22.3153 3.66797 19.723 5.27947 18.1115C6.68747 16.7035 8.84714 16.5257 12.8346 16.5037"
-                        stroke="#6A6A6A"
-                        stroke-width="4"
-                        stroke-linecap="round"
-                      />
-                      <path
-                        d="M22 27.5V3.66663M22 3.66663L27.5 10.0833M22 3.66663L16.5 10.0833"
-                        stroke="#6A6A6A"
-                        stroke-width="4"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    <p class="text-2xl text-[#2E2E2E] font-medium">
-                      Drag and drop images or click to upload
-                    </p>
-
-                    <p class="text-[14px] text-[#6A6A6A] font-mediumFont">
-                      Supported formats: JPEG, PNG, GIF (max. 5MB)
-                    </p>
-
-                    <p
-                      class="inline-block bg-[#ECECEC] py-[10px] px-[20px] rounded-lg text-center text-[#2E2E2E] mt-3 font-mediumFont"
-                    >
-                      Choose Files
-                    </p>
-                  </div>
-
-                  <input class="hidden" type="file" id="roomsCoverUpload" />
-                </label>
               </div>
 
               <!-- price & Payment -->
@@ -485,73 +455,30 @@
                 />
               </div>
 
-              <!-- payment options -->
-              <div class="space-y-6 mb-6">
+              <!-- location -->
+              <p class="font-bold text-2xl my-11">Job Location</p>
+
+              <div class="space-y-2 mb-6">
                 <label class="text-base text-[#2E2E2E] font-mediumFont" for=""
-                  >Payment Method</label
+                  >Location Type <span class="text-red-600">*</span></label
                 >
 
-                <div class="flex flex-col gap-4">
-                  <div
-                    class="flex items-center gap-3 text-[#6A6A6A] font-medium"
-                  >
-                    <input
-                      class="w-5 h-5"
-                      type="checkbox"
-                      name=""
-                      id=""
-                      value="cash"
-                    />
-                    <label for="">Cash</label>
+                <div class="flex gap-10">
+                  <div>
+                    <input type="radio" name="" id="" />
+                    <label for="">Onsite</label>
                   </div>
 
-                  <div
-                    class="flex items-center gap-3 text-[#6A6A6A] font-medium"
-                  >
-                    <input
-                      class="w-5 h-5"
-                      type="checkbox"
-                      name=""
-                      id=""
-                      value="bank"
-                    />
-                    <label for="">Bank Transfer</label>
-                  </div>
-
-                  <div
-                    class="flex items-center gap-3 text-[#6A6A6A] font-medium"
-                  >
-                    <input
-                      class="w-5 h-5"
-                      type="checkbox"
-                      name=""
-                      id=""
-                      value="card"
-                    />
-                    <label for="">Credit Card</label>
-                  </div>
-
-                  <div
-                    class="flex items-center gap-3 text-[#6A6A6A] font-medium"
-                  >
-                    <input
-                      class="w-5 h-5"
-                      type="checkbox"
-                      name=""
-                      id=""
-                      value="paypal"
-                    />
-                    <label for="">Paypal</label>
+                  <div>
+                    <input type="radio" name="" id="" />
+                    <label for="">Remote</label>
                   </div>
                 </div>
               </div>
 
-              <!-- location -->
-              <p class="font-bold text-2xl my-11">Item Location</p>
-
               <div class="space-y-2 mb-6">
                 <label class="text-base text-[#2E2E2E] font-mediumFont" for=""
-                  >Item Location</label
+                  >Job Location</label
                 >
                 <input
                   type="text"
@@ -560,27 +487,55 @@
                 />
               </div>
 
-              <p class="font-bold text-2xl my-11">Contact Information</p>
+              <!-- job location part end here-->
+
+              <p class="font-bold text-2xl my-11">Salary & Benefits</p>
 
               <div class="space-y-2 mb-6">
                 <label class="text-base text-[#2E2E2E] font-mediumFont" for=""
-                  >Seller Name</label
+                  >Salary Range</label
                 >
-                <input
-                  type="text"
-                  placeholder="Enter name"
-                  class="font-mediumFont text-[14px] placeholder:text-[#B6B6B6] py-[14px] px-6 rounded-lg border border-[rgba(0,_0,_0,_0.08)] w-full bg-[#FAFAFA] outline-0"
-                />
+
+                <div class="flex gap-6">
+                  <input
+                    type="text"
+                    placeholder="$Min Salary"
+                    class="font-mediumFont text-[14px] placeholder:text-[#B6B6B6] py-[14px] px-6 rounded-lg border border-[rgba(0,_0,_0,_0.08)] w-full bg-[#FAFAFA] outline-0"
+                  />
+
+                  <input
+                    type="text"
+                    placeholder="$Max Salary"
+                    class="font-mediumFont text-[14px] placeholder:text-[#B6B6B6] py-[14px] px-6 rounded-lg border border-[rgba(0,_0,_0,_0.08)] w-full bg-[#FAFAFA] outline-0"
+                  />
+                </div>
               </div>
 
+              <div class="space-y-2 flex flex-col mb-6">
+                <label class="text-base text-[#2E2E2E] font-mediumFont" for=""
+                  >Benefits</label
+                >
+                <textarea
+                  placeholder="Enter Benefits"
+                  name=""
+                  id=""
+                  class="resize-none bg-[#FAFAFA] w-full px-6 py-[14px] text-[14px] font-mediumFont outline-0 rounded-lg border border-[rgba(0,_0,_0,_0.08)] h-[130px]"
+                ></textarea>
+              </div>
+
+              <!-- salary and benefits ends here -->
+
+              <p class="font-bold text-2xl my-11">Application Process</p>
+
               <div class="space-y-2 mb-6">
                 <label class="text-base text-[#2E2E2E] font-mediumFont" for=""
-                  >Phone Number</label
+                  >Job Title<span class="text-red-600">*</span></label
                 >
                 <input
-                  type="text"
-                  placeholder="Enter phone number"
+                  type="url"
+                  placeholder="Enter Email or application URL"
                   class="font-mediumFont text-[14px] placeholder:text-[#B6B6B6] py-[14px] px-6 rounded-lg border border-[rgba(0,_0,_0,_0.08)] w-full bg-[#FAFAFA] outline-0"
+                  required
                 />
               </div>
 
@@ -603,6 +558,8 @@
 
               <div class="pt-12">
                 <button
+                  onclick="submitForm()"
+                  id="submitted"
                   class="w-full block border border-[rgba(0,_0,_0,_0.08)] rounded-lg bg-[#008080] py-[15px] text-center text-white text-lg font-mediumFont"
                 >
                   Publish for Review
@@ -633,9 +590,13 @@
           </div>
         </div>
       </section>
+
+
+
+     
     </main>
 
-    <!-- footer -->
+     <!-- footer -->
     <footer
       class="w-full bg-[#003333] text-white px-5 md:px-8 2xl:px-0 overflow-hidden mt-48"
     >
@@ -748,8 +709,81 @@
       </div>
     </footer>
 
+    <!-- ?footer ends here? -->
+
+    
+
+    <!-- submission card/ modals starts -->
+
+    <div
+      id="submissionModal"
+      class="items-center justify-center inset-0 fixed hidden z-50"
+    >
+      <div
+        class="w-1/4 text-center bg-white rounded-xl border mx-auto py-8 px-12 z-50"
+      >
+        <svg
+          class="mx-auto"
+          xmlns="http://www.w3.org/2000/svg"
+          width="52"
+          height="52"
+          viewBox="0 0 52 52"
+          fill="none"
+        >
+          <path
+            d="M26 3.25C32.0337 3.25 37.8202 5.64687 42.0867 9.91332C46.3531 14.1798 48.75 19.9663 48.75 26C48.75 32.0337 46.3531 37.8202 42.0867 42.0867C37.8202 46.3531 32.0337 48.75 26 48.75C19.9663 48.75 14.1798 46.3531 9.91332 42.0867C5.64687 37.8202 3.25 32.0337 3.25 26C3.25 19.9663 5.64687 14.1798 9.91332 9.91332C14.1798 5.64687 19.9663 3.25 26 3.25ZM23.166 30.4882L18.1122 25.4312C17.9311 25.2501 17.716 25.1064 17.4793 25.0083C17.2426 24.9103 16.9888 24.8598 16.7326 24.8598C16.4764 24.8598 16.2227 24.9103 15.986 25.0083C15.7493 25.1064 15.5342 25.2501 15.353 25.4312C14.9871 25.7971 14.7815 26.2934 14.7815 26.8109C14.7815 27.3283 14.9871 27.8246 15.353 28.1905L21.788 34.6255C21.9687 34.8076 22.1836 34.9521 22.4204 35.0508C22.6571 35.1494 22.9111 35.2002 23.1676 35.2002C23.4241 35.2002 23.6781 35.1494 23.9149 35.0508C24.1517 34.9521 24.3666 34.8076 24.5473 34.6255L37.8722 21.2973C38.0558 21.1168 38.2019 20.9018 38.302 20.6647C38.4021 20.4275 38.4542 20.1729 38.4554 19.9155C38.4566 19.6581 38.4069 19.403 38.309 19.1649C38.2111 18.9268 38.067 18.7105 37.8851 18.5284C37.7032 18.3463 37.487 18.202 37.2491 18.1038C37.0111 18.0056 36.7561 17.9556 36.4987 17.9564C36.2413 17.9573 35.9866 18.0092 35.7493 18.109C35.5121 18.2088 35.2969 18.3546 35.1163 18.538L23.166 30.4882Z"
+            fill="#36B37E"
+          />
+        </svg>
+
+        <p class="font-medium text-primary text-xl my-4">
+          Submission Received!
+        </p>
+        <p class="mb-6 text-wrap">
+          Your post has been submitted for review. It is currently pending
+          approval. Our team will review and publish your post within 24 hours.
+          Thank you for your patience
+        </p>
+        <button
+          id="closeModal"
+          onclick="offModal()"
+          class="bg-[#E8F2F2] text-primary rounded-lg py-3 w-full"
+        >
+          Got It
+        </button>
+      </div>
+    </div>
     <!-- Scripts -->
-    <script></script>
+    <script>
+      const modal = document.getElementById("submissionModal");
+      const submitted = document.getElementById("submitted");
+      const postBody = document.getElementById("postBody");
+      const submissionForm = document.getElementById("submissionForm");
+      const closeModal = document.getElementById("closeModal");
+
+      function submitForm() {
+        // const modal = document.getElementById("submissionModal");
+
+        submitted.addEventListener("click", (e) => {
+          e.preventDefault();
+          modal.classList.remove("hidden");
+          modal.classList.add("flex");
+          // postBody.classList.add('bg-black');
+          postBody.classList.add("opacity-50");
+          // submissionForm.classList.add('bg-black');
+          submissionForm.classList.add("opacity-50");
+        });
+      }
+
+      function offModal() {
+        postBody.classList.remove("opacity-50");
+        // postBody.classList.remove("bg-black");
+        modal.classList.remove("flex");
+        // submissionForm.classList.remove("bg-black");
+        submissionForm.classList.remove("opacity-50");
+        modal.classList.add("hidden");
+      }
+    </script>
 
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>

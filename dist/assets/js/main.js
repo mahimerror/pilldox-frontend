@@ -582,3 +582,8 @@ document.addEventListener("click", (e) => {
     dropdownMenu.classList.add("hidden");
   }
 });
+
+
+
+// sajnin for showing modal
+
