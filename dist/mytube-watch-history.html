@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pilldox Client | My Tube Watch History</title>
+    <link rel="stylesheet" href="./assets/css/nice-select.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -316,7 +317,7 @@
 
             <div class="">
               <!-- zh watch history search and tags start-->
-              <div class="">
+              <div class="relative">
                 <input
                   type="text"
                   placeholder="Search"
@@ -342,35 +343,16 @@
             </p>
 
             <div class="flex items-center gap-[30px]">
-              <div class="relative">
-                <select
-                  class="appearance-none outline-0 border border-[rgba(0,_0,_0,_0.08)] rounded-lg py-3 px-4 w-[155px] text-[#2E2E2E] text-base font-mediumFont"
-                  name=""
-                  id=""
-                >
-                  <option class="text-[#6A6A6A]" value="">Last 7 days</option>
-                  <option class="text-[#6A6A6A]" value="">Last 10 days</option>
-                  <option class="text-[#6A6A6A]" value="">Last 15 days</option>
-                  <option class="text-[#6A6A6A]" value="">Last 30 days</option>
+              <div class="watch-history-select">
+                <select class="text-sm md:text-base border border-amber-500">
+                  <option value="All Categories" disabled selected>
+                    Select Days
+                  </option>
+                  <option value="Professional">7 Days Ago</option>
+                  <option value="Business">10 Days Ago</option>
+                  <option value="Business">15 Days Ago</option>
+                  <option value="Business">30 Days Ago</option>
                 </select>
-
-                <div class="absolute top-[50%] right-0 -translate-y-1/2 pr-4">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <path
-                      d="M7 10L12 15L17 10"
-                      stroke="#2E2E2E"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </div>
               </div>
 
               <button
@@ -461,6 +443,14 @@
                 src="../dist/assets/images/chat-room-img1.png"
                 alt=""
               />
+              <!-- playing progress time -->
+              <div
+                class="absolute max-w-full w-full bottom-0 left-0 bg-[#E0E0E0] h-[4px]"
+              >
+                <div
+                  class="relative bg-[#FF4040] max-w-[245px] w-full h-full rounded-xl"
+                ></div>
+              </div>
               <!-- play time -->
               <div class="absolute bottom-[14px] right-[14px]">
                 <span
@@ -509,6 +499,14 @@
                 src="../dist/assets/images/chat-room-img1.png"
                 alt=""
               />
+              <!-- playing progress time -->
+              <div
+                class="absolute max-w-full w-full bottom-0 left-0 bg-[#E0E0E0] h-[4px]"
+              >
+                <div
+                  class="relative bg-[#FF4040] max-w-[245px] w-full h-full rounded-xl"
+                ></div>
+              </div>
               <!-- play time -->
               <div class="absolute bottom-[14px] right-[14px]">
                 <span
@@ -557,246 +555,14 @@
                 src="../dist/assets/images/chat-room-img1.png"
                 alt=""
               />
-              <!-- play time -->
-              <div class="absolute bottom-[14px] right-[14px]">
-                <span
-                  class="bg-[#222222] py-[5px] px-3 rounded-lg text-[14px] text-white font-mediumFont"
-                >
-                  2:30
-                </span>
-              </div>
-            </div>
-            <!-- room content text -->
-            <div
-              class="px-6 py-[13px] rounded-bl-xl rounded-br-xl bg-[#FAFAFA]"
-            >
-              <div class="space-y-2">
-                <h3 class="text-lg font-boldFont text-[#2E2E2E] w-[200px]">
-                  Consult us for your business
-                </h3>
-                <p class="text-[14px] font-mediumFont text-[#6A6A6A]">
-                  BusinessStudio
-                </p>
+              <!-- playing progress time -->
+              <div
+                class="absolute max-w-full w-full bottom-0 left-0 bg-[#E0E0E0] h-[4px]"
+              >
                 <div
-                  class="flex items-center gap-2 text-[14px] font-mediumFont text-[#6A6A6A]"
-                >
-                  <span>1.2M views</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="4"
-                    height="4"
-                    viewBox="0 0 4 4"
-                    fill="none"
-                  >
-                    <circle cx="2" cy="2" r="2" fill="#6A6A6A" />
-                  </svg>
-                  <span>2 hours ago</span>
-                </div>
+                  class="relative bg-[#FF4040] max-w-[245px] w-full h-full rounded-xl"
+                ></div>
               </div>
-            </div>
-          </div>
-
-          <!-- video no 5 -->
-          <div class="">
-            <!-- room img -->
-            <div class="w-[366px] h-[143px] relative">
-              <img
-                class="w-full h-full object-cover rounded-tl-xl rounded-tr-xl"
-                src="../dist/assets/images/chat-room-img1.png"
-                alt=""
-              />
-              <!-- play time -->
-              <div class="absolute bottom-[14px] right-[14px]">
-                <span
-                  class="bg-[#222222] py-[5px] px-3 rounded-lg text-[14px] text-white font-mediumFont"
-                >
-                  2:30
-                </span>
-              </div>
-            </div>
-            <!-- room content text -->
-            <div
-              class="px-6 py-[13px] rounded-bl-xl rounded-br-xl bg-[#FAFAFA]"
-            >
-              <div class="space-y-2">
-                <h3 class="text-lg font-boldFont text-[#2E2E2E] w-[200px]">
-                  Consult us for your business
-                </h3>
-                <p class="text-[14px] font-mediumFont text-[#6A6A6A]">
-                  BusinessStudio
-                </p>
-                <div
-                  class="flex items-center gap-2 text-[14px] font-mediumFont text-[#6A6A6A]"
-                >
-                  <span>1.2M views</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="4"
-                    height="4"
-                    viewBox="0 0 4 4"
-                    fill="none"
-                  >
-                    <circle cx="2" cy="2" r="2" fill="#6A6A6A" />
-                  </svg>
-                  <span>2 hours ago</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- video no 6 -->
-          <div class="">
-            <!-- room img -->
-            <div class="w-[366px] h-[143px] relative">
-              <img
-                class="w-full h-full object-cover rounded-tl-xl rounded-tr-xl"
-                src="../dist/assets/images/chat-room-img1.png"
-                alt=""
-              />
-              <!-- play time -->
-              <div class="absolute bottom-[14px] right-[14px]">
-                <span
-                  class="bg-[#222222] py-[5px] px-3 rounded-lg text-[14px] text-white font-mediumFont"
-                >
-                  2:30
-                </span>
-              </div>
-            </div>
-            <!-- room content text -->
-            <div
-              class="px-6 py-[13px] rounded-bl-xl rounded-br-xl bg-[#FAFAFA]"
-            >
-              <div class="space-y-2">
-                <h3 class="text-lg font-boldFont text-[#2E2E2E] w-[200px]">
-                  Consult us for your business
-                </h3>
-                <p class="text-[14px] font-mediumFont text-[#6A6A6A]">
-                  BusinessStudio
-                </p>
-                <div
-                  class="flex items-center gap-2 text-[14px] font-mediumFont text-[#6A6A6A]"
-                >
-                  <span>1.2M views</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="4"
-                    height="4"
-                    viewBox="0 0 4 4"
-                    fill="none"
-                  >
-                    <circle cx="2" cy="2" r="2" fill="#6A6A6A" />
-                  </svg>
-                  <span>2 hours ago</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- video no 7 -->
-          <div class="">
-            <!-- room img -->
-            <div class="w-[366px] h-[143px] relative">
-              <img
-                class="w-full h-full object-cover rounded-tl-xl rounded-tr-xl"
-                src="../dist/assets/images/chat-room-img1.png"
-                alt=""
-              />
-              <!-- play time -->
-              <div class="absolute bottom-[14px] right-[14px]">
-                <span
-                  class="bg-[#222222] py-[5px] px-3 rounded-lg text-[14px] text-white font-mediumFont"
-                >
-                  2:30
-                </span>
-              </div>
-            </div>
-            <!-- room content text -->
-            <div
-              class="px-6 py-[13px] rounded-bl-xl rounded-br-xl bg-[#FAFAFA]"
-            >
-              <div class="space-y-2">
-                <h3 class="text-lg font-boldFont text-[#2E2E2E] w-[200px]">
-                  Consult us for your business
-                </h3>
-                <p class="text-[14px] font-mediumFont text-[#6A6A6A]">
-                  BusinessStudio
-                </p>
-                <div
-                  class="flex items-center gap-2 text-[14px] font-mediumFont text-[#6A6A6A]"
-                >
-                  <span>1.2M views</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="4"
-                    height="4"
-                    viewBox="0 0 4 4"
-                    fill="none"
-                  >
-                    <circle cx="2" cy="2" r="2" fill="#6A6A6A" />
-                  </svg>
-                  <span>2 hours ago</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- video no 8 -->
-          <div class="">
-            <!-- room img -->
-            <div class="w-[366px] h-[143px] relative">
-              <img
-                class="w-full h-full object-cover rounded-tl-xl rounded-tr-xl"
-                src="../dist/assets/images/chat-room-img1.png"
-                alt=""
-              />
-              <!-- play time -->
-              <div class="absolute bottom-[14px] right-[14px]">
-                <span
-                  class="bg-[#222222] py-[5px] px-3 rounded-lg text-[14px] text-white font-mediumFont"
-                >
-                  2:30
-                </span>
-              </div>
-            </div>
-            <!-- room content text -->
-            <div
-              class="px-6 py-[13px] rounded-bl-xl rounded-br-xl bg-[#FAFAFA]"
-            >
-              <div class="space-y-2">
-                <h3 class="text-lg font-boldFont text-[#2E2E2E] w-[200px]">
-                  Consult us for your business
-                </h3>
-                <p class="text-[14px] font-mediumFont text-[#6A6A6A]">
-                  BusinessStudio
-                </p>
-                <div
-                  class="flex items-center gap-2 text-[14px] font-mediumFont text-[#6A6A6A]"
-                >
-                  <span>1.2M views</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="4"
-                    height="4"
-                    viewBox="0 0 4 4"
-                    fill="none"
-                  >
-                    <circle cx="2" cy="2" r="2" fill="#6A6A6A" />
-                  </svg>
-                  <span>2 hours ago</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- video no 9 -->
-          <div class="">
-            <!-- room img -->
-            <div class="w-[366px] h-[143px] relative">
-              <img
-                class="w-full h-full object-cover rounded-tl-xl rounded-tr-xl"
-                src="../dist/assets/images/chat-room-img1.png"
-                alt=""
-              />
               <!-- play time -->
               <div class="absolute bottom-[14px] right-[14px]">
                 <span
