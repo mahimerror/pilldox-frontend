@@ -1457,6 +1457,10 @@ video {
   max-width: 1320px;
 }
 
+.max-w-\[438px\]{
+  max-width: 438px;
+}
+
 .flex-1{
   flex: 1 1 0%;
 }
@@ -4031,6 +4035,10 @@ video {
 
   .lg\:max-w-\[calc\(100\%-900px\)\]{
     max-width: calc(100% - 900px);
+  }
+
+  .lg\:max-w-\[calc\(100\%-800px\)\]{
+    max-width: calc(100% - 800px);
   }
 
   .lg\:grid-cols-3{
