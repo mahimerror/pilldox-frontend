@@ -304,7 +304,7 @@
         </div>
 
         <!-- form wrapper -->
-        <div class="w-[1320px] mx-auto mt-[10px]">
+        <div class="max-w-[1320px] w-full mx-auto mt-[10px]">
           <!-- form title -->
           <div
             class="text-center mb-10 flex flex-col justify-center items-center"
@@ -375,12 +375,20 @@
                   </span>
                 </div>
 
-                <input class="hidden" type="file" id="roomsCoverUpload" />
+                <input
+                  class="hidden"
+                  type="file"
+                  accept="video/*"
+                  id="roomsCoverUpload"
+                />
               </label>
             </div>
 
             <!-- video show box -->
-            <div class="p-6 rounded-xl border border-[#B6B6B6] flex gap-3">
+            <div
+              id="vide-info"
+              class="hidden p-6 rounded-xl border border-[#B6B6B6] flex gap-3"
+            >
               <div class="border border-[#B6B6B6] p-[6px] rounded-xl h-fit">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -432,15 +440,22 @@
                 <!-- video size and title show -->
                 <div class="flex justify-between">
                   <div>
-                    <p class="text-base font-mediumFont text-[#222222]">
-                      Consult us for your business 01.mp4
+                    <p
+                      id="upload-video-name"
+                      class="text-base font-mediumFont text-[#222222]"
+                    >
+                      Video Title
                     </p>
-                    <span class="text-[#6A6A6A] text-[14px] font-mediumFont"
-                      >20 mB</span
+                    <span
+                      id="upload-video-size"
+                      class="text-[#6A6A6A] text-[14px] font-mediumFont"
+                      >00 mB</span
                     >
                   </div>
-                  <div>
+
+                  <div id="video-preview-close-btn">
                     <svg
+                      class="cursor-pointer"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
                       height="24"
@@ -464,12 +479,12 @@
                     class="relative bg-[#D9D9D9] h-[8px] rounded-[50px] w-[95%] mt-[10px]"
                   >
                     <div
-                      class="absolute top-0 left-0 h-full w-[85%] bg-[#008080] rounded-[50px]"
+                      class="absolute top-0 left-0 h-full w-[100%] bg-[#008080] rounded-[50px]"
                     ></div>
                   </div>
 
                   <span class="text-[14px] font-mediumFont text-[#2E2E2E]"
-                    >86%</span
+                    >100%</span
                   >
                 </div>
               </div>
@@ -482,6 +497,7 @@
                   >Add Title</label
                 >
                 <input
+                  required
                   type="text"
                   placeholder="Enter your title"
                   class="font-mediumFont text-[14px] placeholder:text-[#B6B6B6] py-[14px] px-6 rounded-lg border border-[rgba(0,_0,_0,_0.08)] w-full bg-[#FAFAFA] outline-0"
@@ -494,6 +510,7 @@
                   >Add Description</label
                 >
                 <textarea
+                  required
                   name=""
                   id=""
                   placeholder="Enter your description..."
@@ -507,6 +524,7 @@
                   >Add Tags</label
                 >
                 <textarea
+                  required
                   name=""
                   id=""
                   placeholder="Enter your Tags"
@@ -530,7 +548,7 @@
         <!-- modal content -->
         <div
           id="modalOverlay"
-          class="fixed inset-0 bg-black bg-opacity-50 justify-center hidden items-center"
+          class="fixed inset-0 bg-black bg-opacity-50 justify-center hidden items-center z-20"
         >
           <div class="flex justify-center items-center min-h-screen">
             <div
@@ -718,29 +736,8 @@
     </footer>
     <!-- zh footer end -->
 
-    <script>
-      const showModalBtn = document.getElementById("showModalBtn");
-      const overlay = document.getElementById("modalOverlay");
-      const modalContent = document.getElementById("modalContent");
-
-      //   show the modal
-      function showModal() {
-        overlay.classList.remove("hidden");
-      }
-      //   hide the modal
-      function hideModal() {
-        overlay.classList.add("hidden");
-      }
-
-      //   add listeners
-      showModalBtn.addEventListener("click", showModal);
-      overlay.addEventListener("click", function (event) {
-        if (!modalContent.contains(event.target)) {
-          hideModal();
-        }
-        console.log(overlay);
-      });
-      console.log(overlay);
-    </script>
+    <script src="./assets/js/upload-video-page.js"></script>
+    <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/main.js"></script>
   </body>
 </html>

@@ -1401,6 +1401,10 @@ video {
   width: 1.5rem;
 }
 
+.w-\[100\%\]{
+  width: 100%;
+}
+
 .max-w-\[1296px\]{
   max-width: 1296px;
 }
@@ -1447,6 +1451,10 @@ video {
 
 .max-w-\[560px\]{
   max-width: 560px;
+}
+
+.max-w-\[1320px\]{
+  max-width: 1320px;
 }
 
 .flex-1{
@@ -2154,9 +2162,19 @@ video {
   fill: #fff;
 }
 
+.object-contain{
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 .object-cover{
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.object-center{
+  -o-object-position: center;
+     object-position: center;
 }
 
 .p-0{
