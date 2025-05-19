@@ -844,6 +844,16 @@ video {
   margin-bottom: 22px;
 }
 
+.my-20{
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.my-1{
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
 .\!mb-3{
   margin-bottom: 0.75rem !important;
 }
@@ -1006,6 +1016,22 @@ video {
 
 .mb-36{
   margin-bottom: 9rem;
+}
+
+.mb-3{
+  margin-bottom: 0.75rem;
+}
+
+.mt-7{
+  margin-top: 1.75rem;
+}
+
+.mb-\[84px\]{
+  margin-bottom: 84px;
+}
+
+.mb-16{
+  margin-bottom: 4rem;
 }
 
 .block{
@@ -1221,6 +1247,10 @@ video {
   height: 100%;
 }
 
+.h-4{
+  height: 1rem;
+}
+
 .max-h-\[700px\]{
   max-height: 700px;
 }
@@ -1368,6 +1398,14 @@ video {
 
 .w-full{
   width: 100%;
+}
+
+.w-5\/6{
+  width: 83.333333%;
+}
+
+.w-4{
+  width: 1rem;
 }
 
 .max-w-3xl{
@@ -2378,6 +2416,16 @@ video {
   padding-right: 4rem;
 }
 
+.py-7{
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
+}
+
+.py-\[28px\]{
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
+
 .pb-10{
   padding-bottom: 2.5rem;
 }
@@ -2798,6 +2846,10 @@ video {
 .placeholder-gray-500::placeholder{
   --tw-placeholder-opacity: 1;
   color: rgb(107 114 128 / var(--tw-placeholder-opacity, 1));
+}
+
+.accent-primary{
+  accent-color: #008080;
 }
 
 .opacity-0{
@@ -3502,6 +3554,18 @@ video {
     margin-top: 2rem;
   }
 
+  .md\:mt-20{
+    margin-top: 5rem;
+  }
+
+  .md\:mt-12{
+    margin-top: 3rem;
+  }
+
+  .md\:mb-\[84px\]{
+    margin-bottom: 84px;
+  }
+
   .md\:flex{
     display: flex;
   }
@@ -3610,6 +3674,10 @@ video {
 
   .md\:w-full{
     width: 100%;
+  }
+
+  .md\:w-\[400px\]{
+    width: 400px;
   }
 
   .md\:min-w-\[450px\]{
@@ -3878,6 +3946,10 @@ video {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
+
+  .md\:text-\[32px\]{
+    font-size: 32px;
+  }
 }
 
 @media (min-width: 1024px){
@@ -3943,6 +4015,10 @@ video {
     margin-top: 52px;
   }
 
+  .lg\:mt-0{
+    margin-top: 0px;
+  }
+
   .lg\:block{
     display: block;
   }
@@ -4006,6 +4082,10 @@ video {
 
   .lg\:w-\[calc\(100\%-800px\)\]{
     width: calc(100% - 800px);
+  }
+
+  .lg\:w-full{
+    width: 100%;
   }
 
   .lg\:max-w-\[calc\(100\%-900px\)\]{
