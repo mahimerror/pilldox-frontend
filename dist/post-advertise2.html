@@ -340,16 +340,18 @@
                     name=""
                     id=""
                   >
-                    <option value="" class="text-gray-400">Select Value</option>
+                    <option value="" class="text-gray-400">Select Type</option>
                     <option value="vehicles" class="text-gray-400">
                       Vehicles
                     </option>
-                    <option value="" class="text-gray-400">Real Estate</option>
                     <option value="" class="text-gray-400">Electronics</option>
                     <option value="" class="text-gray-400">Furniture</option>
-                    <option value="" class="text-gray-400">Books</option>
-                    <option value="" class="text-gray-400">Pets</option>
+                    <option value="" class="text-gray-400">Vehicles</option>
+                    <option value="" class="text-gray-400">Clothings</option>
                     <option value="" class="text-gray-400">Sports</option>
+                    <option value="" class="text-gray-400">
+                      Home Application
+                    </option>
                   </select>
                   <div class="absolute top-[50%] right-6 -translate-y-1/2">
                     <svg
@@ -382,9 +384,14 @@
                     name=""
                     id=""
                   >
-                    <option value="" class="text-gray-400">Select Value</option>
+                    <option value="" class="text-gray-400">Select Type</option>
                     <option value="" class="text-gray-400">New</option>
-                    <option value="vehicles" class="text-gray-400">Old</option>
+                    <option value="vehicles" class="text-gray-400">
+                      Used(good)
+                    </option>
+                    <option value="vehicles" class="text-gray-400">
+                      Used(Fair)
+                    </option>
                   </select>
                   <div class="absolute top-[50%] right-6 -translate-y-1/2">
                     <svg
@@ -603,6 +610,8 @@
 
               <div class="pt-12">
                 <button
+                  onclick="submitForm()"
+                  id="submitted"
                   class="w-full block border border-[rgba(0,_0,_0,_0.08)] rounded-lg bg-[#008080] py-[15px] text-center text-white text-lg font-mediumFont"
                 >
                   Publish for Review
@@ -748,8 +757,64 @@
       </div>
     </footer>
 
+
+
+    <!-- success modal  -->
+    <div
+      id="submissionModal"
+      class="items-center justify-center inset-0 bg-black bg-opacity-50 fixed hidden z-50"
+    >
+      <div
+        class="w-1/4 text-center bg-white rounded-xl border mx-auto py-8 px-12 z-50"
+      >
+        <svg
+          class="mx-auto"
+          xmlns="http://www.w3.org/2000/svg"
+          width="52"
+          height="52"
+          viewBox="0 0 52 52"
+          fill="none"
+        >
+          <path
+            d="M26 3.25C32.0337 3.25 37.8202 5.64687 42.0867 9.91332C46.3531 14.1798 48.75 19.9663 48.75 26C48.75 32.0337 46.3531 37.8202 42.0867 42.0867C37.8202 46.3531 32.0337 48.75 26 48.75C19.9663 48.75 14.1798 46.3531 9.91332 42.0867C5.64687 37.8202 3.25 32.0337 3.25 26C3.25 19.9663 5.64687 14.1798 9.91332 9.91332C14.1798 5.64687 19.9663 3.25 26 3.25ZM23.166 30.4882L18.1122 25.4312C17.9311 25.2501 17.716 25.1064 17.4793 25.0083C17.2426 24.9103 16.9888 24.8598 16.7326 24.8598C16.4764 24.8598 16.2227 24.9103 15.986 25.0083C15.7493 25.1064 15.5342 25.2501 15.353 25.4312C14.9871 25.7971 14.7815 26.2934 14.7815 26.8109C14.7815 27.3283 14.9871 27.8246 15.353 28.1905L21.788 34.6255C21.9687 34.8076 22.1836 34.9521 22.4204 35.0508C22.6571 35.1494 22.9111 35.2002 23.1676 35.2002C23.4241 35.2002 23.6781 35.1494 23.9149 35.0508C24.1517 34.9521 24.3666 34.8076 24.5473 34.6255L37.8722 21.2973C38.0558 21.1168 38.2019 20.9018 38.302 20.6647C38.4021 20.4275 38.4542 20.1729 38.4554 19.9155C38.4566 19.6581 38.4069 19.403 38.309 19.1649C38.2111 18.9268 38.067 18.7105 37.8851 18.5284C37.7032 18.3463 37.487 18.202 37.2491 18.1038C37.0111 18.0056 36.7561 17.9556 36.4987 17.9564C36.2413 17.9573 35.9866 18.0092 35.7493 18.109C35.5121 18.2088 35.2969 18.3546 35.1163 18.538L23.166 30.4882Z"
+            fill="#36B37E"
+          />
+        </svg>
+
+        <p class="font-medium text-primary text-xl my-4">
+          Submission Received!
+        </p>
+        <p class="mb-6 text-wrap">
+          Your post has been submitted for review. It is currently pending
+          approval. Our team will review and publish your post within 24 hours.
+          Thank you for your patience
+        </p>
+        <button
+          id="closeModal"
+          onclick="offModal()"
+          class="bg-[#E8F2F2] text-primary rounded-lg py-3 w-full"
+        >
+          Got It
+        </button>
+      </div>
+    </div>
+
+
     <!-- Scripts -->
-    <script></script>
+    <script>
+      const modal = document.getElementById("submissionModal");
+      const submitted = document.getElementById("submitted");
+
+      function submitForm() {
+         modal.classList.remove("hidden");
+          modal.classList.add("flex");
+      }
+
+      function offModal() {
+        modal.classList.remove("flex");
+        modal.classList.add("hidden");
+      }
+    </script>
 
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>
