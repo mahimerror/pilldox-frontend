@@ -375,7 +375,7 @@
                   for="roomsCoverUpload"
                   class="relative cursor-pointer text-center bg-[#FAFAFA] w-full h-auto px-6 py-8 rounded-lg border-[2px] border-dashed border-[rgba(0,_0,_0,_0.08)] flex items-center justify-center"
                 >
-                  <div class="space-y-3">
+                  <div id="hideUploadContent" class="space-y-3">
                     <svg
                       class="mx-auto"
                       xmlns="http://www.w3.org/2000/svg"
@@ -407,26 +407,27 @@
                     <p class="text-[14px] text-[#6A6A6A] font-mediumFont">
                       Supported formats: JPEG, PNG, GIF (max. 5MB)
                     </p>
+                  </div>
 
-                    <div
-                      id="imagePreviewBoxArea"
-                      class="border border-[rgba(0,_0,_0,_0.08)] p-3 rounded-lg hidden"
-                    >
-                      <!-- image name -->
-                      <p
-                        id="fileName"
-                        class="text-[#6A6A6A] font-mediumFont text-base pb-2"
-                      ></p>
+                  <!-- image preview box -->
+                  <div
+                    id="imagePreviewBoxArea"
+                    class="hidden border border-[rgba(0,_0,_0,_0.08)] p-3 rounded-lg w-[450px]"
+                  >
+                    <!-- image name -->
+                    <p
+                      id="fileName"
+                      class="text-[#6A6A6A] font-mediumFont text-base pb-2"
+                    ></p>
 
-                      <!-- image preview -->
-                      <div class="flex flex-col items-center justify-center">
-                        <img
-                          id="imgPreview"
-                          src=""
-                          alt=""
-                          class="h-[150px] w-full hidden rounded-md object-cover"
-                        />
-                      </div>
+                    <!-- image preview -->
+                    <div class="flex flex-col items-center justify-center">
+                      <img
+                        id="imgPreview"
+                        src=""
+                        alt=""
+                        class="hidden h-[180px] w-full rounded-md object-cover"
+                      />
                     </div>
                   </div>
 
@@ -496,6 +497,7 @@
                     Max Participants
                   </h3>
                   <input
+                    required
                     class="py-[14px] px-6 rounded-lg border border-[rgba(0,_0,_0,_0.08)] w-[360px] mt-2 outline-0 placeholder:text-[#B6B6B6] text-[14px] font-mediumFont"
                     type="number"
                     placeholder="Enter Max number..."
@@ -636,6 +638,7 @@
       const imagePreviewBoxArea = document.getElementById(
         "imagePreviewBoxArea"
       );
+      const hideUploadContent = document.getElementById("hideUploadContent");
 
       input.addEventListener("change", function () {
         const file = this.files[0];
@@ -648,6 +651,7 @@
           console.log(reader);
           reader.onload = (e) => {
             imgPreview.src = e.target.result;
+            hideUploadContent.classList.add("hidden");
             imagePreviewBoxArea.classList.remove("hidden");
             imgPreview.classList.remove("hidden");
             console.log(imgPreview);
