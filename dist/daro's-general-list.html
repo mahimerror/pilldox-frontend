@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Daro's General User</title>
     <link rel="stylesheet" href="./style.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.css" />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+
 
     <style>
       .search-bg{
@@ -496,23 +499,29 @@
 
         <div class="divider my-10"></div>
 
+        <!-- date posted -->
         <div>
           <p class="text-2xl font-bold mb-4">Date Posted</p>
 
-           <div class="relative">
+           <!-- <div class="relative">
               <input
                 type="text"
                 placeholder="Select an option"
                 class="py-3 px-4 w-full border border-gray-300 rounded-lg outline-none"
               />
-              
-              <!-- Down arrow icon -->
+             
               <div class="py-3 px-4 absolute right-3 top-1/2 transform -translate-y-1/2">
-                <!-- You can use any down arrow icon, this is an example with Heroicons -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path d="M7 10L12 15L17 10" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
+           </div> -->
+           <div>
+             <select>
+              <option>Option 1</option>
+              <option>Option 1</option>
+              <option>Option 2</option>
+             </select>
            </div>
 
         </div>
@@ -871,6 +880,11 @@
       </div>
     </footer>
 
+    <script>
+      $(document).ready(function() {
+        $('select').niceSelect();
+      });
+    </script>
 
     <!-- for icon  -->
     <script
@@ -885,5 +899,9 @@
     <!-- Scripts -->
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>
+    
+
+    <script src="path/to/jquery.js"></script> 
+    <script src="path/to/jquery.nice-select.js"></script>
   </body>
 </html>
