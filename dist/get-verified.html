@@ -3,22 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daro's General User</title>
     <link rel="stylesheet" href="./style.css" />
-     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Get Verified</title>
 
     <style>
-      .bg-colorWhite {
-        background-color: white;
+      .search-bg{
+        background-color: #F6F6F6;
+        color: #606060;
       }
     </style>
   </head>
-  <body>
-    
+
+  <body class="w-full" id="daros-list">
+
     <!-- navbar -->
     <header class="border-black/10 border-b">
       <nav
-        class="py-4 md:py-5 w-11/12 flex items-center justify-between mx-auto"
+        class="py-4 md:py-5 w-full flex items-center justify-between px-5 md:px-8 2xl:px-0 container mx-auto"
       >
         <!-- logo -->
         <div>
@@ -68,7 +69,7 @@
             Yo!Tube
           </a>
           <a
-            href=""
+            href="#daros-list"
             class="font-boldFont text-[#141414] w-32 flex items-center justify-center"
           >
             Daro’s List
@@ -284,7 +285,8 @@
         </div>
       </nav>
     </header>
-    
+
+
 
     <!-- main content -->
     <main class="my-10 text-text">
@@ -523,6 +525,8 @@
           </div>
     </main>
 
+
+
     <!-- footer -->
     <footer
       class="w-full bg-[#003333] text-white px-5 md:px-8 2xl:px-0 overflow-hidden mt-48"
@@ -635,5 +639,20 @@
         <p>Copyright ©2024 <span class="text-[#F8BF2C]">Connect</span></p>
       </div>
     </footer>
+
+
+    <!-- for icon  -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <!-- Scripts -->
+    <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/main.js"></script>
   </body>
 </html>
