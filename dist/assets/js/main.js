@@ -587,5 +587,39 @@ document.addEventListener("click", (e) => {
   }
 });
 
+// sajnin- for form submission modal
 
+function submitForm() {
+  const modal = document.getElementById("submissionModal");
+  // const submitted = document.getElementById("submitted");
+  modal.classList.remove("hidden");
+  modal.classList.add("flex");
+}
 
+function offModal() {
+  const modal = document.getElementById("submissionModal");
+  modal.classList.remove("flex");
+  // const submitted = document.getElementById("submitted");
+  modal.classList.add("hidden");
+}
+
+// script for showing uploaded image
+
+function uploadPhoto() {
+  const uploadImage = document.getElementById("uploadImage");
+  const givenContent = document.getElementById("givenContent");
+  const roomsCoverUpload = document.getElementById("roomsCoverUpload");
+
+  roomsCoverUpload.addEventListener("change", function () {
+    const imageFile = this.files[0];
+    if (imageFile && imageFile.type.startsWith("image/")) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        uploadImage.src = e.target.result;
+        uploadImage.classList.remove("hidden");
+        givenContent.classList.add("hidden");
+      };
+      reader.readAsDataURL(imageFile);
+    }
+  });
+}

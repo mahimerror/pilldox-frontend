@@ -425,7 +425,7 @@
                   </p>
                 </div>
 
-                <input class="hidden" type="file" id="roomsCoverUpload" />
+                <input class="hidden" type="file" id="roomsCoverUpload" onclick="uploadPhoto()" />
               </label>
             </div>
 
@@ -586,43 +586,6 @@
 
     <!-- Scripts -->
     <script>
-      const uploadImage = document.getElementById('uploadImage');
-      const givenContent = document.getElementById('givenContent');
-      const roomsCoverUpload = document.getElementById('roomsCoverUpload');
-
-      
-
-      roomsCoverUpload.addEventListener('change', function(){
-        const imageFile = this.files[0];
-        if(imageFile && imageFile.type.startsWith('image/')){
-          const reader = new FileReader();
-          reader.onload = function(e){
-            uploadImage.src = e.target.result;
-            givenContent.classList.add('hidden');
-            uploadImage.classList.remove('hidden');
-          }
-          reader.readAsDataURL(imageFile);
-        }
-      })  
-
-
-      // script for showing uploaded image
-      // const uploadImage = document.getElementById('uploadImage');
-      // const givenContent = document.getElementById('givenContent');
-      // const roomsCoverUpload = document.getElementById('roomsCoverUpload');
-
-      // roomsCoverUpload.addEventListener('change', function(){
-      //   const imageFile = this.files[0];
-      //   if(imageFile && imageFile.type.startsWith('image/')){
-      //     const reader = new FileReader();
-      //     reader.onload = function(e){
-      //       uploadImage.src = e.target.result;
-      //       uploadImage.classList.remove('hidden');
-      //       givenContent.classList.add('hidden');
-      //     }
-      //     reader.readAsDataURL(imageFile);
-      //   }
-      // })
     </script>
 
     <script src="./assets/js/plugins.js"></script>
