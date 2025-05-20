@@ -13,10 +13,10 @@
   </head>
 
   <body>
-    <!-- navbar -->
+    <!-- zh navbar start-->
     <header class="border-black/10 border-b">
       <nav
-        class="py-4 md:py-5 w-full flex items-center justify-between px-5 md:px-8 2xl:px-0 container mx-auto"
+        class="py-4 md:py-5 w-full flex items-center justify-between container mx-auto"
       >
         <!-- logo -->
         <div>
@@ -51,7 +51,7 @@
         </div>
 
         <!-- Auth Buttons -->
-        <div class="md:flex items-center gap-6 hidden">
+        <div class="lg:flex items-center gap-6 hidden">
           <!-- add from zh start -->
           <a
             href=""
@@ -143,10 +143,10 @@
           </button>
         </div>
 
-        <div class="md:hidden">
+        <div class="lg:hidden">
           <div
             id="menu-hamburger"
-            class="bg-primary p-2 size-10 flex items-center justify-center rounded-md md:hidden"
+            class="bg-primary p-2 size-10 flex items-center justify-center rounded-md lg:hidden"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -174,7 +174,7 @@
           </div>
           <div
             id="menu-close"
-            class="bg-primary p-2 hidden size-10 items-center justify-center rounded-md md:hidden"
+            class="bg-primary p-2 hidden size-10 items-center justify-center rounded-md lg:hidden"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -282,15 +282,16 @@
         </div>
       </nav>
     </header>
+    <!-- zh navbar end-->
 
     <!-- body -->
-    <main class="w-full flex">
+    <main class="container mx-auto w-full lg:flex">
       <!-- sidebar -->
       <section
-        class="w-[400px] bg-white border-r border-black/10 h-screen-full pr-6 pt-[30px] hidden lg:block"
+        class="max-w-[300px] w-full bg-white border-r border-black/10 h-screen-full pr-6 pt-[30px] hidden lg:block"
       >
         <!-- zh room category start -->
-        <div class="pl-10">
+        <div class="lg:pl-3">
           <h4 class="mt-[30px] text-2xl font-boldFont text-[#2E2E2E]">
             Categories
           </h4>
@@ -465,11 +466,9 @@
       </section>
 
       <!-- main content -->
-      <section
-        class="lg:max-w-[calc(100%-900px)] lg:w-[calc(100%-800px)] h-[calc(100vh-90px)] overflow-y-auto px-5 md:px-8 lg:px-0 border-r"
-      >
+      <section class="flex-1 overflow-y-auto lg:px-0 lg:border-r">
         <!-- zh room title start-->
-        <div class="lg:px-14 mt-[30px] flex justify-between items-center">
+        <div class="lg:px-6 mt-[30px] flex justify-between items-center">
           <h3 class="text-2xl font-boldFont text-[#2E2E2E] mb-[6px]">
             Foodie paradise
           </h3>
@@ -482,7 +481,32 @@
         <div class="border border-[rgba(0,_0,_0,_0.08)] mt-6"></div>
 
         <!-- room user conversation start  -->
-        <div class="lg:px-14 lg:mt-[52px] space-y-6 h-[60vh]">
+        <div
+          class="lg:px-14 mt-6 lg:mt-[52px] space-y-6 lg:max-w-full max-h-[100vh] overflow-y-auto"
+        >
+          <!-- conversation user 1 -->
+          <div class="flex gap-3">
+            <div class="w-[42px] h-[42px]">
+              <img
+                class="w-full h-full rounded-full object-cover"
+                src="https://images.unsplash.com/photo-1678379534870-81a4c19c2f79?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2F0JTIwJTIwcGljdHVyZSUyMGZvciUyMHBjJTIwd2FscGFwcGVyfGVufDB8fDB8fHww"
+                alt=""
+              />
+            </div>
+
+            <div>
+              <h6 class="text-base text-[#2E2E2E] font-mediumFont">
+                Killan james<span
+                  class="text-[14px] text-[#B6B6B6] font-mediumFont pl-[17px]"
+                  >2:45 pM</span
+                >
+              </h6>
+              <p class="text-base text-[#6A6A6A] font-mediumFont pt-2">
+                Has anyone tried the new Italian restaurant downtown?
+              </p>
+            </div>
+          </div>
+          
           <!-- conversation user 1 -->
           <div class="flex gap-3">
             <div class="w-[42px] h-[42px]">
@@ -506,30 +530,7 @@
             </div>
           </div>
 
-          <!-- conversation user 2 -->
-          <div class="flex gap-3">
-            <div class="w-[42px] h-[42px]">
-              <img
-                class="aspect-square w-full h-full rounded-full object-cover"
-                src="https://images.unsplash.com/photo-1613793479691-a87ea36c2302?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt=""
-              />
-            </div>
-
-            <div>
-              <h6 class="text-base text-[#2E2E2E] font-mediumFont">
-                Killan james<span
-                  class="text-[14px] text-[#B6B6B6] font-mediumFont pl-[17px]"
-                  >2:45 pM</span
-                >
-              </h6>
-              <p class="text-base text-[#6A6A6A] font-mediumFont pt-2">
-                Has anyone tried the new Italian restaurant downtown?
-              </p>
-            </div>
-          </div>
-
-          <!-- conversation user 3 -->
+          <!-- conversation user 1 -->
           <div class="flex gap-3">
             <div class="w-[42px] h-[42px]">
               <img
@@ -552,7 +553,7 @@
             </div>
           </div>
 
-          <!-- conversation user 4 -->
+          <!-- conversation user 1 -->
           <div class="flex gap-3">
             <div class="w-[42px] h-[42px]">
               <img
@@ -574,6 +575,238 @@
               </p>
             </div>
           </div>
+
+          <!-- conversation user 1 -->
+          <div class="flex gap-3">
+            <div class="w-[42px] h-[42px]">
+              <img
+                class="w-full h-full rounded-full object-cover"
+                src="https://images.unsplash.com/photo-1678379534870-81a4c19c2f79?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2F0JTIwJTIwcGljdHVyZSUyMGZvciUyMHBjJTIwd2FscGFwcGVyfGVufDB8fDB8fHww"
+                alt=""
+              />
+            </div>
+
+            <div>
+              <h6 class="text-base text-[#2E2E2E] font-mediumFont">
+                Killan james<span
+                  class="text-[14px] text-[#B6B6B6] font-mediumFont pl-[17px]"
+                  >2:45 pM</span
+                >
+              </h6>
+              <p class="text-base text-[#6A6A6A] font-mediumFont pt-2">
+                Has anyone tried the new Italian restaurant downtown?
+              </p>
+            </div>
+          </div>
+
+          <!-- conversation user 1 -->
+          <div class="flex gap-3">
+            <div class="w-[42px] h-[42px]">
+              <img
+                class="w-full h-full rounded-full object-cover"
+                src="https://images.unsplash.com/photo-1678379534870-81a4c19c2f79?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2F0JTIwJTIwcGljdHVyZSUyMGZvciUyMHBjJTIwd2FscGFwcGVyfGVufDB8fDB8fHww"
+                alt=""
+              />
+            </div>
+
+            <div>
+              <h6 class="text-base text-[#2E2E2E] font-mediumFont">
+                Killan james<span
+                  class="text-[14px] text-[#B6B6B6] font-mediumFont pl-[17px]"
+                  >2:45 pM</span
+                >
+              </h6>
+              <p class="text-base text-[#6A6A6A] font-mediumFont pt-2">
+                Has anyone tried the new Italian restaurant downtown?
+              </p>
+            </div>
+          </div>
+
+          <!-- conversation user 1 -->
+          <div class="flex gap-3">
+            <div class="w-[42px] h-[42px]">
+              <img
+                class="w-full h-full rounded-full object-cover"
+                src="https://images.unsplash.com/photo-1678379534870-81a4c19c2f79?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2F0JTIwJTIwcGljdHVyZSUyMGZvciUyMHBjJTIwd2FscGFwcGVyfGVufDB8fDB8fHww"
+                alt=""
+              />
+            </div>
+
+            <div>
+              <h6 class="text-base text-[#2E2E2E] font-mediumFont">
+                Killan james<span
+                  class="text-[14px] text-[#B6B6B6] font-mediumFont pl-[17px]"
+                  >2:45 pM</span
+                >
+              </h6>
+              <p class="text-base text-[#6A6A6A] font-mediumFont pt-2">
+                Has anyone tried the new Italian restaurant downtown?
+              </p>
+            </div>
+          </div>
+
+          <!-- conversation user 1 -->
+          <div class="flex gap-3">
+            <div class="w-[42px] h-[42px]">
+              <img
+                class="w-full h-full rounded-full object-cover"
+                src="https://images.unsplash.com/photo-1678379534870-81a4c19c2f79?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2F0JTIwJTIwcGljdHVyZSUyMGZvciUyMHBjJTIwd2FscGFwcGVyfGVufDB8fDB8fHww"
+                alt=""
+              />
+            </div>
+
+            <div>
+              <h6 class="text-base text-[#2E2E2E] font-mediumFont">
+                Killan james<span
+                  class="text-[14px] text-[#B6B6B6] font-mediumFont pl-[17px]"
+                  >2:45 pM</span
+                >
+              </h6>
+              <p class="text-base text-[#6A6A6A] font-mediumFont pt-2">
+                Has anyone tried the new Italian restaurant downtown?
+              </p>
+            </div>
+          </div>
+
+          <!-- conversation user 1 -->
+          <div class="flex gap-3">
+            <div class="w-[42px] h-[42px]">
+              <img
+                class="w-full h-full rounded-full object-cover"
+                src="https://images.unsplash.com/photo-1678379534870-81a4c19c2f79?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2F0JTIwJTIwcGljdHVyZSUyMGZvciUyMHBjJTIwd2FscGFwcGVyfGVufDB8fDB8fHww"
+                alt=""
+              />
+            </div>
+
+            <div>
+              <h6 class="text-base text-[#2E2E2E] font-mediumFont">
+                Killan james<span
+                  class="text-[14px] text-[#B6B6B6] font-mediumFont pl-[17px]"
+                  >2:45 pM</span
+                >
+              </h6>
+              <p class="text-base text-[#6A6A6A] font-mediumFont pt-2">
+                Has anyone tried the new Italian restaurant downtown?
+              </p>
+            </div>
+          </div>
+
+          <!-- conversation user 1 -->
+          <div class="flex gap-3">
+            <div class="w-[42px] h-[42px]">
+              <img
+                class="w-full h-full rounded-full object-cover"
+                src="https://images.unsplash.com/photo-1678379534870-81a4c19c2f79?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2F0JTIwJTIwcGljdHVyZSUyMGZvciUyMHBjJTIwd2FscGFwcGVyfGVufDB8fDB8fHww"
+                alt=""
+              />
+            </div>
+
+            <div>
+              <h6 class="text-base text-[#2E2E2E] font-mediumFont">
+                Killan james<span
+                  class="text-[14px] text-[#B6B6B6] font-mediumFont pl-[17px]"
+                  >2:45 pM</span
+                >
+              </h6>
+              <p class="text-base text-[#6A6A6A] font-mediumFont pt-2">
+                Has anyone tried the new Italian restaurant downtown?
+              </p>
+            </div>
+          </div>
+
+          <!-- conversation user 1 -->
+          <div class="flex gap-3">
+            <div class="w-[42px] h-[42px]">
+              <img
+                class="w-full h-full rounded-full object-cover"
+                src="https://images.unsplash.com/photo-1678379534870-81a4c19c2f79?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2F0JTIwJTIwcGljdHVyZSUyMGZvciUyMHBjJTIwd2FscGFwcGVyfGVufDB8fDB8fHww"
+                alt=""
+              />
+            </div>
+
+            <div>
+              <h6 class="text-base text-[#2E2E2E] font-mediumFont">
+                Killan james<span
+                  class="text-[14px] text-[#B6B6B6] font-mediumFont pl-[17px]"
+                  >2:45 pM</span
+                >
+              </h6>
+              <p class="text-base text-[#6A6A6A] font-mediumFont pt-2">
+                Has anyone tried the new Italian restaurant downtown?
+              </p>
+            </div>
+          </div>
+
+          <!-- conversation user 1 -->
+          <div class="flex gap-3">
+            <div class="w-[42px] h-[42px]">
+              <img
+                class="w-full h-full rounded-full object-cover"
+                src="https://images.unsplash.com/photo-1678379534870-81a4c19c2f79?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2F0JTIwJTIwcGljdHVyZSUyMGZvciUyMHBjJTIwd2FscGFwcGVyfGVufDB8fDB8fHww"
+                alt=""
+              />
+            </div>
+
+            <div>
+              <h6 class="text-base text-[#2E2E2E] font-mediumFont">
+                Killan james<span
+                  class="text-[14px] text-[#B6B6B6] font-mediumFont pl-[17px]"
+                  >2:45 pM</span
+                >
+              </h6>
+              <p class="text-base text-[#6A6A6A] font-mediumFont pt-2">
+                Has anyone tried the new Italian restaurant downtown?
+              </p>
+            </div>
+          </div>
+
+          <!-- conversation user 1 -->
+          <div class="flex gap-3">
+            <div class="w-[42px] h-[42px]">
+              <img
+                class="w-full h-full rounded-full object-cover"
+                src="https://images.unsplash.com/photo-1678379534870-81a4c19c2f79?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2F0JTIwJTIwcGljdHVyZSUyMGZvciUyMHBjJTIwd2FscGFwcGVyfGVufDB8fDB8fHww"
+                alt=""
+              />
+            </div>
+
+            <div>
+              <h6 class="text-base text-[#2E2E2E] font-mediumFont">
+                Killan james<span
+                  class="text-[14px] text-[#B6B6B6] font-mediumFont pl-[17px]"
+                  >2:45 pM</span
+                >
+              </h6>
+              <p class="text-base text-[#6A6A6A] font-mediumFont pt-2">
+                Has anyone tried the new Italian restaurant downtown?
+              </p>
+            </div>
+          </div>
+
+          <!-- conversation user 1 -->
+          <div class="flex gap-3">
+            <div class="w-[42px] h-[42px]">
+              <img
+                class="w-full h-full rounded-full object-cover"
+                src="https://images.unsplash.com/photo-1678379534870-81a4c19c2f79?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2F0JTIwJTIwcGljdHVyZSUyMGZvciUyMHBjJTIwd2FscGFwcGVyfGVufDB8fDB8fHww"
+                alt=""
+              />
+            </div>
+
+            <div>
+              <h6 class="text-base text-[#2E2E2E] font-mediumFont">
+                Killan james<span
+                  class="text-[14px] text-[#B6B6B6] font-mediumFont pl-[17px]"
+                  >2:45 pM</span
+                >
+              </h6>
+              <p class="text-base text-[#6A6A6A] font-mediumFont pt-2">
+                Has anyone tried the new Italian restaurant downtown?
+              </p>
+            </div>
+          </div>
+
+
         </div>
         <!-- room user conversation end -->
 
@@ -634,7 +867,7 @@
 
       <!-- zh features room right sidebar -->
       <section
-        class="px-8 pt-8 max-w-[400px] w-full border-r border-[rgba(0,_0,_0,_0.08)] h-screen-full hidden lg:block"
+        class="flex-1 px-8 pt-8 max-w-[300px] w-full mx-auto border-r border-[rgba(0,_0,_0,_0.08)] h-screen-full hidden lg:block"
       >
         <!-- zh active user list start -->
         <div class="w-full mt-10">
@@ -771,7 +1004,7 @@
     <!-- zh footer start -->
     <footer class="bg-[#004040]">
       <div
-        class="py-[60px] flex items-center justify-between max-w-[1296px] mx-auto"
+        class="py-[60px] sm:flex items-center justify-between sm:max-w-[1296px] mx-auto"
       >
         <!-- logo -->
         <div>
@@ -805,7 +1038,9 @@
           </a>
         </div>
 
-        <div class="flex items-center gap-8">
+        <div
+          class="flex flex-col gap-3 items-start sm:flex-row sm:items-center sm:gap-8 my-4 sm:my-0"
+        >
           <a class="text-base text-[#F6F6F6] font-normalFont" href=""
             >Help & Support</a
           >
