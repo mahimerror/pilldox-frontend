@@ -315,7 +315,8 @@
 
             <div class="flex gap-6 items-center">
               <!-- upload video button -->
-              <button
+              <a
+                href="upload-video-page.html"
                 class="text-base text-white font-mediumFont bg-[#008080] rounded-lg py-3 px-4 flex items-center gap-2"
               >
                 <svg
@@ -340,7 +341,7 @@
                   />
                 </svg>
                 Upload Video
-              </button>
+              </a>
 
               <!-- zh search input start-->
               <div class="relative">
@@ -359,20 +360,32 @@
         </div>
 
         <!-- video list start -->
-        <div class="grid grid-cols-3 gap-6">
+        <div class="grid grid-cols-2 lg:grid-cols-3 gap-6">
           <!-- video 1 -->
-          <div>
-            <div class="w-[450px] h-[338px] relative">
-              <img
+          <div id="video-wrapper">
+            <div
+              class="max-w-[450px] w-full h-[290px] relative bg-gray-100 rounded-md"
+            >
+              <!-- <img
                 class="w-full h-full rounded-tr-xl rounded-tl-md object-cover"
                 src="https://images.unsplash.com/photo-1613793479691-a87ea36c2302?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt=""
-              />
+              /> -->
+
+              <video
+                id="custom-video"
+                controls
+                class="w-full h-full rounded-tr-xl rounded-tl-md"
+                src="../dist/assets/video/upload-video.mp4"
+              ></video>
+
               <!-- play icon -->
               <div
+                id="playPauseBtn"
                 class="absolute top-[50%] left-[50%] -translate-x-2/4 cursor-pointer"
               >
                 <svg
+                  id="playIcon"
                   xmlns="http://www.w3.org/2000/svg"
                   width="40"
                   height="40"
@@ -387,6 +400,16 @@
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   />
+                </svg>
+
+                <svg
+                  id="pauseIcon"
+                  class="w-6 h-6 text-white hidden"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#ffffff"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
                 </svg>
               </div>
 
@@ -436,18 +459,30 @@
           </div>
 
           <!-- video 2 -->
-          <div>
-            <div class="w-[450px] h-[338px] relative">
-              <img
+          <div id="video-wrapper">
+            <div
+              class="max-w-[450px] w-full h-[290px] relative bg-gray-100 rounded-md"
+            >
+              <!-- <img
                 class="w-full h-full rounded-tr-xl rounded-tl-md object-cover"
                 src="https://images.unsplash.com/photo-1613793479691-a87ea36c2302?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt=""
-              />
+              /> -->
+
+              <video
+                id="custom-video"
+                controls
+                class="w-full h-full rounded-tr-xl rounded-tl-md"
+                src="../dist/assets/video/upload-video2.mp4"
+              ></video>
+
               <!-- play icon -->
               <div
+                id="playPauseBtn"
                 class="absolute top-[50%] left-[50%] -translate-x-2/4 cursor-pointer"
               >
                 <svg
+                  id="playIcon"
                   xmlns="http://www.w3.org/2000/svg"
                   width="40"
                   height="40"
@@ -462,6 +497,16 @@
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   />
+                </svg>
+
+                <svg
+                  id="pauseIcon"
+                  class="w-6 h-6 text-white hidden"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#ffffff"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
                 </svg>
               </div>
 
@@ -511,18 +556,30 @@
           </div>
 
           <!-- video 3 -->
-          <div>
-            <div class="w-[450px] h-[338px] relative">
-              <img
+          <div id="video-wrapper">
+            <div
+              class="max-w-[450px] w-full h-[290px] relative bg-gray-100 rounded-md"
+            >
+              <!-- <img
                 class="w-full h-full rounded-tr-xl rounded-tl-md object-cover"
                 src="https://images.unsplash.com/photo-1613793479691-a87ea36c2302?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt=""
-              />
+              /> -->
+
+              <video
+                id="custom-video"
+                controls
+                class="w-full h-full rounded-tr-xl rounded-tl-md"
+                src="../dist/assets/video/upload-video.mp4"
+              ></video>
+
               <!-- play icon -->
               <div
+                id="playPauseBtn"
                 class="absolute top-[50%] left-[50%] -translate-x-2/4 cursor-pointer"
               >
                 <svg
+                  id="playIcon"
                   xmlns="http://www.w3.org/2000/svg"
                   width="40"
                   height="40"
@@ -537,6 +594,16 @@
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   />
+                </svg>
+
+                <svg
+                  id="pauseIcon"
+                  class="w-6 h-6 text-white hidden"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#ffffff"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
                 </svg>
               </div>
 
@@ -586,18 +653,30 @@
           </div>
 
           <!-- video 4 -->
-          <div>
-            <div class="w-[450px] h-[338px] relative">
-              <img
+          <div id="video-wrapper">
+            <div
+              class="max-w-[450px] w-full h-[290px] relative bg-gray-100 rounded-md"
+            >
+              <!-- <img
                 class="w-full h-full rounded-tr-xl rounded-tl-md object-cover"
                 src="https://images.unsplash.com/photo-1613793479691-a87ea36c2302?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt=""
-              />
+              /> -->
+
+              <video
+                id="custom-video"
+                controls
+                class="w-full h-full rounded-tr-xl rounded-tl-md"
+                src="../dist/assets/video/upload-video2.mp4"
+              ></video>
+
               <!-- play icon -->
               <div
+                id="playPauseBtn"
                 class="absolute top-[50%] left-[50%] -translate-x-2/4 cursor-pointer"
               >
                 <svg
+                  id="playIcon"
                   xmlns="http://www.w3.org/2000/svg"
                   width="40"
                   height="40"
@@ -612,6 +691,16 @@
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   />
+                </svg>
+
+                <svg
+                  id="pauseIcon"
+                  class="w-6 h-6 text-white hidden"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#ffffff"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
                 </svg>
               </div>
 
@@ -661,18 +750,30 @@
           </div>
 
           <!-- video 5 -->
-          <div>
-            <div class="w-[450px] h-[338px] relative">
-              <img
+          <div id="video-wrapper">
+            <div
+              class="max-w-[450px] w-full h-[290px] relative bg-gray-100 rounded-md"
+            >
+              <!-- <img
                 class="w-full h-full rounded-tr-xl rounded-tl-md object-cover"
                 src="https://images.unsplash.com/photo-1613793479691-a87ea36c2302?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt=""
-              />
+              /> -->
+
+              <video
+                id="custom-video"
+                controls
+                class="w-full h-full rounded-tr-xl rounded-tl-md"
+                src="../dist/assets/video/upload-video.mp4"
+              ></video>
+
               <!-- play icon -->
               <div
+                id="playPauseBtn"
                 class="absolute top-[50%] left-[50%] -translate-x-2/4 cursor-pointer"
               >
                 <svg
+                  id="playIcon"
                   xmlns="http://www.w3.org/2000/svg"
                   width="40"
                   height="40"
@@ -688,80 +789,15 @@
                     stroke-linejoin="round"
                   />
                 </svg>
-              </div>
 
-              <!-- play time -->
-              <div class="absolute bottom-5 right-5">
-                <span
-                  class="bg-[#222222] py-[5px] px-3 rounded-lg text-[14px] text-white font-mediumFont"
-                >
-                  2:30
-                </span>
-              </div>
-            </div>
-
-            <div
-              class="bg-[#F6F6F6] px-4 py-[18px] rounded-bl-xl rounded-br-xl"
-            >
-              <div class="flex items-center gap-3">
-                <div class="size-11">
-                  <img
-                    class="w-full h-full object-cover rounded-full"
-                    src="../dist/assets/images/inbox-user-icon.png"
-                    alt=""
-                  />
-                </div>
-                <div>
-                  <h6 class="text-base text-[#2E2E2E] font-mediumFont">
-                    Consult us for your business
-                  </h6>
-                  <div
-                    class="flex items-center gap-2 text-[14px] font-mediumFont text-[#6A6A6A]"
-                  >
-                    <span>Business</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="4"
-                      height="4"
-                      viewBox="0 0 4 4"
-                      fill="none"
-                    >
-                      <circle cx="2" cy="2" r="2" fill="#6A6A6A" />
-                    </svg>
-                    <span>2 hours ago</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- video 6 -->
-          <div>
-            <div class="w-[450px] h-[338px] relative">
-              <img
-                class="w-full h-full rounded-tr-xl rounded-tl-md object-cover"
-                src="https://images.unsplash.com/photo-1613793479691-a87ea36c2302?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt=""
-              />
-              <!-- play icon -->
-              <div
-                class="absolute top-[50%] left-[50%] -translate-x-2/4 cursor-pointer"
-              >
                 <svg
+                  id="pauseIcon"
+                  class="w-6 h-6 text-white hidden"
                   xmlns="http://www.w3.org/2000/svg"
-                  width="40"
-                  height="40"
-                  viewBox="0 0 40 40"
-                  fill="none"
+                  fill="#ffffff"
+                  viewBox="0 0 24 24"
                 >
-                  <path
-                    d="M11.51 7.5617C11.3582 7.47168 11.1852 7.42345 11.0087 7.42191C10.8322 7.42037 10.6585 7.46557 10.5051 7.55292C10.3517 7.64028 10.2242 7.76667 10.1355 7.91926C10.0468 8.07185 10 8.2452 10 8.4217V31.5784C10 31.7549 10.0468 31.9282 10.1355 32.0808C10.2242 32.2334 10.3517 32.3598 10.5051 32.4471C10.6585 32.5345 10.8322 32.5797 11.0087 32.5782C11.1852 32.5766 11.3582 32.5284 11.51 32.4384L31.0483 20.86C31.1976 20.7715 31.3212 20.6456 31.407 20.4949C31.4929 20.3441 31.538 20.1735 31.538 20C31.538 19.8265 31.4929 19.656 31.407 19.5052C31.3212 19.3544 31.1976 19.2286 31.0483 19.14L11.51 7.5617Z"
-                    fill="white"
-                    stroke="white"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
+                  <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
                 </svg>
               </div>
 
@@ -1148,6 +1184,7 @@
     </footer>
     <!-- zh footer end -->
 
+    <script src="./assets/js/play-paused.js"></script>
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>
   </body>

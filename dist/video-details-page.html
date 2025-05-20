@@ -45,7 +45,7 @@
         </div>
 
         <!-- Auth Buttons -->
-        <div class="md:flex items-center gap-6 hidden">
+        <div class="lg:flex items-center gap-6 hidden">
           <!-- add from zh start -->
           <a
             href=""
@@ -137,10 +137,10 @@
           </button>
         </div>
 
-        <div class="md:hidden">
+        <div class="lg:hidden">
           <div
             id="menu-hamburger"
-            class="bg-primary p-2 size-10 flex items-center justify-center rounded-md md:hidden"
+            class="bg-primary p-2 size-10 flex items-center justify-center rounded-md lg:hidden"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -168,7 +168,7 @@
           </div>
           <div
             id="menu-close"
-            class="bg-primary p-2 hidden size-10 items-center justify-center rounded-md md:hidden"
+            class="bg-primary p-2 hidden size-10 items-center justify-center rounded-md lg:hidden"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -283,16 +283,20 @@
       <section class="container mx-auto">
         <!-- tube top title -->
         <div class="py-10">
-          <div class="flex items-center justify-between pt-4 pb-9">
-            <h4 class="text-[40px] text-[#222222] font-boldFont">Yo!tube</h4>
+          <div class="md:flex items-center justify-between pt-4 pb-9">
+            <h4
+              class="pb-3 md:pb-0 text-3xl sm:text-[40px] text-[#222222] font-boldFont"
+            >
+              Yo!tube
+            </h4>
 
-            <div class="flex gap-6 items-center">
+            <div class="flex gap-4 sm:gap-6 items-center">
               <!-- zh search input start-->
               <div class="relative">
                 <input
                   type="text"
                   placeholder="Search"
-                  class="py-[11px] pr-4 pl-[52px] w-[287px] bg-[#ECECEC] rounded-xl outline-0 focus:outline-0 placeholder:text-[#6A6A6A] font-mediumFont text-base"
+                  class="py-[11px] pr-4 pl-[52px] w-[200px] sm:max-w-[287px] sm:w-full bg-[#ECECEC] rounded-xl outline-0 focus:outline-0 placeholder:text-[#6A6A6A] font-mediumFont text-base"
                 />
                 <div class="absolute top-[12px] left-6">
                   <img src="../dist//assets/images/serarch-inbox.png" alt="" />
@@ -301,8 +305,9 @@
               <!-- zh search input end-->
 
               <!-- upload video button -->
-              <button
-                class="text-base text-[#008080] border border-[#008080] font-mediumFont rounded-lg py-3 px-4 flex items-center gap-2"
+              <a
+                href="upload-video-page.html"
+                class="text-[14px] sm:text-base text-[#008080] border border-[#008080] font-mediumFont rounded-lg py-3 px-4 flex items-center gap-1 sm:gap-2"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -326,7 +331,7 @@
                   />
                 </svg>
                 Upload Video
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -355,7 +360,7 @@
         <div class="flex flex-col items-center justify-center gap-6">
           <!-- video details 1 -->
           <div
-            class="video-wrapper max-w-[560px] w-full h-[990px] relative bg-slate-400 rounded-lg"
+            class="video-wrapper max-w-[560px] w-full h-[500px] md:h-[990px] relative bg-gray-100 rounded-lg"
           >
             <!-- <iframe
               class="w-full h-full rounded-lg"
@@ -372,6 +377,309 @@
               class="w-full h-full rounded-lg"
               controls
               src="../dist/assets/video/upload-video.mp4"
+            ></video>
+
+            <!-- play and pause icon -->
+            <div class="absolute top-6 left-6 flex gap-4 items-center">
+              <!-- play and sound icon -->
+              <div class="flex items-center justify-center relative">
+                <!-- play icon bg -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="48"
+                  height="48"
+                  viewBox="0 0 48 48"
+                  fill="none"
+                >
+                  <circle
+                    cx="24"
+                    cy="24"
+                    r="24"
+                    fill="#D9D9D9"
+                    fill-opacity="0.5"
+                  />
+                </svg>
+                <!-- play icon -->
+                <button id="playPauseBtn" class="absolute">
+                  <svg
+                    id="playIcon"
+                    class=""
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M6.906 4.53702C6.81491 4.48301 6.71114 4.45407 6.60524 4.45315C6.49934 4.45222 6.39508 4.47934 6.30306 4.53175C6.21104 4.58417 6.13452 4.66 6.0813 4.75155C6.02807 4.84311 6.00002 4.94712 6 5.05302V18.947C6.00002 19.0529 6.02807 19.1569 6.0813 19.2485C6.13452 19.34 6.21104 19.4159 6.30306 19.4683C6.39508 19.5207 6.49934 19.5478 6.60524 19.5469C6.71114 19.546 6.81491 19.517 6.906 19.463L18.629 12.516C18.7185 12.4629 18.7927 12.3874 18.8442 12.2969C18.8957 12.2064 18.9228 12.1041 18.9228 12C18.9228 11.8959 18.8957 11.7936 18.8442 11.7031C18.7927 11.6127 18.7185 11.5371 18.629 11.484L6.906 4.53702Z"
+                      fill="#E0E0E0"
+                      stroke="#E0E0E0"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <svg
+                    id="pauseIcon"
+                    class="w-6 h-6 text-white hidden"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="#E0E0E0"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
+                  </svg>
+                </button>
+              </div>
+              <!-- sound icon -->
+              <div class="flex items-center justify-center relative">
+                <!-- sound icon bg -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="48"
+                  height="48"
+                  viewBox="0 0 48 48"
+                  fill="none"
+                >
+                  <circle
+                    cx="24"
+                    cy="24"
+                    r="24"
+                    fill="#D9D9D9"
+                    fill-opacity="0.5"
+                  />
+                </svg>
+
+                <!-- sound icon -->
+                <button id="sound-muted-btn" class="absolute">
+                  <svg
+                    id="sound-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_11541_2420)">
+                      <path
+                        d="M11.6227 0.732372C11.3907 0.621705 11.1173 0.651038 10.9173 0.812372L4.432 6.00037H1.33333C0.598667 6.00037 0 6.59904 0 7.33371V12.667C0 13.403 0.598667 14.0004 1.33333 14.0004H4.432L10.916 19.1884C11.0348 19.2824 11.1818 19.3336 11.3333 19.3337C11.432 19.3337 11.5307 19.311 11.6227 19.267C11.7357 19.2128 11.8311 19.1276 11.8979 19.0215C11.9646 18.9153 12 18.7924 12 18.667V1.33371C11.9999 1.20816 11.9644 1.08518 11.8977 0.978836C11.831 0.872492 11.7357 0.78708 11.6227 0.732372ZM15.3747 5.28571C15.112 5.02704 14.6907 5.03104 14.432 5.29104C14.1733 5.55371 14.176 5.97504 14.4373 6.23504C15.4453 7.22971 16 8.56704 16 10.0004C16 11.4337 15.4453 12.771 14.4373 13.7657C14.176 14.023 14.1733 14.4457 14.432 14.7084C14.4939 14.771 14.5676 14.8207 14.6489 14.8546C14.7301 14.8884 14.8173 14.9058 14.9053 14.9057C15.0747 14.9057 15.244 14.8417 15.3747 14.7124C16.6387 13.4684 17.3333 11.7937 17.3333 10.0004C17.3333 8.20704 16.6387 6.53237 15.3747 5.28571Z"
+                        fill="#E0E0E0"
+                      />
+                      <path
+                        d="M17.2556 3.40701C16.993 3.14701 16.5716 3.14968 16.3116 3.41101C16.053 3.67234 16.0556 4.09501 16.3156 4.35368C17.8316 5.85634 18.6663 7.86168 18.6663 10.0003C18.6663 12.139 17.8316 14.143 16.3156 15.6457C16.0556 15.9057 16.053 16.3283 16.3116 16.5897C16.4436 16.7203 16.6143 16.7857 16.785 16.7857C16.9543 16.7857 17.125 16.7217 17.2556 16.5923C19.0263 14.839 19.9996 12.4977 19.9996 10.0003C19.9996 7.50301 19.0263 5.16168 17.2556 3.40701Z"
+                        fill="#E0E0E0"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_11541_2420">
+                        <rect width="20" height="20" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+
+                  <svg
+                    id="muted-icon"
+                    class="hidden"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_11541_2425)">
+                      <path
+                        d="M15.7125 0.717494C15.7125 0.446111 15.5554 0.189011 15.3126 0.0747446C15.0555 -0.0538053 14.7698 -0.0109553 14.5556 0.160445L8.22808 5.20246L15.7125 12.6869V0.717494ZM19.789 18.7802L1.22068 0.211865C0.942153 -0.0666603 0.489371 -0.0666603 0.210847 0.211865C-0.0676781 0.490389 -0.0676781 0.943171 0.210847 1.2217L4.70438 5.71666H4.28588C3.8431 5.71666 3.45745 5.91662 3.20035 6.23086C2.9861 6.47367 2.85755 6.80219 2.85755 7.14499V12.8583C2.85755 13.6439 3.5003 14.2867 4.28588 14.2867H7.59961L14.5556 19.8429C14.6841 19.9428 14.8413 20 14.9984 20C15.0984 20 15.2126 19.9714 15.3126 19.9286C15.5554 19.8143 15.7125 19.5572 15.7125 19.2858V16.7248L18.7777 19.79C18.9177 19.93 19.1005 20 19.2834 20C19.4662 20 19.649 19.93 19.789 19.7914C20.0675 19.5115 20.0675 19.0601 19.789 18.7802Z"
+                        fill="#E0E0E0"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_11541_2425">
+                        <rect width="20" height="20" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- reaction and share icons -->
+            <div class="absolute right-4 bottom-[227px] flex flex-col gap-4">
+              <!-- reaction -->
+              <div class="flex flex-col items-center">
+                <!-- reaction-->
+                <div class="flex items-center justify-center relative">
+                  <!-- play icon bg -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    viewBox="0 0 48 48"
+                    fill="none"
+                  >
+                    <circle
+                      cx="24"
+                      cy="24"
+                      r="24"
+                      fill="#D9D9D9"
+                      fill-opacity="0.5"
+                    />
+                  </svg>
+
+                  <button class="absolute">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <path
+                        d="M11.566 21.112C11.6927 21.2018 11.8442 21.25 11.9995 21.25C12.1548 21.25 12.3063 21.2018 12.433 21.112L12 20.5L12.434 21.112L12.442 21.106L12.463 21.091L12.543 21.033C12.6123 20.983 12.7107 20.91 12.838 20.814C14.324 19.6924 15.7267 18.4645 17.035 17.14C18.183 15.972 19.35 14.607 20.234 13.159C21.114 11.719 21.75 10.135 21.75 8.547C21.75 6.662 21.165 5.189 20.13 4.189C19.1 3.195 17.71 2.75 16.25 2.75C14.525 2.75 13.002 3.583 12 4.867C10.998 3.583 9.474 2.75 7.75 2.75C4.67 2.75 2.25 5.389 2.25 8.547C2.25 10.135 2.887 11.718 3.766 13.159C4.65 14.607 5.817 15.972 6.965 17.141C8.35981 18.5521 9.86161 19.8534 11.457 21.033L11.537 21.091L11.558 21.106L11.566 21.112Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div>
+                  <p class="text-base text-[#F6F6F6] font-mediumFont pt-2">
+                    1.2<span class="pr-1">k</span>Likes
+                  </p>
+                </div>
+              </div>
+
+              <!-- share -->
+              <div class="flex flex-col items-center">
+                <!-- share-->
+                <div class="flex items-center justify-center relative">
+                  <!-- share icon bg -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    viewBox="0 0 48 48"
+                    fill="none"
+                  >
+                    <circle
+                      cx="24"
+                      cy="24"
+                      r="24"
+                      fill="#D9D9D9"
+                      fill-opacity="0.5"
+                    />
+                  </svg>
+
+                  <button class="absolute">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M13.803 5.33301C13.803 3.49301 15.303 2.00001 17.151 2.00001C17.5898 1.99883 18.0245 2.08412 18.4303 2.251C18.8361 2.41788 19.2051 2.66309 19.5161 2.97261C19.8271 3.28214 20.0741 3.64991 20.2429 4.05492C20.4117 4.45992 20.4991 4.89423 20.5 5.33301C20.5 7.17401 19 8.66701 17.151 8.66701C16.7076 8.66734 16.2686 8.57964 15.8593 8.40901C15.4501 8.23838 15.0788 7.98821 14.767 7.67301L10.132 10.829C10.2608 11.472 10.1975 12.1387 9.95 12.746L15.032 16.086C15.6307 15.5981 16.3797 15.3321 17.152 15.333C17.5908 15.332 18.0255 15.4174 18.4312 15.5844C18.837 15.7514 19.2059 15.9967 19.5168 16.3063C19.8277 16.6159 20.0746 16.9838 20.2433 17.3888C20.412 17.7939 20.4992 18.2282 20.5 18.667C20.5 20.507 19 22 17.151 22C16.7123 22.0011 16.2777 21.9157 15.872 21.7487C15.4663 21.5818 15.0975 21.3366 14.7866 21.0271C14.4757 20.7175 14.2288 20.3498 14.06 19.9449C13.8913 19.5399 13.8039 19.1057 13.803 18.667C13.8022 18.1996 13.9007 17.7374 14.092 17.311L9.05 14C8.43922 14.5306 7.65706 14.8222 6.848 14.821C6.40922 14.8221 5.97453 14.7366 5.56877 14.5696C5.16301 14.4026 4.79413 14.1573 4.48321 13.8477C4.17229 13.5381 3.92543 13.1702 3.75673 12.7652C3.58802 12.3601 3.50079 11.9258 3.5 11.487C3.50092 11.0483 3.58825 10.6141 3.75701 10.2091C3.92578 9.80421 4.17266 9.43648 4.48356 9.12697C4.79447 8.81746 5.1633 8.57223 5.569 8.40529C5.97469 8.23834 6.4093 8.15296 6.848 8.15401C7.912 8.15401 8.858 8.64701 9.471 9.41501L13.964 6.35601C13.8568 6.02561 13.8025 5.68036 13.803 5.33301Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div>
+                  <span class="text-base text-[#F6F6F6] font-mediumFont pt-2"
+                    >50</span
+                  >
+                </div>
+              </div>
+
+              <!-- 3 dots -->
+              <div>
+                <!-- dots-->
+                <div class="flex items-center justify-center relative">
+                  <!-- dots icon bg -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    viewBox="0 0 48 48"
+                    fill="none"
+                  >
+                    <circle
+                      cx="24"
+                      cy="24"
+                      r="24"
+                      fill="#D9D9D9"
+                      fill-opacity="0.5"
+                    />
+                  </svg>
+
+                  <button class="absolute">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <path
+                        d="M10.5 6C10.5 5.79 10.5 5.6865 10.512 5.5995C10.5502 5.32456 10.677 5.0696 10.8733 4.87332C11.0696 4.67704 11.3246 4.55018 11.5995 4.512C11.685 4.5 11.79 4.5 12 4.5C12.21 4.5 12.3135 4.5 12.4005 4.512C12.6754 4.55018 12.9304 4.67704 13.1267 4.87332C13.323 5.0696 13.4498 5.32456 13.488 5.5995C13.5 5.685 13.5 5.79 13.5 6C13.5 6.21 13.5 6.3135 13.488 6.4005C13.4498 6.67544 13.323 6.9304 13.1267 7.12668C12.9304 7.32296 12.6754 7.44982 12.4005 7.488C12.315 7.5 12.21 7.5 12 7.5C11.79 7.5 11.6865 7.5 11.5995 7.488C11.3246 7.44982 11.0696 7.32296 10.8733 7.12668C10.677 6.9304 10.5502 6.67544 10.512 6.4005C10.5 6.315 10.5 6.21 10.5 6ZM10.5 12C10.5 11.79 10.5 11.6865 10.512 11.5995C10.5502 11.3246 10.677 11.0696 10.8733 10.8733C11.0696 10.677 11.3246 10.5502 11.5995 10.512C11.685 10.5 11.79 10.5 12 10.5C12.21 10.5 12.3135 10.5 12.4005 10.512C12.6754 10.5502 12.9304 10.677 13.1267 10.8733C13.323 11.0696 13.4498 11.3246 13.488 11.5995C13.5 11.685 13.5 11.79 13.5 12C13.5 12.21 13.5 12.3135 13.488 12.4005C13.4498 12.6754 13.323 12.9304 13.1267 13.1267C12.9304 13.323 12.6754 13.4498 12.4005 13.488C12.315 13.5 12.21 13.5 12 13.5C11.79 13.5 11.6865 13.5 11.5995 13.488C11.3246 13.4498 11.0696 13.323 10.8733 13.1267C10.677 12.9304 10.5502 12.6754 10.512 12.4005C10.5 12.315 10.5 12.21 10.5 12ZM10.5 18C10.5 17.7915 10.5 17.6865 10.512 17.5995C10.5504 17.3251 10.6772 17.0706 10.8731 16.8746C11.0691 16.6787 11.3236 16.5519 11.598 16.5135C11.6865 16.5015 11.79 16.5015 11.9985 16.5015C12.207 16.5015 12.3135 16.5015 12.399 16.5135C12.6734 16.5519 12.9279 16.6787 13.1239 16.8746C13.3198 17.0706 13.4466 17.3251 13.485 17.5995C13.497 17.6865 13.497 17.7915 13.497 18C13.497 18.2085 13.497 18.3135 13.485 18.4005C13.4466 18.6749 13.3198 18.9294 13.1239 19.1254C12.9279 19.3213 12.6734 19.4481 12.399 19.4865C12.312 19.4985 12.207 19.4985 11.9985 19.4985C11.79 19.4985 11.685 19.4985 11.598 19.4865C11.3236 19.4481 11.0691 19.3213 10.8731 19.1254C10.6772 18.9294 10.5504 18.6749 10.512 18.4005C10.5 18.3135 10.5 18.2085 10.5 18Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- video publisher information -->
+            <div class="absolute bottom-[108px] left-6">
+              <div class="flex items-center gap-4">
+                <div class="size-11">
+                  <img
+                    class="w-full h-full rounded-full object-cover"
+                    src="../dist/assets/images/chat-room-icon.png"
+                    alt=""
+                  />
+                </div>
+                <a class="text-base font-boldFont text-[#ECECEC]" href=""
+                  >@Killan james</a
+                >
+                <a
+                  href=""
+                  class="text-[14px] text-[#222222] font-mediumFont bg-[#ECECEC] rounded-[120px] px-[18px] py-[7px] inline-block"
+                >
+                  Follow
+                </a>
+              </div>
+            </div>
+
+            <!-- video details -->
+            <p
+              class="absolute sm:max-w-[434px] sm:w-full bottom-10 left-6 text-[#2E2E2E] font-mediumFont text-base"
+            >
+              Consult with us to address all your business needs and unlock new
+              opportunities for growth and success.
+            </p>
+          </div>
+
+          <!-- video details 2 -->
+          <div
+            class="video-wrapper max-w-[560px] w-full h-[500px] md:h-[990px] relative bg-gray-100 rounded-lg"
+          >
+            <!-- <iframe
+              class="w-full h-full rounded-lg"
+              src="https://www.youtube.com/embed/hEwdIHTzL6Q"
+              title=""
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe> -->
+
+            <video
+              id="custom-video"
+              class="w-full h-full rounded-lg"
+              controls
+              src="../dist/assets/video/upload-video2.mp4"
             ></video>
 
             <!-- play and pause icon -->
@@ -648,9 +956,9 @@
             </div>
           </div>
 
-          <!-- video 2 -->
+          <!-- video details 3 -->
           <div
-            class="video-wrapper max-w-[560px] w-full h-[990px] relative bg-slate-400 rounded-lg"
+            class="video-wrapper max-w-[560px] w-full h-[500px] md:h-[990px] relative bg-gray-100 rounded-lg"
           >
             <!-- <iframe
               class="w-full h-full rounded-lg"
@@ -666,7 +974,7 @@
               id="custom-video"
               class="w-full h-full rounded-lg"
               controls
-              src="../dist/assets/video/upload-video2.mp4"
+              src="../dist/assets/video/upload-video.mp4"
             ></video>
 
             <!-- play and pause icon -->

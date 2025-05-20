@@ -1,3 +1,4 @@
+// video details page start
 document.querySelectorAll(".video-wrapper").forEach((wrapper) => {
   // play paused
   const video = wrapper.querySelector("#custom-video");
@@ -45,3 +46,44 @@ document.querySelectorAll(".video-wrapper").forEach((wrapper) => {
 
   soundMutedBtn.addEventListener("click", toggleMute);
 });
+// video details page end
+
+// my tube home page start
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("#video-wrapper").forEach((wrapper) => {
+    // play paused
+    const video = wrapper.querySelector("#custom-video");
+    const playPauseBtn = wrapper.querySelector("#playPauseBtn");
+    const playIcon = wrapper.querySelector("#playIcon");
+    const pauseIcon = wrapper.querySelector("#pauseIcon");
+
+    const togglePlayPause = () => {
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    };
+
+    const togglePlayBtn = () => {
+      playIcon.classList.add("hidden");
+      pauseIcon.classList.remove("hidden");
+    };
+
+    const togglepauseBtn = () => {
+      playIcon.classList.remove("hidden");
+      pauseIcon.classList.add("hidden");
+    };
+
+    video.addEventListener("play", togglePlayBtn);
+    video.addEventListener("pause", togglepauseBtn);
+    playPauseBtn.addEventListener("click", togglePlayPause);
+
+    // When the video ends, reset icons
+    video.addEventListener("ended", () => {
+      playIcon.classList.remove("hidden");
+      pauseIcon.classList.add("hidden");
+    });
+  });
+});
+// my tube home page end
