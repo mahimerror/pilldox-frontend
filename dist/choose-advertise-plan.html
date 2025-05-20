@@ -285,7 +285,9 @@
     <!-- main content -->
 
     <main class="my-10 text-text">
-      <div class="flex flex-col items-center justify-center mt-5 space-y-2 text-center">
+      <div
+        class="flex flex-col items-center justify-center mt-5 space-y-2 text-center"
+      >
         <p class="text-[32px] font-bold">Choose Your Advertise Plan</p>
         <p class="text-[#6A6A6A] font-medium text-center max-w-lg">
           Boost your visibility with our premium advertising options and reach
@@ -294,8 +296,9 @@
       </div>
 
       <div class="my-10 bg-[#FAFAFA] md:py-14 lg:py-28">
-        <div class="flex flex-col lg:flex-row gap-20 items-center justify-center mb-36">
-
+        <div
+          class="flex flex-col lg:flex-row gap-20 items-center justify-center mb-36"
+        >
           <!-- conteiner-banner advertising-->
           <div
             class="w-5/6 lg:w-full max-w-xl mt-8 lg:mt-0 flex flex-col py-6 lg:py-8 px-5 lg:px-16 border-2 border-transparent rounded-xl items-center bg-white font-medium"
@@ -335,24 +338,33 @@
               </div>
             </div>
 
-            <h3 class="text-2xl font-bold mb-1 text-center">Select Banner Advertising</h3>
-            <p class="text-[#6A6A6A] mb-8 text-center">Premium banner placement options</p>
+            <h3 class="text-2xl font-bold mb-1 text-center">
+              Select Banner Advertising
+            </h3>
+            <p class="text-[#6A6A6A] mb-8 text-center">
+              Premium banner placement options
+            </p>
 
             <div
-              class="w-full text-base md:text-lg flex items-center justify-between bg-[#F6F6F6] py-4 px-6 rounded-lg hover:border-2 border-primary mb-5"
+              id="plan49"
+              onclick="choosePlan('plan49')"
+              class="w-full text-base md:text-lg flex items-center justify-between bg-[#F6F6F6] py-4 px-6 rounded-lg mb-5 border-2 border-[#F6F6F6] plan-container"
             >
               <p>Homepage banner</p>
-              <p class="text-primary font-bold">$49.99/week</p>
+              <p class="text-primary font-bold plan-option">$49.99/week</p>
             </div>
 
             <div
-              class="w-full text-base md:text-lg flex items-center justify-between bg-[#F6F6F6] py-4 px-6 rounded-lg hover:border-2 border-primary mb-10"
+              id="plan29"
+              onclick="choosePlan('plan29')"
+              class="w-full text-base md:text-lg flex items-center justify-between bg-[#F6F6F6] py-4 px-6 rounded-lg mb-10 border-2 border-[#F6F6F6] plan-container"
             >
               <p>Sidebar banner</p>
-              <p class="text-primary font-bold">$29.99/week</p>
+              <p class="text-primary font-bold plan-option">$29.99/week</p>
             </div>
 
-            <a href="submit-banner-add.html"
+            <a
+              href="submit-banner-add.html"
               class="bg-primary rounded-lg py-4 px-6 text-white w-full mb-7 text-center"
             >
               Continue
@@ -393,23 +405,31 @@
             </div>
 
             <h3 class="text-2xl font-bold mb-1">Select Sponsor Content</h3>
-            <p class="text-[#6A6A6A] mb-8">Featured content placement options</p>
+            <p class="text-[#6A6A6A] mb-8">
+              Featured content placement options
+            </p>
 
+            <!-- onclick="choosePlan3()"  -->
             <div
-              class="w-full text-base md:text-lg flex items-center justify-between bg-[#F6F6F6] py-4 px-6 rounded-lg hover:border-2 border-primary mb-5"
+              id="plan99"
+              onclick="choosePlan('plan99')"
+              class="w-full text-base md:text-lg flex items-center justify-between bg-[#F6F6F6] py-4 px-6 rounded-lg border-2 border-[#F6F6F6] mb-5 plan-container"
             >
               <p>Sponsored Post</p>
-              <p class="text-primary font-bold">$99.99/post</p>
+              <p class="text-primary font-bold plan-option">$99.99/post</p>
             </div>
 
             <div
-              class="w-full text-base md:text-lg flex items-center justify-between bg-[#F6F6F6] py-4 px-6 rounded-lg hover:border-2 border-primary mb-10"
+              id="plan149"
+              onclick="choosePlan('plan149')"
+              class="w-full text-base md:text-lg flex items-center justify-between bg-[#F6F6F6] py-4 px-6 rounded-lg border-2 border-[#F6F6F6] mb-10 plan-container"
             >
               <p>Sponsored Video</p>
-              <p class="text-primary font-bold">$149.99/video</p>
+              <p class="text-primary font-bold plan-option">$149.99/video</p>
             </div>
 
-            <a href="submit-banner-add.html"
+            <a
+              href="submit-banner-add.html"
               class="bg-primary rounded-lg py-4 px-6 text-white w-full mb-7 text-center"
             >
               Continue
@@ -535,7 +555,56 @@
     <!-- ?footer ends here? -->
 
     <!-- Scripts -->
-    <script></script>
+    <script>
+      // const plan49 = document.getElementById("plan49");
+      // const plan29 = document.getElementById("plan29");
+      // const plan99 = document.getElementById("plan99");
+      // const plan149 = document.getElementById("plan149");
+
+      // function choosePlan(planId) {
+      //  const allPlan = document.getElementsByClassName('plan-container');
+      //  const selectedPlan = document.getElementById('planId');
+      // //  selectedPlan.classList.remove('border-[#F6F6F6]');
+      //  selectedPlan.classList.add("border-primary");
+      // }
+
+      function choosePlan(planId) {
+        const selectedDiv = document.getElementById(planId);
+
+        const allPlans = document.getElementsByClassName('plan-container');
+        for(let i=0; i<allPlans.length; i++){
+          // console.log(allPlans[i]);
+          allPlans[i].classList.remove('border-primary');
+          allPlans[i].classList.add('border-[#F6F6F6]');
+        }
+       
+        selectedDiv.classList.remove("border-[#F6F6F6]");
+        selectedDiv.classList.add("border-primary");
+
+        // Step 3: Get the price from the child with class 'plan-option'
+        const plansOption = selectedDiv.getElementsByClassName("plan-option");
+        let priceValue = null;
+        if(plansOption.length > 0){
+          const priceText = plansOption[0].textContent;
+          priceValue = parseFloat(priceText.replace(/[0-9.]/g, ""));
+
+        }
+        // let priceValue = null;
+        // if (priceEls.length > 0) {
+        //   const priceText = priceEls[0].textContent;
+        //   priceValue = parseFloat(priceText.replace(/[^0-9.]/g, ""));
+        // }
+
+       
+        console.log("Selected price:", priceValue);
+
+        // Optional: store selected plan
+        window.selectedPlan = {
+          id: planId,
+          price: priceValue,
+        };
+      }
+    </script>
 
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>
