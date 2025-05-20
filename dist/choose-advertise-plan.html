@@ -586,7 +586,7 @@
         let priceValue = null;
         if(plansOption.length > 0){
           const priceText = plansOption[0].textContent;
-          priceValue = parseFloat(priceText.replace(/[0-9.]/g, ""));
+          priceValue = parseFloat(priceText.replace(/[^0-9.]/g, ""));
 
         }
         // let priceValue = null;
