@@ -10,7 +10,7 @@
     <!-- zh navbar start-->
     <header class="border-black/10 border-b">
       <nav
-        class="py-4 md:py-5 w-full flex items-center justify-between lg:px-[100px]"
+        class="py-4 md:py-5 w-full flex items-center justify-between container mx-auto"
       >
         <!-- logo -->
         <div>
@@ -45,7 +45,7 @@
         </div>
 
         <!-- Auth Buttons -->
-        <div class="md:flex items-center gap-6 hidden">
+        <div class="lg:flex items-center gap-6 hidden">
           <!-- add from zh start -->
           <a
             href=""
@@ -137,10 +137,10 @@
           </button>
         </div>
 
-        <div class="md:hidden">
+        <div class="lg:hidden">
           <div
             id="menu-hamburger"
-            class="bg-primary p-2 size-10 flex items-center justify-center rounded-md md:hidden"
+            class="bg-primary p-2 size-10 flex items-center justify-center rounded-md lg:hidden"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -168,7 +168,7 @@
           </div>
           <div
             id="menu-close"
-            class="bg-primary p-2 hidden size-10 items-center justify-center rounded-md md:hidden"
+            class="bg-primary p-2 hidden size-10 items-center justify-center rounded-md lg:hidden"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -279,45 +279,51 @@
     <!-- zh navbar end-->
 
     <!-- main  -->
-    <main class="lg:pl-[100px] flex gap-[30px]">
+    <main class="lg:pl-[100px] md:flex xl:gap-[30px]">
       <!-- my tube video list -->
       <section class="">
         <!-- tube top title -->
         <div class="py-10">
-          <h4 class="text-[40px] text-[#222222] font-boldFont">MyTube</h4>
-          <div class="flex items-center justify-between pt-4 pb-9">
-            <div class="flex items-center gap-4">
+          <h4
+            class="pb-3 md:pb-0 text-3xl sm:text-[40px] text-[#222222] font-boldFont"
+          >
+            MyTube
+          </h4>
+          <div
+            class="flex flex-col gap-2 xl:flex-row xl:items-center lg:gap-0 lg:justify-between pt-4 lg:pb-6 xl:pb-9"
+          >
+            <div class="flex items-center gap-2 sm:gap-4">
               <a
                 href=""
-                class="hover-active-bg py-2 px-[14px] rounded-[22px] bg-[#ECECEC] text-[#2E2E2E] text-base font-mediumFont transition duration-300 hover:bg-[#008080] hover:text-white"
+                class="hover-active-bg py-2 px-[14px] rounded-[22px] bg-[#ECECEC] text-[#2E2E2E] text-[10px] sm:text-base font-mediumFont transition duration-300 hover:bg-[#008080] hover:text-white"
               >
                 For You
               </a>
               <a
                 href=""
-                class="hover-active-bg py-2 px-[14px] rounded-[22px] bg-[#ECECEC] text-[#2E2E2E] text-base font-mediumFont transition duration-300 hover:bg-[#008080] hover:text-white"
+                class="hover-active-bg py-2 px-[14px] rounded-[22px] bg-[#ECECEC] text-[#2E2E2E] text-[10px] sm:text-base font-mediumFont transition duration-300 hover:bg-[#008080] hover:text-white"
               >
                 Popular
               </a>
               <a
                 href=""
-                class="hover-active-bg py-2 px-[14px] rounded-[22px] bg-[#ECECEC] text-[#2E2E2E] text-base font-mediumFont transition duration-300 hover:bg-[#008080] hover:text-white"
+                class="hover-active-bg py-2 px-[14px] rounded-[22px] bg-[#ECECEC] text-[#2E2E2E] text-[10px] sm:text-base font-mediumFont transition duration-300 hover:bg-[#008080] hover:text-white"
               >
                 My Videos
               </a>
               <a
                 href=""
-                class="hover-active-bg py-2 px-[14px] rounded-[22px] bg-[#ECECEC] text-[#2E2E2E] text-base font-mediumFont transition duration-300 hover:bg-[#008080] hover:text-white"
+                class="hover-active-bg py-2 px-[14px] rounded-[22px] bg-[#ECECEC] text-[#2E2E2E] text-[10px] sm:text-base font-mediumFont transition duration-300 hover:bg-[#008080] hover:text-white"
               >
                 Watch history
               </a>
             </div>
 
-            <div class="flex gap-6 items-center">
+            <div class="sm:flex gap-6 items-center">
               <!-- upload video button -->
               <a
                 href="upload-video-page.html"
-                class="text-base text-white font-mediumFont bg-[#008080] rounded-lg py-3 px-4 flex items-center gap-2"
+                class="mb-2 sm:md-0 sm:text-base text-white font-mediumFont bg-[#008080] rounded-lg py-3 px-4 flex items-center gap-2"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -348,7 +354,7 @@
                 <input
                   type="text"
                   placeholder="Search"
-                  class="py-[11px] pr-4 pl-[52px] max-w-[312px] bg-[#ECECEC] rounded-xl border border-[rgba(0,_0,_0,_0.08)] outline-0 focus:outline-0 placeholder:text-[#6A6A6A] font-mediumFont text-base"
+                  class="py-[11px] pr-4 pl-[52px] w-full sm:max-w-[230px] sm:w-full bg-[#ECECEC] rounded-xl border border-[rgba(0,_0,_0,_0.08)] outline-0 focus:outline-0 placeholder:text-[#6A6A6A] font-mediumFont text-base"
                 />
                 <div class="absolute top-[12px] left-6">
                   <img src="../dist//assets/images/serarch-inbox.png" alt="" />
@@ -360,11 +366,13 @@
         </div>
 
         <!-- video list start -->
-        <div class="grid grid-cols-2 lg:grid-cols-3 gap-6">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 sm:gap-3 lg:grid-cols-3 md:gap-4 xl:gap-6"
+        >
           <!-- video 1 -->
           <div id="video-wrapper">
             <div
-              class="max-w-[450px] w-full h-[290px] relative bg-gray-100 rounded-md"
+              class="w-full sm:max-w-[450px] sm:w-full h-[290px] relative bg-gray-100 rounded-md"
             >
               <!-- <img
                 class="w-full h-full rounded-tr-xl rounded-tl-md object-cover"
@@ -461,104 +469,7 @@
           <!-- video 2 -->
           <div id="video-wrapper">
             <div
-              class="max-w-[450px] w-full h-[290px] relative bg-gray-100 rounded-md"
-            >
-              <!-- <img
-                class="w-full h-full rounded-tr-xl rounded-tl-md object-cover"
-                src="https://images.unsplash.com/photo-1613793479691-a87ea36c2302?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt=""
-              /> -->
-
-              <video
-                id="custom-video"
-                controls
-                class="w-full h-full rounded-tr-xl rounded-tl-md"
-                src="../dist/assets/video/upload-video2.mp4"
-              ></video>
-
-              <!-- play icon -->
-              <div
-                id="playPauseBtn"
-                class="absolute top-[50%] left-[50%] -translate-x-2/4 cursor-pointer"
-              >
-                <svg
-                  id="playIcon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="40"
-                  height="40"
-                  viewBox="0 0 40 40"
-                  fill="none"
-                >
-                  <path
-                    d="M11.51 7.5617C11.3582 7.47168 11.1852 7.42345 11.0087 7.42191C10.8322 7.42037 10.6585 7.46557 10.5051 7.55292C10.3517 7.64028 10.2242 7.76667 10.1355 7.91926C10.0468 8.07185 10 8.2452 10 8.4217V31.5784C10 31.7549 10.0468 31.9282 10.1355 32.0808C10.2242 32.2334 10.3517 32.3598 10.5051 32.4471C10.6585 32.5345 10.8322 32.5797 11.0087 32.5782C11.1852 32.5766 11.3582 32.5284 11.51 32.4384L31.0483 20.86C31.1976 20.7715 31.3212 20.6456 31.407 20.4949C31.4929 20.3441 31.538 20.1735 31.538 20C31.538 19.8265 31.4929 19.656 31.407 19.5052C31.3212 19.3544 31.1976 19.2286 31.0483 19.14L11.51 7.5617Z"
-                    fill="white"
-                    stroke="white"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-
-                <svg
-                  id="pauseIcon"
-                  class="w-6 h-6 text-white hidden"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="#ffffff"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
-                </svg>
-              </div>
-
-              <!-- play time -->
-              <div class="absolute bottom-5 right-5">
-                <span
-                  class="bg-[#222222] py-[5px] px-3 rounded-lg text-[14px] text-white font-mediumFont"
-                >
-                  2:30
-                </span>
-              </div>
-            </div>
-
-            <div
-              class="bg-[#F6F6F6] px-4 py-[18px] rounded-bl-xl rounded-br-xl"
-            >
-              <div class="flex items-center gap-3">
-                <div class="size-11">
-                  <img
-                    class="w-full h-full object-cover rounded-full"
-                    src="../dist/assets/images/inbox-user-icon.png"
-                    alt=""
-                  />
-                </div>
-                <div>
-                  <h6 class="text-base text-[#2E2E2E] font-mediumFont">
-                    Consult us for your business
-                  </h6>
-                  <div
-                    class="flex items-center gap-2 text-[14px] font-mediumFont text-[#6A6A6A]"
-                  >
-                    <span>Business</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="4"
-                      height="4"
-                      viewBox="0 0 4 4"
-                      fill="none"
-                    >
-                      <circle cx="2" cy="2" r="2" fill="#6A6A6A" />
-                    </svg>
-                    <span>2 hours ago</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- video 3 -->
-          <div id="video-wrapper">
-            <div
-              class="max-w-[450px] w-full h-[290px] relative bg-gray-100 rounded-md"
+              class="w-full sm:max-w-[450px] sm:w-full h-[290px] relative bg-gray-100 rounded-md"
             >
               <!-- <img
                 class="w-full h-full rounded-tr-xl rounded-tl-md object-cover"
@@ -652,107 +563,10 @@
             </div>
           </div>
 
-          <!-- video 4 -->
+          <!-- video 3 -->
           <div id="video-wrapper">
             <div
-              class="max-w-[450px] w-full h-[290px] relative bg-gray-100 rounded-md"
-            >
-              <!-- <img
-                class="w-full h-full rounded-tr-xl rounded-tl-md object-cover"
-                src="https://images.unsplash.com/photo-1613793479691-a87ea36c2302?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt=""
-              /> -->
-
-              <video
-                id="custom-video"
-                controls
-                class="w-full h-full rounded-tr-xl rounded-tl-md"
-                src="../dist/assets/video/upload-video2.mp4"
-              ></video>
-
-              <!-- play icon -->
-              <div
-                id="playPauseBtn"
-                class="absolute top-[50%] left-[50%] -translate-x-2/4 cursor-pointer"
-              >
-                <svg
-                  id="playIcon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="40"
-                  height="40"
-                  viewBox="0 0 40 40"
-                  fill="none"
-                >
-                  <path
-                    d="M11.51 7.5617C11.3582 7.47168 11.1852 7.42345 11.0087 7.42191C10.8322 7.42037 10.6585 7.46557 10.5051 7.55292C10.3517 7.64028 10.2242 7.76667 10.1355 7.91926C10.0468 8.07185 10 8.2452 10 8.4217V31.5784C10 31.7549 10.0468 31.9282 10.1355 32.0808C10.2242 32.2334 10.3517 32.3598 10.5051 32.4471C10.6585 32.5345 10.8322 32.5797 11.0087 32.5782C11.1852 32.5766 11.3582 32.5284 11.51 32.4384L31.0483 20.86C31.1976 20.7715 31.3212 20.6456 31.407 20.4949C31.4929 20.3441 31.538 20.1735 31.538 20C31.538 19.8265 31.4929 19.656 31.407 19.5052C31.3212 19.3544 31.1976 19.2286 31.0483 19.14L11.51 7.5617Z"
-                    fill="white"
-                    stroke="white"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-
-                <svg
-                  id="pauseIcon"
-                  class="w-6 h-6 text-white hidden"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="#ffffff"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
-                </svg>
-              </div>
-
-              <!-- play time -->
-              <div class="absolute bottom-5 right-5">
-                <span
-                  class="bg-[#222222] py-[5px] px-3 rounded-lg text-[14px] text-white font-mediumFont"
-                >
-                  2:30
-                </span>
-              </div>
-            </div>
-
-            <div
-              class="bg-[#F6F6F6] px-4 py-[18px] rounded-bl-xl rounded-br-xl"
-            >
-              <div class="flex items-center gap-3">
-                <div class="size-11">
-                  <img
-                    class="w-full h-full object-cover rounded-full"
-                    src="../dist/assets/images/inbox-user-icon.png"
-                    alt=""
-                  />
-                </div>
-                <div>
-                  <h6 class="text-base text-[#2E2E2E] font-mediumFont">
-                    Consult us for your business
-                  </h6>
-                  <div
-                    class="flex items-center gap-2 text-[14px] font-mediumFont text-[#6A6A6A]"
-                  >
-                    <span>Business</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="4"
-                      height="4"
-                      viewBox="0 0 4 4"
-                      fill="none"
-                    >
-                      <circle cx="2" cy="2" r="2" fill="#6A6A6A" />
-                    </svg>
-                    <span>2 hours ago</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- video 5 -->
-          <div id="video-wrapper">
-            <div
-              class="max-w-[450px] w-full h-[290px] relative bg-gray-100 rounded-md"
+              class="w-full sm:max-w-[450px] sm:w-full h-[290px] relative bg-gray-100 rounded-md"
             >
               <!-- <img
                 class="w-full h-full rounded-tr-xl rounded-tl-md object-cover"
@@ -856,16 +670,16 @@
       </section>
 
       <!-- zh suggested creator sidebar start -->
-      <section class="pl-1 pt-10 w-[278px]">
-        <h4 class="text-2xl font-boldFont text-[#2E2E2E]">
+      <section class="md:pl-4 pt-10 md:max-w-[278px] md:w-full hidden md:block">
+        <h4 class="md:text-lg lg:text-2xl font-boldFont text-[#2E2E2E]">
           Suggested Creators
         </h4>
 
         <!-- suggester creator -->
-        <div class="pt-6 pb-11 space-y-[18px]">
+        <div class="pt-4 lg:pt-6 pb-8 lg:pb-11 space-y-[18px]">
           <!-- creator 1 -->
           <div class="flex items-center gap-3">
-            <div class="size-11">
+            <div class="size-9 lg:size-11">
               <img
                 class="w-full h-full object-cover rounded-full"
                 src="../dist/assets/images/inbox-user-icon.png"
@@ -873,7 +687,9 @@
               />
             </div>
             <div>
-              <h6 class="text-lg text-[#2E2E2E] font-mediumFont">
+              <h6
+                class="md:text-base lg:text-lg text-[#2E2E2E] font-mediumFont"
+              >
                 Killan james
               </h6>
               <span class="text-[14px] font-mediumFont text-[#B6B6B6]"
@@ -892,7 +708,7 @@
 
           <!-- creator 2 -->
           <div class="flex items-center gap-3">
-            <div class="size-11">
+            <div class="size-9 lg:size-11">
               <img
                 class="w-full h-full object-cover rounded-full"
                 src="../dist/assets/images/inbox-user-icon.png"
@@ -900,7 +716,9 @@
               />
             </div>
             <div>
-              <h6 class="text-lg text-[#2E2E2E] font-mediumFont">
+              <h6
+                class="md:text-base lg:text-lg text-[#2E2E2E] font-mediumFont"
+              >
                 Killan james
               </h6>
               <span class="text-[14px] font-mediumFont text-[#B6B6B6]"
@@ -919,7 +737,7 @@
 
           <!-- creator 3 -->
           <div class="flex items-center gap-3">
-            <div class="size-11">
+            <div class="size-9 lg:size-11">
               <img
                 class="w-full h-full object-cover rounded-full"
                 src="../dist/assets/images/inbox-user-icon.png"
@@ -927,7 +745,9 @@
               />
             </div>
             <div>
-              <h6 class="text-lg text-[#2E2E2E] font-mediumFont">
+              <h6
+                class="md:text-base lg:text-lg text-[#2E2E2E] font-mediumFont"
+              >
                 Killan james
               </h6>
               <span class="text-[14px] font-mediumFont text-[#B6B6B6]"
@@ -946,7 +766,7 @@
 
           <!-- creator 4 -->
           <div class="flex items-center gap-3">
-            <div class="size-11">
+            <div class="size-9 lg:size-11">
               <img
                 class="w-full h-full object-cover rounded-full"
                 src="../dist/assets/images/inbox-user-icon.png"
@@ -954,7 +774,9 @@
               />
             </div>
             <div>
-              <h6 class="text-lg text-[#2E2E2E] font-mediumFont">
+              <h6
+                class="md:text-base lg:text-lg text-[#2E2E2E] font-mediumFont"
+              >
                 Killan james
               </h6>
               <span class="text-[14px] font-mediumFont text-[#B6B6B6]"
@@ -973,7 +795,7 @@
 
           <!-- creator 5 -->
           <div class="flex items-center gap-3">
-            <div class="size-11">
+            <div class="size-9 lg:size-11">
               <img
                 class="w-full h-full object-cover rounded-full"
                 src="../dist/assets/images/inbox-user-icon.png"
@@ -981,34 +803,9 @@
               />
             </div>
             <div>
-              <h6 class="text-lg text-[#2E2E2E] font-mediumFont">
-                Killan james
-              </h6>
-              <span class="text-[14px] font-mediumFont text-[#B6B6B6]"
-                >200 followers</span
+              <h6
+                class="md:text-base lg:text-lg text-[#2E2E2E] font-mediumFont"
               >
-            </div>
-
-            <div class="flex-1 justify-end items-end text-end">
-              <a
-                href=""
-                class="inline-block border leading-6 border-[#F8BF2C] text-[14px] font-mediumFont rounded-[120px] px-[13px] py-[1] text-[#F8BF2C]"
-                >Follow</a
-              >
-            </div>
-          </div>
-
-          <!-- creator 6 -->
-          <div class="flex items-center gap-3">
-            <div class="size-11">
-              <img
-                class="w-full h-full object-cover rounded-full"
-                src="../dist/assets/images/inbox-user-icon.png"
-                alt=""
-              />
-            </div>
-            <div>
-              <h6 class="text-lg text-[#2E2E2E] font-mediumFont">
                 Killan james
               </h6>
               <span class="text-[14px] font-mediumFont text-[#B6B6B6]"
@@ -1074,9 +871,9 @@
     <!-- main -->
 
     <!-- zh footer start -->
-    <footer class="bg-[#004040] mt-36">
+    <footer class="bg-[#004040] lg:mt-24 xl:mt-36">
       <div
-        class="py-[60px] flex items-center justify-between max-w-[1296px] mx-auto"
+        class="py-[60px] sm:flex items-center justify-between sm:max-w-[1296px] mx-auto"
       >
         <!-- logo -->
         <div>
@@ -1110,7 +907,9 @@
           </a>
         </div>
 
-        <div class="flex items-center gap-8">
+        <div
+          class="flex flex-col gap-3 items-start sm:flex-row sm:items-center sm:gap-8 my-4 sm:my-0"
+        >
           <a class="text-base text-[#F6F6F6] font-normalFont" href=""
             >Help & Support</a
           >
