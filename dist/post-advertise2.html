@@ -433,9 +433,11 @@
                 >
                 <label
                   for="roomsCoverUpload"
-                  class="relative cursor-pointer text-center bg-[#FAFAFA] w-full px-6 py-10 rounded-lg border-[2px] border-dashed border-[rgba(0,_0,_0,_0.08)] flex items-center justify-center"
+                  class="relative cursor-pointer text-center bg-[#FAFAFA] w-full   px-6 py-10 rounded-lg border-[2px] border-dashed border-[rgba(0,_0,_0,_0.08)] flex items-center justify-center"
                 >
-                  <div class="space-y-4">
+
+                <img id="uploadImage" src="" alt="" class="w-full h-[291px] object-cover rounded-lg hidden">
+                  <div id="givenContent" class="space-y-4">
                     <svg
                       class="mx-auto"
                       xmlns="http://www.w3.org/2000/svg"
@@ -473,7 +475,7 @@
                     </p>
                   </div>
 
-                  <input class="hidden" type="file" id="roomsCoverUpload" />
+                  <input class="hidden" type="file" id="roomsCoverUpload" accept="image/*"/>
                 </label>
               </div>
 
@@ -757,8 +759,6 @@
       </div>
     </footer>
 
-
-
     <!-- success modal  -->
     <div
       id="submissionModal"
@@ -799,21 +799,41 @@
       </div>
     </div>
 
-
     <!-- Scripts -->
     <script>
       const modal = document.getElementById("submissionModal");
       const submitted = document.getElementById("submitted");
 
       function submitForm() {
-         modal.classList.remove("hidden");
-          modal.classList.add("flex");
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
       }
 
       function offModal() {
         modal.classList.remove("flex");
         modal.classList.add("hidden");
       }
+
+
+      // script for showing uploaded image
+      const uploadImage = document.getElementById('uploadImage');
+      const givenContent = document.getElementById('givenContent');
+      const roomsCoverUpload = document.getElementById('roomsCoverUpload');
+
+      roomsCoverUpload.addEventListener('change', function(){
+        const imageFile = this.files[0];
+        if(imageFile && imageFile.type.startsWith('image/')){
+          const reader = new FileReader();
+          reader.onload = function(e){
+            uploadImage.src = e.target.result;
+            uploadImage.classList.remove('hidden');
+            givenContent.classList.add('hidden');
+          }
+          reader.readAsDataURL(imageFile);
+        }
+      })
+
+      
     </script>
 
     <script src="./assets/js/plugins.js"></script>

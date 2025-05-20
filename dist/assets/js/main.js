@@ -8,6 +8,8 @@ $(document).ready(function () {
   $(".details-page-select").niceSelect();
   $(".business-specialty-select").niceSelect();
   $(".set-operation-select").niceSelect();
+  // $('select').niceSelect();
+  // $('#selectNice').niceSelect();
 
   // hideButton:
   const hidePasswordButton = document.querySelector(".hidePass");
@@ -586,6 +588,4 @@ document.addEventListener("click", (e) => {
 });
 
 
-
-// sajnin for showing modal
 

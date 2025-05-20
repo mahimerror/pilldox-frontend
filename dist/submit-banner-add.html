@@ -382,9 +382,11 @@
             <div class="flex flex-col my-10">
               <label
                 for="roomsCoverUpload"
-                class="relative cursor-pointer text-center bg-[#FAFAFA] w-full px-6 py-10 rounded-lg border-[2px] border-dashed border-[rgba(0,_0,_0,_0.08)] flex items-center justify-center"
+                class="relative cursor-pointer text-center bg-[#FAFAFA] w-full px-6 py-10 rounded-lg border-[2px] border-dashed border-[rgba(0,_0,_0,_0.08)] flex items-center justify-center overflow-hidden"
               >
-                <div class="space-y-4">
+                <img id="uploadImage" class="w-full max-h-72 h-full object-cover rounded-lg hidden" src="" alt="">
+
+                <div id="givenContent" class="space-y-4">
                   <svg
                     class="mx-auto"
                     xmlns="http://www.w3.org/2000/svg"
@@ -582,7 +584,45 @@
     <!-- ?footer ends here? -->
 
     <!-- Scripts -->
-    <script></script>
+    <script>
+      const uploadImage = document.getElementById('uploadImage');
+      const givenContent = document.getElementById('givenContent');
+      const roomsCoverUpload = document.getElementById('roomsCoverUpload');
+
+      
+
+      roomsCoverUpload.addEventListener('change', function(){
+        const imageFile = this.files[0];
+        if(imageFile && imageFile.type.startsWith('image/')){
+          const reader = new FileReader();
+          reader.onload = function(e){
+            uploadImage.src = e.target.result;
+            givenContent.classList.add('hidden');
+            uploadImage.classList.remove('hidden');
+          }
+          reader.readAsDataURL(imageFile);
+        }
+      })  
+
+
+      // script for showing uploaded image
+      // const uploadImage = document.getElementById('uploadImage');
+      // const givenContent = document.getElementById('givenContent');
+      // const roomsCoverUpload = document.getElementById('roomsCoverUpload');
+
+      // roomsCoverUpload.addEventListener('change', function(){
+      //   const imageFile = this.files[0];
+      //   if(imageFile && imageFile.type.startsWith('image/')){
+      //     const reader = new FileReader();
+      //     reader.onload = function(e){
+      //       uploadImage.src = e.target.result;
+      //       uploadImage.classList.remove('hidden');
+      //       givenContent.classList.add('hidden');
+      //     }
+      //     reader.readAsDataURL(imageFile);
+      //   }
+      // })
+    </script>
 
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>

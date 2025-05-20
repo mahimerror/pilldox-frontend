@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Daro's General User</title>
     <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./assets/css/nice-select.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.css" />
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
 
@@ -459,7 +460,7 @@
         <div>
           <p class="text-2xl font-bold mb-4">Location</p>
 
-            <div class="relative">
+            <div class="relative w-full">
                <input
                  type="text"
                  placeholder="Enter your location"
@@ -467,7 +468,7 @@
                />
                
                <!-- Location icon -->
-               <div class="py-3 px-4 absolute left-3 top-1/2 transform -translate-y-1/2 -translate-x-1/3">
+               <div class="absolute left-3 inset-y-0 flex items-center">
                  <!-- You can use any icon here, this is an example with Font Awesome -->
                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
                     <path d="M12.0001 2.09082C7.58908 2.09082 4.00008 5.67982 4.00008 10.0858C3.97108 16.5308 11.6961 21.8748 12.0001 22.0908C12.0001 22.0908 20.0291 16.5308 20.0001 10.0908C20.0001 5.67982 16.4111 2.09082 12.0001 2.09082ZM12.0001 14.0908C9.79008 14.0908 8.00008 12.3008 8.00008 10.0908C8.00008 7.88082 9.79008 6.09082 12.0001 6.09082C14.2101 6.09082 16.0001 7.88082 16.0001 10.0908C16.0001 12.3008 14.2101 14.0908 12.0001 14.0908Z" fill="#6A6A6A"/>
@@ -487,12 +488,12 @@
             <input
               type="text"
               placeholder="Min"
-              class="border border-[#6A6A6A] py-3 px-4 rounded-lg w-full max-w-xs text-[#6A6A6A] outline-none"
+              class="border py-3 px-4 rounded-lg w-full max-w-xs text-[#6A6A6A] outline-none"
             />
             <input
               type="text"
               placeholder="Max"
-              class="border border-[#6A6A6A] py-3 px-4 rounded-lg w-full max-w-xs text-[#6A6A6A] outline-none"
+              class="border py-3 px-4 rounded-lg w-full max-w-xs text-[#6A6A6A] outline-none"
             />
           </div>
         </div>
@@ -516,12 +517,15 @@
                 </svg>
               </div>
            </div> -->
-           <div>
-             <select>
-              <option>Option 1</option>
-              <option>Option 1</option>
-              <option>Option 2</option>
-             </select>
+           <div class="nice-select wide" tabindex="0">
+              <span class="current">Anytime</span>
+              <ul class="list">
+                <li data-value="Nothing" data-display="Select" class="option selected focus">Option1</li>
+                <li data-value="1" class="option">Some option</li>
+                <li data-value="2" class="option">Another option</li>
+                <li data-value="3" class="option disabled">A disabled option</li>
+                <li data-value="4" class="option">Potato</li>
+              </ul>
            </div>
 
         </div>
@@ -879,13 +883,12 @@
         <p>Copyright ©2024 <span class="text-[#F8BF2C]">Connect</span></p>
       </div>
     </footer>
-
+    
     <script>
       $(document).ready(function() {
         $('select').niceSelect();
       });
     </script>
-
     <!-- for icon  -->
     <script
       type="module"
@@ -900,8 +903,9 @@
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>
     
-
-    <script src="path/to/jquery.js"></script> 
-    <script src="path/to/jquery.nice-select.js"></script>
+    <!-- script for jquery -->
+    <script src="./assets/js/jquery.js"></script> 
+   <script src="./assets/js/jquery.nice-select.min.js"></script>
+    
   </body>
 </html>
