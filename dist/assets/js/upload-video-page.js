@@ -72,5 +72,6 @@ input.addEventListener("change", () => {
 
 videoBoxCloseBtn.addEventListener("click", () => {
   videoInfo.classList.add("hidden");
+  document.getElementById("roomsCoverUpload").value = "";
 });
 // zh video upload and show video name and video size end
