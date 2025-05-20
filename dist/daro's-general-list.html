@@ -3,8 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Daro's General User</title>
+    <link
+      rel="shortcut icon"
+      href="../dist/assets/images/logo.svg"
+      type="image/x-icon"
+    />
+    <title>Pilldox Client | Dora's General</title>
     <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./assets/css/nice-select.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.css" />
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
 
@@ -318,7 +324,9 @@
         <a href="business-premium-plan.html"
           class="bg-[#008080] px-6 py-[10px] rounded-lg text-lg text-white flex items-center gap-1"
         >
-          <ion-icon name="diamond" class="text-xl"></ion-icon>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M0 9H6L10.5 21.9L0 9ZM24 9H18L13.5 21.9L24 9ZM12 22.5L7.5 9H16.5L12 22.5ZM6 7.5H0L3 3L6 7.5ZM24 7.5H18L21 3L24 7.5ZM15 7.5H9L12 3L15 7.5ZM5.01 3H10.5L7.5 7.5L5.01 3ZM13.5 3H19.5L16.5 7.5L13.5 3Z" fill="white"/>
+          </svg>
           Unlock Post Ad
         </a>
       </div>
@@ -337,7 +345,9 @@
         <div class="font-lg font-medium">
           <div class="flex justify-between items-center">
             <p class="flex items-center gap-3">
-              <ion-icon name="bag" class="text-2xl text-primary"></ion-icon>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M20.25 6H16.5C16.5 4.80653 16.0259 3.66193 15.182 2.81802C14.3381 1.97411 13.1935 1.5 12 1.5C10.8065 1.5 9.66193 1.97411 8.81802 2.81802C7.97411 3.66193 7.5 4.80653 7.5 6H3.75C3.35218 6 2.97064 6.15804 2.68934 6.43934C2.40804 6.72064 2.25 7.10218 2.25 7.5V18.75C2.25 19.1478 2.40804 19.5294 2.68934 19.8107C2.97064 20.092 3.35218 20.25 3.75 20.25H20.25C20.6478 20.25 21.0294 20.092 21.3107 19.8107C21.592 19.5294 21.75 19.1478 21.75 18.75V7.5C21.75 7.10218 21.592 6.72064 21.3107 6.43934C21.0294 6.15804 20.6478 6 20.25 6ZM12 3C12.7956 3 13.5587 3.31607 14.1213 3.87868C14.6839 4.44129 15 5.20435 15 6H9C9 5.20435 9.31607 4.44129 9.87868 3.87868C10.4413 3.31607 11.2044 3 12 3Z" fill="#008080"/>
+              </svg>
               Jobs
             </p>
             <p class="text-[#B6B6B6] font-medium">875</p>
@@ -459,7 +469,7 @@
         <div>
           <p class="text-2xl font-bold mb-4">Location</p>
 
-            <div class="relative">
+            <div class="relative w-full">
                <input
                  type="text"
                  placeholder="Enter your location"
@@ -467,7 +477,7 @@
                />
                
                <!-- Location icon -->
-               <div class="py-3 px-4 absolute left-3 top-1/2 transform -translate-y-1/2 -translate-x-1/3">
+               <div class="absolute left-3 inset-y-0 flex items-center">
                  <!-- You can use any icon here, this is an example with Font Awesome -->
                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
                     <path d="M12.0001 2.09082C7.58908 2.09082 4.00008 5.67982 4.00008 10.0858C3.97108 16.5308 11.6961 21.8748 12.0001 22.0908C12.0001 22.0908 20.0291 16.5308 20.0001 10.0908C20.0001 5.67982 16.4111 2.09082 12.0001 2.09082ZM12.0001 14.0908C9.79008 14.0908 8.00008 12.3008 8.00008 10.0908C8.00008 7.88082 9.79008 6.09082 12.0001 6.09082C14.2101 6.09082 16.0001 7.88082 16.0001 10.0908C16.0001 12.3008 14.2101 14.0908 12.0001 14.0908Z" fill="#6A6A6A"/>
@@ -487,12 +497,12 @@
             <input
               type="text"
               placeholder="Min"
-              class="border border-[#6A6A6A] py-3 px-4 rounded-lg w-full max-w-xs text-[#6A6A6A] outline-none"
+              class="border py-3 px-4 rounded-lg w-full max-w-xs text-[#6A6A6A] outline-none"
             />
             <input
               type="text"
               placeholder="Max"
-              class="border border-[#6A6A6A] py-3 px-4 rounded-lg w-full max-w-xs text-[#6A6A6A] outline-none"
+              class="border py-3 px-4 rounded-lg w-full max-w-xs text-[#6A6A6A] outline-none"
             />
           </div>
         </div>
@@ -516,12 +526,15 @@
                 </svg>
               </div>
            </div> -->
-           <div>
-             <select>
-              <option>Option 1</option>
-              <option>Option 1</option>
-              <option>Option 2</option>
-             </select>
+           <div class="nice-select wide" tabindex="0">
+              <span class="current">Anytime</span>
+              <ul class="list">
+                <li data-value="Nothing" data-display="Select" class="option selected focus">Option1</li>
+                <li data-value="1" class="option">Some option</li>
+                <li data-value="2" class="option">Another option</li>
+                <li data-value="3" class="option disabled">A disabled option</li>
+                <li data-value="4" class="option">Potato</li>
+              </ul>
            </div>
 
         </div>
@@ -534,7 +547,12 @@
 
         <!-- featured listing div -->
 
-          <p class="text-2xl font-bold mb-8">Featured Listing</p>
+          <div class="flex justify-between items-center">
+            <p class="text-2xl font-bold mb-8">Featured Listing</p>
+          <p>
+            <a href="" class="text-primary font-medium">View All</a>
+          </p>
+          </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
              
@@ -632,7 +650,12 @@
              
              
              <!-- recent listing div -->
-             <p class="text-2xl font-bold mb-8">Recent Listing</p>
+              <div class="flex justify-between items-center">
+            <p class="text-2xl font-bold mb-8">Recent Listing</p>
+          <p>
+            <a href="" class="text-primary font-medium">View All</a>
+          </p>
+          </div>
 
           <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
              
@@ -879,29 +902,25 @@
         <p>Copyright ©2024 <span class="text-[#F8BF2C]">Connect</span></p>
       </div>
     </footer>
-
+    
     <script>
       $(document).ready(function() {
         $('select').niceSelect();
       });
     </script>
-
     <!-- for icon  -->
-    <script
+    <!-- <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
     ></script>
     <script
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
+    ></script> -->
 
     <!-- Scripts -->
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>
     
-
-    <script src="path/to/jquery.js"></script> 
-    <script src="path/to/jquery.nice-select.js"></script>
   </body>
 </html>

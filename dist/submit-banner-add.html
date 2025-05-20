@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pilldox Client | Job Post Advertise</title>
+    <link rel="icon" href="assets/images/logo.svg" type="image/x-icon" />
+    <title>Pilldox Client| Banner Add</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -382,9 +383,11 @@
             <div class="flex flex-col my-10">
               <label
                 for="roomsCoverUpload"
-                class="relative cursor-pointer text-center bg-[#FAFAFA] w-full px-6 py-10 rounded-lg border-[2px] border-dashed border-[rgba(0,_0,_0,_0.08)] flex items-center justify-center"
+                class="relative cursor-pointer text-center bg-[#FAFAFA] w-full px-6 py-10 rounded-lg border-[2px] border-dashed border-[rgba(0,_0,_0,_0.08)] flex items-center justify-center overflow-hidden"
               >
-                <div class="space-y-4">
+                <img id="uploadImage" class="w-full max-h-72 h-full object-cover rounded-lg hidden" src="" alt="">
+
+                <div id="givenContent" class="space-y-4">
                   <svg
                     class="mx-auto"
                     xmlns="http://www.w3.org/2000/svg"
@@ -422,7 +425,7 @@
                   </p>
                 </div>
 
-                <input class="hidden" type="file" id="roomsCoverUpload" />
+                <input class="hidden" type="file" id="roomsCoverUpload" onclick="uploadPhoto()" />
               </label>
             </div>
 
@@ -582,7 +585,8 @@
     <!-- ?footer ends here? -->
 
     <!-- Scripts -->
-    <script></script>
+    <script>
+    </script>
 
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>
