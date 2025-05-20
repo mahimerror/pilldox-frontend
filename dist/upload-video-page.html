@@ -45,7 +45,7 @@
         </div>
 
         <!-- Auth Buttons -->
-        <div class="md:flex items-center gap-6 hidden">
+        <div class="lg:flex items-center gap-6 hidden">
           <!-- add from zh start -->
           <a
             href=""
@@ -137,10 +137,10 @@
           </button>
         </div>
 
-        <div class="md:hidden">
+        <div class="lg:hidden">
           <div
             id="menu-hamburger"
-            class="bg-primary p-2 size-10 flex items-center justify-center rounded-md md:hidden"
+            class="bg-primary p-2 size-10 flex items-center justify-center rounded-md lg:hidden"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -168,7 +168,7 @@
           </div>
           <div
             id="menu-close"
-            class="bg-primary p-2 hidden size-10 items-center justify-center rounded-md md:hidden"
+            class="bg-primary p-2 hidden size-10 items-center justify-center rounded-md lg:hidden"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -531,15 +531,13 @@
             </div>
 
             <!-- upload video button -->
-            <div class="pt-6">
               <button
-                type="submit"
-                id="showModalBtn"
-                class="px-9 block border border-[rgba(0,_0,_0,_0.08)] rounded-lg bg-[#008080] py-[15px] text-center text-white text-lg font-mediumFont"
-              >
-                Upload video
-              </button>
-            </div>
+              type="submit"
+              id="showModalBtn"
+              class="mb-4 md:pt-6 px-4 py-3 md:px-9 md:py-[15px]  block border border-[rgba(0,_0,_0,_0.08)] rounded-lg bg-[#008080] text-center text-white text-base md:text-lg font-mediumFont"
+            >
+              Upload video
+            </button>
           </form>
         </div>
 
@@ -627,9 +625,9 @@
     <!-- zh main end   -->
 
     <!-- zh footer start -->
-    <footer class="bg-[#004040] mt-36">
+    <footer class="bg-[#004040] mt-10 lg:mt-24 xl:mt-36">
       <div
-        class="py-[60px] flex items-center justify-between max-w-[1296px] mx-auto"
+        class="py-[60px] sm:flex items-center justify-between sm:max-w-[1296px] mx-auto"
       >
         <!-- logo -->
         <div>
@@ -663,7 +661,9 @@
           </a>
         </div>
 
-        <div class="flex items-center gap-8">
+        <div
+          class="flex flex-col gap-3 items-start sm:flex-row sm:items-center sm:gap-8 my-4 sm:my-0"
+        >
           <a class="text-base text-[#F6F6F6] font-normalFont" href=""
             >Help & Support</a
           >
