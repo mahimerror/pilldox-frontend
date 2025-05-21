@@ -13,10 +13,10 @@
   </head>
 
   <body>
-    <!-- navbar -->
-    <header class="border-black/10 border-b">
+    <!-- zh navbar start-->
+    <header class="border-black/10 border-b px-4">
       <nav
-        class="py-4 md:py-5 w-full flex items-center justify-between px-5 md:px-8 2xl:px-0 container mx-auto"
+        class="py-4 md:py-5 w-full flex items-center justify-between container mx-auto"
       >
         <!-- logo -->
         <div>
@@ -51,29 +51,29 @@
         </div>
 
         <!-- Auth Buttons -->
-        <div class="md:flex items-center gap-6 hidden">
+        <div class="lg:flex items-center gap-4 hidden">
           <!-- add from zh start -->
           <a
-            href=""
+            href="community-join.html"
             class="font-boldFont text-[#141414] w-32 flex items-center justify-center"
           >
             Chat rooms
           </a>
           <a
-            href=""
+            href="mytube-home.html"
             class="font-boldFont text-[#141414] w-32 flex items-center justify-center"
           >
             Yo!Tube
           </a>
           <a
-            href=""
+            href="daro's-general-list.html"
             class="font-boldFont text-[#141414] w-32 flex items-center justify-center"
           >
             Daro’s List
           </a>
           <!-- add from zh end -->
           <a
-            href="community-join.html"
+            href="community-inbox.html"
             class="font-boldFont text-[#141414] w-32 flex items-center justify-center"
           >
             Inbox
@@ -143,10 +143,10 @@
           </button>
         </div>
 
-        <div class="md:hidden">
+        <div class="lg:hidden">
           <div
             id="menu-hamburger"
-            class="bg-primary p-2 size-10 flex items-center justify-center rounded-md md:hidden"
+            class="bg-primary p-2 size-10 flex items-center justify-center rounded-md lg:hidden"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -174,7 +174,7 @@
           </div>
           <div
             id="menu-close"
-            class="bg-primary p-2 hidden size-10 items-center justify-center rounded-md md:hidden"
+            class="bg-primary p-2 hidden size-10 items-center justify-center rounded-md lg:hidden"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -202,11 +202,11 @@
         <!-- sidebar -->
         <div
           id="sidebar"
-          class="fixed left-0 top-0 z-20 h-full w-60 -translate-x-full transform overflow-y-scroll bg-white transition-transform duration-500 md:w-64"
+          class="fixed left-0 top-0 z-20 h-full w-60 -translate-x-full transform overflow-y-scroll bg-white transition-transform duration-500 md:w-64 shadow-lg"
         >
           <!-- logo -->
           <div
-            class="flex w-full items-center pb-2 pl-10 pt-12 font-roboto font-bold text-primary md:text-xl"
+            class="flex w-full items-center pb-2 px-5 pt-12 font-roboto font-bold text-primary md:text-xl"
           >
             <a href="user-homepage.html" class="flex items-center gap-1">
               <svg
@@ -234,14 +234,16 @@
                   fill="#008080"
                 />
               </svg>
-              <p class="font-boldFont">CommunityConnect</p>
+              <p class="font-boldFont">Community</p>
             </a>
           </div>
 
           <!-- Profile info -->
-          <div class="pt-4 px-4">
+          <div
+            class="pl-5 pr-5 flex items-center pt-4 border-b border-black/20"
+          >
             <button
-              class="px-5 py-2 text-sm text-[#222222] border-b border-black/20 font-mediumFont navbar-dropdown-btn relative w-full"
+              class="text-sm text-[#222222] font-mediumFont relative w-full"
             >
               <div class="flex items-center gap-2">
                 <div>
@@ -269,28 +271,370 @@
                 </div>
               </div>
             </button>
+            <button
+              class="inline text-start text-base text-[#222222] font-mediumFont"
+            >
+              Logout
+            </button>
           </div>
           <!-- NavLinks ::start -->
-          <div class="py-4 pl-10 font-inter text-sm">
+          <div class="py-4 px-5 font-inter text-sm">
             <div class="flex flex-col justify-center gap-4 font-boldFont">
-              <a href="community-inbox.html">Inbox</a>
-              <a href="account.html">Account</a>
-              <button class="inline text-start">Logout</button>
+              <!-- zh active user list start -->
+              <div class="w-full">
+                <h5 class="text-[#2E2E2E] text-xl font-boldFont">
+                  Active Users
+                </h5>
+
+                <div class="flex flex-col gap-2 mt-2">
+                  <!-- active user 1 -->
+                  <div class="flex items-center gap-3">
+                    <div class="size-8 relative">
+                      <img
+                        class="w-full h-full rounded-full object-cover"
+                        src="../dist/assets/images/inbox-user-icon.png"
+                        alt=""
+                      />
+                      <svg
+                        class="absolute bottom-[2px] right-[2px]"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="8"
+                        height="8"
+                        viewBox="0 0 8 8"
+                        fill="none"
+                      >
+                        <circle cx="4" cy="4" r="4" fill="#36B37E" />
+                      </svg>
+                    </div>
+                    <span class="text-[#222222] text-sm font-mediumFont"
+                      >Killan james</span
+                    >
+                  </div>
+
+                  <!-- active user 2 -->
+                  <div class="flex items-center gap-3">
+                    <div class="size-8 relative">
+                      <img
+                        class="w-full h-full rounded-full object-cover"
+                        src="../dist/assets/images/inbox-user-icon.png"
+                        alt=""
+                      />
+                      <svg
+                        class="absolute bottom-[2px] right-[2px]"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="8"
+                        height="8"
+                        viewBox="0 0 8 8"
+                        fill="none"
+                      >
+                        <circle cx="4" cy="4" r="4" fill="#36B37E" />
+                      </svg>
+                    </div>
+                    <span class="text-[#222222] text-sm font-mediumFont"
+                      >Killan james</span
+                    >
+                  </div>
+
+                  <!-- active user 3 -->
+                  <div class="flex items-center gap-3">
+                    <div class="size-8 relative">
+                      <img
+                        class="w-full h-full rounded-full object-cover"
+                        src="../dist/assets/images/inbox-user-icon.png"
+                        alt=""
+                      />
+                      <svg
+                        class="absolute bottom-[2px] right-[2px]"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="8"
+                        height="8"
+                        viewBox="0 0 8 8"
+                        fill="none"
+                      >
+                        <circle cx="4" cy="4" r="4" fill="#36B37E" />
+                      </svg>
+                    </div>
+                    <span class="text-[#222222] text-sm font-mediumFont"
+                      >Killan james</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- zh active user list end -->
+
+              <!-- categories -->
+              <h1 class="text-xl">Categories</h1>
+              <!-- zh rooms list start -->
+              <div class="space-y-2">
+                <!-- zh rooms -->
+                <div class="flex items-center gap-[10px] text-base">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M12 14C13.381 14 14.631 13.44 15.536 12.535C16.44 11.631 17 10.381 17 9C17 7.619 16.44 6.369 15.536 5.465C14.631 4.56 13.381 4 12 4C10.619 4 9.369 4.56 8.464 5.465C7.56 6.369 7 7.619 7 9C7 10.381 7.56 11.631 8.464 12.535C8.9283 12.9994 9.47956 13.3679 10.0863 13.6192C10.693 13.8706 11.3433 14 12 14ZM20 15C20.3285 15.0007 20.6539 14.9364 20.9575 14.811C21.2611 14.6856 21.537 14.5015 21.7692 14.2692C22.0015 14.037 22.1856 13.7611 22.311 13.4575C22.4364 13.1539 22.5007 12.8285 22.5 12.5C22.5 11.81 22.221 11.185 21.768 10.732C21.5358 10.4999 21.2602 10.3157 20.9568 10.1901C20.6535 10.0646 20.3283 9.99994 20 10C19.6715 9.99934 19.3461 10.0636 19.0425 10.189C18.7389 10.3144 18.463 10.4985 18.2308 10.7308C17.9985 10.963 17.8144 11.2389 17.689 11.5425C17.5636 11.8461 17.4993 12.1715 17.5 12.5C17.4995 12.8285 17.5638 13.1538 17.6892 13.4573C17.8147 13.7609 17.9988 14.0367 18.2311 14.2689C18.4633 14.5012 18.7391 14.6853 19.0427 14.8108C19.3462 14.9362 19.6715 15.0005 20 15ZM20 15.59C18.669 15.59 17.668 15.996 17.083 16.558C15.968 15.641 14.205 15 12 15C9.734 15 8.005 15.648 6.908 16.564C6.312 15.999 5.3 15.59 4 15.59C1.812 15.59 0.5 16.68 0.5 17.772C0.5 18.317 1.812 18.864 4 18.864C4.604 18.864 5.146 18.813 5.623 18.731L5.583 19.001C5.583 20.001 7.989 21.001 12 21.001C15.762 21.001 18.417 20.001 18.417 19.001L18.397 18.746C18.86 18.819 19.392 18.864 20 18.864C22.051 18.864 23.5 18.317 23.5 17.772C23.5 16.68 22.127 15.59 20 15.59ZM4 15C4.69 15 5.315 14.721 5.768 14.268C6.00013 14.0358 6.18425 13.7602 6.30985 13.4568C6.43545 13.1535 6.50006 12.8283 6.5 12.5C6.50066 12.1715 6.43644 11.8461 6.31104 11.5425C6.18564 11.2389 6.00151 10.963 5.76924 10.7308C5.53696 10.4985 5.2611 10.3144 4.95749 10.189C4.65388 10.0636 4.32849 9.99934 4 10C3.67155 9.99947 3.34622 10.0638 3.04267 10.1892C2.73912 10.3147 2.46331 10.4988 2.23106 10.7311C1.99881 10.9633 1.81468 11.2391 1.68923 11.5427C1.56378 11.8462 1.49947 12.1715 1.5 12.5C1.49934 12.8285 1.56356 13.1539 1.68896 13.4575C1.81436 13.7611 1.99849 14.037 2.23076 14.2692C2.46304 14.5015 2.7389 14.6856 3.04251 14.811C3.34612 14.9364 3.67151 15.0007 4 15Z"
+                      fill="#008080"
+                    />
+                  </svg>
+                  <a href="" class="text-[#222222] font-mediumFont"
+                    >Popular Rooms</a
+                  >
+                </div>
+
+                <!-- zh food dining -->
+                <div class="flex items-center gap-[10px] text-base">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="26"
+                    height="26"
+                    viewBox="0 0 26 26"
+                    fill="none"
+                  >
+                    <path
+                      d="M6 0C6 0 5 7 5 8C5 9 7.25 11 7.25 11L7 24.344C7 25.448 7.896 26 9 26C10.104 26 11 25.448 11 24.344L10.75 11C10.75 11 13 8.958 13 8C13 7.042 12 0 12 0H11V6.5C11 6.63261 10.9473 6.75979 10.8536 6.85355C10.7598 6.94732 10.6326 7 10.5 7C10.3674 7 10.2402 6.94732 10.1464 6.85355C10.0527 6.75979 10 6.63261 10 6.5C10 6.407 9.656 0 9.656 0H8.344C8.344 0 8 6.407 8 6.5C8 6.63261 7.94732 6.75979 7.85355 6.85355C7.75979 6.94732 7.63261 7 7.5 7C7.36739 7 7.24021 6.94732 7.14645 6.85355C7.05268 6.75979 7 6.63261 7 6.5V0H6ZM16.719 0.063C16.13 0.204 16 0.835 16 1.53V24.343C16 25.447 16.896 25.999 18 25.999C19.104 25.999 19.969 25.446 19.969 24.343C19.969 19.256 18.969 16.544 18.969 13.999C18.969 12.851 21 11.373 21 6.03C21 2.762 18.104 0.062 17 0.062C16.896 0.062 16.803 0.042 16.719 0.062V0.063Z"
+                      fill="#008080"
+                    />
+                  </svg>
+                  <a href="" class="text-[#222222] font-mediumFont"
+                    >Food & Dining</a
+                  >
+                </div>
+
+                <!-- zh gaming -->
+                <div class="flex items-center gap-[10px] text-base">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M17.0001 4C18.1061 4 18.9551 4.843 19.5841 5.75L19.7971 6.071L19.9921 6.391C20.0541 6.49567 20.1135 6.59833 20.1701 6.699C20.9571 8.106 21.6421 9.943 22.0951 11.758C22.5451 13.559 22.7941 15.44 22.6351 16.919C22.4751 18.404 21.7101 20 20.0001 20C18.4661 20 17.2571 19.18 16.2751 18.379L15.1651 17.448C14.2421 16.692 13.2321 16 12.0001 16C10.7681 16 9.75712 16.692 8.83612 17.448L7.72612 18.378C6.74212 19.18 5.53312 20 4.00012 20C2.28912 20 1.52412 18.404 1.36512 16.919C1.20712 15.439 1.45512 13.559 1.90512 11.758C2.35812 9.943 3.04312 8.106 3.83012 6.699L4.00812 6.39L4.20312 6.071L4.41612 5.75C5.04512 4.843 5.89412 4 7.00012 4C7.51012 4 8.01712 4.124 8.51512 4.27L9.10812 4.452C9.20612 4.482 9.30346 4.51067 9.40012 4.538C10.2651 4.786 11.1501 5 12.0001 5C12.8501 5 13.7351 4.786 14.6001 4.538L15.4851 4.271C15.9831 4.124 16.4901 4 17.0001 4ZM8.50012 8C7.83708 8 7.2012 8.26339 6.73236 8.73223C6.26352 9.20107 6.00012 9.83696 6.00012 10.5C6.00012 11.163 6.26352 11.7989 6.73236 12.2678C7.2012 12.7366 7.83708 13 8.50012 13C9.16317 13 9.79905 12.7366 10.2679 12.2678C10.7367 11.7989 11.0001 11.163 11.0001 10.5C11.0001 9.83696 10.7367 9.20107 10.2679 8.73223C9.79905 8.26339 9.16317 8 8.50012 8ZM15.5001 8C15.2349 8 14.9806 8.10536 14.793 8.29289C14.6055 8.48043 14.5001 8.73478 14.5001 9V9.5H14.0001C13.7349 9.5 13.4806 9.60536 13.293 9.79289C13.1055 9.98043 13.0001 10.2348 13.0001 10.5C13.0001 10.7652 13.1055 11.0196 13.293 11.2071C13.4806 11.3946 13.7349 11.5 14.0001 11.5H14.5001V12C14.5001 12.2652 14.6055 12.5196 14.793 12.7071C14.9806 12.8946 15.2349 13 15.5001 13C15.7653 13 16.0197 12.8946 16.2072 12.7071C16.3948 12.5196 16.5001 12.2652 16.5001 12V11.5H17.0001C17.2653 11.5 17.5197 11.3946 17.7072 11.2071C17.8948 11.0196 18.0001 10.7652 18.0001 10.5C18.0001 10.2348 17.8948 9.98043 17.7072 9.79289C17.5197 9.60536 17.2653 9.5 17.0001 9.5H16.5001V9C16.5001 8.73478 16.3948 8.48043 16.2072 8.29289C16.0197 8.10536 15.7653 8 15.5001 8ZM8.50012 10C8.63273 10 8.75991 10.0527 8.85368 10.1464C8.94745 10.2402 9.00012 10.3674 9.00012 10.5C9.00012 10.6326 8.94745 10.7598 8.85368 10.8536C8.75991 10.9473 8.63273 11 8.50012 11C8.36752 11 8.24034 10.9473 8.14657 10.8536C8.0528 10.7598 8.00012 10.6326 8.00012 10.5C8.00012 10.3674 8.0528 10.2402 8.14657 10.1464C8.24034 10.0527 8.36752 10 8.50012 10Z"
+                      fill="#008080"
+                    />
+                  </svg>
+                  <a href="" class="text-[#222222] font-mediumFont">Gaming</a>
+                </div>
+
+                <!-- zh technology -->
+                <div class="flex items-center gap-[10px] text-base">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <mask
+                      id="mask0_10974_2879"
+                      style="mask-type: luminance"
+                      maskUnits="userSpaceOnUse"
+                      x="1"
+                      y="3"
+                      width="22"
+                      height="18"
+                    >
+                      <path
+                        d="M20.5 4H3.5C2.94772 4 2.5 4.44772 2.5 5V15C2.5 15.5523 2.94772 16 3.5 16H20.5C21.0523 16 21.5 15.5523 21.5 15V5C21.5 4.44772 21.0523 4 20.5 4Z"
+                        fill="white"
+                        stroke="white"
+                        stroke-width="2"
+                      />
+                      <path
+                        d="M2 20H22"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M11 7H13"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </mask>
+                    <g mask="url(#mask0_10974_2879)">
+                      <path d="M0 0H24V24H0V0Z" fill="#008080" />
+                    </g>
+                  </svg>
+                  <a href="" class="text-[#222222] font-mediumFont"
+                    >Technology</a
+                  >
+                </div>
+              </div>
+
+              <!-- zh my rooms start -->
+              <div class="">
+                <h3 class="text-[#2E2E2E] text-xl font-boldFont">My Rooms</h3>
+                <div
+                  class="w-full bg-[#FAFAFA] rounded-lg mt-3 pl-4 py-4 pr-4 border border-[rgba(0,_0,_0,_0.08)] flex flex-col"
+                >
+                  <div class="flex flex-col gap-1">
+                    <p class="text-base text-[#2E2E2E] font-mediumFont">
+                      Tech Summit 2025
+                    </p>
+                    <span class="text-[14px] text-[#008080] font-mediumFont"
+                      >Technology</span
+                    >
+                  </div>
+                  <p class="text-[14px] font-mediumFont text-[#6A6A6A]">
+                    <span>126</span> Users
+                  </p>
+                </div>
+              </div>
+              <!-- zh my rooms end -->
+
+              <!-- zh room create button start-->
+              <div>
+                <a
+                  href="create-rooms.html"
+                  class="bg-[#008080] rounded-lg py-2 flex items-center justify-center text-center text-white"
+                >
+                  <button
+                    class="flex items-center gap-[5px] text-sm font-mediumFont text-white"
+                  >
+                    <svg
+                      class="fill-white text-white"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="#ffffff"
+                    >
+                      <path
+                        d="M6 12H18"
+                        stroke="white"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M12 18V6"
+                        stroke="white"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    Create Room
+                  </button>
+                </a>
+              </div>
+              <!-- zh room create button end-->
+
+              <!-- zh room statistics start -->
+              <div class="w-full">
+                <h5 class="text-[#2E2E2E] text-xl font-boldFont">
+                  Room Statistics
+                </h5>
+
+                <div class="flex flex-col gap-2 mt-2">
+                  <div class="flex items-center gap-1">
+                    <div>
+                      <svg
+                        class="size-6"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M12 14C13.381 14 14.631 13.44 15.536 12.535C16.44 11.631 17 10.381 17 9C17 7.619 16.44 6.369 15.536 5.465C14.631 4.56 13.381 4 12 4C10.619 4 9.369 4.56 8.464 5.465C7.56 6.369 7 7.619 7 9C7 10.381 7.56 11.631 8.464 12.535C8.9283 12.9994 9.47956 13.3679 10.0863 13.6192C10.693 13.8706 11.3433 14 12 14ZM20 15C20.3285 15.0007 20.6539 14.9364 20.9575 14.811C21.2611 14.6856 21.537 14.5015 21.7692 14.2692C22.0015 14.037 22.1856 13.7611 22.311 13.4575C22.4364 13.1539 22.5007 12.8285 22.5 12.5C22.5 11.81 22.221 11.185 21.768 10.732C21.5358 10.4999 21.2602 10.3157 20.9568 10.1901C20.6535 10.0646 20.3283 9.99994 20 10C19.6715 9.99934 19.3461 10.0636 19.0425 10.189C18.7389 10.3144 18.463 10.4985 18.2308 10.7308C17.9985 10.963 17.8144 11.2389 17.689 11.5425C17.5636 11.8461 17.4993 12.1715 17.5 12.5C17.4995 12.8285 17.5638 13.1538 17.6892 13.4573C17.8147 13.7609 17.9988 14.0367 18.2311 14.2689C18.4633 14.5012 18.7391 14.6853 19.0427 14.8108C19.3462 14.9362 19.6715 15.0005 20 15ZM20 15.59C18.669 15.59 17.668 15.996 17.083 16.558C15.968 15.641 14.205 15 12 15C9.734 15 8.005 15.648 6.908 16.564C6.312 15.999 5.3 15.59 4 15.59C1.812 15.59 0.5 16.68 0.5 17.772C0.5 18.317 1.812 18.864 4 18.864C4.604 18.864 5.146 18.813 5.623 18.731L5.583 19.001C5.583 20.001 7.989 21.001 12 21.001C15.762 21.001 18.417 20.001 18.417 19.001L18.397 18.746C18.86 18.819 19.392 18.864 20 18.864C22.051 18.864 23.5 18.317 23.5 17.772C23.5 16.68 22.127 15.59 20 15.59ZM4 15C4.69 15 5.315 14.721 5.768 14.268C6.00013 14.0358 6.18425 13.7602 6.30985 13.4568C6.43545 13.1535 6.50006 12.8283 6.5 12.5C6.50066 12.1715 6.43644 11.8461 6.31104 11.5425C6.18564 11.2389 6.00151 10.963 5.76924 10.7308C5.53696 10.4985 5.2611 10.3144 4.95749 10.189C4.65388 10.0636 4.32849 9.99934 4 10C3.67155 9.99947 3.34622 10.0638 3.04267 10.1892C2.73912 10.3147 2.46331 10.4988 2.23106 10.7311C1.99881 10.9633 1.81468 11.2391 1.68923 11.5427C1.56378 11.8462 1.49947 12.1715 1.5 12.5C1.49934 12.8285 1.56356 13.1539 1.68896 13.4575C1.81436 13.7611 1.99849 14.037 2.23076 14.2692C2.46304 14.5015 2.7389 14.6856 3.04251 14.811C3.34612 14.9364 3.67151 15.0007 4 15Z"
+                          fill="#008080"
+                        />
+                      </svg>
+                    </div>
+
+                    <div class="flex flex-col">
+                      <span class="text-[14px] text-[#6A6A6A] font-mediumFont"
+                        >Total users online</span
+                      >
+                      <h6 class="text-base font-mediumFont text-[#2E2E2E]">
+                        324
+                      </h6>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center gap-1">
+                    <div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="28"
+                        height="28"
+                        viewBox="0 0 28 28"
+                        fill="none"
+                      >
+                        <path
+                          d="M6.75 3C5.75544 3 4.80161 3.39509 4.09835 4.09835C3.39509 4.80161 3 5.75544 3 6.75V21.25C3 22.2446 3.39509 23.1984 4.09835 23.9017C4.80161 24.6049 5.75544 25 6.75 25H21.25C22.2446 25 23.1984 24.6049 23.9017 23.9017C24.6049 23.1984 25 22.2446 25 21.25V6.75C25 5.75544 24.6049 4.80161 23.9017 4.09835C23.1984 3.39509 22.2446 3 21.25 3H6.75ZM9.5 11.75V19.25C9.5 19.4489 9.42098 19.6397 9.28033 19.7803C9.13968 19.921 8.94891 20 8.75 20C8.55109 20 8.36032 19.921 8.21967 19.7803C8.07902 19.6397 8 19.4489 8 19.25V11.75C8 11.5511 8.07902 11.3603 8.21967 11.2197C8.36032 11.079 8.55109 11 8.75 11C8.94891 11 9.13968 11.079 9.28033 11.2197C9.42098 11.3603 9.5 11.5511 9.5 11.75ZM14 14C14.1989 14 14.3897 14.079 14.5303 14.2197C14.671 14.3603 14.75 14.5511 14.75 14.75V19.25C14.75 19.4489 14.671 19.6397 14.5303 19.7803C14.3897 19.921 14.1989 20 14 20C13.8011 20 13.6103 19.921 13.4697 19.7803C13.329 19.6397 13.25 19.4489 13.25 19.25V14.75C13.25 14.5511 13.329 14.3603 13.4697 14.2197C13.6103 14.079 13.8011 14 14 14ZM20 8.75V19.25C20 19.4489 19.921 19.6397 19.7803 19.7803C19.6397 19.921 19.4489 20 19.25 20C19.0511 20 18.8603 19.921 18.7197 19.7803C18.579 19.6397 18.5 19.4489 18.5 19.25V8.75C18.5 8.55109 18.579 8.36032 18.7197 8.21967C18.8603 8.07902 19.0511 8 19.25 8C19.4489 8 19.6397 8.07902 19.7803 8.21967C19.921 8.36032 20 8.55109 20 8.75Z"
+                          fill="#008080"
+                        />
+                      </svg>
+                    </div>
+                    <div class="flex flex-col">
+                      <span class="text-[14px] text-[#6A6A6A] font-mediumFont"
+                        >Active rooms</span
+                      >
+                      <h6 class="text-base font-mediumFont text-[#2E2E2E]">
+                        24
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- zh room statistics end -->
+
+              <!-- zh leave room button  -->
+              <button
+                class="text-[#6A6A6A] text-base font-mediumFont flex items-center gap-2 transition-all duration-300 hover:pl-2"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M14 8V6C14 5.46957 13.7893 4.96086 13.4142 4.58579C13.0391 4.21071 12.5304 4 12 4H5C4.46957 4 3.96086 4.21071 3.58579 4.58579C3.21071 4.96086 3 5.46957 3 6V18C3 18.5304 3.21071 19.0391 3.58579 19.4142C3.96086 19.7893 4.46957 20 5 20H12C12.5304 20 13.0391 19.7893 13.4142 19.4142C13.7893 19.0391 14 18.5304 14 18V16"
+                    stroke="#6A6A6A"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M9 12H21M21 12L18 9M21 12L18 15"
+                    stroke="#6A6A6A"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                Leave Room
+              </button>
             </div>
           </div>
           <!-- NavLinks ::end -->
         </div>
       </nav>
     </header>
+    <!-- zh navbar end-->
 
     <!-- body -->
-    <main class="w-full flex">
+    <main class="w-full flex container mx-auto">
       <!-- sidebar -->
       <section
-        class="max-w-[400px] w-full bg-white border-r border-black/10 h-screen-full pr-6 pt-[30px] hidden lg:block"
+        class="max-w-[300px] w-full bg-white border-r border-black/10 h-screen-full pr-6 pt-[30px] hidden lg:block"
       >
         <!-- zh room category start -->
-        <div class="pl-10">
+        <div class="">
           <h4 class="mt-[30px] text-2xl font-boldFont text-[#2E2E2E]">
             Categories
           </h4>
@@ -298,7 +642,7 @@
           <!-- zh rooms list start -->
           <div class="pt-8 space-y-6">
             <!-- zh rooms -->
-            <div class="flex items-center gap-[10px]">
+            <a href="" class="flex items-center gap-[10px]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -314,10 +658,10 @@
               <span class="text-[#222222] text-lg font-mediumFont"
                 >Popular Rooms</span
               >
-            </div>
+            </a>
 
             <!-- zh food dining -->
-            <div class="flex items-center gap-[10px]">
+            <a href="" class="flex items-center gap-[10px]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="26"
@@ -333,10 +677,10 @@
               <span class="text-[#222222] text-lg font-mediumFont"
                 >Food & Dining</span
               >
-            </div>
+            </a>
 
             <!-- zh gaming -->
-            <div class="flex items-center gap-[10px]">
+            <a href="" class="flex items-center gap-[10px]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -350,10 +694,10 @@
                 />
               </svg>
               <span class="text-[#222222] text-lg font-mediumFont">Gaming</span>
-            </div>
+            </a>
 
             <!-- zh technology -->
-            <div class="flex items-center gap-[10px]">
+            <a href="" class="flex items-center gap-[10px]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -398,14 +742,14 @@
               <span class="text-[#222222] text-lg font-mediumFont"
                 >Technology</span
               >
-            </div>
+            </a>
           </div>
           <!-- zh rooms list start -->
 
           <!-- zh room create button start-->
           <div class="mt-8">
             <a
-              href=""
+              href="./create-rooms.html"
               class="bg-[#008080] rounded-lg py-2 flex items-center justify-center text-center text-white"
             >
               <button
@@ -465,9 +809,7 @@
       </section>
 
       <!-- main content -->
-      <section
-        class="lg:max-w-[calc(100%-900px)] h-screen-full px-5 md:px-8 lg:px-0 border-r"
-      >
+      <section class="flex-1 overflow-y-auto px-4 lg:px-0 lg:border-r">
         <!-- zh room title start-->
         <div class="text-textColor lg:px-14 mt-[30px]">
           <h3 class="text-2xl font-boldFont text-[#2E2E2E] mb-[6px]">
@@ -494,11 +836,13 @@
         <!-- zh room title end-->
 
         <!-- zh show rooms list  start-->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 px-5 md:px-14">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6 lg:mt-[52px] lg:px-5 lg:max-w-full max-h-[100vh] overflow-y-auto"
+        >
           <!-- room no 1 -->
-          <div class="max-w-[438px] w-full">
+          <div class="w-full sm:max-w-[438px] sm:w-full">
             <!-- room img -->
-            <div class="max-w-[438px] w-full h-[143px]">
+            <div class="w-full sm:max-w-[438px] sm:w-full h-[143px]">
               <img
                 class="w-full h-full object-cover rounded-tl-xl rounded-tr-xl"
                 src="../dist/assets/images/chat-room-img1.png"
@@ -507,7 +851,7 @@
             </div>
             <!-- room content text -->
             <div
-              class="border border-[] px-6 py-[18px] rounded-bl-xl rounded-br-xl"
+              class="border border-[rgba(0,_0,_0,_0.08)] px-6 py-[18px] rounded-bl-xl rounded-br-xl"
             >
               <div class="flex items-center justify-between mb-2">
                 <h6 class="text-lg font-mediumFont text-black">
@@ -535,11 +879,11 @@
                   >
                 </div>
                 <a
-                  href="../dist/community-join.html"
-                  class="bg-[#008080] rounded-lg py-2 px-[15px]"
+                  href="community-join.html"
+                  class="bg-[#008080] rounded-lg py-1 sm:py-2 px-[15px]"
                 >
                   <button
-                    class="text-center text-white text-base font-mediumFont"
+                    class="text-center text-white text-sm sm:text-base font-mediumFont"
                   >
                     Join Room
                   </button>
@@ -549,9 +893,9 @@
           </div>
 
           <!-- room no 2 -->
-          <div class="max-w-[438px] w-full">
+          <div class="w-full sm:max-w-[438px] sm:w-full">
             <!-- room img -->
-            <div class="max-w-[438px] w-full h-[143px]">
+            <div class="w-full sm:max-w-[438px] sm:w-full h-[143px]">
               <img
                 class="w-full h-full object-cover rounded-tl-xl rounded-tr-xl"
                 src="../dist/assets/images/chat-room-img1.png"
@@ -560,7 +904,7 @@
             </div>
             <!-- room content text -->
             <div
-              class="border border-[] px-6 py-[18px] rounded-bl-xl rounded-br-xl"
+              class="border border-[rgba(0,_0,_0,_0.08)] px-6 py-[18px] rounded-bl-xl rounded-br-xl"
             >
               <div class="flex items-center justify-between mb-2">
                 <h6 class="text-lg font-mediumFont text-black">
@@ -588,11 +932,11 @@
                   >
                 </div>
                 <a
-                  href="../dist/community-join.html"
-                  class="bg-[#008080] rounded-lg py-2 px-[15px]"
+                  href="community-join.html"
+                  class="bg-[#008080] rounded-lg py-1 sm:py-2 px-[15px]"
                 >
                   <button
-                    class="text-center text-white text-base font-mediumFont"
+                    class="text-center text-white text-sm sm:text-base font-mediumFont"
                   >
                     Join Room
                   </button>
@@ -602,9 +946,9 @@
           </div>
 
           <!-- room no 3 -->
-          <div class="max-w-[438px] w-full">
+          <div class="w-full sm:max-w-[438px] sm:w-full">
             <!-- room img -->
-            <div class="max-w-[438px] w-full h-[143px]">
+            <div class="w-full sm:max-w-[438px] sm:w-full h-[143px]">
               <img
                 class="w-full h-full object-cover rounded-tl-xl rounded-tr-xl"
                 src="../dist/assets/images/chat-room-img1.png"
@@ -613,7 +957,7 @@
             </div>
             <!-- room content text -->
             <div
-              class="border border-[] px-6 py-[18px] rounded-bl-xl rounded-br-xl"
+              class="border border-[rgba(0,_0,_0,_0.08)] px-6 py-[18px] rounded-bl-xl rounded-br-xl"
             >
               <div class="flex items-center justify-between mb-2">
                 <h6 class="text-lg font-mediumFont text-black">
@@ -641,64 +985,11 @@
                   >
                 </div>
                 <a
-                  href="../dist/community-join.html"
-                  class="bg-[#008080] rounded-lg py-2 px-[15px]"
+                  href="community-join.html"
+                  class="bg-[#008080] rounded-lg py-1 sm:py-2 px-[15px]"
                 >
                   <button
-                    class="text-center text-white text-base font-mediumFont"
-                  >
-                    Join Room
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- room no 4 -->
-          <div class="max-w-[438px] w-full">
-            <!-- room img -->
-            <div class="max-w-[438px] w-full h-[143px]">
-              <img
-                class="w-full h-full object-cover rounded-tl-xl rounded-tr-xl"
-                src="../dist/assets/images/chat-room-img1.png"
-                alt=""
-              />
-            </div>
-            <!-- room content text -->
-            <div
-              class="border border-[] px-6 py-[18px] rounded-bl-xl rounded-br-xl"
-            >
-              <div class="flex items-center justify-between mb-2">
-                <h6 class="text-lg font-mediumFont text-black">
-                  Foodie Paradise
-                </h6>
-                <p class="text-[14px] font-mediumFont text-[#6A6A6A]">
-                  <span>126</span> Users
-                </p>
-              </div>
-              <span
-                class="text-[14px] text-[#6A6A6A] font-mediumFont px-[10px] py-1 rounded-3xl bg-[#ECECEC] border border-[rgba(0,_0,_0,_0.08)] leading-[22px]"
-                >Food & Dining
-              </span>
-              <div class="flex items-center justify-between mt-[30px]">
-                <div class="flex items-center gap-2">
-                  <div class="size-8 shrink-0">
-                    <img
-                      class="w-full h-full object-cover"
-                      src="../dist/assets/images/chat-room-icon.png"
-                      alt=""
-                    />
-                  </div>
-                  <span class="text-base font-mediumFont text-[#2E2E2E]"
-                    >Chef John</span
-                  >
-                </div>
-                <a
-                  href="../dist/community-join.html"
-                  class="bg-[#008080] rounded-lg py-2 px-[15px]"
-                >
-                  <button
-                    class="text-center text-white text-base font-mediumFont"
+                    class="text-center text-white text-sm sm:text-base font-mediumFont"
                   >
                     Join Room
                   </button>
@@ -710,15 +1001,74 @@
         <!-- zh show rooms list  end-->
 
         <button
-          class="w-[114px] mx-auto mt-16 mb-[60px] text-base font-mediumFont text-[#2E2E2E] text-center bg-[#ECECEC] rounded-[4px] py-3 px-[18px] flex items-center justify-center"
+          class="w-[114px] mx-auto mt-7 mb-8 sm:mt-10 md:mt-12 lg:mt-16 lg:mb-[60px] text-base font-mediumFont text-[#2E2E2E] text-center bg-[#ECECEC] rounded-[4px] py-3 px-[18px] flex items-center justify-center"
         >
           View More
         </button>
+
+        <!-- zh room featured list -->
+        <div class="lg:hidden">
+          <h3 class="text-2xl font-boldFont text-[#2E2E2E] mb-[4px]">
+            Featured Rooms
+          </h3>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mt-4 mb-6 md:mb-8"
+          >
+            <div
+              class="w-full bg-[#FAFAFA] rounded-lg pl-4 py-4 pr-[25px] border border-[rgba(0,_0,_0,_0.08)] flex justify-between"
+            >
+              <div class="flex flex-col gap-1">
+                <p class="text-base text-[#2E2E2E] font-mediumFont">
+                  Tech Summit 2025
+                </p>
+                <span class="text-[14px] text-[#008080] font-mediumFont"
+                  >Technology</span
+                >
+              </div>
+              <p class="text-[14px] font-mediumFont text-[#6A6A6A]">
+                <span>126</span> Users
+              </p>
+            </div>
+
+            <div
+              class="w-full bg-[#FAFAFA] rounded-lg pl-4 py-4 pr-[25px] border border-[rgba(0,_0,_0,_0.08)] flex justify-between"
+            >
+              <div class="flex flex-col gap-1">
+                <p class="text-base text-[#2E2E2E] font-mediumFont">
+                  Tech Summit 2025
+                </p>
+                <span class="text-[14px] text-[#008080] font-mediumFont"
+                  >Gaming</span
+                >
+              </div>
+              <p class="text-[14px] font-mediumFont text-[#6A6A6A]">
+                <span>126</span> Users
+              </p>
+            </div>
+
+            <div
+              class="w-full bg-[#FAFAFA] rounded-lg pl-4 py-4 pr-[25px] border border-[rgba(0,_0,_0,_0.08)] flex justify-between"
+            >
+              <div class="flex flex-col gap-1">
+                <p class="text-base text-[#2E2E2E] font-mediumFont">
+                  Tech Summit 2025
+                </p>
+                <span class="text-[14px] text-[#008080] font-mediumFont"
+                  >Technology</span
+                >
+              </div>
+              <p class="text-[14px] font-mediumFont text-[#6A6A6A]">
+                <span>126</span> Users
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- zh room featured list -->
       </section>
 
       <!-- zh features room right sidebar -->
       <section
-        class="px-8 pt-8 max-w-[400px] w-full border-r border-[rgba(0,_0,_0,_0.08)] h-screen-full"
+        class="flex-1 px-8 pt-8 max-w-[300px] w-full mx-auto border-r border-[rgba(0,_0,_0,_0.08)] h-screen-full hidden lg:block"
       >
         <h3 class="text-2xl font-boldFont text-[#2E2E2E] mb-[6px]">
           Featured Rooms
@@ -936,112 +1286,115 @@
     </main>
 
     <!-- zh footer start -->
-    <footer class="bg-[#004040]">
-      <div
-        class="py-[60px] flex items-center justify-between max-w-[1296px] mx-auto"
-      >
-        <!-- logo -->
-        <div>
+    <footer
+      class="w-full bg-[#003333] text-white px-5 md:px-8 2xl:px-0 overflow-hidden font-mediumFont"
+    >
+      <div class="container mx-auto py-6 sm:py-8 md:py-10 lg:py-12 xl:py-16">
+        <div
+          class="w-full flex md:items-center justify-between flex-col gap-4 md:gap-6 lg:gap-0 lg:flex-row"
+        >
           <a href="user-homepage.html" class="flex items-center gap-1">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="size-10 md:size-12 lg:size-14"
-              viewBox="0 0 51 48"
-              fill="none"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M25.394 16.3611L32.2544 12.4005C33.6571 11.5903 34.1425 9.77961 33.3316 8.37627C32.5218 6.97328 30.7114 6.48818 29.3084 7.2984L22.8436 11.0309L4.41683 0.392493C3.01315 -0.41772 1.20247 0.0673744 0.392597 1.47071C-0.41796 2.8737 0.0671392 4.68438 1.47082 5.4946L20.2922 16.3614L22.8426 17.8339L25.394 16.3614V16.3611ZM22.8436 2.19319C24.4702 2.19319 25.7893 3.51259 25.7893 5.13955C25.7893 6.76651 24.4702 8.08487 22.8436 8.08487C21.217 8.08487 19.8979 6.76617 19.8979 5.13955C19.8979 3.51293 21.2163 2.19319 22.8436 2.19319Z"
-                fill="#FF4040"
-              />
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M37.8602 28.1984C37.0469 29.6072 35.2462 30.0892 33.837 29.2759C32.4279 28.4626 31.9455 26.6616 32.7588 25.2527C33.5718 23.8435 35.3739 23.3612 36.7827 24.1745C38.1919 24.9878 38.6742 26.7896 37.8602 28.1987M24.3157 23.3237V31.2445C24.3157 32.865 25.642 34.1902 27.2614 34.1902C28.8808 34.1902 30.2071 32.865 30.2071 31.2445V23.7799L48.6338 13.1412C50.0375 12.331 50.5219 10.5203 49.7121 9.11694C48.9015 7.7136 47.0908 7.22885 45.6878 8.03906L26.8665 18.9052L24.3151 20.378V23.3234L24.3157 23.3237Z"
-                fill="#F8BF2C"
-              />
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M7.82562 28.1995C7.01231 26.7903 7.49466 24.9885 8.90384 24.1742C10.3127 23.3612 12.1148 23.8439 12.9277 25.2535C13.741 26.6616 13.2587 28.4633 11.8495 29.2767C10.4407 30.09 8.63859 29.6073 7.82562 28.1991M18.8194 18.9056L11.9589 14.945C10.5563 14.1351 8.74558 14.6202 7.93571 16.0232C7.12585 17.4266 7.61094 19.2369 9.01394 20.0468L15.4788 23.7796V45.0567C15.4788 46.6771 16.804 48.0024 18.4244 48.0024C20.0449 48.0024 21.3701 46.6771 21.3701 45.0567V20.3781L18.8187 18.9052L18.8194 18.9056Z"
-                fill="#008080"
-              />
-            </svg>
-            <p class="font-boldFont text-white">Connect</p>
-          </a>
-        </div>
-
-        <div class="flex items-center gap-8">
-          <a class="text-base text-[#F6F6F6] font-normalFont" href=""
-            >Help & Support</a
-          >
-          <a class="text-base text-[#F6F6F6] font-normalFont" href=""
-            >Privacy policy</a
-          >
-          <a class="text-base text-[#F6F6F6] font-normalFont" href=""
-            >Terms & Conditions</a
-          >
-        </div>
-
-        <div class="flex items-center gap-3">
-          <a href="" class="border border-[#F8BF2C] rounded-full p-3">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-            >
-              <path
-                d="M16 8.04847C16 3.60302 12.418 -0.000732422 7.99949 -0.000732422C3.58095 -0.000732422 -0.000976562 3.60302 -0.000976562 8.04847C-0.000976562 12.0661 2.92468 15.396 6.74942 15.9999V10.3752H4.71805V8.04847H6.74942V6.27513C6.74942 4.2578 7.94383 3.14349 9.77132 3.14349C10.6466 3.14349 11.5622 3.3007 11.5622 3.3007V5.28156H10.5534C9.55951 5.28156 9.24957 5.90202 9.24957 6.53857V8.04847H11.4684L11.1137 10.3752H9.24957V15.9999C13.0743 15.396 16 12.0661 16 8.04847Z"
-                fill="#F8BF2C"
-              />
-            </svg>
+            <div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="size-10 md:size-12 lg:size-14"
+                viewBox="0 0 51 48"
+                fill="none"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M25.394 16.3611L32.2544 12.4005C33.6571 11.5903 34.1425 9.77961 33.3316 8.37627C32.5218 6.97328 30.7114 6.48818 29.3084 7.2984L22.8436 11.0309L4.41683 0.392493C3.01315 -0.41772 1.20247 0.0673744 0.392597 1.47071C-0.41796 2.8737 0.0671392 4.68438 1.47082 5.4946L20.2922 16.3614L22.8426 17.8339L25.394 16.3614V16.3611ZM22.8436 2.19319C24.4702 2.19319 25.7893 3.51259 25.7893 5.13955C25.7893 6.76651 24.4702 8.08487 22.8436 8.08487C21.217 8.08487 19.8979 6.76617 19.8979 5.13955C19.8979 3.51293 21.2163 2.19319 22.8436 2.19319Z"
+                  fill="#FF4040"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M37.8602 28.1984C37.0469 29.6072 35.2462 30.0892 33.837 29.2759C32.4279 28.4626 31.9455 26.6616 32.7588 25.2527C33.5718 23.8435 35.3739 23.3612 36.7827 24.1745C38.1919 24.9878 38.6742 26.7896 37.8602 28.1987M24.3157 23.3237V31.2445C24.3157 32.865 25.642 34.1902 27.2614 34.1902C28.8808 34.1902 30.2071 32.865 30.2071 31.2445V23.7799L48.6338 13.1412C50.0375 12.331 50.5219 10.5203 49.7121 9.11694C48.9015 7.7136 47.0908 7.22885 45.6878 8.03906L26.8665 18.9052L24.3151 20.378V23.3234L24.3157 23.3237Z"
+                  fill="#F8BF2C"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M7.82562 28.1995C7.01231 26.7903 7.49466 24.9885 8.90384 24.1742C10.3127 23.3612 12.1148 23.8439 12.9277 25.2535C13.741 26.6616 13.2587 28.4633 11.8495 29.2767C10.4407 30.09 8.63859 29.6073 7.82562 28.1991M18.8194 18.9056L11.9589 14.945C10.5563 14.1351 8.74558 14.6202 7.93571 16.0232C7.12585 17.4266 7.61094 19.2369 9.01394 20.0468L15.4788 23.7796V45.0567C15.4788 46.6771 16.804 48.0024 18.4244 48.0024C20.0449 48.0024 21.3701 46.6771 21.3701 45.0567V20.3781L18.8187 18.9052L18.8194 18.9056Z"
+                  fill="#008080"
+                />
+              </svg>
+            </div>
+            <p class="font-boldFont">Connect</p>
           </a>
 
-          <a
-            href=""
-            class="border border-[#F8BF2C] transition duration-300 bg-[#F8BF2C] rounded-full p-3"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-            >
-              <path
-                d="M5.02601 15C11.0636 15 14.3673 9.99705 14.3673 5.66585C14.3673 5.5251 14.3673 5.38435 14.3609 5.2436C15.0012 4.78297 15.5582 4.20079 16 3.54183C15.411 3.80413 14.7771 3.97687 14.1112 4.06004C14.7899 3.65699 15.3085 3.01083 15.5582 2.24311C14.9244 2.62057 14.2201 2.88927 13.471 3.03642C12.8691 2.39665 12.0176 2 11.0764 2C9.26451 2 7.79192 3.47146 7.79192 5.28199C7.79192 5.53789 7.82393 5.7874 7.87515 6.03051C5.14766 5.89616 2.72749 4.58465 1.10764 2.60138C0.825931 3.0876 0.665866 3.65059 0.665866 4.25197C0.665866 5.39075 1.2485 6.39518 2.12565 6.98376C1.58784 6.96457 1.08203 6.81742 0.640256 6.57431C0.640256 6.58711 0.640256 6.5999 0.640256 6.61909C0.640256 8.20571 1.77351 9.53642 3.27171 9.83711C2.9964 9.91388 2.70828 9.95226 2.40736 9.95226C2.19608 9.95226 1.9912 9.93307 1.79272 9.89469C2.20888 11.1998 3.42537 12.1467 4.85954 12.1722C3.73269 13.0551 2.31773 13.5797 0.781113 13.5797C0.518608 13.5797 0.256102 13.5669 0 13.5349C1.44698 14.4562 3.17567 15 5.02601 15Z"
-                fill="#003333"
-              />
-            </svg>
-          </a>
+          <!-- navLinks -->
+          <div class="text-white flex items-center gap-8 text-sm sm:text-base">
+            <a href="#">Help & Support</a>
+            <a href="#">Privacy policy</a>
+            <a href="#">Terms & Conditions</a>
+          </div>
 
-          <a href="" class="border border-[#F8BF2C] rounded-full p-3">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
+          <!-- social Links -->
+          <div class="flex items-center gap-4">
+            <a
+              href="#"
+              class="p-2 md:p-3 border block border-[#F8BF2C] rounded-full hover:bg-[#F8BF2C] cursor-pointer group transition duration-300"
             >
-              <path
-                d="M4.67147 0C5.55053 0 6.40406 0.246952 7.13866 0.702309C7.40017 0.674361 7.66348 0.660278 7.9275 0.660278C8.89914 0.660278 9.86127 0.851023 10.7589 1.22162C11.6566 1.59222 12.4723 2.13541 13.1593 2.82019C13.8464 3.50497 14.3914 4.31791 14.7632 5.21262C15.1351 6.10732 15.3264 7.06626 15.3264 8.03468C15.3264 8.37887 15.3023 8.72185 15.2544 9.06118C15.3451 9.22217 15.4264 9.38872 15.4976 9.56001C15.7324 10.1251 15.8533 10.7307 15.8533 11.3424C15.8533 11.954 15.7324 12.5597 15.4976 13.1248C15.2627 13.6898 14.9185 14.2033 14.4846 14.6358C14.0506 15.0683 13.5355 15.4114 12.9685 15.6454C12.4016 15.8795 11.7939 16 11.1802 16C10.3396 16 9.52239 15.7742 8.81007 15.3564C8.51779 15.3914 8.22309 15.4091 7.9275 15.4091C6.95586 15.4091 5.99373 15.2183 5.09605 14.8477C4.19837 14.4771 3.38272 13.9339 2.69566 13.2492C2.00861 12.5644 1.46361 11.7514 1.09177 10.8567C0.719944 9.96203 0.528564 9.0031 0.528564 8.03468C0.528564 7.67208 0.555394 7.31082 0.608479 6.95376C0.213109 6.25922 0 5.46856 0 4.656C0 3.42115 0.492171 2.23688 1.36824 1.36371C2.24431 0.490541 3.43252 0 4.67147 0ZM5.11793 7.00958C5.29849 7.31865 5.548 7.58185 5.847 7.77864C6.24316 8.03785 6.66428 8.25672 7.10407 8.43198C7.59581 8.63749 7.97732 8.81171 8.24861 8.95464C8.47801 9.06747 8.68622 9.21902 8.86408 9.40264C8.99867 9.54547 9.07348 9.7344 9.07315 9.93064C9.07894 10.069 9.05168 10.2068 8.99362 10.3326C8.93556 10.4584 8.84837 10.5685 8.73928 10.6538C8.44787 10.8499 8.09923 10.9429 7.74888 10.9178C7.55077 10.9199 7.35306 10.8995 7.15954 10.857C7.0026 10.8226 6.84909 10.774 6.70087 10.712C6.57109 10.6558 6.39385 10.5715 6.16914 10.4592C5.98842 10.3628 5.78726 10.311 5.58247 10.3082C5.39866 10.3007 5.21899 10.3641 5.0806 10.4853C5.01458 10.5481 4.96299 10.6246 4.92938 10.7093C4.89577 10.794 4.88095 10.885 4.88593 10.976C4.8818 11.1485 4.93383 11.3177 5.0342 11.4581C5.15508 11.6113 5.31139 11.7328 5.48967 11.8122C6.187 12.1145 6.94293 12.2575 7.70248 12.2309C8.25521 12.242 8.80534 12.1524 9.32595 11.9664C9.75792 11.813 10.1341 11.5338 10.406 11.1648C10.673 10.775 10.8083 10.31 10.7921 9.83784C10.8025 9.4522 10.7059 9.07121 10.5132 8.73704C10.3174 8.4191 10.0537 8.14844 9.74089 7.94451C9.34487 7.68903 8.92472 7.47306 8.48648 7.29971C8.43964 7.27676 8.39115 7.25733 8.34141 7.24158C7.89234 7.05598 7.55457 6.907 7.32808 6.79464C7.12587 6.69985 6.94275 6.5688 6.78781 6.40798C6.65741 6.27108 6.58548 6.08876 6.58727 5.89971C6.58103 5.75571 6.61356 5.61268 6.68149 5.48556C6.74941 5.35844 6.85023 5.25189 6.97341 5.17704C7.2653 5.00302 7.60128 4.91708 7.94088 4.92958C8.20144 4.92685 8.46119 4.95914 8.71315 5.02558C8.98687 5.10451 9.25473 5.20253 9.51475 5.31891C9.62025 5.36786 9.73499 5.39368 9.85129 5.39464C9.93581 5.39688 10.0198 5.38122 10.0979 5.34868C10.1759 5.31614 10.2462 5.26746 10.3041 5.20584C10.3653 5.13897 10.4127 5.0607 10.4436 4.97551C10.4745 4.89031 10.4884 4.79986 10.4844 4.70931C10.4871 4.53502 10.4262 4.3657 10.3132 4.23304C10.1597 4.07181 9.96934 3.95028 9.75849 3.87891C9.52887 3.79459 9.29143 3.73331 9.04969 3.69598C8.71194 3.64057 8.37006 3.61434 8.02781 3.61758C7.50472 3.61448 6.98504 3.70199 6.4918 3.87624C6.0383 4.02934 5.63346 4.29985 5.31847 4.66024C5.01537 5.01912 4.85512 5.47708 4.86833 5.94664C4.85757 6.31664 4.94361 6.68304 5.11793 7.00958Z"
-                fill="#F8BF2C"
-              />
-            </svg>
-          </a>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+              >
+                <path
+                  class="group-hover:fill-[#003333] transition duration-300"
+                  d="M16 8.04823C16 3.60277 12.418 -0.000976562 7.99949 -0.000976562C3.58095 -0.000976562 -0.000976562 3.60277 -0.000976562 8.04823C-0.000976562 12.0658 2.92468 15.3958 6.74942 15.9997V10.375H4.71805V8.04823H6.74942V6.27489C6.74942 4.25756 7.94383 3.14324 9.77132 3.14324C10.6466 3.14324 11.5622 3.30046 11.5622 3.30046V5.28131H10.5534C9.55951 5.28131 9.24957 5.90178 9.24957 6.53833V8.04823H11.4684L11.1137 10.375H9.24957V15.9997C13.0743 15.3958 16 12.0658 16 8.04823Z"
+                  fill="#F8BF2C"
+                />
+              </svg>
+            </a>
+            <a
+              href="#"
+              class="p-2 md:p-3 border block border-[#F8BF2C] rounded-full hover:bg-[#F8BF2C] cursor-pointer group transition duration-300"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+              >
+                <path
+                  class="group-hover:fill-[#003333] transition duration-300"
+                  d="M5.02601 15C11.0636 15 14.3673 9.99705 14.3673 5.66585C14.3673 5.5251 14.3673 5.38435 14.3609 5.2436C15.0012 4.78297 15.5582 4.20079 16 3.54183C15.411 3.80413 14.7771 3.97687 14.1112 4.06004C14.7899 3.65699 15.3085 3.01083 15.5582 2.24311C14.9244 2.62057 14.2201 2.88927 13.471 3.03642C12.8691 2.39665 12.0176 2 11.0764 2C9.26451 2 7.79192 3.47146 7.79192 5.28199C7.79192 5.53789 7.82393 5.7874 7.87515 6.03051C5.14766 5.89616 2.72749 4.58465 1.10764 2.60138C0.825931 3.0876 0.665866 3.65059 0.665866 4.25197C0.665866 5.39075 1.2485 6.39518 2.12565 6.98376C1.58784 6.96457 1.08203 6.81742 0.640256 6.57431C0.640256 6.58711 0.640256 6.5999 0.640256 6.61909C0.640256 8.20571 1.77351 9.53642 3.27171 9.83711C2.9964 9.91388 2.70828 9.95226 2.40736 9.95226C2.19608 9.95226 1.9912 9.93307 1.79272 9.89469C2.20888 11.1998 3.42537 12.1467 4.85954 12.1722C3.73269 13.0551 2.31773 13.5797 0.781113 13.5797C0.518608 13.5797 0.256102 13.5669 0 13.5349C1.44698 14.4562 3.17567 15 5.02601 15Z"
+                  fill="#F8BF2C"
+                />
+              </svg>
+            </a>
+            <a
+              href="#"
+              class="p-2 md:p-3 border block border-[#F8BF2C] rounded-full hover:bg-[#F8BF2C] cursor-pointer group transition duration-300"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+              >
+                <path
+                  class="group-hover:fill-[#003333] transition duration-300"
+                  d="M4.67147 0C5.55053 0 6.40406 0.246952 7.13866 0.702309C7.40017 0.674361 7.66348 0.660278 7.9275 0.660278C8.89914 0.660278 9.86127 0.851023 10.7589 1.22162C11.6566 1.59222 12.4723 2.13541 13.1593 2.82019C13.8464 3.50497 14.3914 4.31791 14.7632 5.21262C15.1351 6.10732 15.3264 7.06626 15.3264 8.03468C15.3264 8.37887 15.3023 8.72185 15.2544 9.06118C15.3451 9.22217 15.4264 9.38872 15.4976 9.56001C15.7324 10.1251 15.8533 10.7307 15.8533 11.3424C15.8533 11.954 15.7324 12.5597 15.4976 13.1248C15.2627 13.6898 14.9185 14.2033 14.4846 14.6358C14.0506 15.0683 13.5355 15.4114 12.9685 15.6454C12.4016 15.8795 11.7939 16 11.1802 16C10.3396 16 9.52239 15.7742 8.81007 15.3564C8.51779 15.3914 8.22309 15.4091 7.9275 15.4091C6.95586 15.4091 5.99373 15.2183 5.09605 14.8477C4.19837 14.4771 3.38272 13.9339 2.69566 13.2492C2.00861 12.5644 1.46361 11.7514 1.09177 10.8567C0.719944 9.96203 0.528564 9.0031 0.528564 8.03468C0.528564 7.67208 0.555394 7.31082 0.608479 6.95376C0.213109 6.25922 0 5.46856 0 4.656C0 3.42115 0.492171 2.23688 1.36824 1.36371C2.24431 0.490541 3.43252 0 4.67147 0ZM5.11793 7.00958C5.29849 7.31865 5.548 7.58185 5.847 7.77864C6.24316 8.03785 6.66428 8.25672 7.10407 8.43198C7.59581 8.63749 7.97732 8.81171 8.24861 8.95464C8.47801 9.06747 8.68622 9.21902 8.86408 9.40264C8.99867 9.54547 9.07348 9.7344 9.07315 9.93064C9.07894 10.069 9.05168 10.2068 8.99362 10.3326C8.93556 10.4584 8.84837 10.5685 8.73928 10.6538C8.44787 10.8499 8.09923 10.9429 7.74888 10.9178C7.55077 10.9199 7.35306 10.8995 7.15954 10.857C7.0026 10.8226 6.84909 10.774 6.70087 10.712C6.57109 10.6558 6.39385 10.5715 6.16914 10.4592C5.98842 10.3628 5.78726 10.311 5.58247 10.3082C5.39866 10.3007 5.21899 10.3641 5.0806 10.4853C5.01458 10.5481 4.96299 10.6246 4.92938 10.7093C4.89577 10.794 4.88095 10.885 4.88593 10.976C4.8818 11.1485 4.93383 11.3177 5.0342 11.4581C5.15508 11.6113 5.31139 11.7328 5.48967 11.8122C6.187 12.1145 6.94293 12.2575 7.70248 12.2309C8.25521 12.242 8.80534 12.1524 9.32595 11.9664C9.75792 11.813 10.1341 11.5338 10.406 11.1648C10.673 10.775 10.8083 10.31 10.7921 9.83784C10.8025 9.4522 10.7059 9.07121 10.5132 8.73704C10.3174 8.4191 10.0537 8.14844 9.74089 7.94451C9.34487 7.68903 8.92472 7.47306 8.48648 7.29971C8.43964 7.27676 8.39115 7.25733 8.34141 7.24158C7.89234 7.05598 7.55457 6.907 7.32808 6.79464C7.12587 6.69985 6.94275 6.5688 6.78781 6.40798C6.65741 6.27108 6.58548 6.08876 6.58727 5.89971C6.58103 5.75571 6.61356 5.61268 6.68149 5.48556C6.74941 5.35844 6.85023 5.25189 6.97341 5.17704C7.2653 5.00302 7.60128 4.91708 7.94088 4.92958C8.20144 4.92685 8.46119 4.95914 8.71315 5.02558C8.98687 5.10451 9.25473 5.20253 9.51475 5.31891C9.62025 5.36786 9.73499 5.39368 9.85129 5.39464C9.93581 5.39688 10.0198 5.38122 10.0979 5.34868C10.1759 5.31614 10.2462 5.26746 10.3041 5.20584C10.3653 5.13897 10.4127 5.0607 10.4436 4.97551C10.4745 4.89031 10.4884 4.79986 10.4844 4.70931C10.4871 4.53502 10.4262 4.3657 10.3132 4.23304C10.1597 4.07181 9.96934 3.95028 9.75849 3.87891C9.52887 3.79459 9.29143 3.73331 9.04969 3.69598C8.71194 3.64057 8.37006 3.61434 8.02781 3.61758C7.50472 3.61448 6.98504 3.70199 6.4918 3.87624C6.0383 4.02934 5.63346 4.29985 5.31847 4.66024C5.01537 5.01912 4.85512 5.47708 4.86833 5.94664C4.85757 6.31664 4.94361 6.68304 5.11793 7.00958Z"
+                  fill="#F8BF2C"
+                />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
-
-      <div class="border border-[#F8BF2C] opacity-[0.2]"></div>
-
-      <!-- copyright -->
-      <div class="max-w-[1296px] mx-auto text-center py-8">
-        <p class="text-white text-base">
-          Copyright ©2024<span class="text-[#F8BF2C]">Connect</span>
-        </p>
+      <!-- footer bottom -->
+      <div
+        class="py-4 md:py-6 lg:py-8 xl:py-10 text-center border-t border-[#F8BF2C33]"
+      >
+        <p>Copyright ©2024 <span class="text-[#F8BF2C]">Connect</span></p>
       </div>
     </footer>
     <!-- zh footer end -->
