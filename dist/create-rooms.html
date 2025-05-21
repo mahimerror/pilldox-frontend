@@ -9,9 +9,9 @@
   </head>
   <body>
     <!-- zh navbar start-->
-    <header class="border-black/10 border-b">
+    <header class="border-black/10 border-b px-4">
       <nav
-        class="py-4 md:py-5 w-full flex items-center justify-between px-5 md:px-8 2xl:px-0 container mx-auto"
+        class="py-4 md:py-5 w-full flex items-center justify-between container mx-auto"
       >
         <!-- logo -->
         <div>
@@ -46,7 +46,7 @@
         </div>
 
         <!-- Auth Buttons -->
-        <div class="md:flex items-center gap-6 hidden">
+        <div class="lg:flex items-center gap-4 hidden">
           <!-- add from zh start -->
           <a
             href=""
@@ -138,10 +138,10 @@
           </button>
         </div>
 
-        <div class="md:hidden">
+        <div class="lg:hidden">
           <div
             id="menu-hamburger"
-            class="bg-primary p-2 size-10 flex items-center justify-center rounded-md md:hidden"
+            class="bg-primary p-2 size-10 flex items-center justify-center rounded-md lg:hidden"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -169,7 +169,7 @@
           </div>
           <div
             id="menu-close"
-            class="bg-primary p-2 hidden size-10 items-center justify-center rounded-md md:hidden"
+            class="bg-primary p-2 hidden size-10 items-center justify-center rounded-md lg:hidden"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -197,11 +197,11 @@
         <!-- sidebar -->
         <div
           id="sidebar"
-          class="fixed left-0 top-0 z-20 h-full w-60 -translate-x-full transform overflow-y-scroll bg-white transition-transform duration-500 md:w-64"
+          class="fixed left-0 top-0 z-20 h-full w-60 -translate-x-full transform overflow-y-scroll bg-white transition-transform duration-500 md:w-64 shadow-lg"
         >
           <!-- logo -->
           <div
-            class="flex w-full items-center pb-2 pl-10 pt-12 font-roboto font-bold text-primary md:text-xl"
+            class="flex w-full items-center pb-2 px-5 pt-12 font-roboto font-bold text-primary md:text-xl"
           >
             <a href="user-homepage.html" class="flex items-center gap-1">
               <svg
@@ -229,14 +229,16 @@
                   fill="#008080"
                 />
               </svg>
-              <p class="font-boldFont">CommunityConnect</p>
+              <p class="font-boldFont">Community</p>
             </a>
           </div>
 
           <!-- Profile info -->
-          <div class="pt-4 px-4">
+          <div
+            class="pl-5 pr-5 flex items-center pt-4 border-b border-black/20"
+          >
             <button
-              class="px-5 py-2 text-sm text-[#222222] border-b border-black/20 font-mediumFont navbar-dropdown-btn relative w-full"
+              class="text-sm text-[#222222] font-mediumFont relative w-full"
             >
               <div class="flex items-center gap-2">
                 <div>
@@ -264,13 +266,25 @@
                 </div>
               </div>
             </button>
+            <button
+              class="inline text-start text-base text-[#222222] font-mediumFont"
+            >
+              Logout
+            </button>
           </div>
           <!-- NavLinks ::start -->
-          <div class="py-4 pl-10 font-inter text-sm">
-            <div class="flex flex-col justify-center gap-4 font-boldFont">
-              <a href="community-inbox.html">Inbox</a>
-              <a href="account.html">Account</a>
-              <button class="inline text-start">Logout</button>
+          <div class="py-4 px-5 font-inter text-base">
+            <div class="flex flex-col gap-4 font-boldFont">
+              <a href="" class="font-boldFont text-[#141414]"> Chat rooms </a>
+              <a href="" class="font-boldFont text-[#141414]"> Yo!Tube </a>
+              <a href="" class="font-boldFont text-[#141414]"> Daro’s List </a>
+              <!-- add from zh end -->
+              <a
+                href="community-join.html"
+                class="font-boldFont text-[#141414]"
+              >
+                Inbox
+              </a>
             </div>
           </div>
           <!-- NavLinks ::end -->
@@ -282,10 +296,8 @@
     <!-- zh main content start-->
     <main>
       <!-- zh create chat room -->
-      <section
-        class="w-full h-full flex flex-col justify-center items-center pt-[30px]"
-      >
-        <div class="flex items-start lg:gap-[136px]">
+      <section class="w-full h-full pt-[30px] container mx-auto px-4 mb-10">
+        <div class="lg:flex lg:items-start lg:gap-[136px]">
           <button>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -307,19 +319,19 @@
           </button>
 
           <div
-            class="w-[960px] bg-white border border-[rgba(0,_0,_0,_0.08)] rounded-xl px-[54px] py-11"
+            class="flex-1 max-w-[960px] w-full bg-white border border-[rgba(0,_0,_0,_0.08)] rounded-xl px-3 md:px-7 py-4 md:py-6 lg:px-[54px] lg:py-11"
           >
-            <div class="text-center space-y-[6px] pb-[30px] lg:pb-[60px]">
-              <h1 class="text-[32px] font-boldFont text-[#2E2E2E]">
+            <div class="text-center space-y-[6px] pb-6 lg:pb-[60px]">
+              <h1 class="text-xl lg:text-[32px] font-boldFont text-[#2E2E2E]">
                 Create a Chat Room
               </h1>
-              <p class="text-base text-[#6A6A6A] font-mediumFont">
+              <p class="text-sm lg:text-base text-[#6A6A6A] font-mediumFont">
                 Set up your perfect space for conversation
               </p>
             </div>
 
             <!-- room form -->
-            <form action="" class="space-y-6 flex flex-col">
+            <form action="" class="w-full space-y-6 flex flex-col">
               <!-- room name -->
               <div class="space-y-2">
                 <label class="text-base text-[#2E2E2E] font-mediumFont" for=""
@@ -441,7 +453,7 @@
               </div>
 
               <!-- room settings and perticpants -->
-              <div class="flex justify-between pt-10">
+              <div class="lg:flex lg:justify-between lg:pt-10">
                 <!-- room setting -->
                 <div class="space-y-4">
                   <h4 class="text-[20px] text-[#2E2E2E] font-mediumFont">
@@ -492,22 +504,22 @@
                 </div>
 
                 <!-- room perticipants -->
-                <div>
+                <div class="space-y-1 mt-3 lg:space-y-0 lg:mt-0">
                   <h3 class="text-base font-mediumFont text-[#2E2E2E]">
                     Max Participants
                   </h3>
                   <input
                     required
-                    class="py-[14px] px-6 rounded-lg border border-[rgba(0,_0,_0,_0.08)] w-[360px] mt-2 outline-0 placeholder:text-[#B6B6B6] text-[14px] font-mediumFont"
+                    class="py-[14px] px-6 rounded-lg border border-[rgba(0,_0,_0,_0.08)] md:max-w-[360px] w-full mt-2 outline-0 placeholder:text-[#B6B6B6] text-[14px] font-mediumFont"
                     type="number"
                     placeholder="Enter Max number..."
                   />
                 </div>
               </div>
 
-              <div class="pt-12">
+              <div class=" md:pt-8 lg:pt-12">
                 <button
-                  class="w-full block border border-[rgba(0,_0,_0,_0.08)] rounded-lg bg-[#008080] py-[15px] text-center text-white text-lg font-mediumFont"
+                  class="w-full block border border-[rgba(0,_0,_0,_0.08)] rounded-lg bg-[#008080] py-[15px] text-center text-white text-base md:text-lg font-mediumFont"
                 >
                   Create Room
                 </button>
