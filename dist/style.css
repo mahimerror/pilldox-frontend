@@ -763,6 +763,14 @@ video {
   top: 50%;
 }
 
+.bottom-1{
+  bottom: 0.25rem;
+}
+
+.right-\[\]{
+  right: ;
+}
+
 .-z-10{
   z-index: -10;
 }
@@ -3427,6 +3435,14 @@ video {
     left: 1.5rem;
   }
 
+  .sm\:right-4{
+    right: 1rem;
+  }
+
+  .sm\:bottom-4{
+    bottom: 1rem;
+  }
+
   .sm\:col-span-1{
     grid-column: span 1 / span 1;
   }
@@ -3681,6 +3697,11 @@ video {
   .sm\:py-3{
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
+  }
+
+  .sm\:px-\[14px\]{
+    padding-left: 14px;
+    padding-right: 14px;
   }
 
   .sm\:pb-6{
