@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="assets/images/logo.svg" type="image/x-icon" />
     <title>Pilldox Client| Post Item</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./assets/css/nice-select.css" />
+    <link rel="stylesheet" href="./assets/css/custom-nice-selector.css" />
   </head>
   <body>
     <!-- navbar start-->
@@ -61,7 +63,7 @@
             Yo!Tube
           </a>
           <a
-            href=""
+            href="daro's-general-list.html"
             class="font-boldFont text-[#141414] w-32 flex items-center justify-center"
           >
             Daro’s List
@@ -278,7 +280,7 @@
       </nav>
     </header>
 
-    <main>
+    <main class="font-mediumFont">
       <section
         class="w-full h-full flex flex-col justify-center items-center pt-[30px]"
       >
@@ -330,91 +332,42 @@
                 />
               </div>
 
-              <div class="space-y-2 mb-6">
-                <label class="text-base text-[#2E2E2E] font-mediumFont" for=""
-                  >Item Category</label
+              <!-- item category -->
+              <p class="text-base mb-2 text-[#2E2E2E] font-mediumFont">
+                Item Category
+              </p>
+              <div class="nice-select bg-select wide">
+                <span
+                  class="current absolute top-1/2 transform -translate-y-1/2"
+                  >Select Type</span
                 >
-
-                <div class="relative">
-                  <select
-                    class="appearance-none font-mediumFont text-[14px] px-6 rounded-lg border border-[rgba(0,_0,_0,_0.08)] w-full bg-[#FAFAFA] outline-0 mr-6 space-y-2 py-[14px]"
-                    name=""
-                    id=""
-                  >
-                    <option value="" class="text-gray-400">Select Type</option>
-                    <option value="vehicles" class="text-gray-400">
-                      Vehicles
-                    </option>
-                    <option value="" class="text-gray-400">Electronics</option>
-                    <option value="" class="text-gray-400">Furniture</option>
-                    <option value="" class="text-gray-400">Vehicles</option>
-                    <option value="" class="text-gray-400">Clothings</option>
-                    <option value="" class="text-gray-400">Sports</option>
-                    <option value="" class="text-gray-400">
-                      Home Application
-                    </option>
-                  </select>
-                  <div class="absolute top-[50%] right-6 -translate-y-1/2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                    >
-                      <path
-                        d="M7 10L12 15L17 10"
-                        stroke="black"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </div>
-                </div>
+                <ul class="list nice-list">
+                  <li data-value="electronics" class="option">Electronics</li>
+                  <li data-value="furniture" class="option">Furniture</li>
+                  <li data-value="vehicles" class="option">Vehicles</li>
+                  <li data-value="clothings" class="option">Clothings</li>
+                  <li data-value="sports" class="option">Sports</li>
+                </ul>
               </div>
 
-              <div class="space-y-2 mb-6">
-                <label class="text-base text-[#2E2E2E] font-mediumFont" for=""
-                  >Item Conditions</label
+              <!-- item condition -->
+              <p class="text-base text-[#2E2E2E] font-mediumFont mb-2"
+                >Item Conditions</p>
+              <div class="nice-select bg-select wide">
+                <span
+                  class="current absolute top-1/2 transform -translate-y-1/2"
+                  >Select Type</span
                 >
-
-                <div class="relative">
-                  <select
-                    class="appearance-none font-mediumFont text-[14px] px-6 rounded-lg border border-[rgba(0,_0,_0,_0.08)] w-full bg-[#FAFAFA] outline-0 mr-6 space-y-2 py-[14px]"
-                    name=""
-                    id=""
-                  >
-                    <option value="" class="text-gray-400">Select Type</option>
-                    <option value="" class="text-gray-400">New</option>
-                    <option value="vehicles" class="text-gray-400">
-                      Used(good)
-                    </option>
-                    <option value="vehicles" class="text-gray-400">
-                      Used(Fair)
-                    </option>
-                  </select>
-                  <div class="absolute top-[50%] right-6 -translate-y-1/2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                    >
-                      <path
-                        d="M7 10L12 15L17 10"
-                        stroke="black"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </div>
-                </div>
+                <ul class="list nice-list">
+                  <li data-value="new" class="option">New</li>
+                  <li data-value="used(good)" class="option">Used (Good)</li>
+                  <li data-value="used(fair)" class="option">Used (Fair)</li>
+                 
+                </ul>
               </div>
 
-              <div class="space-y-2 flex flex-col mb-6">
+              <!-- item Description -->
+              <div class="space-y-2 mb-6">
                 <label class="text-base text-[#2E2E2E] font-mediumFont" for=""
                   >Description <span class="text-red-600">*</span></label
                 >
@@ -434,10 +387,14 @@
                 >
                 <label
                   for="roomsCoverUpload"
-                  class="relative cursor-pointer text-center bg-[#FAFAFA] w-full   px-6 py-10 rounded-lg border-[2px] border-dashed border-[rgba(0,_0,_0,_0.08)] flex items-center justify-center"
+                  class="relative cursor-pointer text-center bg-[#FAFAFA] w-full px-6 py-10 rounded-lg border-[2px] border-dashed border-[rgba(0,_0,_0,_0.08)] flex items-center justify-center"
                 >
-
-                <img id="uploadImage" src="" alt="" class="w-full h-[291px] object-cover rounded-lg hidden">
+                  <img
+                    id="uploadImage"
+                    src=""
+                    alt=""
+                    class="w-full h-[291px] object-cover rounded-lg hidden"
+                  />
                   <div id="givenContent" class="space-y-4">
                     <svg
                       class="mx-auto"
@@ -476,7 +433,13 @@
                     </p>
                   </div>
 
-                  <input class="hidden" type="file" id="roomsCoverUpload" onclick="uploadPhoto()" accept="image/*"/>
+                  <input
+                    class="hidden"
+                    type="file"
+                    id="roomsCoverUpload"
+                    onclick="uploadPhoto()"
+                    accept="image/*"
+                  />
                 </label>
               </div>
 
@@ -502,57 +465,57 @@
                 >
 
                 <div class="flex flex-col gap-4">
-                  <div
+                  <label
                     class="flex items-center gap-3 text-[#6A6A6A] font-medium"
                   >
                     <input
-                      class="w-5 h-5"
+                      class="w-5 h-5 accent-primary"
                       type="checkbox"
                       name=""
                       id=""
                       value="cash"
                     />
-                    <label for="">Cash</label>
-                  </div>
+                    <p for="">Cash</p>
+                  </label>
 
-                  <div
+                  <label
                     class="flex items-center gap-3 text-[#6A6A6A] font-medium"
                   >
                     <input
-                      class="w-5 h-5"
+                      class="w-5 h-5 accent-primary"
                       type="checkbox"
                       name=""
                       id=""
                       value="bank"
                     />
-                    <label for="">Bank Transfer</label>
-                  </div>
+                    <p for="">Bank Transfer</p>
+                  </label>
 
-                  <div
+                  <label
                     class="flex items-center gap-3 text-[#6A6A6A] font-medium"
                   >
                     <input
-                      class="w-5 h-5"
+                      class="w-5 h-5 accent-primary"
                       type="checkbox"
                       name=""
                       id=""
                       value="card"
                     />
-                    <label for="">Credit Card</label>
-                  </div>
+                    <p for="">Credit Card</p>
+                  </label>
 
-                  <div
+                  <label
                     class="flex items-center gap-3 text-[#6A6A6A] font-medium"
                   >
                     <input
-                      class="w-5 h-5"
+                      class="w-5 h-5 accent-primary"
                       type="checkbox"
                       name=""
                       id=""
                       value="paypal"
                     />
-                    <label for="">Paypal</label>
-                  </div>
+                    <p for="">Paypal</p>
+                  </label>
                 </div>
               </div>
 
@@ -593,22 +556,29 @@
                   class="font-mediumFont text-[14px] placeholder:text-[#B6B6B6] py-[14px] px-6 rounded-lg border border-[rgba(0,_0,_0,_0.08)] w-full bg-[#FAFAFA] outline-0"
                 />
               </div>
+              
 
+              <!-- terns & conditions -->
               <div class="space-y-2 mb-6">
-                <div class="flex items-center gap-3">
-                  <input class="w-5 h-5" type="checkbox" name="" id="" />
+                <label class="flex items-center gap-3">
+                  <input
+                    class="w-5 h-5 accent-primary"
+                    type="checkbox"
+                    name=""
+                    id=""
+                  />
 
-                  <label for="" class="font-medium"
-                    >I agree to the
+                  <p for="" class="font-medium">
+                    I agree to the
                     <span class="text-primary"
-                      ><a href="">Terms and Conditions</a></span
+                      ><a>Terms and Conditions</a></span
                     >
                     and
                     <span class="text-primary"
-                      ><a href="">Privacy Policy</a></span
-                    ></label
-                  >
-                </div>
+                      ><a>Privacy Policy</a></span
+                    >
+                  </p>
+                </label>
               </div>
 
               <div class="pt-12">
@@ -622,7 +592,7 @@
               </div>
 
               <div
-                class="text-[#F8BF2C] font-medium text-sm flex items-center justify-center gap-2 my-8"
+                class="text-[#F8BF2C] bg-[#FFFAEC] py-[10px] px-[15px] rounded-lg w-fit mx-auto font-medium text-sm flex items-center justify-center gap-2 my-8"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -801,8 +771,14 @@
     </div>
 
     <!-- Scripts -->
+    <!-- jquery nice select -->
     <script>
-      
+      // $(document).ready(function () {
+      //   $("select").niceSelect();
+
+      $(document).ready(function () {
+        $("select").niceSelect();
+      });
     </script>
 
     <script src="./assets/js/plugins.js"></script>

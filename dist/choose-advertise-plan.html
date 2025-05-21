@@ -284,7 +284,7 @@
 
     <!-- main content -->
 
-    <main class="my-10 text-text">
+    <main class="my-10 text-text font-mediumFont">
       <div
         class="flex flex-col items-center justify-center mt-5 space-y-2 text-center"
       >
@@ -350,7 +350,7 @@
               onclick="choosePlan('plan49')"
               class="w-full text-base md:text-lg flex items-center justify-between bg-[#F6F6F6] py-4 px-6 rounded-lg mb-5 border-2 border-[#F6F6F6] plan-container"
             >
-              <p>Homepage banner</p>
+              <p class="plan-name">Homepage banner</p>
               <p class="text-primary font-bold plan-option">$49.99/week</p>
             </div>
 
@@ -359,12 +359,13 @@
               onclick="choosePlan('plan29')"
               class="w-full text-base md:text-lg flex items-center justify-between bg-[#F6F6F6] py-4 px-6 rounded-lg mb-10 border-2 border-[#F6F6F6] plan-container"
             >
-              <p>Sidebar banner</p>
+              <p class="plan-name">Sidebar banner</p>
               <p class="text-primary font-bold plan-option">$29.99/week</p>
             </div>
 
+            <!-- href="submit-banner-add.html" -->
             <a
-              href="submit-banner-add.html"
+              onclick="nextPage()"
               class="bg-primary rounded-lg py-4 px-6 text-white w-full mb-7 text-center"
             >
               Continue
@@ -415,7 +416,7 @@
               onclick="choosePlan('plan99')"
               class="w-full text-base md:text-lg flex items-center justify-between bg-[#F6F6F6] py-4 px-6 rounded-lg border-2 border-[#F6F6F6] mb-5 plan-container"
             >
-              <p>Sponsored Post</p>
+              <p class="plan-name">Sponsored Post</p>
               <p class="text-primary font-bold plan-option">$99.99/post</p>
             </div>
 
@@ -424,12 +425,12 @@
               onclick="choosePlan('plan149')"
               class="w-full text-base md:text-lg flex items-center justify-between bg-[#F6F6F6] py-4 px-6 rounded-lg border-2 border-[#F6F6F6] mb-10 plan-container"
             >
-              <p>Sponsored Video</p>
+              <p class="plan-name">Sponsored Video</p>
               <p class="text-primary font-bold plan-option">$149.99/video</p>
             </div>
 
             <a
-              href="submit-banner-add.html"
+              onclick="nextPage()"
               class="bg-primary rounded-lg py-4 px-6 text-white w-full mb-7 text-center"
             >
               Continue
@@ -556,53 +557,52 @@
 
     <!-- Scripts -->
     <script>
-      // const plan49 = document.getElementById("plan49");
-      // const plan29 = document.getElementById("plan29");
-      // const plan99 = document.getElementById("plan99");
-      // const plan149 = document.getElementById("plan149");
 
-      // function choosePlan(planId) {
-      //  const allPlan = document.getElementsByClassName('plan-container');
-      //  const selectedPlan = document.getElementById('planId');
-      // //  selectedPlan.classList.remove('border-[#F6F6F6]');
-      //  selectedPlan.classList.add("border-primary");
-      // }
+      let selectedPlan = {};
 
       function choosePlan(planId) {
         const selectedDiv = document.getElementById(planId);
 
-        const allPlans = document.getElementsByClassName('plan-container');
-        for(let i=0; i<allPlans.length; i++){
+        const allPlans = document.getElementsByClassName("plan-container");
+        for (let i = 0; i < allPlans.length; i++) {
           // console.log(allPlans[i]);
-          allPlans[i].classList.remove('border-primary');
-          allPlans[i].classList.add('border-[#F6F6F6]');
+          allPlans[i].classList.remove("border-primary");
+          allPlans[i].classList.add("border-[#F6F6F6]");
         }
-       
+
         selectedDiv.classList.remove("border-[#F6F6F6]");
         selectedDiv.classList.add("border-primary");
 
         // Step 3: Get the price from the child with class 'plan-option'
-        const plansOption = selectedDiv.getElementsByClassName("plan-option");
-        let priceValue = null;
-        if(plansOption.length > 0){
-          const priceText = plansOption[0].textContent;
-          priceValue = parseFloat(priceText.replace(/[^0-9.]/g, ""));
-
-        }
+        // const plansOption = selectedDiv.getElementsByClassName("plan-option");
         // let priceValue = null;
-        // if (priceEls.length > 0) {
-        //   const priceText = priceEls[0].textContent;
+        // if (plansOption.length > 0) {
+        //   const priceText = plansOption[0].textContent;
         //   priceValue = parseFloat(priceText.replace(/[^0-9.]/g, ""));
         // }
 
-       
-        console.log("Selected price:", priceValue);
 
-        // Optional: store selected plan
-        window.selectedPlan = {
-          id: planId,
-          price: priceValue,
-        };
+        const plansOption = selectedDiv.querySelector('.plan-option');
+        const priceValue = plansOption.textContent;
+
+        const planOptionName = selectedDiv.querySelector(".plan-name");
+        const planName = planOptionName.textContent;
+
+        selectedPlan = {
+        name: planName,
+        price: priceValue,
+      };
+       
+      }
+      // console.log(selectedPlan);
+
+      function nextPage() {
+        if (selectedPlan.name && selectedPlan.price != null) {
+          localStorage.setItem("selectedPlan", JSON.stringify(selectedPlan));
+          window.location.href = "submit-banner-add.html";
+        } else {
+          alert("select a plan please");
+        }
       }
     </script>
 

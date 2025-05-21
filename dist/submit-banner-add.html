@@ -7,7 +7,8 @@
     <title>Pilldox Client| Banner Add</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+
+  <body onload="selectedPlanLoad()">
     <!-- navbar start-->
     <header class="border-black/10 border-b">
       <nav
@@ -61,7 +62,7 @@
             Yo!Tube
           </a>
           <a
-            href=""
+            href="daro's-general-list.html"
             class="font-boldFont text-[#141414] w-32 flex items-center justify-center"
           >
             Daro’s List
@@ -278,7 +279,7 @@
       </nav>
     </header>
 
-    <main>
+    <main class="font-mediumFont">
       <section
         class="w-full h-full flex flex-col justify-center items-center pt-[30px]"
       >
@@ -298,9 +299,11 @@
           <div
             class="bg-[#E8F2F2] py-7 px-3 lg:px-12 font-medium flex items-center justify-between rounded-lg mb-16 md:mb-[84px]"
           >
-            <div>
-              <p class="text-base md:text-lg">Homepage Add</p>
-              <p class="text-primary text-2xl lg:text-[32px] font-bold">$49.99</p>
+            <div id="selectedPlanDetails" class="space-y-1">
+              <p></p>
+              <p></p>
+              <!-- <p class="text-base md:text-lg">Homepage Add</p>
+              <p class="text-primary text-2xl lg:text-[32px] font-bold">$49.99</p> -->
             </div>
 
             <a
@@ -317,12 +320,12 @@
 
             <div class="my-6">
               <div class="flex flex-col md:flex-row gap-8">
-                <div
+                <label
                   class="flex items-center gap-6 border rounded-xl py-[18px] px-6 w-full"
                 >
                   <input
                     type="radio"
-                    name=""
+                    name="banner-type"
                     id=""
                     class="w-4 h-4 border accent-primary"
                   />
@@ -347,14 +350,14 @@
                     </svg>
                     Image Banner
                   </div>
-                </div>
+                </label>
 
-                <div
+                <label
                   class="flex items-center gap-6 border rounded-xl py-[18px] px-6 w-full"
                 >
                   <input
                     type="radio"
-                    name=""
+                    name="banner-type"
                     id=""
                     class="w-4 h-4 border accent-primary"
                   />
@@ -373,7 +376,7 @@
                     </svg>
                     Video Banner
                   </div>
-                </div>
+                </label>
               </div>
             </div>
 
@@ -383,9 +386,14 @@
             <div class="flex flex-col my-10">
               <label
                 for="roomsCoverUpload"
-                class="relative cursor-pointer text-center bg-[#FAFAFA] w-full px-6 py-10 rounded-lg border-[2px] border-dashed border-[rgba(0,_0,_0,_0.08)] flex items-center justify-center overflow-hidden"
+                class="relative cursor-pointer text-center bg-[#FAFAFA] w-full px-6 py-10 rounded-lg border-2 border-dashed border-[rgba(0,_0,_0,_0.08)] flex items-center justify-center overflow-hidden"
               >
-                <img id="uploadImage" class="w-full max-h-72 h-full object-cover rounded-lg hidden" src="" alt="">
+                <img
+                  id="uploadImage"
+                  class="w-full max-h-72 h-full object-cover rounded-lg hidden"
+                  src=""
+                  alt=""
+                />
 
                 <div id="givenContent" class="space-y-4">
                   <svg
@@ -425,7 +433,12 @@
                   </p>
                 </div>
 
-                <input class="hidden" type="file" id="roomsCoverUpload" onclick="uploadPhoto()" />
+                <input
+                  class="hidden"
+                  type="file"
+                  id="roomsCoverUpload"
+                  onclick="uploadPhoto()"
+                />
               </label>
             </div>
 
@@ -442,18 +455,19 @@
               />
             </div>
 
-
-
+            <!-- payment details -->
             <div class="mb-6">
               <label class="text-2xl text-[#2E2E2E] font-mediumFont" for=""
                 >Payment Details</label
               >
 
-              <div class="py-[28px] px-5 lg:px-14 rounded-lg border border-[rgba(0,_0,_0,_0.08)] w-full bg-[#FAFAFA] outline-0 mt-3 flex items-center justify-between font-medium text-xl">
-                <p class="ont-mediumFont placeholder:text-[#B6B6B6]">Banner Ad (1 week)</p>
-                <p>$49.99</p>
+              <div
+                id="paymentDetails"
+                class="py-[28px] px-5 lg:px-14 rounded-lg border border-[rgba(0,_0,_0,_0.08)] w-full bg-[#FAFAFA] outline-0 mt-3 flex items-center justify-between font-medium text-xl"
+              >
+                <p></p>
+                <p></p>
               </div>
-              
             </div>
 
             <div class="pt-12">
@@ -463,7 +477,6 @@
                 Submit & Pay
               </button>
             </div>
-            
           </form>
         </div>
       </section>
@@ -584,8 +597,30 @@
 
     <!-- ?footer ends here? -->
 
-    <!-- Scripts -->
+    <!-- script for load plan from choose-add-plan page -->
     <script>
+      function selectedPlanLoad() {
+        const planData = localStorage.getItem("selectedPlan");
+        if (planData) {
+          const plan = JSON.parse(planData);
+          console.log(plan);
+          document.getElementById("selectedPlanDetails").innerHTML = `
+              <p class="text-base md:text-lg">${plan.name}</p>
+              <p class="text-primary text-2xl lg:text-[32px] font-bold">${plan.price}</p> 
+            `;
+
+          document.getElementById("paymentDetails").innerHTML = `
+          <p class="ont-mediumFont placeholder:text-[#B6B6B6] tracking-wide">
+                  Banner Add (1 Week)
+                </p>
+                <p>${plan.price}</p>
+          
+          `;
+        } else {
+          document.getElementById("selectedPlanDetails").innerText =
+            "No Plan Selected";
+        }
+      }
     </script>
 
     <script src="./assets/js/plugins.js"></script>

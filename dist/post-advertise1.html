@@ -10,6 +10,8 @@
     />
     <title>Pilldox Client | Post Advertise</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./assets/css/nice-select.css" />
+    <link rel="stylesheet" href="./assets/css/custom-nice-selector.css" />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
@@ -67,7 +69,7 @@
             Yo!Tube
           </a>
           <a
-            href=""
+            href="daro's-general-list.html"
             class="font-boldFont text-[#141414] w-32 flex items-center justify-center"
           >
             Daro’s List
@@ -297,69 +299,33 @@
         </p>
       </div>
 
-      <section class="flex items-center">
+      <section class="flex flex-col items-center font-mediumFont">
         <div
           class="w-3/4 md:w-full max-w-3xl bg-white border p-8 mx-auto rounded-xl relative"
         >
-          <div class="pb-32 md:pb-40">
-            <p class="font-medium mb-4">Post Type</p>
-            <div
-              id="dropdownToggle"
-              class="w-full border flex items-center justify-between py-3 px-6 rounded-lg"
+          <p class="text-base text-[#2E2E2E] font-mediumFont mb-3">
+            Item Conditions
+          </p>
+          <div class="nice-select bg-select wide nice-relative">
+            <span class="current absolute top-1/2 transform -translate-y-1/2"
+              >Select Post Type...</span
             >
-              <span id="selectedOption">Select the type of post...</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <path
-                  d="M7 10L12 15L17 10"
-                  stroke="black"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </div>
-
-            <!-- options for dropdown -->
-            <ul
-              id="dropdownMenu"
-              class="rounded-lg p-6 mt-3 shadow-lg font-medium overflow-auto hidden"
-            >
-              <li
-                class="bg-white w-full py-3 px-6 hover:bg-[#F6F6F6] rounded-lg"
-              >
-                Jobs
-              </li>
-              <li
-                class="bg-white w-full py-3 px-6 hover:bg-[#F6F6F6] rounded-lg"
-              >
-                For Sale
-              </li>
-              <li
-                class="bg-white w-full py-3 px-6 hover:bg-[#F6F6F6] rounded-lg"
-              >
-                Housing
-              </li>
-              <li
-                class="bg-white w-full py-3 px-6 hover:bg-[#F6F6F6] rounded-lg"
-              >
-                Community
-              </li>
+            <ul class="list nice-list nice-flows-full">
+              <li data-value="jobs" class="option">Jobs</li>
+              <li data-value="sale" class="option">For Sale</li>
+              <li data-value="housinf" class="option">Housing</li>
+              <li data-value="community" class="option">Community</li>
             </ul>
           </div>
 
           <button
-            class="absolute bottom-8 left-8 right-8 bg-[#008080] text-white py-3 rounded-md text-lg font-medium transition mb-14"
+            class="bg-[#008080] w-full text-white py-3 rounded-md text-lg font-medium transition mb-14"
           >
             Continue
           </button>
         </div>
       </section>
+     
     </main>
 
     <!-- footer -->
@@ -474,36 +440,8 @@
         <p>Copyright ©2024 <span class="text-[#F8BF2C]">Connect</span></p>
       </div>
     </footer>
-    
 
     <!-- custorm scripts -->
-    <script>
-      const dropdownToggle = document.getElementById("dropdownToggle");
-      const dropdownMenu = document.getElementById("dropdownMenu");
-      const option = dropdownMenu.querySelectorAll("li");
-      const selected = document.getElementById("selectedOption");
-
-      dropdownToggle.addEventListener("click", (e) => {
-        e.preventDefault();
-        dropdownMenu.classList.toggle("hidden");
-      });
-
-      option.forEach((opt) =>
-        opt.addEventListener("click", () => {
-          selected.textContent = opt.textContent;
-          dropdownMenu.classList.add("hidden");
-        })
-      );
-
-      document.addEventListener("click", (e) => {
-        if (
-          !dropdownToggle.contains(e.target) &&
-          !dropdownMenu.contains(e.target)
-        ) {
-          dropdownMenu.classList.add("hidden");
-        }
-      });
-    </script>
 
     <!-- Scripts -->
     <script src="./assets/js/plugins.js"></script>

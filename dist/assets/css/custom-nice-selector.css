@@ -1,0 +1,72 @@
+/* zh css start */
+.watch-history-select {
+  font-family: "Poppins", "sans-serif";
+  font-weight: 600;
+  width: 9rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.watch-history-select .list {
+  width: 100%;
+  font-family: "Poppins", "sans-serif";
+  font-weight: 600;
+}
+
+.create-rooms-select span {
+  line-height: 50px;
+}
+
+.create-rooms-select{
+  font-family: "Poppins", "sans-serif";
+  font-weight: 600;
+  width: 100%;
+  padding: 0 24px;
+  background: #FAFAFA;
+  height: auto;
+}
+.create-rooms-select .list {
+  width: 100%;
+  font-family: "Poppins", "sans-serif";
+  font-weight: 600;
+}
+/* zhcss end */
+
+
+.bg-select{
+    background-color: #FAFAFA;
+    margin-bottom: 24px;
+    font-weight: 500;
+    color: #6A6A6A;
+    padding:  24px;
+    outline: none;
+    font-family: "Poppins", "sans-serif";
+   
+}
+
+/* .bg-select span{
+    color: #6A6A6A;
+    font-weight: 500;
+} */
+
+.bg-select .nice-list{
+    padding: 16px;
+    color: #2E2E2E;
+    font-weight: 500;
+    border-radius: 8px;
+    font-family: "Poppins", "sans-serif";
+}
+
+.bg-select .nice-relative{
+    position: relative
+}
+.bg-select .nice-flows-full{
+    position: absolute;
+    top: 100%;
+    z-index: 1;
+    display: none;
+}
+
+.bg-select.open .nice-flows-full {
+  display: block;
+}
