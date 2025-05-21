@@ -9,7 +9,7 @@
   </head>
   <body>
     <!-- zh navbar start-->
-    <header class="border-black/10 border-b">
+    <header class="border-black/10 border-b px-4">
       <nav
         class="py-4 md:py-5 w-full flex items-center justify-between container mx-auto"
       >
@@ -46,7 +46,7 @@
         </div>
 
         <!-- Auth Buttons -->
-        <div class="lg:flex items-center gap-6 hidden">
+        <div class="lg:flex items-center gap-4 hidden">
           <!-- add from zh start -->
           <a
             href=""
@@ -197,11 +197,11 @@
         <!-- sidebar -->
         <div
           id="sidebar"
-          class="fixed left-0 top-0 z-20 h-full w-60 -translate-x-full transform overflow-y-scroll bg-white transition-transform duration-500 md:w-64"
+          class="fixed left-0 top-0 z-20 h-full w-60 -translate-x-full transform overflow-y-scroll bg-white transition-transform duration-500 md:w-64 shadow-lg"
         >
           <!-- logo -->
           <div
-            class="flex w-full items-center pb-2 pl-10 pt-12 font-roboto font-bold text-primary md:text-xl"
+            class="flex w-full items-center pb-2 px-5 pt-12 font-roboto font-bold text-primary md:text-xl"
           >
             <a href="user-homepage.html" class="flex items-center gap-1">
               <svg
@@ -229,14 +229,16 @@
                   fill="#008080"
                 />
               </svg>
-              <p class="font-boldFont">CommunityConnect</p>
+              <p class="font-boldFont">Community</p>
             </a>
           </div>
 
           <!-- Profile info -->
-          <div class="pt-4 px-4">
+          <div
+            class="pl-5 pr-5 flex items-center pt-4 border-b border-black/20"
+          >
             <button
-              class="px-5 py-2 text-sm text-[#222222] border-b border-black/20 font-mediumFont navbar-dropdown-btn relative w-full"
+              class="text-sm text-[#222222] font-mediumFont relative w-full"
             >
               <div class="flex items-center gap-2">
                 <div>
@@ -264,13 +266,25 @@
                 </div>
               </div>
             </button>
+            <button
+              class="inline text-start text-base text-[#222222] font-mediumFont"
+            >
+              Logout
+            </button>
           </div>
           <!-- NavLinks ::start -->
-          <div class="py-4 pl-10 font-inter text-sm">
-            <div class="flex flex-col justify-center gap-4 font-boldFont">
-              <a href="community-inbox.html">Inbox</a>
-              <a href="account.html">Account</a>
-              <button class="inline text-start">Logout</button>
+          <div class="py-4 px-5 font-inter text-base">
+            <div class="flex flex-col gap-4 font-boldFont">
+              <a href="" class="font-boldFont text-[#141414]"> Chat rooms </a>
+              <a href="" class="font-boldFont text-[#141414]"> Yo!Tube </a>
+              <a href="" class="font-boldFont text-[#141414]"> Daro’s List </a>
+              <!-- add from zh end -->
+              <a
+                href="community-join.html"
+                class="font-boldFont text-[#141414]"
+              >
+                Inbox
+              </a>
             </div>
           </div>
           <!-- NavLinks ::end -->
@@ -281,7 +295,7 @@
 
     <main>
       <!-- video watch history list start -->
-      <section class="container mx-auto">
+      <section class="container mx-auto px-4">
         <!-- tube top title -->
         <div class="pt-3 md:py-10">
           <h4 class="text-3xl md:text-[40px] text-[#222222] font-boldFont">
@@ -290,7 +304,7 @@
 
           <!-- tags and seact input -->
           <div class="sm:flex items-center justify-between pt-4 pb-4 md:pb-9">
-            <div class="flex items-center gap-4 mb-3 sm:mb-0">
+            <div class="flex items-center gap-1 sm:gap-3 md:gap-4 mb-3 sm:mb-0">
               <a
                 href=""
                 class="hover-active-bg py-2 px-[14px] rounded-[22px] bg-[#ECECEC] text-[#2E2E2E] text-[10px] sm:text-base font-mediumFont transition duration-300 hover:bg-[#008080] hover:text-white"
@@ -323,9 +337,9 @@
                 <input
                   type="text"
                   placeholder="Search"
-                  class="py-[11px] pr-4 pl-[52px] max-w-[187px] w-full md:max-w-[290px] md:w-full bg-[#ECECEC] rounded-xl outline-0 focus:outline-0 placeholder:text-[#6A6A6A] font-mediumFont text-base"
+                  class="py-[11px] pr-4 pl-9 md:pl-[52px] max-w-[187px] w-full md:max-w-[290px] md:w-full bg-[#ECECEC] rounded-xl outline-0 focus:outline-0 placeholder:text-[#6A6A6A] font-mediumFont text-base"
                 />
-                <div class="absolute top-[12px] left-6">
+                <div class="absolute top-[12px] left-3 md:left-6">
                   <img src="../dist//assets/images/serarch-inbox.png" alt="" />
                 </div>
               </div>
@@ -360,7 +374,7 @@
               </div>
 
               <button
-                class="flex items-center gap-[10px] text-base text-[#FF385C] font-mediumFont"
+                class="flex items-center md:gap-[10px] text-sm md:text-base text-[#FF385C] font-mediumFont"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -664,7 +678,7 @@
         </div>
 
         <!-- pagination -->
-        <div class="flex items-center justify-center mt-[54px] flex-wrap">
+        <div class="flex items-center justify-center mt-7 md:mt-[54px] mb-7 lg:mb-14 flex-wrap">
           <div
             class="flex flex-wrap sm:flex-nowrap items-center text-[14px] font-mediumFont text-[#6A6A6A] border border-gray-300 rounded-lg p-0 h-auto sm:h-9 w-full sm:w-auto"
           >
