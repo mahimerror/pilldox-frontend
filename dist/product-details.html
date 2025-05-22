@@ -291,83 +291,47 @@
       </nav>
     </header>
 
-    <!--daro's  Title  part -->
+     <!--daro's  Title  part -->
     <div
-      class="px-5 md:px-8 2xl:px-0 container mx-auto flex flex-col lg:flex-row gap-4 justify-between items-center pt-[34px] pb-[26px] font-mediumFont"
+      class="px-5 md:px-8 2xl:px-0 container mx-auto flex flex-col gap-4 md:flex-row justify-between items-center pt-[34px] pb-[26px] font-mediumFont"
     >
-      <p class="font-bold text-[40px]">Daro's List</p>
+      <p class="font-bold text-2xl md:text-[28px] lg:text-[34px] xl:text-[40px]">Daro's List</p>
 
-      <div class="relative w-11/12 lg:w-1/2 rounded-md">
-        <input
-          type="text"
-          placeholder="Search for Anything..."
-          class="w-full py-3 px-8 shadow-sm search-bg rounded-lg outline-none"
-        />
-        <div
-          class="absolute inset-y-0 right-0 py-3 px-8 flex items-center pointer-events-none"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <path
-              d="M10.5 18C14.6421 18 18 14.6421 18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18Z"
-              stroke="#6A6A6A"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M21 21L16 16"
-              stroke="#6A6A6A"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </div>
+      <div class="relative rounded-md w-full md:w-1/3 lg:w-1/2">
+          <input
+            type="text"
+            placeholder="Search for Anything..."
+            class="w-full py-3 px-8 md:px-2 lg:px-6 xl:px-8 shadow-sm search-bg rounded-lg outline-none"
+          />
+          <div class="absolute inset-y-0 right-0 py-3 px-8 flex items-center pointer-events-none">
+           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M10.5 18C14.6421 18 18 14.6421 18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18Z" stroke="#6A6A6A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M21 21L16 16" stroke="#6A6A6A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+           </svg>
+          </div>
       </div>
+     
 
-      <div>
-        <a
-          href="business-premium-plan.html"
-          class="bg-[#008080] px-6 py-[10px] rounded-lg text-lg text-white flex items-center gap-1"
+     
+
+      <div class="text-base md:text-sm xl:text-base">
+        <a href="business-premium-plan.html"
+          class="bg-[#008080] px-6 py-[10px] rounded-lg text-white flex items-center gap-1"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <path
-              d="M6 12H18"
-              stroke="white"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M12 18V6"
-              stroke="white"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-          <p>Post Ad</p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M6 12H18" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 18V6" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+         Post Ad
         </a>
       </div>
     </div>
 
-    <p class="divider mt-10 border-b"></p>
+    <div class="divider mt-3 md:mt-6 lg:mt-8 xl:mt-10 border-b"></div>
 
     <!-- main content -->
     <section
-      class="w-11/12 md:w-5/6 lg:w-3/4 mx-auto py-[70px] font-medium font-mediumFont"
+      class="w-11/12 md:w-5/6 lg:w-3/4 mx-auto py-12 md:py-[60px] lg:py-[70px] font-medium font-mediumFont"
     >
       <div class="flex items-center gap-2 flex-wrap text-[#6A6A6A]">
         <p>Classified ads</p>
@@ -427,100 +391,111 @@
         <p class="text-primary">Mac Book Pro</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-5">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-3 md:my-4 lg:my-5">
         <!-- image container -->
-        <div class="col-span-2">
+        <div class="col-span-1 md:col-span-2">
           <!-- image container -->
           <div
             id="imageContainer"
-            class="w-full rounded-xl max-h-16 md:max-h-52 lg:max-h-[450px] h-full mb-[22px]"
+            class="w-full rounded-xl max-h-52 lg:max-h-64 xl:max-h-[450px] h-full mb-[22px] overflow-hidden"
           >
             <img
               src="./assets/images/sajnin-icon/macbook1.jpg"
               alt=""
-              class="w-full h-full rounded-xl"
+              class="w-full h-full object-cover"
             />
           </div>
 
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4 xl:gap-5">
             <div
               onclick="getImage('selectedImage1')"
-              class="w-full max-h-40 rounded-[4px] h-full"
+              class="w-full max-h-40 rounded-[4px] h-28 md:h-32 xl:h-full overflow-hidden"
             >
               <img
                 id="selectedImage1"
                 src="./assets/images/sajnin-icon/macbook2.jpg"
                 alt=""
-                class="w-full h-full rounded-[4px]"
+                class="w-full h-full object-cover"
               />
             </div>
 
             <div
               onclick="getImage('selectedImage2')"
-              class="w-full max-h-40 rounded-[4px] h-full"
+              class="w-full max-h-40 rounded-[4px] h-28 md:h-32 xl:h-full overflow-hidden"
             >
               <img
                 id="selectedImage2"
                 src="./assets/images/sajnin-icon/macbook3.jpg"
                 alt=""
-                class="w-full h-full rounded-[4px]"
+                class="w-full h-full object-cover object-center"
               />
             </div>
 
             <div
               onclick="getImage('selectedImage3')"
-              class="w-full max-h-40 rounded-[4px] h-full"
+              class="w-full max-h-40 rounded-[4px] h-28 md:h-32 xl:h-full overflow-hidden"
             >
               <img
                 id="selectedImage3"
                 src="./assets/images/sajnin-icon/macbook4.jpg"
                 alt=""
-                class="w-full h-full rounded-[4px]"
+                class="w-full h-full object-cover"
               />
             </div>
 
             <div
               onclick="getImage('selectedImage4')"
-              class="w-full max-h-40 rounded-[4px] h-full"
+              class="w-full max-h-40 rounded-[4px] h-28 md:h-32 xl:h-full overflow-hidden"
             >
               <img
                 id="selectedImage4"
                 src="./assets/images/sajnin-icon/macbook5.jpg"
                 alt=""
-                class="w-full h-full rounded-[4px]"
+                class="w-full h-full object-cover"
               />
             </div>
           </div>
         </div>
 
-
         <!-- contact seller container -->
-         <div class="border rounded-xl p-[30px] h-fit bg-[#F6F6F6]">
-            <div class="font-medium flex items-center gap-3 mb-9">
-                <img src="./assets/images/sajnin-icon/icon.png" alt="">
-                <div>
-                    <p>Michel Clark</p>
-                    <p class="text-[#B6B6B6] text-sm">Member since 2024</p>
-                </div>
+        <div class="border rounded-xl p-3 lg:p-6 xl:p-[30px] h-fit bg-[#F6F6F6] w-full mx-auto">
+          <div class="font-medium flex items-center gap-3 mb-4 md:mb-7 lg:mb-9">
+            <img src="./assets/images/sajnin-icon/icon.png" alt="" />
+            <div>
+              <p>Michel Clark</p>
+              <p class="text-[#B6B6B6] text-sm">Member since 2024</p>
             </div>
+          </div>
 
-            <a class="mb-3" href=""><button class="text-white bg-primary py-3 w-full rounded-lg border border-primary">Contact Seller</button></a>
-            <a href=""><button class="text-[#2E2E2E] bg-[#E0E0E0] py-3 w-full rounded-lg border mt-3">Message</button></a>
-
-         </div>
+          <a class="mb-3" href=""
+            ><button
+              class="text-white bg-primary py-3 w-full text-sm md:text-base rounded-lg border border-primary"
+            >
+              Contact Seller
+            </button></a
+          >
+          <a href=""
+            ><button
+              class="text-[#2E2E2E] bg-[#E0E0E0] py-3 w-full rounded-lg border mt-3"
+            >
+              Message
+            </button></a
+          >
+        </div>
       </div>
-       
 
-      <div class="mt-14 flex items-center flex-wrap gap-[30px]">
-          <h1 class="text-2xl md:text-[32px] font-bold">MacBook Pro 16" 2023 - Deep Purple</h1>
-          <span class="bg-[#E8F2F2] rounded-[28px] py-[6px] px-5 text-primary">New</span>
+      <div class="mt-7 md:mt-10 lg:mt-14 flex items-center flex-wrap gap-4 md:gap-6 lg:gap-[30px]">
+        <h1 class="text-lg md:text-2xl lg:text-[32px] font-bold">
+          MacBook Pro 16" 2023 - Deep Purple
+        </h1>
+        <span class="bg-[#E8F2F2] rounded-[28px] py-[6px] px-5 text-primary"
+          >New</span
+        >
       </div>
 
-      <h6 class="text-[40px] font-bold text-primary mt-7 mb-4">$2,200</h6>
+      <h6 class="text-2xl md:text-4xl lg:text-[40px] font-bold text-primary mt-3 md:mt-5 lg:mt-7 mb-4">$2,200</h6>
 
-      <!--  last done till here -->
-      <div class="font-medium flex flex-wrap items-center gap-7 my-5">
-        <h5 class="text-xl">TechCorp Solutions</h5>
+      <div class="font-medium text-sm md:text-base flex flex-wrap items-center gap-4 md:gap-7 my-3 md:my-4 lg:my-5">
         <div class="flex items-center gap-3 text-[#6A6A6A]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -534,7 +509,7 @@
               fill="#6A6A6A"
             />
           </svg>
-          <p>Los Angeles, CA</p>
+          <p class="text-nowrap">Los Angeles, CA</p>
         </div>
 
         <div class="flex items-center gap-3 text-[#6A6A6A]">
@@ -549,187 +524,31 @@
               <circle cx="2" cy="2" r="2" fill="#6A6A6A" />
             </svg>
           </p>
-          <p>Posted 2 days ago</p>
+          <p class="text-nowrap">Posted 2 days ago</p>
         </div>
       </div>
 
-      <div class="flex items-center gap-5 flex-wrap">
-        <button class="px-5 py-[6px] rounded-[28px] text-primary bg-[#E8F2F2]">
-          Full Time
-        </button>
-        <p class="text-lg text-[#2E2E2E]">$120,000 - $160,000/year</p>
-      </div>
-
-      <div class="flex items-center gap-8 my-10 flex-wrap">
-        <button class="bg-primary rounded-lg text-white py-2 px-8">
-          Apply Now
-        </button>
-        <button
-          class="border rounded-lg py-2 px-8 flex items-center gap-[10px]"
-        >
-          <p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-            >
-              <path
-                d="M21 12L14 5V9C7 10 4 15 3 20C5.5 16.5 9 14.9 14 14.9V19L21 12Z"
-                fill="#2E2E2E"
-              />
-            </svg>
-          </p>
-          <p>Share</p>
-        </button>
-      </div>
-
-      <h5 class="text-2xl font-bold mt-20">About This Role</h5>
-      <p class="text-[#6A6A6A] max-w-[920px] mt-4">
-        We are seeking an experienced Senior Frontend Developer to join our
-        dynamic team. You will be responsible for building and maintaining
-        high-quality web applications using modern technologies and best
-        practices.
+      <h5 class="text-lg md:text-xl font-bold mt-10 md:mt-14 lg:mt-20">Description</h5>
+      <p class="text-[#6A6A6A] max-w-[920px] mt-4 text-sm md:text-base">
+        Selling my MacBook Pro 256GB in Deep Purple. The Laptop is in excellent
+        condition, used for only 3 months. Comes with original box, charger, and
+        unused earphones. AppleCare+ valid until December 2024.
       </p>
 
-      <!--Required skilles  -->
-      <h5 class="text-2xl font-bold mt-20">Required Skills</h5>
-
-      <div class="flex gap-5 w-11/12 md:w-4/5 lg:w-1/4 flex-wrap mt-5">
-        <button class="bg-[#ECECEC] px-5 py-2 rounded-lg">React</button>
-        <button class="bg-[#ECECEC] px-5 py-2 rounded-lg">JavaScript</button>
-        <button class="bg-[#ECECEC] px-5 py-2 rounded-lg">TypeScript</button>
-        <button class="bg-[#ECECEC] px-5 py-2 rounded-lg">HTML5</button>
-        <button class="bg-[#ECECEC] px-5 py-2 rounded-lg">CSS3</button>
-        <button class="bg-[#ECECEC] px-5 py-2 rounded-lg">Redux</button>
-        <button class="bg-[#ECECEC] px-5 py-2 rounded-lg">Rest APIs</button>
-        <button class="bg-[#ECECEC] px-5 py-2 rounded-lg">Git</button>
-        <button class="bg-[#ECECEC] px-5 py-2 rounded-lg">Webpacks</button>
-      </div>
-
-      <!-- Benefits -->
-      <h5 class="text-2xl font-bold mt-20">Benefits</h5>
-      <div class="space-y-3 mt-5 text-[#6A6A6A]">
-        <div class="flex items-center gap-2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <path
-              d="M4.125 13.125L9.375 18.375L19.875 7.125"
-              stroke="#008080"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-          <p>Competitive salary and equity</p>
-        </div>
-
-        <div class="flex items-center gap-2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <path
-              d="M4.125 13.125L9.375 18.375L19.875 7.125"
-              stroke="#008080"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-          <p>Learning & development budget</p>
-        </div>
-
-        <div class="flex items-center gap-2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <path
-              d="M4.125 13.125L9.375 18.375L19.875 7.125"
-              stroke="#008080"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-          <p>Latest equipment provided</p>
-        </div>
-
-        <div class="flex items-center gap-2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <path
-              d="M4.125 13.125L9.375 18.375L19.875 7.125"
-              stroke="#008080"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-          <p>Free lunch and snacks</p>
-        </div>
-
-        <div class="flex items-center gap-2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <path
-              d="M4.125 13.125L9.375 18.375L19.875 7.125"
-              stroke="#008080"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-          <p>Health insurance for you and your family</p>
-        </div>
-      </div>
-
-      <!-- How to apply    -->
-      <h5 class="text-2xl font-bold mt-20">How to Apply</h5>
-      <div class="mt-5 text-[#6A6A6A] space-y-4">
-        <p>
-          Interested candidates are invited to apply by sending their
-          <strong>CV/Resume</strong> to <strong>[company email]</strong> with
-          <br />
-          the subject line:
-        </p>
-        <p class="text-[#2E2E2E]">
-          Application for Senior Frontend Developer – [Your Name]
-        </p>
-        <p>
-          <strong class="text-[#2E2E2E]">Application Deadline:</strong> 8 March,
-          2025
-        </p>
-        <p>We look forward to receiving your application!</p>
-      </div>
+      <!--specification -->
+      <h5 class="text-lg md:text-xl font-bold mt-10 md:mt-14 lg:mt-20">Specification</h5>
+       <div class="font-medium text-[#6A6A6A] mt-3 space-y-4 text-sm md:text-base">
+         <p><span class="text-black">Processor:</span> Apple M2 Max (12-core CPU, 38-core GPU)</p>
+         <p><span class="text-black">RAM: </span> 32GB Unified Memory</p>
+         <p><span class="text-black">Storage: </span> 1TB SSD</p>
+         <p><span class="text-black">Display: </span> 16.2-inch Liquid Retina XDR (3456x2234)</p>
+         <p><span class="text-black">Battery Life: </span> Up to 22 hours</p>
+       </div>
     </section>
 
     <!-- footer -->
     <footer
-      class="w-full bg-[#003333] text-white px-5 md:px-8 2xl:px-0 overflow-hidden mt-48"
+      class="w-full bg-[#003333] text-white px-5 md:px-8 2xl:px-0 overflow-hidden"
     >
       <div class="container mx-auto py-6 sm:py-8 md:py-10 lg:py-12 xl:py-16">
         <div
