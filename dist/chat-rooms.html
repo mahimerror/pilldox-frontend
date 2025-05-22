@@ -363,7 +363,7 @@
               <!-- zh active user list end -->
 
               <!-- categories -->
-              <h1 class="text-xl">Categories</h1>
+              <h1 class="text-xl mt-4">Categories</h1>
               <!-- zh rooms list start -->
               <div class="space-y-2">
                 <!-- zh rooms -->
@@ -629,6 +629,10 @@
 
     <!-- body -->
     <main class="w-full flex container mx-auto">
+      <div
+        id="overlay"
+        class="fixed inset-0 bg-black bg-opacity-50 justify-center hidden items-center z-10 -translate-x-full transform transition-transform duration-1000"
+      ></div>
       <!-- sidebar -->
       <section
         class="lg:w-[200px] xl:max-w-[300px] xl:w-full bg-white border-r border-black/10 h-screen-full lg:pl-3 pr-6 pt-[30px] hidden lg:block"
@@ -880,10 +884,10 @@
                 </div>
                 <a
                   href="community-join.html"
-                  class="bg-[#008080] rounded-lg py-1 sm:py-2 px-[15px]"
+                  class="bg-[#008080] rounded-lg py-1 px-3 lg:px-1 xl:py-2 xl:px-[15px]"
                 >
                   <button
-                    class="text-center text-white text-sm sm:text-base  font-mediumFont lg:font-normalFont"
+                    class="text-center text-white text-sm xl:text-base font-mediumFont"
                   >
                     Join Room
                   </button>
@@ -933,10 +937,10 @@
                 </div>
                 <a
                   href="community-join.html"
-                  class="bg-[#008080] rounded-lg py-1 sm:py-2 px-[15px]"
+                  class="bg-[#008080] rounded-lg py-1 px-3 lg:px-1 xl:py-2 xl:px-[15px]"
                 >
                   <button
-                    class="text-center text-white text-sm sm:text-base font-mediumFont"
+                    class="text-center text-white text-sm xl:text-base font-mediumFont"
                   >
                     Join Room
                   </button>
@@ -986,10 +990,10 @@
                 </div>
                 <a
                   href="community-join.html"
-                  class="bg-[#008080] rounded-lg py-1 sm:py-2 px-[15px]"
+                  class="bg-[#008080] rounded-lg py-1 px-3 lg:px-1 xl:py-2 xl:px-[15px]"
                 >
                   <button
-                    class="text-center text-white text-sm sm:text-base font-mediumFont"
+                    class="text-center text-white text-sm xl:text-base font-mediumFont"
                   >
                     Join Room
                   </button>
@@ -1068,7 +1072,7 @@
 
       <!-- zh features room right sidebar -->
       <section
-        class="flex-1 px-8 pt-8 max-w-[300px] w-full mx-auto border-r border-[rgba(0,_0,_0,_0.08)] h-screen-full hidden lg:block"
+        class="px-4 xl:px-8 pt-8 w-full lg:w-[250px] xl:w-[300px] mx-auto border-r border-[rgba(0,_0,_0,_0.08)] h-screen-full hidden lg:block"
       >
         <h3 class="text-2xl font-boldFont text-[#2E2E2E] mb-[6px]">
           Featured Rooms
@@ -1077,7 +1081,7 @@
         <!-- zh room featured list -->
         <div class="flex flex-col gap-3 mt-6">
           <div
-            class="w-full bg-[#FAFAFA] rounded-lg pl-4 py-4 pr-[25px] border border-[rgba(0,_0,_0,_0.08)] flex justify-between"
+            class="w-full bg-[#FAFAFA] rounded-lg pl-4 py-4 xl:pr-2 border border-[rgba(0,_0,_0,_0.08)] flex justify-between"
           >
             <div class="flex flex-col gap-1">
               <p class="text-base text-[#2E2E2E] font-mediumFont">
@@ -1093,7 +1097,7 @@
           </div>
 
           <div
-            class="w-full bg-[#FAFAFA] rounded-lg pl-4 py-4 pr-[25px] border border-[rgba(0,_0,_0,_0.08)] flex justify-between"
+            class="w-full bg-[#FAFAFA] rounded-lg pl-4 py-4 xl:pr-2 border border-[rgba(0,_0,_0,_0.08)] flex justify-between"
           >
             <div class="flex flex-col gap-1">
               <p class="text-base text-[#2E2E2E] font-mediumFont">
@@ -1109,7 +1113,7 @@
           </div>
 
           <div
-            class="w-full bg-[#FAFAFA] rounded-lg pl-4 py-4 pr-[25px] border border-[rgba(0,_0,_0,_0.08)] flex justify-between"
+            class="w-full bg-[#FAFAFA] rounded-lg pl-4 py-4 xl:pr-2 border border-[rgba(0,_0,_0,_0.08)] flex justify-between"
           >
             <div class="flex flex-col gap-1">
               <p class="text-base text-[#2E2E2E] font-mediumFont">

@@ -295,13 +295,6 @@
               >
                 Inbox
               </a>
-              <!-- add from zh end -->
-              <a
-                href="community-join.html"
-                class="font-boldFont text-[#141414]"
-              >
-                Inbox
-              </a>
             </div>
           </div>
           <!-- NavLinks ::end -->
@@ -312,11 +305,14 @@
 
     <!-- main -->
     <main>
+      <div
+        id="overlay"
+        class="fixed inset-0 bg-black bg-opacity-50 justify-center hidden items-center z-10 -translate-x-full transform transition-transform duration-1000"
+      ></div>
       <section class="container mx-auto px-4">
         <!-- bg overlay -->
         <div
-          id="modalOverlay"
-          class="fixed inset-0 bg-black bg-opacity-50 justify-center hidden z-10 items-center"
+          class="modalOverlay fixed inset-0 bg-black bg-opacity-50 justify-center hidden z-10 items-center"
         ></div>
 
         <!-- tube top title -->
@@ -395,69 +391,54 @@
           </div>
         </div>
 
-        <div>
-          <div
-            class="grid grid-cols-6 sm:grid-cols-12 py-4 border-b border-b-[rgba(0,_0,_0,_0.08)] text-center"
-          >
+        <div class="space-y-10">
+          <!-- video 1 -->
+          <div class="">
+            <!-- Header Row -->
             <div
-              class="col-span-3 sm:col-span-8 text-[14px] md:text-base font-mediumFont text-[#6A6A6A] text-start"
+              class="hidden md:grid grid-cols-12 border-b text-base font-mediumFont text-[#6A6A6A] pb-4"
             >
-              video
+              <div class="col-span-6">Video</div>
+              <div class="col-span-2 text-center">Date</div>
+              <div class="col-span-1 text-center">Views</div>
+              <div class="col-span-2 text-center">Likes</div>
+              <div class="col-span-1 text-center"></div>
             </div>
-            <div
-              class="col-span-1 sm:col-span-1 text-[14px] md:text-base font-mediumFont text-[#2E2E2E]"
-            >
-              date
-            </div>
-            <div
-              class="col-span-1 sm:col-span-1 text-[14px] md:text-base font-mediumFont text-[#2E2E2E]"
-            >
-              Views
-            </div>
-            <div
-              class="col-span-1 sm:col-span-1 text-[14px] md:text-base font-mediumFont text-[#2E2E2E]"
-            >
-              Likes
-            </div>
-          </div>
 
-          <!-- upload video list -->
-          <div class="space-y-4 md:space-y-10 lg:pace-y-16">
-            <!-- video 1 -->
+            <!-- Video Row -->
             <div
-              class="video-list-wrapper grid grid-cols-12 py-[18px] border-b border-b-[rgba(0,_0,_0,_0.08)]"
+              class="edit-wrapper grid grid-cols-1 md:grid-cols-12 items-center md:items-start gap-4 border-b py-8"
             >
-              <div class="col-span-8 flex gap-2 sm:gap-3 md:gap-6">
-                <div class="w-[269px] h-[130px] relative">
+              <!-- Video Column -->
+              <div class="md:col-span-6 flex flex-col sm:flex-row gap-4">
+                <div
+                  class="relative sm:max-w-[265px] w-full sm:h-[130px] rounded overflow-hidden"
+                >
                   <img
-                    class="w-full h-full object-cover rounded-lg"
                     src="../dist/assets/images/video-list-img.png"
-                    alt=""
+                    alt="Thumbnail"
+                    class="w-full h-full object-cover"
                   />
                   <span
-                    class="absolute bottom-[2px] right-[2px] sm:bottom-4 sm:right-4 text-[#FFFFFF] text-[10px] sm:text-[14px] font-mediumFont py-1 px-[10px] sm:px-[14px] rounded-[4px] bg-[#2E2E2E]"
+                    class="absolute bottom-1 right-1 bg-black bg-opacity-60 text-white font-mediumFont text-xs px-1 py-0.5 rounded"
+                    >2:30</span
                   >
-                    2:30
-                  </span>
                 </div>
-                <div class="space-y-[10px] relative">
-                  <h6
-                    class="text-black text-[12px] sm:text-[14px] md:text-lg font-mediumFont"
-                  >
+                <div class="relative">
+                  <h3 class="text-lg text-black font-semibold mb-2">
                     Expert Legal Consultation: Get the Right Advice for Your
                     Case
-                  </h6>
+                  </h3>
                   <p
-                    class="text-[12px] sm:text-[14px] font-mediumFont text-[#6A6A6A] max-w-[541px] w-full"
+                    class="text-sm font-normalFont sm:font-mediumFont text-[#6A6A6A]"
                   >
                     Need legal guidance? In this video, our experienced lawyer
-                    provides professional insights on [specific legal topic...
+                    provides professional insights on [specific legal topic]...
                   </p>
 
-                  <!-- modal content -->
+                  <!-- modal contetn -->
                   <div
-                    id="modalBox"
-                    class="absolute hidden z-10 space-y-5 w- sm:w-[540px] top-5 -left-20 sm:left-0 bg-white rounded-xl p-5 border border-[rgba(0,_0,_0,_0.08)] shadow-md"
+                    class="modalBox absolute hidden z-10 space-y-5 w- sm:w-[540px] top-5 sm:left-0 bg-white rounded-xl p-5 border border-[rgba(0,_0,_0,_0.08)] shadow-md"
                   >
                     <!-- title -->
                     <div
@@ -495,8 +476,7 @@
                       class="space-x-4 place-content-end w-full flex items-center justify-end"
                     >
                       <button
-                        id="closeModalBtn"
-                        class="text-base text-black font-mediumFont leading-[26px] px-[18px] py-[6px] rounded-[40px] bg-[#E0E0E0]"
+                        class="closeModalBtn text-base text-black font-mediumFont leading-[26px] px-[18px] py-[6px] rounded-[40px] bg-[#E0E0E0]"
                       >
                         Cancel
                       </button>
@@ -510,63 +490,65 @@
                 </div>
               </div>
 
-              <!-- uploaded date -->
               <div
-                class="text-[12px] md:text-base font-mediumFont text-[#6A6A6A] text-center"
+                class="md:col-span-6 flex justify-between sm:justify-around text-center"
               >
-                mar 11, 2025 uploaded
-              </div>
+                <!-- Date Column -->
+                <div class="md:col-span-2 sm:text-center">
+                  <p class="text-base text-[#6A6A6A] font-mediumFont">
+                    mar 11, 2025
+                    <span class="block">uploaded</span>
+                  </p>
+                </div>
 
-              <!-- views -->
-              <div id="" class="col-span-1 text-center">
-                <span
-                  class="inline-block text-[12px] md:text-[#6A6A6A] md:text-base font-mediumFont"
-                  >1.2k</span
+                <!-- Views Column -->
+                <div
+                  class="md:col-span-1 sm:text-center text-base text-[#6A6A6A] font-mediumFont md:-translate-x-[20px] lg:-translate-x-[20px] xl:-translate-x-0"
                 >
-              </div>
+                  1.2k
+                </div>
 
-              <!-- likes -->
-              <div class="col-span-1 text-center">
-                <span
-                  class="inline-block text-[#6A6A6A] text-[12px] mdtext-base font-mediumFont"
-                  >100</span
+                <!-- Likes Column -->
+                <div
+                  class="md:col-span-2 sm:text-center text-base text-[#6A6A6A] font-mediumFont xl:translate-x-[20px]"
                 >
-              </div>
+                  100
+                </div>
 
-              <!-- video actions buttons -->
-              <div
-                class="col-span-1 text-center space-y-3 md:space-y-0 md:flex md:gap-4 lg:gap-10"
-              >
-                <svg
-                  id="editButton"
-                  class="cursor-pointer"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
+                <!-- Actions Column -->
+                <div
+                  class="md:col-span-1 md:flex justify-center gap-4 md:-translate-y-[12px]"
                 >
-                  <path
-                    d="M15 5.99994L18 8.99994M13 19.9999H21M5 15.9999L4 19.9999L8 18.9999L19.586 7.41394C19.9609 7.03889 20.1716 6.53027 20.1716 5.99994C20.1716 5.46961 19.9609 4.961 19.586 4.58594L19.414 4.41394C19.0389 4.039 18.5303 3.82837 18 3.82837C17.4697 3.82837 16.9611 4.039 16.586 4.41394L5 15.9999Z"
-                    stroke="black"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-                <svg
-                  class="cursor-pointer"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <path
-                    d="M10 5H14C14 4.46957 13.7893 3.96086 13.4142 3.58579C13.0391 3.21071 12.5304 3 12 3C11.4696 3 10.9609 3.21071 10.5858 3.58579C10.2107 3.96086 10 4.46957 10 5ZM8.5 5C8.5 4.54037 8.59053 4.08525 8.76642 3.66061C8.94231 3.23597 9.20012 2.85013 9.52513 2.52513C9.85013 2.20012 10.236 1.94231 10.6606 1.76642C11.0852 1.59053 11.5404 1.5 12 1.5C12.4596 1.5 12.9148 1.59053 13.3394 1.76642C13.764 1.94231 14.1499 2.20012 14.4749 2.52513C14.7999 2.85013 15.0577 3.23597 15.2336 3.66061C15.4095 4.08525 15.5 4.54037 15.5 5H21.25C21.4489 5 21.6397 5.07902 21.7803 5.21967C21.921 5.36032 22 5.55109 22 5.75C22 5.94891 21.921 6.13968 21.7803 6.28033C21.6397 6.42098 21.4489 6.5 21.25 6.5H19.93L18.76 18.611C18.6702 19.539 18.238 20.4002 17.5477 21.0268C16.8573 21.6534 15.9583 22.0004 15.026 22H8.974C8.04186 22.0001 7.1431 21.653 6.45295 21.0265C5.7628 20.3999 5.33073 19.5388 5.241 18.611L4.07 6.5H2.75C2.55109 6.5 2.36032 6.42098 2.21967 6.28033C2.07902 6.13968 2 5.94891 2 5.75C2 5.55109 2.07902 5.36032 2.21967 5.21967C2.36032 5.07902 2.55109 5 2.75 5H8.5ZM10.5 9.75C10.5 9.55109 10.421 9.36032 10.2803 9.21967C10.1397 9.07902 9.94891 9 9.75 9C9.55109 9 9.36032 9.07902 9.21967 9.21967C9.07902 9.36032 9 9.55109 9 9.75V17.25C9 17.4489 9.07902 17.6397 9.21967 17.7803C9.36032 17.921 9.55109 18 9.75 18C9.94891 18 10.1397 17.921 10.2803 17.7803C10.421 17.6397 10.5 17.4489 10.5 17.25V9.75ZM14.25 9C14.4489 9 14.6397 9.07902 14.7803 9.21967C14.921 9.36032 15 9.55109 15 9.75V17.25C15 17.4489 14.921 17.6397 14.7803 17.7803C14.6397 17.921 14.4489 18 14.25 18C14.0511 18 13.8603 17.921 13.7197 17.7803C13.579 17.6397 13.5 17.4489 13.5 17.25V9.75C13.5 9.55109 13.579 9.36032 13.7197 9.21967C13.8603 9.07902 14.0511 9 14.25 9ZM6.734 18.467C6.78794 19.0236 7.04724 19.5403 7.46137 19.9161C7.87549 20.292 8.41475 20.5001 8.974 20.5H15.026C15.5853 20.5001 16.1245 20.292 16.5386 19.9161C16.9528 19.5403 17.2121 19.0236 17.266 18.467L18.424 6.5H5.576L6.734 18.467Z"
-                    fill="black"
-                  />
-                </svg>
+                  <button title="Edit Title and Description" class="editButton">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="size-5 md:size-6"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <path
+                        d="M15 5.99994L18 8.99994M13 19.9999H21M5 15.9999L4 19.9999L8 18.9999L19.586 7.41394C19.9609 7.03889 20.1716 6.53027 20.1716 5.99994C20.1716 5.46961 19.9609 4.961 19.586 4.58594L19.414 4.41394C19.0389 4.039 18.5303 3.82837 18 3.82837C17.4697 3.82837 16.9611 4.039 16.586 4.41394L5 15.9999Z"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                  <button title="Delete">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="size-5 md:size-6"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <path
+                        d="M10 5H14C14 4.46957 13.7893 3.96086 13.4142 3.58579C13.0391 3.21071 12.5304 3 12 3C11.4696 3 10.9609 3.21071 10.5858 3.58579C10.2107 3.96086 10 4.46957 10 5ZM8.5 5C8.5 4.54037 8.59053 4.08525 8.76642 3.66061C8.94231 3.23597 9.20012 2.85013 9.52513 2.52513C9.85013 2.20012 10.236 1.94231 10.6606 1.76642C11.0852 1.59053 11.5404 1.5 12 1.5C12.4596 1.5 12.9148 1.59053 13.3394 1.76642C13.764 1.94231 14.1499 2.20012 14.4749 2.52513C14.7999 2.85013 15.0577 3.23597 15.2336 3.66061C15.4095 4.08525 15.5 4.54037 15.5 5H21.25C21.4489 5 21.6397 5.07902 21.7803 5.21967C21.921 5.36032 22 5.55109 22 5.75C22 5.94891 21.921 6.13968 21.7803 6.28033C21.6397 6.42098 21.4489 6.5 21.25 6.5H19.93L18.76 18.611C18.6702 19.539 18.238 20.4002 17.5477 21.0268C16.8573 21.6534 15.9583 22.0004 15.026 22H8.974C8.04186 22.0001 7.1431 21.653 6.45295 21.0265C5.7628 20.3999 5.33073 19.5388 5.241 18.611L4.07 6.5H2.75C2.55109 6.5 2.36032 6.42098 2.21967 6.28033C2.07902 6.13968 2 5.94891 2 5.75C2 5.55109 2.07902 5.36032 2.21967 5.21967C2.36032 5.07902 2.55109 5 2.75 5H8.5ZM10.5 9.75C10.5 9.55109 10.421 9.36032 10.2803 9.21967C10.1397 9.07902 9.94891 9 9.75 9C9.55109 9 9.36032 9.07902 9.21967 9.21967C9.07902 9.36032 9 9.55109 9 9.75V17.25C9 17.4489 9.07902 17.6397 9.21967 17.7803C9.36032 17.921 9.55109 18 9.75 18C9.94891 18 10.1397 17.921 10.2803 17.7803C10.421 17.6397 10.5 17.4489 10.5 17.25V9.75ZM14.25 9C14.4489 9 14.6397 9.07902 14.7803 9.21967C14.921 9.36032 15 9.55109 15 9.75V17.25C15 17.4489 14.921 17.6397 14.7803 17.7803C14.6397 17.921 14.4489 18 14.25 18C14.0511 18 13.8603 17.921 13.7197 17.7803C13.579 17.6397 13.5 17.4489 13.5 17.25V9.75C13.5 9.55109 13.579 9.36032 13.7197 9.21967C13.8603 9.07902 14.0511 9 14.25 9ZM6.734 18.467C6.78794 19.0236 7.04724 19.5403 7.46137 19.9161C7.87549 20.292 8.41475 20.5001 8.974 20.5H15.026C15.5853 20.5001 16.1245 20.292 16.5386 19.9161C16.9528 19.5403 17.2121 19.0236 17.266 18.467L18.424 6.5H5.576L6.734 18.467Z"
+                        fill="black"
+                      />
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -695,10 +677,10 @@
     <!-- zh footer end -->
 
     <script>
-      const editButton = document.getElementById("editButton");
-      const modalBox = document.getElementById("modalBox");
-      const modalOverlay = document.getElementById("modalOverlay");
-      const closeModalBtn = document.getElementById("closeModalBtn");
+      const editButton = document.querySelector(".editButton");
+      const modalBox = document.querySelector(".modalBox");
+      const modalOverlay = document.querySelector(".modalOverlay");
+      const closeModalBtn = document.querySelector(".closeModalBtn");
 
       // show modal
       const showModal = () => {
@@ -712,9 +694,6 @@
         modalBox.classList.add("hidden");
       };
 
-      // show modal listener
-      editButton.addEventListener("click", showModal);
-
       // hide modal listener
       closeModalBtn.addEventListener("click", (event) => {
         if (event.target === closeModalBtn) {
@@ -722,17 +701,19 @@
         }
       });
 
+      // show modal listener
+      editButton.addEventListener("click", showModal);
+
       // Auto-resize textarea function
       function autoResize(textarea) {
-        // textarea.value = textarea.value.trim();
         textarea.style.height = "auto";
         textarea.style.height = textarea.scrollHeight + "px";
       }
       // Auto-resize on load
-      window.addEventListener("load", function () {
-        const ta = document.getElementById("textAreaContent");
-        autoResize(ta);
-      });
+      // window.addEventListener("load", function () {
+      //   const ta = document.getElementById("textAreaContent");
+      //   autoResize(ta);
+      // });
     </script>
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>

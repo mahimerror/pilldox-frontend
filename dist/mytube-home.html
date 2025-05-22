@@ -311,6 +311,10 @@
 
     <!-- main  -->
     <main class="md:flex xl:gap-[30px] px-4 container mx-auto">
+      <div
+        id="overlay"
+        class="fixed inset-0 bg-black bg-opacity-50 justify-center hidden items-center z-10 -translate-x-full transform transition-transform duration-1000"
+      ></div>
       <!-- my tube video list -->
       <section class="">
         <!-- tube top title -->
@@ -397,14 +401,10 @@
         </div>
 
         <!-- video list start -->
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:grid-cols-3 md:gap-4 xl:gap-6"
-        >
+        <div class="grid grid-cols-1 gap-3 lg:grid-cols-3 md:gap-4 xl:gap-6">
           <!-- video 1 -->
-          <div id="video-wrapper">
-            <div
-              class="w-full sm:max-w-[450px] sm:w-full h-[290px] relative bg-gray-100 rounded-md"
-            >
+          <div id="video-wrapper" class="w-full">
+            <div class="w-full h-[290px] relative bg-gray-100 rounded-md">
               <!-- <img
                 class="w-full h-full rounded-tr-xl rounded-tl-md object-cover"
                 src="https://images.unsplash.com/photo-1613793479691-a87ea36c2302?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -443,7 +443,7 @@
 
                 <svg
                   id="pauseIcon"
-                  class="w-6 h-6 text-white hidden"
+                  class="size-10 text-white hidden"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="#ffffff"
                   viewBox="0 0 24 24"
@@ -498,10 +498,8 @@
           </div>
 
           <!-- video 2 -->
-          <div id="video-wrapper">
-            <div
-              class="w-full sm:max-w-[450px] sm:w-full h-[290px] relative bg-gray-100 rounded-md"
-            >
+          <div id="video-wrapper" class="w-full">
+            <div class="w-full h-[290px] relative bg-gray-100 rounded-md">
               <!-- <img
                 class="w-full h-full rounded-tr-xl rounded-tl-md object-cover"
                 src="https://images.unsplash.com/photo-1613793479691-a87ea36c2302?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -540,7 +538,7 @@
 
                 <svg
                   id="pauseIcon"
-                  class="w-6 h-6 text-white hidden"
+                  class="size-10 text-white hidden"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="#ffffff"
                   viewBox="0 0 24 24"
@@ -595,10 +593,8 @@
           </div>
 
           <!-- video 3 -->
-          <div id="video-wrapper">
-            <div
-              class="w-full sm:max-w-[450px] sm:w-full h-[290px] relative bg-gray-100 rounded-md"
-            >
+          <div id="video-wrapper" class="w-full">
+            <div class="w-full h-[290px] relative bg-gray-100 rounded-md">
               <!-- <img
                 class="w-full h-full rounded-tr-xl rounded-tl-md object-cover"
                 src="https://images.unsplash.com/photo-1613793479691-a87ea36c2302?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -637,7 +633,7 @@
 
                 <svg
                   id="pauseIcon"
-                  class="w-6 h-6 text-white hidden"
+                  class="size-10 text-white hidden"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="#ffffff"
                   viewBox="0 0 24 24"

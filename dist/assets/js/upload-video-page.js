@@ -1,42 +1,41 @@
 // zh form validation start
 const form = document.getElementById("upload-form");
+const showModalBtn = document.getElementById("showModalBtn");
+const overlay = document.getElementById("modalOverlay");
+const modalContent = document.getElementById("modalContent");
+
+const showModal = () => {
+  console.log("dfjhfgjhg");
+  overlay.classList.remove("hidden");
+};
+const hideModal = () => {
+  overlay.classList.add("hidden");
+};
+overlay.addEventListener("click", function (event) {
+  if (!modalContent.contains(event.target)) {
+    hideModal();
+  }
+  console.log(overlay);
+});
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
+  const videoUploadLabel = document.getElementById("roomsCoverUpload");
+  // const videoUploadLabel = document.getElementById("roomsCoverUpload");
   const formTitle = document.getElementById("add-title").value;
   const formDescription = document.getElementById("add-description").value;
   const formTags = document.getElementById("add-tags").value;
 
-  // validation
+  if (!videoUploadLabel.files.length) {
+    alert("Please Upload Video");
+    return;
+  }
   if (!formTitle || !formDescription || !formTags) {
     alert("Please fill in the all field");
     return;
   }
 
-  // zh modal content show selector start
-  const showModalBtn = document.getElementById("showModalBtn");
-  const overlay = document.getElementById("modalOverlay");
-  const modalContent = document.getElementById("modalContent");
-
-  //   show the modal
-  const showModal = () => {
-    overlay.classList.remove("hidden");
-  };
-  //   hide the modal
-  const hideModal = () => {
-    overlay.classList.add("hidden");
-  };
-
-  //   add listeners
-  showModalBtn.addEventListener("click", showModal);
-  overlay.addEventListener("click", function (event) {
-    if (!modalContent.contains(event.target)) {
-      hideModal();
-    }
-    console.log(overlay);
-  });
-  console.log(overlay);
-  // zh modal content show selector end
+  showModal();
 });
 // zh form validation end
 

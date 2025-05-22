@@ -464,16 +464,20 @@ $(document).ready(function () {
   const closeMenu = document.getElementById("menu-close");
   const openMenu = document.getElementById("menu-hamburger");
   const sidebar = document.getElementById("sidebar");
-  //  const overlay = document.getElementById('overlay');
+  const overlay = document.getElementById("overlay");
   openMenu?.addEventListener("click", function () {
     openMenu.classList.add("hidden");
     closeMenu.classList.remove("hidden");
+    overlay.classList.remove("hidden");
+    overlay.classList.remove("-translate-x-full");
     sidebar.classList.remove("-translate-x-full");
   });
 
   closeMenu?.addEventListener("click", function () {
     openMenu.classList.remove("hidden");
     closeMenu.classList.add("hidden");
+    overlay.classList.add("hidden");
+    overlay.classList.add("-translate-x-full");
     sidebar.classList.add("-translate-x-full");
   });
 
@@ -481,6 +485,8 @@ $(document).ready(function () {
     if (!sidebar?.contains(e.target) && !openMenu?.contains(e.target)) {
       openMenu?.classList.remove("hidden");
       closeMenu?.classList.add("hidden");
+      overlay?.classList.add("hidden");
+      overlay?.classList.add("-translate-x-full");
       sidebar?.classList.add("-translate-x-full");
     }
   });
@@ -623,4 +629,3 @@ function uploadPhoto() {
     }
   });
 }
-
