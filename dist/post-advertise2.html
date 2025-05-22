@@ -284,7 +284,7 @@
       <section
         class="w-full h-full flex flex-col justify-center items-center pt-[30px]"
       >
-        <div class="flex flex-col md:flex-row md:items-start lg:gap-[136px]">
+        <div class="flex flex-col md:flex-row items-center md:items-start justify-center gap-6 md:gap-10">
           <button>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -306,20 +306,20 @@
           </button>
 
           <div
-            class="w-11/12 md:w-2/3 mx-auto lg:w-[960px] bg-white border border-[rgba(0,_0,_0,_0.08)] rounded-xl px-8 md:px-10 lg:px-[54px] py-11"
+            class="w-11/12 md:w-2/3 lg:w-3/4 mx-auto xl:w-[960px] bg-white border border-[rgba(0,_0,_0,_0.08)] rounded-xl px-4 md:px-10 lg:px-[54px] py-5 md:py-7 lg:py-11"
           >
             <div class="text-center space-y-[6px] pb-[30px] lg:pb-[60px]">
-              <h1 class="text-[32px] font-boldFont text-[#2E2E2E]">
+              <h1 class="text-xl md:text-[26px] lg:text-[32px] font-boldFont text-[#2E2E2E]">
                 Post a New Advertisement
               </h1>
-              <p class="text-base text-[#6A6A6A] font-mediumFont">
+              <p class="text-sm md:text-base text-[#6A6A6A] font-mediumFont">
                 Fill in the details below to create your ad
               </p>
             </div>
 
             <!-- post advertise form -->
             <form action="" class="w-full">
-              <p class="text-2xl font-bold mb-11">Item Details</p>
+              <p class="text-lg md:text-xl lg:text-2xl font-bold mb-11">Item Details</p>
               <div class="space-y-2 mb-6">
                 <label class="text-base text-[#2E2E2E] font-mediumFont" for=""
                   >Item Title<span class="text-red-600">*</span></label
@@ -375,7 +375,7 @@
                   placeholder="Describe the item’s condition, features, and specifications..."
                   name=""
                   id=""
-                  class="resize-none bg-[#FAFAFA] w-full px-6 py-[14px] text-[14px] font-mediumFont outline-0 rounded-lg border border-[rgba(0,_0,_0,_0.08)] h-[149px]"
+                  class="resize-none bg-[#FAFAFA] w-full px-6 py-[14px] text-[14px] font-mediumFont outline-0 rounded-lg border border-[rgba(0,_0,_0,_0.08)] h-24 md:h-32 lg:h-[149px]"
                   required
                 ></textarea>
               </div>
@@ -387,7 +387,7 @@
                 >
                 <label
                   for="roomsCoverUpload"
-                  class="relative cursor-pointer text-center bg-[#FAFAFA] w-full px-6 py-10 rounded-lg border-[2px] border-dashed border-[rgba(0,_0,_0,_0.08)] flex items-center justify-center"
+                  class="relative cursor-pointer text-center bg-[#FAFAFA] w-full px-3 md:px-5 lg:px-6 py-5 md:py-7 lg:py-10 rounded-lg border-[2px] border-dashed border-[rgba(0,_0,_0,_0.08)] flex items-center justify-center"
                 >
                   <img
                     id="uploadImage"
@@ -397,7 +397,7 @@
                   />
                   <div id="givenContent" class="space-y-4">
                     <svg
-                      class="mx-auto"
+                      class="mx-auto size-6 md:size-9 lg:size-12"
                       xmlns="http://www.w3.org/2000/svg"
                       width="44"
                       height="44"
@@ -418,11 +418,11 @@
                         stroke-linejoin="round"
                       />
                     </svg>
-                    <p class="text-2xl text-[#2E2E2E] font-medium">
+                    <p class="text-lg md:text-xl lg:text-2xl text-[#2E2E2E] font-medium">
                       Drag and drop images or click to upload
                     </p>
 
-                    <p class="text-[14px] text-[#6A6A6A] font-mediumFont">
+                    <p class="text-xs md:text-[14px] text-[#6A6A6A] font-mediumFont">
                       Supported formats: JPEG, PNG, GIF (max. 5MB)
                     </p>
 
@@ -444,10 +444,10 @@
               </div>
 
               <!-- price & Payment -->
-              <p class="font-bold text-2xl my-11">Price and Payment</p>
+              <p class="font-bold text-lg md:text-xl lg:text-2xl my-5 md:my-9 lg:my-11">Price and Payment</p>
 
               <div class="space-y-2 mb-6">
-                <label class="text-base text-[#2E2E2E] font-mediumFont" for=""
+                <label class="text-[#2E2E2E] text-sm md:text-base font-mediumFont" for=""
                   >Price <span class="text-red-600">*</span></label
                 >
                 <input
@@ -464,7 +464,7 @@
                   >Payment Method</label
                 >
 
-                <div class="flex flex-col gap-4">
+                <div class="flex flex-col gap-4 text-sm md:text-base">
                   <label
                     class="flex items-center gap-3 text-[#6A6A6A] font-medium"
                   >
@@ -475,7 +475,7 @@
                       id=""
                       value="cash"
                     />
-                    <p for="">Cash</p>
+                    <p>Cash</p>
                   </label>
 
                   <label
@@ -488,7 +488,7 @@
                       id=""
                       value="bank"
                     />
-                    <p for="">Bank Transfer</p>
+                    <p>Bank Transfer</p>
                   </label>
 
                   <label
@@ -520,7 +520,7 @@
               </div>
 
               <!-- location -->
-              <p class="font-bold text-2xl my-11">Item Location</p>
+              <p class="font-bold text-lg md:text-xl lg:text-2xl my-5 md:my-9 lg:my-11">Item Location</p>
 
               <div class="space-y-2 mb-6">
                 <label class="text-base text-[#2E2E2E] font-mediumFont" for=""
@@ -533,7 +533,7 @@
                 />
               </div>
 
-              <p class="font-bold text-2xl my-11">Contact Information</p>
+              <p class="font-bold text-lg md:text-xl lg:text-2xl my-5 md:my-9 lg:my-11">Contact Information</p>
 
               <div class="space-y-2 mb-6">
                 <label class="text-base text-[#2E2E2E] font-mediumFont" for=""
@@ -559,7 +559,7 @@
               
 
               <!-- terns & conditions -->
-              <div class="space-y-2 mb-6">
+              <div class="space-y-2 mb-6 text-sm md:text-base">
                 <label class="flex items-center gap-3">
                   <input
                     class="w-5 h-5 accent-primary"
@@ -581,18 +581,18 @@
                 </label>
               </div>
 
-              <div class="pt-12">
+              <div class="pt-8 md:pt-10 lg:pt-12">
                 <button
                   onclick="submitForm()"
                   id="submitted"
-                  class="w-full block border border-[rgba(0,_0,_0,_0.08)] rounded-lg bg-[#008080] py-[15px] text-center text-white text-lg font-mediumFont"
+                  class="w-full block border border-[rgba(0,_0,_0,_0.08)] rounded-lg bg-[#008080] py-3 md:py-[15px] text-center text-white text-sm md:text-base lg:text-lg font-mediumFont"
                 >
                   Publish for Review
                 </button>
               </div>
 
               <div
-                class="text-[#F8BF2C] bg-[#FFFAEC] py-[10px] px-[15px] rounded-lg w-fit mx-auto font-medium text-sm flex items-center justify-center gap-2 my-8"
+                class="text-[#F8BF2C] bg-[#FFFAEC] py-[10px] px-[15px] rounded-lg w-fit mx-auto font-medium text-xs md:text-sm flex items-center justify-center gap-2 my-8"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -619,7 +619,7 @@
 
     <!-- footer -->
     <footer
-      class="w-full bg-[#003333] text-white px-5 md:px-8 2xl:px-0 overflow-hidden mt-48"
+      class="w-full bg-[#003333] text-white px-5 md:px-8 2xl:px-0 overflow-hidden mt-10 md:mt-14 lg:mt-20"
     >
       <div class="container mx-auto py-6 sm:py-8 md:py-10 lg:py-12 xl:py-16">
         <div

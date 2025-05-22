@@ -286,22 +286,23 @@
 
     <main class="my-10 text-text font-mediumFont">
       <div
-        class="flex flex-col items-center justify-center mt-5 space-y-2 text-center"
+        class="flex flex-col items-center justify-center p-3 mt-5 space-y-2 text-center"
       >
-        <p class="text-[32px] font-bold">Choose Your Advertise Plan</p>
-        <p class="text-[#6A6A6A] font-medium text-center max-w-lg">
+        <p class="text-2xl md:text-[28px] lg:text-[32px] font-bold">Choose Your Advertise Plan</p>
+        <p class="text-[#6A6A6A] font-medium text-center max-w-lg text-sm md:text-base">
           Boost your visibility with our premium advertising options and reach
           your target audience effectively
         </p>
       </div>
 
-      <div class="my-10 bg-[#FAFAFA] md:py-14 lg:py-28">
+      <div class="my-6 md:my-8 lg:my-10 bg-[#FAFAFA] py-8 md:py-14 lg:py-28">
         <div
-          class="flex flex-col lg:flex-row gap-20 items-center justify-center mb-36"
+          class="flex flex-col md:flex-row gap-7 md:gap-8 lg:gap-12 xl:gap-20 items-center justify-center mt-6 md:mt-8 lg:mt-0 mb-10 md:mb-20
+           lg:mb-36 px-5"
         >
           <!-- conteiner-banner advertising-->
           <div
-            class="w-5/6 lg:w-full max-w-xl mt-8 lg:mt-0 flex flex-col py-6 lg:py-8 px-5 lg:px-16 border-2 border-transparent rounded-xl items-center bg-white font-medium"
+            class="w-full max-w-xl flex flex-col py-6 lg:py-8 px-5 lg:px-16 border-2 border-transparent rounded-xl items-center bg-white font-medium"
           >
             <div class="relative mb-6">
               <svg
@@ -338,7 +339,7 @@
               </div>
             </div>
 
-            <h3 class="text-2xl font-bold mb-1 text-center">
+            <h3 class="text-xl md:text-2xl font-bold mb-1 text-center">
               Select Banner Advertising
             </h3>
             <p class="text-[#6A6A6A] mb-8 text-center">
@@ -348,7 +349,7 @@
             <div
               id="plan49"
               onclick="choosePlan('plan49')"
-              class="w-full text-base md:text-lg flex items-center justify-between bg-[#F6F6F6] py-4 px-6 rounded-lg mb-5 border-2 border-[#F6F6F6] plan-container"
+              class="w-full text-sm md:text-lg flex items-center justify-between bg-[#F6F6F6] py-4 px-6 rounded-lg mb-5 border-2 border-[#F6F6F6] plan-container"
             >
               <p class="plan-name">Homepage banner</p>
               <p class="text-primary font-bold plan-option">$49.99/week</p>
@@ -357,7 +358,7 @@
             <div
               id="plan29"
               onclick="choosePlan('plan29')"
-              class="w-full text-base md:text-lg flex items-center justify-between bg-[#F6F6F6] py-4 px-6 rounded-lg mb-10 border-2 border-[#F6F6F6] plan-container"
+              class="w-full text-sm md:text-lg flex items-center justify-between bg-[#F6F6F6] py-4 px-6 rounded-lg mb-10 border-2 border-[#F6F6F6] plan-container"
             >
               <p class="plan-name">Sidebar banner</p>
               <p class="text-primary font-bold plan-option">$29.99/week</p>
@@ -374,10 +375,11 @@
 
           <!-- content-sponsorcpntent -->
           <div
-            class="w-5/6 lg:w-full max-w-xl flex flex-col py-6 lg:py-8 px-5 lg:px-16 border-2 border-transparent rounded-xl items-center bg-white font-medium"
+            class="w-full max-w-xl flex flex-col py-6 lg:py-8 px-4 md:px-6 lg:px-16 border-2 border-transparent rounded-xl items-center bg-white font-medium"
           >
             <div class="relative mb-6">
               <svg
+                class=""
                 xmlns="http://www.w3.org/2000/svg"
                 width="90"
                 height="90"
@@ -405,8 +407,8 @@
               </div>
             </div>
 
-            <h3 class="text-2xl font-bold mb-1">Select Sponsor Content</h3>
-            <p class="text-[#6A6A6A] mb-8">
+            <h3 class="text-lg md:text-xl lg:text-2xl font-bold mb-1">Select Sponsor Content</h3>
+            <p class="text-[#6A6A6A] mb-5 md:mb-8 text-center text-sm md:text-base">
               Featured content placement options
             </p>
 
@@ -414,7 +416,7 @@
             <div
               id="plan99"
               onclick="choosePlan('plan99')"
-              class="w-full text-base md:text-lg flex items-center justify-between bg-[#F6F6F6] py-4 px-6 rounded-lg border-2 border-[#F6F6F6] mb-5 plan-container"
+              class="w-full text-sm md:text-base lg:text-lg flex items-center justify-between bg-[#F6F6F6] py-4 px-6 rounded-lg border-2 border-[#F6F6F6] mb-5 plan-container"
             >
               <p class="plan-name">Sponsored Post</p>
               <p class="text-primary font-bold plan-option">$99.99/post</p>
@@ -423,7 +425,7 @@
             <div
               id="plan149"
               onclick="choosePlan('plan149')"
-              class="w-full text-base md:text-lg flex items-center justify-between bg-[#F6F6F6] py-4 px-6 rounded-lg border-2 border-[#F6F6F6] mb-10 plan-container"
+              class="w-full text-sm md:text-base lg:text-lg flex items-center justify-between bg-[#F6F6F6] py-4 px-6 rounded-lg border-2 border-[#F6F6F6] mb-10 plan-container"
             >
               <p class="plan-name">Sponsored Video</p>
               <p class="text-primary font-bold plan-option">$149.99/video</p>
@@ -442,7 +444,7 @@
 
     <!-- footer -->
     <footer
-      class="w-full bg-[#003333] text-white px-5 md:px-8 2xl:px-0 overflow-hidden mt-48"
+      class="w-full bg-[#003333] text-white px-5 md:px-8 2xl:px-0 overflow-hidden mt-10 md:mt-14 lg:mt-20"
     >
       <div class="container mx-auto py-6 sm:py-8 md:py-10 lg:py-12 xl:py-16">
         <div

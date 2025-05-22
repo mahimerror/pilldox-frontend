@@ -281,23 +281,23 @@
 
     <main class="font-mediumFont">
       <section
-        class="w-full h-full flex flex-col justify-center items-center pt-[30px]"
+        class="w-full h-full flex flex-col justify-center items-center  pt-4 md:pt-6 lg:pt-[30px]"
       >
         <!-- title part of the page -->
         <div
-          class="flex flex-col items-center justify-center mt-5 space-y-2 text-center"
+          class="flex flex-col items-center justify-center mt-5 space-y-2 text-center p-3"
         >
-          <p class="text-[32px] font-bold">Submit Your Banner Ad</p>
+          <p class="text-2xl md:text-[32px] font-bold">Submit Your Banner Ad</p>
           <p class="text-[#6A6A6A] font-medium text-center max-w-lg">
             Upload your banner and set your ad preferences
           </p>
         </div>
 
         <div
-          class="w-11/12 md:w-2/3 mx-auto bg-white rounded-xl px-4 md:px-10 lg:px-[54px] py-11"
+          class="w-full lg:w-2/3 mx-auto bg-white rounded-xl px-4 md:px-10 lg:px-[54px] pt-6 pb-3 md:py-11"
         >
           <div
-            class="bg-[#E8F2F2] py-7 px-3 lg:px-12 font-medium flex items-center justify-between rounded-lg mb-16 md:mb-[84px]"
+            class="bg-[#E8F2F2] py-4 md:py-6 lg:py-7 px-4 md:px-6 lg:px-12 font-medium flex items-center justify-between rounded-lg  mb-11 md:mb-16 lg:mb-[84px]"
           >
             <div id="selectedPlanDetails" class="space-y-1">
               <p></p>
@@ -308,7 +308,7 @@
 
             <a
               href="choose-advertise-plan.html"
-              class="border border-primary text-primary p-[10px] rounded-lg"
+              class="border border-primary text-primary p-2 md:p-[10px] rounded-lg"
               >Change Plan</a
             >
           </div>
@@ -316,10 +316,10 @@
           <!-- post advertise form -->
           <form id="submissionForm" action="" class="w-full">
             <!-- banner type starts -->
-            <p class="font-medium text-2xl">banner Type</p>
+            <p class="font-medium text-lg md:text-xl lg:text-2xl capitalize">banner Type</p>
 
-            <div class="my-6">
-              <div class="flex flex-col md:flex-row gap-8">
+            <div class="my-3 md:my-6">
+              <div class="flex flex-col md:flex-row gap-3 md:gap-8 text-sm md:text-base">
                 <label
                   class="flex items-center gap-6 border rounded-xl py-[18px] px-6 w-full"
                 >
@@ -383,21 +383,21 @@
             <!-- banner type ends -->
 
             <!-- image upload -->
-            <div class="flex flex-col my-10">
+            <div class="flex flex-col my-6 md:my-8 lg:my-10">
               <label
-                for="roomsCoverUpload"
-                class="relative cursor-pointer text-center bg-[#FAFAFA] w-full px-6 py-10 rounded-lg border-2 border-dashed border-[rgba(0,_0,_0,_0.08)] flex items-center justify-center overflow-hidden"
+                for=""
+                class="relative cursor-pointer text-center bg-[#FAFAFA] w-full px-2 md:px-5 lg:px-6 py-5 md:py-8 lg:py-10 rounded-lg border-2 border-dashed border-[rgba(0,_0,_0,_0.08)] flex items-center justify-center overflow-hidden"
               >
                 <img
                   id="uploadImage"
-                  class="w-full max-h-72 h-full object-cover rounded-lg hidden"
+                  class="w-full max-h-56 md:max-h-64 lg:max-h-72 h-full object-cover rounded-lg hidden"
                   src=""
                   alt=""
                 />
 
                 <div id="givenContent" class="space-y-4">
                   <svg
-                    class="mx-auto"
+                    class="mx-auto size-8 md:size-10 lg:size-12"
                     xmlns="http://www.w3.org/2000/svg"
                     width="44"
                     height="44"
@@ -418,16 +418,16 @@
                       stroke-linejoin="round"
                     />
                   </svg>
-                  <p class="text-2xl text-[#2E2E2E] font-medium">
+                  <p class="text-base md:text-xl lg:text-2xl text-[#2E2E2E] font-medium">
                     Drag and drop images or click to upload
                   </p>
 
-                  <p class="text-[14px] text-[#6A6A6A] font-mediumFont">
+                  <p class="text-xs md:text-[14px] text-[#6A6A6A] font-mediumFont">
                     Supported formats: JPEG, PNG, GIF (max. 5MB)
                   </p>
 
                   <p
-                    class="inline-block bg-[#ECECEC] py-[10px] px-[20px] rounded-lg text-center text-[#2E2E2E] mt-3 font-mediumFont"
+                    class="inline-block bg-[#ECECEC] py-[10px] px-3 md:px-4 lg:px-[20px] text-sm md:text-base rounded-lg text-center text-[#2E2E2E] mt-3 font-mediumFont"
                   >
                     Choose Files
                   </p>
@@ -444,7 +444,7 @@
 
             <!-- url -->
             <div class="mb-6">
-              <label class="text-2xl text-[#2E2E2E] font-mediumFont" for=""
+              <label class="text-lg md:text-xl lg:text-2xl text-[#2E2E2E] font-mediumFont" for=""
                 >Banner Ad URL</label
               >
               <input
@@ -457,22 +457,22 @@
 
             <!-- payment details -->
             <div class="mb-6">
-              <label class="text-2xl text-[#2E2E2E] font-mediumFont" for=""
+              <label class="text-lg md:text-xl lg:text-2xl text-[#2E2E2E] font-mediumFont" for=""
                 >Payment Details</label
               >
 
               <div
                 id="paymentDetails"
-                class="py-[28px] px-5 lg:px-14 rounded-lg border border-[rgba(0,_0,_0,_0.08)] w-full bg-[#FAFAFA] outline-0 mt-3 flex items-center justify-between font-medium text-xl"
+                class="py-[28px] px-2 md:px-5 lg:px-14 rounded-lg border border-[rgba(0,_0,_0,_0.08)] w-full bg-[#FAFAFA] outline-0 mt-3 flex items-center justify-between font-medium text-sm md:text-lg lg:text-xl"
               >
                 <p></p>
                 <p></p>
               </div>
             </div>
 
-            <div class="pt-12">
+            <div class="pt-5 md:pt-10 lg:pt-12">
               <button
-                class="w-full block border border-[rgba(0,_0,_0,_0.08)] rounded-lg bg-[#008080] py-[18px] text-center text-white text-lg font-mediumFont"
+                class="w-full block border border-[rgba(0,_0,_0,_0.08)] rounded-lg bg-[#008080] py-[18px] text-center text-white text-sm md:text-base lg:text-lg font-mediumFont"
               >
                 Submit & Pay
               </button>
@@ -484,7 +484,7 @@
 
     <!-- footer -->
     <footer
-      class="w-full bg-[#003333] text-white px-5 md:px-8 2xl:px-0 overflow-hidden mt-48"
+      class="w-full bg-[#003333] text-white px-5 md:px-8 2xl:px-0 overflow-hidden mt-7 md:mt-10 lg:mt-14"
     >
       <div class="container mx-auto py-6 sm:py-8 md:py-10 lg:py-12 xl:py-16">
         <div
@@ -605,13 +605,13 @@
           const plan = JSON.parse(planData);
           console.log(plan);
           document.getElementById("selectedPlanDetails").innerHTML = `
-              <p class="text-base md:text-lg">${plan.name}</p>
-              <p class="text-primary text-2xl lg:text-[32px] font-bold">${plan.price}</p> 
+              <p class="text-sm md:text-lg">${plan.name}</p>
+              <p class="text-primary text-base lg:text-[28px] xl:text-[32px] font-bold">${plan.price}</p> 
             `;
 
           document.getElementById("paymentDetails").innerHTML = `
-          <p class="ont-mediumFont placeholder:text-[#B6B6B6] tracking-wide">
-                  Banner Add (1 Week)
+          <p class="font-mediumFont placeholder:text-[#B6B6B6] tracking-wide">
+                  Banner Add <br class='md:hidden'> (1 Week)
                 </p>
                 <p>${plan.price}</p>
           

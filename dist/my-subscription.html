@@ -289,13 +289,13 @@
 
     <main class="font-mediumFont">
       <!-- class="w-full h-full flex flex-col justify-center items-center pt-[30px]" -->
-      <section class="w-11/12 md:w-5/6 lg:w-3/4 mx-auto my-[50px]">
+      <section class="w-11/12 md:w-5/6 lg:w-3/4 mx-auto my-8 md:my-11 lg:my-[50px]">
         <!-- bode of membership -->
-        <div class="border rounded-xl p-8 font-medium">
+        <div class="border rounded-xl p-3 md:p-5 lg:p-8 font-medium">
           <div class="flex items-center justify-between flex-wrap gap-3">
-            <h3 class="text-2xl font-bold">My Subscription</h3>
+            <h3 class="text-base md:text-xl lg:text-2xl font-bold">My Subscription</h3>
             <button
-              class="p-[10px] rounded-lg border border-primary text-primary"
+              class="p-1 md:p-2 lg:p-[10px] text-sm md:text-base rounded-lg border border-primary text-primary"
             >
               Manage Plan
             </button>
@@ -307,38 +307,45 @@
             Active
           </button>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-8 mb-6">
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-3 md:mt-6 lg:mt-8 mb-6"
+          >
             <div>
               <p class="text-[#6A6A6A] text-sm">User Type</p>
-              <p class="text-xl md:text-2xl font-bold">General</p>
+              <p class="text-base md:text-xl lg:text-2xl font-bold">General</p>
             </div>
 
             <div>
               <p class="text-[#6A6A6A] text-sm">Premium Membership</p>
-              <p class="text-xl md:text-2xl font-bold">
+              <p class="text-base md:text-xl lg:text-2xl font-bold">
                 Premium
                 <span class="text-[#6A6A6A] text-sm">(monthly plan)</span>
               </p>
             </div>
           </div>
-           
-          <div class="flex justify-between items-center mt-6">
-             <p class="text-[#6A6A6A]">Renews on December 15, 2024</p>
-            <h5 class="font-bold text-[32px]">5.99<span class="text-[#6A6A6A] text-base font-medium">/month</span></h5>
+
+          <div class="flex justify-between gap-3 items-center mt-6">
+            <p class="text-[#6A6A6A] text-sm md:text-base">
+              Renews on December 15, 2024
+            </p>
+            <h5 class="font-bold text-xl md:text-2xl lg:text-[32px]">
+              5.99<span class="text-[#6A6A6A] text-base font-medium"
+                >/month</span
+              >
+            </h5>
           </div>
-         
         </div>
 
         <!-- features section -->
-        <div class="my-10">
-          <h3 class="text-2xl font-bold">Features</h3>
+        <div class="my-5 md:my-8 lg:my-10">
+          <h3 class="text-base md:text-lg lg:text-2xl font-bold">Features</h3>
 
           <!-- features -->
           <div
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 py-[18px] font-medium"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 py-[18px] font-medium"
           >
             <!-- features part-1-->
-            <div class="space-y-4 max-w-[330px] w-full">
+            <div class="space-y-4 max-w-[330px] w-full text-sm md:text-base">
               <div class="flex gap-[10px] items-center">
                 <div class="relative">
                   <svg
@@ -543,7 +550,7 @@
             </div>
 
             <!-- feature part 2 -->
-            <div class="space-y-4 max-w-[330px] w-full text-wrap">
+            <div class="space-y-4 max-w-[330px] w-full text-wrap text-sm md:text-base">
               <div class="flex gap-[10px] items-center">
                 <div class="relative">
                   <svg
@@ -673,54 +680,45 @@
 
         <!-- billing section -->
         <div>
-          <h3 class="text-2xl font-bold">Billing History</h3>
+          <h3 class="text-base md:text-lg lg:text-2xl font-bold">
+            Billing History
+          </h3>
 
           <!-- table of content -->
-          <div class="border rounded-lg mt-5">
-            <table class="w-full">
-              <tr class="py-3 text-sm md:text-base">
+          <div class="mt-5 overflow-x-auto border rounded-lg">
+            <table class="min-w-full">
+              <thead class="py-3 text-xs md:text-base">
                 <th class="font-medium text-[#2E2E2E] py-3">Date</th>
                 <th class="font-medium text-[#2E2E2E] py-3">Invoice Id</th>
                 <th class="font-medium text-[#2E2E2E] py-3">Amount</th>
                 <th class="font-medium text-[#2E2E2E] py-3">Status</th>
                 <th class="font-medium text-[#2E2E2E] py-3">Download</th>
-              </tr>
+              </thead>
 
-              <tr class="text-xs">
-                <td class="text-[#6A6A6A] py-3 text-center">1 Dec, 2023</td>
-                <td class="text-[#6A6A6A] py-3 text-center">INV-2023-012</td>
-                <td class="text-[#6A6A6A] py-3 text-center">$499.00</td>
-                <td class="py-3 text-center">
-                  <button
-                    class="text-[#36B37E] bg-[#E8F2F2] px-[10px] py-1 rounded-[48px]"
-                  >
-                    Paid
-                  </button>
-                </td>
-                <td class="py-3">
-                  <svg
-                    class="mx-auto"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <g clip-path="url(#clip0_11212_5728)">
-                      <mask
-                        id="mask0_11212_5728"
-                        style="mask-type: luminance"
-                        maskUnits="userSpaceOnUse"
-                        x="0"
-                        y="0"
-                        width="24"
-                        height="24"
-                      >
-                        <path d="M0 0H24V24H0V0Z" fill="white" />
-                      </mask>
-                      <g mask="url(#mask0_11212_5728)">
+              <tbody>
+                <tr class="text-xs">
+                  <td class="text-[#6A6A6A] py-3 text-center">1 Dec, 2023</td>
+                  <td class="text-[#6A6A6A] py-3 text-center">INV-2023-012</td>
+                  <td class="text-[#6A6A6A] py-3 text-center">$499.00</td>
+                  <td class="py-3 text-center">
+                    <button
+                      class="text-[#36B37E] bg-[#E8F2F2] px-[10px] py-1 rounded-[48px]"
+                    >
+                      Paid
+                    </button>
+                  </td>
+                  <td class="py-3">
+                    <svg
+                      class="mx-auto size-5 md:size-8"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_11212_5728)">
                         <mask
-                          id="mask1_11212_5728"
+                          id="mask0_11212_5728"
                           style="mask-type: luminance"
                           maskUnits="userSpaceOnUse"
                           x="0"
@@ -730,72 +728,72 @@
                         >
                           <path d="M0 0H24V24H0V0Z" fill="white" />
                         </mask>
-                        <g mask="url(#mask1_11212_5728)">
-                          <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M3 14C2.44772 14 2 14.4477 2 15V19C2 19.8284 2.29289 20.5355 2.87868 21.1213C3.46446 21.7071 4.17157 22 5 22H19C19.8284 22 20.5356 21.7071 21.1213 21.1213C21.7071 20.5355 22 19.8284 22 19V15C22 14.4477 21.5522 14 21 14C20.4478 14 20 14.4477 20 15V19C20 19.2761 19.9024 19.5118 19.7071 19.7071C19.5118 19.9024 19.2761 20 19 20H5C4.72386 20 4.48816 19.9024 4.29289 19.7071C4.09763 19.5118 4 19.2761 4 19V15C4 14.4477 3.55228 14 3 14Z"
-                            fill="#36B37E"
-                          />
-                          <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M6.29289 9.29289C5.90237 9.68341 5.90237 10.3166 6.29289 10.7071L11.2929 15.7071C11.3393 15.7535 11.3898 15.795 11.4444 15.8315C11.499 15.8679 11.5566 15.8988 11.6173 15.9239C11.678 15.949 11.7405 15.968 11.8049 15.9808C11.8693 15.9936 11.9343 16 12 16C12.0657 16 12.1307 15.9936 12.1951 15.9808C12.2595 15.968 12.322 15.949 12.3827 15.9239C12.4433 15.8988 12.501 15.8679 12.5556 15.8315C12.6102 15.795 12.6607 15.7535 12.7071 15.7071L17.7071 10.7071C18.0976 10.3166 18.0976 9.68341 17.7071 9.29289C17.3166 8.90237 16.6834 8.90237 16.2929 9.29289L12 13.5858L7.70711 9.29289C7.31658 8.90237 6.68341 8.90237 6.29289 9.29289Z"
-                            fill="#36B37E"
-                          />
-                          <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M12 2C11.4477 2 11 2.44772 11 3V15C11 15.5522 11.4477 16 12 16C12.5523 16 13 15.5522 13 15V3C13 2.44772 12.5523 2 12 2Z"
-                            fill="#36B37E"
-                          />
+                        <g mask="url(#mask0_11212_5728)">
+                          <mask
+                            id="mask1_11212_5728"
+                            style="mask-type: luminance"
+                            maskUnits="userSpaceOnUse"
+                            x="0"
+                            y="0"
+                            width="24"
+                            height="24"
+                          >
+                            <path d="M0 0H24V24H0V0Z" fill="white" />
+                          </mask>
+                          <g mask="url(#mask1_11212_5728)">
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M3 14C2.44772 14 2 14.4477 2 15V19C2 19.8284 2.29289 20.5355 2.87868 21.1213C3.46446 21.7071 4.17157 22 5 22H19C19.8284 22 20.5356 21.7071 21.1213 21.1213C21.7071 20.5355 22 19.8284 22 19V15C22 14.4477 21.5522 14 21 14C20.4478 14 20 14.4477 20 15V19C20 19.2761 19.9024 19.5118 19.7071 19.7071C19.5118 19.9024 19.2761 20 19 20H5C4.72386 20 4.48816 19.9024 4.29289 19.7071C4.09763 19.5118 4 19.2761 4 19V15C4 14.4477 3.55228 14 3 14Z"
+                              fill="#36B37E"
+                            />
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M6.29289 9.29289C5.90237 9.68341 5.90237 10.3166 6.29289 10.7071L11.2929 15.7071C11.3393 15.7535 11.3898 15.795 11.4444 15.8315C11.499 15.8679 11.5566 15.8988 11.6173 15.9239C11.678 15.949 11.7405 15.968 11.8049 15.9808C11.8693 15.9936 11.9343 16 12 16C12.0657 16 12.1307 15.9936 12.1951 15.9808C12.2595 15.968 12.322 15.949 12.3827 15.9239C12.4433 15.8988 12.501 15.8679 12.5556 15.8315C12.6102 15.795 12.6607 15.7535 12.7071 15.7071L17.7071 10.7071C18.0976 10.3166 18.0976 9.68341 17.7071 9.29289C17.3166 8.90237 16.6834 8.90237 16.2929 9.29289L12 13.5858L7.70711 9.29289C7.31658 8.90237 6.68341 8.90237 6.29289 9.29289Z"
+                              fill="#36B37E"
+                            />
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M12 2C11.4477 2 11 2.44772 11 3V15C11 15.5522 11.4477 16 12 16C12.5523 16 13 15.5522 13 15V3C13 2.44772 12.5523 2 12 2Z"
+                              fill="#36B37E"
+                            />
+                          </g>
                         </g>
                       </g>
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_11212_5728">
-                        <rect width="24" height="24" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </td>
-              </tr>
+                      <defs>
+                        <clipPath id="clip0_11212_5728">
+                          <rect width="24" height="24" fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </td>
+                </tr>
 
-              <tr class="text-xs">
-                <td class="text-[#6A6A6A] py-3 text-center">1 Dec, 2023</td>
-                <td class="text-[#6A6A6A] py-3 text-center">INV-2023-012</td>
-                <td class="text-[#6A6A6A] py-3 text-center">$499.00</td>
-                <td class="py-3 text-center">
-                  <button
-                    class="text-[#36B37E] bg-[#E8F2F2] px-[10px] py-1 rounded-[48px]"
-                  >
-                    Paid
-                  </button>
-                </td>
-                <td class="py-3">
-                  <svg
-                    class="mx-auto"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <g clip-path="url(#clip0_11212_5728)">
-                      <mask
-                        id="mask0_11212_5728"
-                        style="mask-type: luminance"
-                        maskUnits="userSpaceOnUse"
-                        x="0"
-                        y="0"
-                        width="24"
-                        height="24"
-                      >
-                        <path d="M0 0H24V24H0V0Z" fill="white" />
-                      </mask>
-                      <g mask="url(#mask0_11212_5728)">
+                <tr class="text-xs">
+                  <td class="text-[#6A6A6A] py-3 text-center">1 Dec, 2023</td>
+                  <td class="text-[#6A6A6A] py-3 text-center">INV-2023-012</td>
+                  <td class="text-[#6A6A6A] py-3 text-center">$499.00</td>
+                  <td class="py-3 text-center">
+                    <button
+                      class="text-[#36B37E] bg-[#E8F2F2] px-[10px] py-1 rounded-[48px]"
+                    >
+                      Paid
+                    </button>
+                  </td>
+                  <td class="py-3">
+                    <svg
+                      class="mx-auto size-5 md:size-8"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_11212_5728)">
                         <mask
-                          id="mask1_11212_5728"
+                          id="mask0_11212_5728"
                           style="mask-type: luminance"
                           maskUnits="userSpaceOnUse"
                           x="0"
@@ -805,36 +803,49 @@
                         >
                           <path d="M0 0H24V24H0V0Z" fill="white" />
                         </mask>
-                        <g mask="url(#mask1_11212_5728)">
-                          <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M3 14C2.44772 14 2 14.4477 2 15V19C2 19.8284 2.29289 20.5355 2.87868 21.1213C3.46446 21.7071 4.17157 22 5 22H19C19.8284 22 20.5356 21.7071 21.1213 21.1213C21.7071 20.5355 22 19.8284 22 19V15C22 14.4477 21.5522 14 21 14C20.4478 14 20 14.4477 20 15V19C20 19.2761 19.9024 19.5118 19.7071 19.7071C19.5118 19.9024 19.2761 20 19 20H5C4.72386 20 4.48816 19.9024 4.29289 19.7071C4.09763 19.5118 4 19.2761 4 19V15C4 14.4477 3.55228 14 3 14Z"
-                            fill="#36B37E"
-                          />
-                          <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M6.29289 9.29289C5.90237 9.68341 5.90237 10.3166 6.29289 10.7071L11.2929 15.7071C11.3393 15.7535 11.3898 15.795 11.4444 15.8315C11.499 15.8679 11.5566 15.8988 11.6173 15.9239C11.678 15.949 11.7405 15.968 11.8049 15.9808C11.8693 15.9936 11.9343 16 12 16C12.0657 16 12.1307 15.9936 12.1951 15.9808C12.2595 15.968 12.322 15.949 12.3827 15.9239C12.4433 15.8988 12.501 15.8679 12.5556 15.8315C12.6102 15.795 12.6607 15.7535 12.7071 15.7071L17.7071 10.7071C18.0976 10.3166 18.0976 9.68341 17.7071 9.29289C17.3166 8.90237 16.6834 8.90237 16.2929 9.29289L12 13.5858L7.70711 9.29289C7.31658 8.90237 6.68341 8.90237 6.29289 9.29289Z"
-                            fill="#36B37E"
-                          />
-                          <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M12 2C11.4477 2 11 2.44772 11 3V15C11 15.5522 11.4477 16 12 16C12.5523 16 13 15.5522 13 15V3C13 2.44772 12.5523 2 12 2Z"
-                            fill="#36B37E"
-                          />
+                        <g mask="url(#mask0_11212_5728)">
+                          <mask
+                            id="mask1_11212_5728"
+                            style="mask-type: luminance"
+                            maskUnits="userSpaceOnUse"
+                            x="0"
+                            y="0"
+                            width="24"
+                            height="24"
+                          >
+                            <path d="M0 0H24V24H0V0Z" fill="white" />
+                          </mask>
+                          <g mask="url(#mask1_11212_5728)">
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M3 14C2.44772 14 2 14.4477 2 15V19C2 19.8284 2.29289 20.5355 2.87868 21.1213C3.46446 21.7071 4.17157 22 5 22H19C19.8284 22 20.5356 21.7071 21.1213 21.1213C21.7071 20.5355 22 19.8284 22 19V15C22 14.4477 21.5522 14 21 14C20.4478 14 20 14.4477 20 15V19C20 19.2761 19.9024 19.5118 19.7071 19.7071C19.5118 19.9024 19.2761 20 19 20H5C4.72386 20 4.48816 19.9024 4.29289 19.7071C4.09763 19.5118 4 19.2761 4 19V15C4 14.4477 3.55228 14 3 14Z"
+                              fill="#36B37E"
+                            />
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M6.29289 9.29289C5.90237 9.68341 5.90237 10.3166 6.29289 10.7071L11.2929 15.7071C11.3393 15.7535 11.3898 15.795 11.4444 15.8315C11.499 15.8679 11.5566 15.8988 11.6173 15.9239C11.678 15.949 11.7405 15.968 11.8049 15.9808C11.8693 15.9936 11.9343 16 12 16C12.0657 16 12.1307 15.9936 12.1951 15.9808C12.2595 15.968 12.322 15.949 12.3827 15.9239C12.4433 15.8988 12.501 15.8679 12.5556 15.8315C12.6102 15.795 12.6607 15.7535 12.7071 15.7071L17.7071 10.7071C18.0976 10.3166 18.0976 9.68341 17.7071 9.29289C17.3166 8.90237 16.6834 8.90237 16.2929 9.29289L12 13.5858L7.70711 9.29289C7.31658 8.90237 6.68341 8.90237 6.29289 9.29289Z"
+                              fill="#36B37E"
+                            />
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M12 2C11.4477 2 11 2.44772 11 3V15C11 15.5522 11.4477 16 12 16C12.5523 16 13 15.5522 13 15V3C13 2.44772 12.5523 2 12 2Z"
+                              fill="#36B37E"
+                            />
+                          </g>
                         </g>
                       </g>
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_11212_5728">
-                        <rect width="24" height="24" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </td>
-              </tr>
+                      <defs>
+                        <clipPath id="clip0_11212_5728">
+                          <rect width="24" height="24" fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </td>
+                </tr>
+              </tbody>
             </table>
           </div>
         </div>
@@ -843,7 +854,7 @@
 
     <!-- footer -->
     <footer
-      class="w-full bg-[#003333] text-white px-5 md:px-8 2xl:px-0 overflow-hidden mt-48"
+      class="w-full bg-[#003333] text-white px-5 md:px-8 2xl:px-0 overflow-hidden"
     >
       <div class="container mx-auto py-6 sm:py-8 md:py-10 lg:py-12 xl:py-16">
         <div
