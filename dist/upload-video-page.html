@@ -45,7 +45,7 @@
         </div>
 
         <!-- Auth Buttons -->
-        <div class="lg:flex items-center gap-4 hidden">
+        <div class="lg:flex items-center xl:gap-4 hidden">
           <!-- add from zh start -->
           <a
             href="community-join.html"
@@ -609,11 +609,18 @@
               <div
                 class="w-full md:max-w-[450px] md:w-full md:mx-auto h-[217px] relative"
               >
-                <img
+                <!-- <img
                   class="w-full h-full rounded-xl object-cover"
                   src="../dist/assets/images/upload-img.png"
                   alt=""
-                />
+                /> -->
+
+                <video
+                  src=""
+                  controls
+                  id="modalVideo"
+                  class="w-full h-full rounded-lg"
+                ></video>
                 <span
                   class="absolute bottom-4 right-4 text-[#FFFFFF] text-[14px] font-mediumFont py-1 px-[14px] rounded-[4px] bg-[#2E2E2E]"
                 >
@@ -631,7 +638,7 @@
                 <div
                   class="flex items-center gap-2 text-[14px] font-mediumFont text-[#6A6A6A]"
                 >
-                  <span>1.2M views</span>
+                  <span id="modalVidoSize">1.2M views</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="4"
