@@ -16,10 +16,14 @@
   </head>
 
   <body>
-    <!-- navbar -->
-    <header class="border-black/10 border-b">
+    <div
+      id="overlay"
+      class="fixed inset-0 bg-black bg-opacity-50 justify-center hidden items-center z-10 -translate-x-full transform transition-transform duration-1000"
+    ></div>
+    <!-- zh navbar start-->
+    <header class="border-black/10 border-b px-4">
       <nav
-        class="py-4 md:py-5 w-full flex items-center justify-between px-5 md:px-8 2xl:px-0 container mx-auto"
+        class="py-4 md:py-5 w-full flex items-center justify-between container mx-auto"
       >
         <!-- logo -->
         <div>
@@ -54,16 +58,16 @@
         </div>
 
         <!-- Auth Buttons -->
-        <div class="md:flex items-center gap-6 hidden">
+        <div class="lg:flex items-center xl:gap-4 hidden">
           <!-- add from zh start -->
           <a
-            href=""
+            href="community-join.html"
             class="font-boldFont text-[#141414] w-32 flex items-center justify-center"
           >
             Chat rooms
           </a>
           <a
-            href=""
+            href="mytube-home.html"
             class="font-boldFont text-[#141414] w-32 flex items-center justify-center"
           >
             Yo!Tube
@@ -76,7 +80,7 @@
           </a>
           <!-- add from zh end -->
           <a
-            href="community-join.html"
+            href="community-inbox.html"
             class="font-boldFont text-[#141414] w-32 flex items-center justify-center"
           >
             Inbox
@@ -108,7 +112,7 @@
                 </svg>
               </div>
               <div>
-                <p>Hi, Sajnin</p>
+                <p>Hi, Zobayer</p>
               </div>
               <div>
                 <svg
@@ -146,10 +150,10 @@
           </button>
         </div>
 
-        <div class="md:hidden">
+        <div class="lg:hidden">
           <div
             id="menu-hamburger"
-            class="bg-primary p-2 size-10 flex items-center justify-center rounded-md md:hidden"
+            class="bg-primary p-2 size-10 flex items-center justify-center rounded-md lg:hidden"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -177,7 +181,7 @@
           </div>
           <div
             id="menu-close"
-            class="bg-primary p-2 hidden size-10 items-center justify-center rounded-md md:hidden"
+            class="bg-primary p-2 hidden size-10 items-center justify-center rounded-md lg:hidden"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -205,11 +209,11 @@
         <!-- sidebar -->
         <div
           id="sidebar"
-          class="fixed left-0 top-0 z-20 h-full w-60 -translate-x-full transform overflow-y-scroll bg-white transition-transform duration-500 md:w-64"
+          class="fixed left-0 top-0 z-20 h-full w-60 -translate-x-full transform overflow-y-scroll bg-white transition-transform duration-500 md:w-64 shadow-lg"
         >
           <!-- logo -->
           <div
-            class="flex w-full items-center pb-2 pl-10 pt-12 font-roboto font-bold text-primary md:text-xl"
+            class="flex w-full items-center pb-2 px-5 pt-4 font-roboto font-bold text-primary md:text-xl"
           >
             <a href="user-homepage.html" class="flex items-center gap-1">
               <svg
@@ -237,14 +241,16 @@
                   fill="#008080"
                 />
               </svg>
-              <p class="font-boldFont">CommunityConnect</p>
+              <p class="font-boldFont">Community</p>
             </a>
           </div>
 
           <!-- Profile info -->
-          <div class="pt-4 px-4">
+          <div
+            class="pl-5 pr-5 pb-3 flex items-center pt-4 border-b border-black/20"
+          >
             <button
-              class="px-5 py-2 text-sm text-[#222222] border-b border-black/20 font-mediumFont navbar-dropdown-btn relative w-full"
+              class="text-sm text-[#222222] font-mediumFont relative w-full"
             >
               <div class="flex items-center gap-2">
                 <div>
@@ -268,23 +274,47 @@
                   </svg>
                 </div>
                 <div>
-                  <p>Hi, Sajnin</p>
+                  <p>Hi, Zobayer</p>
                 </div>
               </div>
             </button>
+            <button
+              class="inline text-start text-base text-[#222222] font-mediumFont"
+            >
+              Logout
+            </button>
           </div>
           <!-- NavLinks ::start -->
-          <div class="py-4 pl-10 font-inter text-sm">
-            <div class="flex flex-col justify-center gap-4 font-boldFont">
-              <a href="community-inbox.html">Inbox</a>
-              <a href="account.html">Account</a>
-              <button class="inline text-start">Logout</button>
+          <div class="py-4 px-5 font-inter text-base">
+            <div class="flex flex-col gap-4 font-boldFont">
+              <a
+                href="community-join.html"
+                class="font-boldFont text-[#141414]"
+              >
+                Chat rooms
+              </a>
+              <a href="mytube-home.html" class="font-boldFont text-[#141414]">
+                Yo!Tube
+              </a>
+              <a
+                href="daro's-general-list.html"
+                class="font-boldFont text-[#141414]"
+              >
+                Daro’s List
+              </a>
+              <a
+                href="community-inbox.html"
+                class="font-boldFont text-[#141414]"
+              >
+                Inbox
+              </a>
             </div>
           </div>
           <!-- NavLinks ::end -->
         </div>
       </nav>
     </header>
+    <!-- zh navbar end-->
 
     <!-- body -->
     <main class="font-mediumFont">
@@ -319,24 +349,23 @@
           </div>
 
           <button
-            class="bg-[#008080] w-full text-white py-3 rounded-md text-lg font-medium transition"
+            class="bg-[#008080] w-full text-white py-1 md:py-3 rounded-md text-base md:text-lg font-medium transition"
           >
             Continue
           </button>
         </div>
       </section>
-     
     </main>
 
-    <!-- footer -->
+    <!-- zh footer start -->
     <footer
-      class="w-full bg-[#003333] text-white px-5 md:px-8 2xl:px-0 overflow-hidden mt-10 md:mt-14 lg:mt-20"
+      class="w-full bg-[#003333] text-white px-5 md:px-8 2xl:px-0 overflow-hidden font-normalFont md:font-mediumFont mt-6 md:mt-10 lg:mt-[100px]"
     >
       <div class="container mx-auto py-6 sm:py-8 md:py-10 lg:py-12 xl:py-16">
         <div
           class="w-full flex md:items-center justify-between flex-col gap-4 md:gap-6 lg:gap-0 lg:flex-row"
         >
-          <a href="index.html" class="flex items-center gap-1">
+          <a href="user-homepage.html" class="flex items-center gap-1">
             <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -440,6 +469,7 @@
         <p>Copyright ©2024 <span class="text-[#F8BF2C]">Connect</span></p>
       </div>
     </footer>
+    <!-- zh footer end -->
 
     <!-- custorm scripts -->
 

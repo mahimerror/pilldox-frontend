@@ -21,10 +21,14 @@
   </head>
 
   <body class="w-full" id="daros-list">
-    <!-- navbar -->
-    <header class="border-black/10 border-b">
+    <div
+      id="overlay"
+      class="fixed inset-0 bg-black bg-opacity-50 justify-center hidden items-center z-10 -translate-x-full transform transition-transform duration-1000"
+    ></div>
+    <!-- zh navbar start-->
+    <header class="border-black/10 border-b px-4">
       <nav
-        class="py-4 md:py-5 w-full flex items-center justify-between px-5 md:px-8 2xl:px-0 container mx-auto"
+        class="py-4 md:py-5 w-full flex items-center justify-between container mx-auto"
       >
         <!-- logo -->
         <div>
@@ -59,29 +63,29 @@
         </div>
 
         <!-- Auth Buttons -->
-        <div class="md:flex items-center gap-6 hidden">
+        <div class="lg:flex items-center xl:gap-4 hidden">
           <!-- add from zh start -->
           <a
-            href=""
+            href="community-join.html"
             class="font-boldFont text-[#141414] w-32 flex items-center justify-center"
           >
             Chat rooms
           </a>
           <a
-            href=""
+            href="mytube-home.html"
             class="font-boldFont text-[#141414] w-32 flex items-center justify-center"
           >
             Yo!Tube
           </a>
           <a
-            href="#daros-list"
+            href="daro's-general-list.html"
             class="font-boldFont text-[#141414] w-32 flex items-center justify-center"
           >
             Daro’s List
           </a>
           <!-- add from zh end -->
           <a
-            href="community-join.html"
+            href="community-inbox.html"
             class="font-boldFont text-[#141414] w-32 flex items-center justify-center"
           >
             Inbox
@@ -113,7 +117,7 @@
                 </svg>
               </div>
               <div>
-                <p>Hi, Sajnin</p>
+                <p>Hi, Zobayer</p>
               </div>
               <div>
                 <svg
@@ -151,10 +155,10 @@
           </button>
         </div>
 
-        <div class="md:hidden">
+        <div class="lg:hidden">
           <div
             id="menu-hamburger"
-            class="bg-primary p-2 size-10 flex items-center justify-center rounded-md md:hidden"
+            class="bg-primary p-2 size-10 flex items-center justify-center rounded-md lg:hidden"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -182,7 +186,7 @@
           </div>
           <div
             id="menu-close"
-            class="bg-primary p-2 hidden size-10 items-center justify-center rounded-md md:hidden"
+            class="bg-primary p-2 hidden size-10 items-center justify-center rounded-md lg:hidden"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -210,11 +214,11 @@
         <!-- sidebar -->
         <div
           id="sidebar"
-          class="fixed left-0 top-0 z-20 h-full w-60 -translate-x-full transform overflow-y-scroll bg-white transition-transform duration-500 md:w-64"
+          class="fixed left-0 top-0 z-20 h-full w-60 -translate-x-full transform overflow-y-scroll bg-white transition-transform duration-500 md:w-64 shadow-lg"
         >
           <!-- logo -->
           <div
-            class="flex w-full items-center pb-2 pl-10 pt-12 font-roboto font-bold text-primary md:text-xl"
+            class="flex w-full items-center pb-2 px-5 pt-4 font-roboto font-bold text-primary md:text-xl"
           >
             <a href="user-homepage.html" class="flex items-center gap-1">
               <svg
@@ -242,14 +246,16 @@
                   fill="#008080"
                 />
               </svg>
-              <p class="font-boldFont">CommunityConnect</p>
+              <p class="font-boldFont">Community</p>
             </a>
           </div>
 
           <!-- Profile info -->
-          <div class="pt-4 px-4">
+          <div
+            class="pl-5 pr-5 pb-3 flex items-center pt-4 border-b border-black/20"
+          >
             <button
-              class="px-5 py-2 text-sm text-[#222222] border-b border-black/20 font-mediumFont navbar-dropdown-btn relative w-full"
+              class="text-sm text-[#222222] font-mediumFont relative w-full"
             >
               <div class="flex items-center gap-2">
                 <div>
@@ -273,56 +279,120 @@
                   </svg>
                 </div>
                 <div>
-                  <p>Hi, Sajnin</p>
+                  <p>Hi, Zobayer</p>
                 </div>
               </div>
             </button>
+            <button
+              class="inline text-start text-base text-[#222222] font-mediumFont"
+            >
+              Logout
+            </button>
           </div>
           <!-- NavLinks ::start -->
-          <div class="py-4 pl-10 font-inter text-sm">
-            <div class="flex flex-col justify-center gap-4 font-boldFont">
-              <a href="community-inbox.html">Inbox</a>
-              <a href="account.html">Account</a>
-              <button class="inline text-start">Logout</button>
+          <div class="py-4 px-5 font-inter text-base">
+            <div class="flex flex-col gap-4 font-boldFont">
+              <a
+                href="community-join.html"
+                class="font-boldFont text-[#141414]"
+              >
+                Chat rooms
+              </a>
+              <a href="mytube-home.html" class="font-boldFont text-[#141414]">
+                Yo!Tube
+              </a>
+              <a
+                href="daro's-general-list.html"
+                class="font-boldFont text-[#141414]"
+              >
+                Daro’s List
+              </a>
+              <a
+                href="community-inbox.html"
+                class="font-boldFont text-[#141414]"
+              >
+                Inbox
+              </a>
             </div>
           </div>
           <!-- NavLinks ::end -->
         </div>
       </nav>
     </header>
+    <!-- zh navbar end-->
 
-     <!--daro's  Title  part -->
+    <!--daro's  Title  part -->
     <div
       class="px-5 md:px-8 2xl:px-0 container mx-auto flex flex-col gap-4 md:flex-row justify-between items-center pt-[34px] pb-[26px] font-mediumFont"
     >
-      <p class="font-bold text-2xl md:text-[28px] lg:text-[34px] xl:text-[40px]">Daro's List</p>
+      <p
+        class="font-bold text-2xl md:text-[28px] lg:text-[34px] xl:text-[40px]"
+      >
+        Daro's List
+      </p>
 
       <div class="relative rounded-md w-full md:w-1/3 lg:w-1/2">
-          <input
-            type="text"
-            placeholder="Search for Anything..."
-            class="w-full py-3 px-8 md:px-2 lg:px-6 xl:px-8 shadow-sm search-bg rounded-lg outline-none"
-          />
-          <div class="absolute inset-y-0 right-0 py-3 px-8 flex items-center pointer-events-none">
-           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M10.5 18C14.6421 18 18 14.6421 18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18Z" stroke="#6A6A6A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M21 21L16 16" stroke="#6A6A6A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-           </svg>
-          </div>
+        <input
+          type="text"
+          placeholder="Search for Anything..."
+          class="w-full py-3 px-8 md:px-2 lg:px-6 xl:px-8 shadow-sm search-bg rounded-lg outline-none"
+        />
+        <div
+          class="absolute inset-y-0 right-0 py-3 px-8 flex items-center pointer-events-none"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              d="M10.5 18C14.6421 18 18 14.6421 18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18Z"
+              stroke="#6A6A6A"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M21 21L16 16"
+              stroke="#6A6A6A"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
       </div>
-     
-
-     
 
       <div class="text-base md:text-sm xl:text-base">
-        <a href="business-premium-plan.html"
+        <a
+          href="business-premium-plan.html"
           class="bg-[#008080] px-6 py-[10px] rounded-lg text-white flex items-center gap-1"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M6 12H18" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M12 18V6" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-         Post Ad
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              d="M6 12H18"
+              stroke="white"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M12 18V6"
+              stroke="white"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          Post Ad
         </a>
       </div>
     </div>
@@ -331,7 +401,7 @@
 
     <!-- main content -->
     <section
-      class="w-11/12 md:w-5/6 lg:w-3/4 mx-auto py-12 md:py-[60px] lg:py-[70px] font-medium font-mediumFont"
+      class="w-11/12 md:w-5/6 lg:w-3/4 mx-auto pt-4 md:py-[60px] lg:py-[70px] font-medium font-mediumFont"
     >
       <div class="flex items-center gap-2 flex-wrap text-[#6A6A6A]">
         <p>Classified ads</p>
@@ -406,7 +476,9 @@
             />
           </div>
 
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4 xl:gap-5">
+          <div
+            class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4 xl:gap-5"
+          >
             <div
               onclick="getImage('selectedImage1')"
               class="w-full max-h-40 rounded-[4px] h-28 md:h-32 xl:h-full overflow-hidden"
@@ -458,7 +530,9 @@
         </div>
 
         <!-- contact seller container -->
-        <div class="border rounded-xl p-3 lg:p-6 xl:p-[30px] h-fit bg-[#F6F6F6] w-full mx-auto">
+        <div
+          class="border rounded-xl p-3 lg:p-6 xl:p-[30px] h-fit bg-[#F6F6F6] w-full mx-auto"
+        >
           <div class="font-medium flex items-center gap-3 mb-4 md:mb-7 lg:mb-9">
             <img src="./assets/images/sajnin-icon/icon.png" alt="" />
             <div>
@@ -484,7 +558,9 @@
         </div>
       </div>
 
-      <div class="mt-7 md:mt-10 lg:mt-14 flex items-center flex-wrap gap-4 md:gap-6 lg:gap-[30px]">
+      <div
+        class="mt-7 md:mt-10 lg:mt-14 flex items-center flex-wrap gap-4 md:gap-6 lg:gap-[30px]"
+      >
         <h1 class="text-lg md:text-2xl lg:text-[32px] font-bold">
           MacBook Pro 16" 2023 - Deep Purple
         </h1>
@@ -493,9 +569,15 @@
         >
       </div>
 
-      <h6 class="text-2xl md:text-4xl lg:text-[40px] font-bold text-primary mt-3 md:mt-5 lg:mt-7 mb-4">$2,200</h6>
+      <h6
+        class="text-2xl md:text-4xl lg:text-[40px] font-bold text-primary mt-3 md:mt-5 lg:mt-7 mb-4"
+      >
+        $2,200
+      </h6>
 
-      <div class="font-medium text-sm md:text-base flex flex-wrap items-center gap-4 md:gap-7 my-3 md:my-4 lg:my-5">
+      <div
+        class="font-medium text-sm md:text-base flex flex-wrap items-center gap-4 md:gap-7 my-3 md:my-4 lg:my-5"
+      >
         <div class="flex items-center gap-3 text-[#6A6A6A]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -528,7 +610,9 @@
         </div>
       </div>
 
-      <h5 class="text-lg md:text-xl font-bold mt-10 md:mt-14 lg:mt-20">Description</h5>
+      <h5 class="text-lg md:text-xl font-bold mt-10 md:mt-14 lg:mt-20">
+        Description
+      </h5>
       <p class="text-[#6A6A6A] max-w-[920px] mt-4 text-sm md:text-base">
         Selling my MacBook Pro 256GB in Deep Purple. The Laptop is in excellent
         condition, used for only 3 months. Comes with original box, charger, and
@@ -536,25 +620,35 @@
       </p>
 
       <!--specification -->
-      <h5 class="text-lg md:text-xl font-bold mt-10 md:mt-14 lg:mt-20">Specification</h5>
-       <div class="font-medium text-[#6A6A6A] mt-3 space-y-4 text-sm md:text-base">
-         <p><span class="text-black">Processor:</span> Apple M2 Max (12-core CPU, 38-core GPU)</p>
-         <p><span class="text-black">RAM: </span> 32GB Unified Memory</p>
-         <p><span class="text-black">Storage: </span> 1TB SSD</p>
-         <p><span class="text-black">Display: </span> 16.2-inch Liquid Retina XDR (3456x2234)</p>
-         <p><span class="text-black">Battery Life: </span> Up to 22 hours</p>
-       </div>
+      <h5 class="text-lg md:text-xl font-bold mt-10 md:mt-14 lg:mt-20">
+        Specification
+      </h5>
+      <div
+        class="font-medium text-[#6A6A6A] mt-3 space-y-4 text-sm md:text-base"
+      >
+        <p>
+          <span class="text-black">Processor:</span> Apple M2 Max (12-core CPU,
+          38-core GPU)
+        </p>
+        <p><span class="text-black">RAM: </span> 32GB Unified Memory</p>
+        <p><span class="text-black">Storage: </span> 1TB SSD</p>
+        <p>
+          <span class="text-black">Display: </span> 16.2-inch Liquid Retina XDR
+          (3456x2234)
+        </p>
+        <p><span class="text-black">Battery Life: </span> Up to 22 hours</p>
+      </div>
     </section>
 
-    <!-- footer -->
+    <!-- zh footer start -->
     <footer
-      class="w-full bg-[#003333] text-white px-5 md:px-8 2xl:px-0 overflow-hidden"
+      class="w-full bg-[#003333] text-white px-5 md:px-8 2xl:px-0 overflow-hidden font-normalFont md:font-mediumFont mt-6 md:mt-10 lg:mt-[100px]"
     >
       <div class="container mx-auto py-6 sm:py-8 md:py-10 lg:py-12 xl:py-16">
         <div
           class="w-full flex md:items-center justify-between flex-col gap-4 md:gap-6 lg:gap-0 lg:flex-row"
         >
-          <a href="index.html" class="flex items-center gap-1">
+          <a href="user-homepage.html" class="flex items-center gap-1">
             <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -658,6 +752,7 @@
         <p>Copyright ©2024 <span class="text-[#F8BF2C]">Connect</span></p>
       </div>
     </footer>
+    <!-- zh footer end -->
 
     <script>
       function getImage(imageId) {

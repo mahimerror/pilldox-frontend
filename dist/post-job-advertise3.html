@@ -3,18 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <link rel="icon" href="assets/images/logo.svg" type="image/x-icon" />
+    <link rel="icon" href="assets/images/logo.svg" type="image/x-icon" />
     <title>Pilldox Client| Post Job</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="./assets/css/nice-select.css">
-    <link rel="stylesheet" href="./assets/css/custom-nice-selector.css">
+    <link rel="stylesheet" href="./assets/css/nice-select.css" />
+    <link rel="stylesheet" href="./assets/css/custom-nice-selector.css" />
   </head>
   <body>
-    
-     <!-- navbar start-->
-    <header class="border-black/10 border-b">
+    <div
+      id="overlay"
+      class="fixed inset-0 bg-black bg-opacity-50 justify-center hidden items-center z-10 -translate-x-full transform transition-transform duration-1000"
+    ></div>
+    <!-- zh navbar start-->
+    <header class="border-black/10 border-b px-4">
       <nav
-        class="py-4 md:py-5 w-full flex items-center justify-between px-5 md:px-8 2xl:px-0 container mx-auto"
+        class="py-4 md:py-5 w-full flex items-center justify-between container mx-auto"
       >
         <!-- logo -->
         <div>
@@ -49,16 +52,16 @@
         </div>
 
         <!-- Auth Buttons -->
-        <div class="md:flex items-center gap-6 hidden">
+        <div class="lg:flex items-center xl:gap-4 hidden">
           <!-- add from zh start -->
           <a
-            href=""
+            href="community-join.html"
             class="font-boldFont text-[#141414] w-32 flex items-center justify-center"
           >
             Chat rooms
           </a>
           <a
-            href=""
+            href="mytube-home.html"
             class="font-boldFont text-[#141414] w-32 flex items-center justify-center"
           >
             Yo!Tube
@@ -71,7 +74,7 @@
           </a>
           <!-- add from zh end -->
           <a
-            href="community-join.html"
+            href="community-inbox.html"
             class="font-boldFont text-[#141414] w-32 flex items-center justify-center"
           >
             Inbox
@@ -103,7 +106,7 @@
                 </svg>
               </div>
               <div>
-                <p>Hi, Sajnin</p>
+                <p>Hi, Zobayer</p>
               </div>
               <div>
                 <svg
@@ -141,10 +144,10 @@
           </button>
         </div>
 
-        <div class="md:hidden">
+        <div class="lg:hidden">
           <div
             id="menu-hamburger"
-            class="bg-primary p-2 size-10 flex items-center justify-center rounded-md md:hidden"
+            class="bg-primary p-2 size-10 flex items-center justify-center rounded-md lg:hidden"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -172,7 +175,7 @@
           </div>
           <div
             id="menu-close"
-            class="bg-primary p-2 hidden size-10 items-center justify-center rounded-md md:hidden"
+            class="bg-primary p-2 hidden size-10 items-center justify-center rounded-md lg:hidden"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -200,11 +203,11 @@
         <!-- sidebar -->
         <div
           id="sidebar"
-          class="fixed left-0 top-0 z-20 h-full w-60 -translate-x-full transform overflow-y-scroll bg-white transition-transform duration-500 md:w-64"
+          class="fixed left-0 top-0 z-20 h-full w-60 -translate-x-full transform overflow-y-scroll bg-white transition-transform duration-500 md:w-64 shadow-lg"
         >
           <!-- logo -->
           <div
-            class="flex w-full items-center pb-2 pl-10 pt-12 font-roboto font-bold text-primary md:text-xl"
+            class="flex w-full items-center pb-2 px-5 pt-4 font-roboto font-bold text-primary md:text-xl"
           >
             <a href="user-homepage.html" class="flex items-center gap-1">
               <svg
@@ -232,14 +235,16 @@
                   fill="#008080"
                 />
               </svg>
-              <p class="font-boldFont">CommunityConnect</p>
+              <p class="font-boldFont">Community</p>
             </a>
           </div>
 
           <!-- Profile info -->
-          <div class="pt-4 px-4">
+          <div
+            class="pl-5 pr-5 pb-3 flex items-center pt-4 border-b border-black/20"
+          >
             <button
-              class="px-5 py-2 text-sm text-[#222222] border-b border-black/20 font-mediumFont navbar-dropdown-btn relative w-full"
+              class="text-sm text-[#222222] font-mediumFont relative w-full"
             >
               <div class="flex items-center gap-2">
                 <div>
@@ -263,30 +268,55 @@
                   </svg>
                 </div>
                 <div>
-                  <p>Hi, Sajnin</p>
+                  <p>Hi, Zobayer</p>
                 </div>
               </div>
             </button>
+            <button
+              class="inline text-start text-base text-[#222222] font-mediumFont"
+            >
+              Logout
+            </button>
           </div>
           <!-- NavLinks ::start -->
-          <div class="py-4 pl-10 font-inter text-sm">
-            <div class="flex flex-col justify-center gap-4 font-boldFont">
-              <a href="community-inbox.html">Inbox</a>
-              <a href="account.html">Account</a>
-              <button class="inline text-start">Logout</button>
+          <div class="py-4 px-5 font-inter text-base">
+            <div class="flex flex-col gap-4 font-boldFont">
+              <a
+                href="community-join.html"
+                class="font-boldFont text-[#141414]"
+              >
+                Chat rooms
+              </a>
+              <a href="mytube-home.html" class="font-boldFont text-[#141414]">
+                Yo!Tube
+              </a>
+              <a
+                href="daro's-general-list.html"
+                class="font-boldFont text-[#141414]"
+              >
+                Daro’s List
+              </a>
+              <a
+                href="community-inbox.html"
+                class="font-boldFont text-[#141414]"
+              >
+                Inbox
+              </a>
             </div>
           </div>
           <!-- NavLinks ::end -->
         </div>
       </nav>
     </header>
-
+    <!-- zh navbar end-->
 
     <main class="font-mediumFont">
       <section
         class="w-full h-full flex flex-col justify-center items-center pt-4 md:pt-6 lg:pt-[30px]"
       >
-        <div class="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10 xl:gap-[136px]">
+        <div
+          class="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10 xl:gap-[136px]"
+        >
           <button>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -311,7 +341,9 @@
             class="w-11/12 md:w-2/3 lg:w-3/4 mx-auto xl:w-[960px] bg-white border border-[rgba(0,_0,_0,_0.08)] rounded-xl px-4 md:px-10 lg:px-[54px] py-5 md:py-7 lg:py-11"
           >
             <div class="text-center space-y-[6px] pb-[30px] lg:pb-[60px]">
-              <h1 class="text-xl md:text-[26px] lg:text-[32px] font-boldFont text-[#2E2E2E]">
+              <h1
+                class="text-xl md:text-[26px] lg:text-[32px] font-boldFont text-[#2E2E2E]"
+              >
                 Post a New Advertisement
               </h1>
               <p class="text-sm md:text-base text-[#6A6A6A] font-mediumFont">
@@ -321,8 +353,9 @@
 
             <!-- post advertise form -->
             <form id="submissionForm" action="" class="w-full">
-              <p class="text-lg md:text-xl lg:text-2xl font-bold mb-11">Job Details</p>
-               
+              <p class="text-lg md:text-xl lg:text-2xl font-bold mb-11">
+                Job Details
+              </p>
 
               <!-- job title -->
               <div class="space-y-2 mb-6">
@@ -336,7 +369,6 @@
                   required
                 />
               </div>
-              
 
               <!-- company name -->
               <div class="space-y-2 mb-6">
@@ -350,11 +382,11 @@
                   required
                 />
               </div>
-              
 
               <!-- job type -->
-              <p class="text-base text-[#2E2E2E] font-mediumFont mb-2"
-                >Job Type</p>
+              <p class="text-base text-[#2E2E2E] font-mediumFont mb-2">
+                Job Type
+              </p>
               <div class="nice-select bg-select wide">
                 <span
                   class="current absolute top-1/2 transform -translate-y-1/2"
@@ -365,15 +397,13 @@
                   <li data-value="part-time" class="option">Part Time</li>
                   <li data-value="internship" class="option">Internship</li>
                   <li data-value="freelance" class="option">Freelance</li>
-                 
                 </ul>
               </div>
-              
-
 
               <!-- job category -->
-              <p class="text-base text-[#2E2E2E] font-mediumFont mb-2"
-                >Job Category</p>
+              <p class="text-base text-[#2E2E2E] font-mediumFont mb-2">
+                Job Category
+              </p>
               <div class="nice-select bg-select wide">
                 <span
                   class="current absolute top-1/2 transform -translate-y-1/2"
@@ -386,10 +416,8 @@
                   <li data-value="healthcare" class="option">Healthcare</li>
                   <li data-value="construction" class="option">Construction</li>
                   <li data-value="others" class="option">Others</li>
-                 
                 </ul>
               </div>
-              
 
               <!-- job description -->
               <div class="space-y-2 mb-6">
@@ -406,14 +434,18 @@
               </div>
 
               <!-- price & Payment -->
-              <p class="font-bold text-lg md:text-xl lg:text-2xl my-5 md:my-9 lg:my-11">Price and Payment</p>
+              <p
+                class="font-bold text-lg md:text-xl lg:text-2xl my-5 md:my-9 lg:my-11"
+              >
+                Price and Payment
+              </p>
 
               <div class="space-y-2 mb-6">
                 <label class="text-base text-[#2E2E2E] font-mediumFont" for=""
                   >Price <span class="text-red-600">*</span></label
                 >
                 <input
-                  type="text"
+                  type="number"
                   placeholder="Enter Price"
                   class="font-mediumFont text-[14px] placeholder:text-[#B6B6B6] py-[14px] px-6 rounded-lg border border-[rgba(0,_0,_0,_0.08)] w-full bg-[#FAFAFA] outline-0"
                   required
@@ -421,7 +453,11 @@
               </div>
 
               <!-- location -->
-              <p class="font-bold text-lg md:text-xl lg:text-2xl my-5 md:my-9 lg:my-11">Job Location</p>
+              <p
+                class="font-bold text-lg md:text-xl lg:text-2xl my-5 md:my-9 lg:my-11"
+              >
+                Job Location
+              </p>
 
               <div class="space-y-2 mb-6">
                 <label class="text-base text-[#2E2E2E] font-mediumFont" for=""
@@ -430,12 +466,22 @@
 
                 <div class="flex gap-10">
                   <label class="flex items-center gap-3">
-                    <input class="w-4 h-4 accent-primary" type="radio" name="jobLocation" id="" />
+                    <input
+                      class="w-4 h-4 accent-primary"
+                      type="radio"
+                      name="jobLocation"
+                      id=""
+                    />
                     <p for="">Onsite</p>
                   </label>
 
                   <label class="flex items-center gap-3">
-                    <input class="w-4 h-4 accent-primary" type="radio" name="jobLocation" id="" />
+                    <input
+                      class="w-4 h-4 accent-primary"
+                      type="radio"
+                      name="jobLocation"
+                      id=""
+                    />
                     <p for="">Remote</p>
                   </label>
                 </div>
@@ -454,9 +500,12 @@
 
               <!-- job location part end here-->
 
-
               <!-- salary and benefits -->
-              <p class="font-bold text-lg md:text-xl lg:text-2xl my-5 md:my-9 lg:my-11">Salary & Benefits</p>
+              <p
+                class="font-bold text-lg md:text-xl lg:text-2xl my-5 md:my-9 lg:my-11"
+              >
+                Salary & Benefits
+              </p>
 
               <div class="space-y-2 mb-6">
                 <label class="text-base text-[#2E2E2E] font-mediumFont" for=""
@@ -465,13 +514,13 @@
 
                 <div class="flex gap-3 md:gap-6">
                   <input
-                    type="text"
+                    type="number"
                     placeholder="$Min Salary"
                     class="font-mediumFont text-[14px] placeholder:text-[#B6B6B6] py-[14px] px-6 rounded-lg border border-[rgba(0,_0,_0,_0.08)] w-full bg-[#FAFAFA] outline-0"
                   />
 
                   <input
-                    type="text"
+                    type="number"
                     placeholder="$Max Salary"
                     class="font-mediumFont text-[14px] placeholder:text-[#B6B6B6] py-[14px] px-6 rounded-lg border border-[rgba(0,_0,_0,_0.08)] w-full bg-[#FAFAFA] outline-0"
                   />
@@ -492,7 +541,11 @@
 
               <!-- salary and benefits ends here -->
 
-              <p class="font-bold text-lg md:text-xl lg:text-2xl my-5 md:my-9 lg:my-11">Application Process</p>
+              <p
+                class="font-bold text-lg md:text-xl lg:text-2xl my-5 md:my-9 lg:my-11"
+              >
+                Application Process
+              </p>
 
               <div class="space-y-2 mb-6">
                 <label class="text-base text-[#2E2E2E] font-mediumFont" for=""
@@ -506,28 +559,31 @@
                 />
               </div>
 
-             
-               <div class="space-y-2 mb-6">
+              <div class="space-y-2 mb-6">
                 <label class="flex items-center gap-3">
-                  <input class="w-5 h-5 accent-primary" type="checkbox" name="" id="" />
+                  <input
+                    class="w-5 h-5 accent-primary"
+                    type="checkbox"
+                    name=""
+                    id=""
+                  />
 
-                  <p class="font-medium text-sm md:text-base"
-                    >I agree to the
+                  <p class="font-medium text-sm md:text-base">
+                    I agree to the
                     <span class="text-primary"
                       ><a href="">Terms and Conditions</a></span
                     >
                     and
                     <span class="text-primary"
                       ><a href="">Privacy Policy</a></span
-                    ></
-                  >
+                    >
+                  </p>
                 </label>
               </div>
-              
 
               <div class="pt-7 md:pt-9 lg:pt-12">
                 <button
-                  onclick="submitForm()"
+                  onsubmit="submitForm()"
                   id="submitted"
                   class="w-full block border border-[rgba(0,_0,_0,_0.08)] rounded-lg bg-[#008080] py-3 md:py-[15px] text-center text-white text-sm md:text-base lg:text-lg font-mediumFont"
                 >
@@ -559,21 +615,17 @@
           </div>
         </div>
       </section>
-
-
-
-     
     </main>
 
-     <!-- footer -->
-    <footer 
-      class="w-full bg-[#003333] text-white px-5 md:px-8 2xl:px-0 overflow-hidden mt-10 md:mt-14 lg:mt-20"
+    <!-- zh footer start -->
+    <footer
+      class="w-full bg-[#003333] text-white px-5 md:px-8 2xl:px-0 overflow-hidden font-normalFont md:font-mediumFont mt-6 md:mt-10 lg:mt-[100px]"
     >
       <div class="container mx-auto py-6 sm:py-8 md:py-10 lg:py-12 xl:py-16">
         <div
           class="w-full flex md:items-center justify-between flex-col gap-4 md:gap-6 lg:gap-0 lg:flex-row"
         >
-          <a href="index.html" class="flex items-center gap-1">
+          <a href="user-homepage.html" class="flex items-center gap-1">
             <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -677,10 +729,9 @@
         <p>Copyright ©2024 <span class="text-[#F8BF2C]">Connect</span></p>
       </div>
     </footer>
+    <!-- zh footer end -->
 
     <!-- ?footer ends here? -->
-
-    
 
     <!-- submission card/ modals starts -->
 
@@ -689,7 +740,7 @@
       class="items-center justify-center inset-0 bg-black bg-opacity-50 fixed hidden z-50"
     >
       <div
-        class="w-1/4 text-center bg-white rounded-xl border mx-auto py-8 px-12 z-50"
+        class="md:w-1/4 text-center bg-white rounded-xl border mx-auto py-8 px-12 z-50"
       >
         <svg
           class="mx-auto"
@@ -722,14 +773,6 @@
         </button>
       </div>
     </div>
-
-
-    <!-- Scripts -->
-    <script>
-      $(document).ready(function () {
-        $("select").niceSelect();
-      });
-    </script>
 
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>
